@@ -11,10 +11,10 @@ jobs:
         python-version: [2.7] # , 3.6, 3.7, 3.8, 3.9
 
     steps:   
-      - uses: actions/checkout@master
-        with:
-          name: mapserver/mapserver
-          ref: main
+      - name: Get MapServer sourcecode
+        shell: powershell
+        run: |
+          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch main
           
       - name: Download and unzip SDK
         shell: powershell
@@ -29,9 +29,10 @@ jobs:
           
       - name: Build MapServer
         shell: powershell
-        run: |          
+        run: |    
+          $SDK="release-1930-x64"
           $BUILD_FOLDER="${{ github.workspace }}"         
-          $SDK_PREFIX="$BUILD_FOLDER/sdk/SDK"
+          $SDK_PREFIX="$BUILD_FOLDER/sdk/$SDK"
           $SDK_INC="$BUILD_FOLDER/sdk/$SDK/include"
           $SDK_LIB="$BUILD_FOLDER/sdk/$SDK/lib"
           $SDK_BIN="$BUILD_FOLDER/sdk/$SDK/bin"
