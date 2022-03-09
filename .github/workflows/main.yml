@@ -17,7 +17,7 @@ jobs:
           ref: main
           
       - name: Download and unzip SDK
-        shell: ps
+        shell: powershell
         # http://download.gisinternals.com/sdk/downloads/release-1930-x64-dev.zip
         run: |
           $SDK="release-1930-x64"
@@ -28,7 +28,7 @@ jobs:
           Expand-Archive $SDK_ZIP -DestinationPath sdk
           
       - name: Build MapServer
-        shell: ps
+        shell: powershell
         run: |          
           $BUILD_FOLDER = "${{ github.workspace }}"         
           $SDK_PREFIX="$BUILD_FOLDER/sdk/SDK"
