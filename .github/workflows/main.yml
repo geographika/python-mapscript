@@ -16,7 +16,7 @@ jobs:
       - name: Get MapServer sourcecode
         shell: powershell
         run: |
-          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch main
+          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch .
           
       - name: Download and unzip SDK
         shell: powershell
@@ -25,28 +25,33 @@ jobs:
           $SDK="${{ env.SDK }}"
           $SDK_ZIP="$SDK-dev.zip"
           $SDK_URL="http://download.gisinternals.com/sdk/downloads/$SDK_ZIP"
-          mkdir sdk
+          $ProgressPreference = 'SilentlyContinue'
           Invoke-WebRequest -Uri $SDK_URL -OutFile $SDK_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk
-          dir
+          #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
+          $SWIG_ZIP="swigwin-3.0.12.zip"
+          Invoke-WebRequest -Uri "https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/$SWIG_ZIP" -OutFile $SWIG_ZIP
+          Expand-Archive $SDK_ZIP -DestinationPath sdk/swig
           
       - name: Build MapServer
         shell: powershell
         run: |    
           $SDK="${{ env.SDK }}"
-          $ROOT_FOLDER=(Get-Location).path       
+          $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
           $SDK_LIB="$ROOT_FOLDER/sdk/$SDK/lib"
           $SDK_BIN="$ROOT_FOLDER/sdk/$SDK/bin"
-          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
+          #$SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
+          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig/swig.exe"
+          #$SWIG_DIR="$ROOT_FOLDER/sdk/swig"
           $REGEX_DIR="$ROOT_FOLDER/sdk/support/regex-0.12"
           mkdir build
-          dir
           cd build
-          $env:Path = "$ROOT_FOLDER/build/Release;$SDK_BIN;" + $env:Path
-          $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"
-          cmake -G "Visual Studio 17 2022" -A "x64" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$SDK_PREFIX -DPNG_LIBRARY=$SDK_LIB/libpng16_static.lib -DHARFBUZZ_INCLUDE_DIR=$SDK_INC/harfbuzz -DICONV_DLL=$SDK_BIN/iconv.dll -DFRIBIDI_INCLUDE_DIR=$SDK_INC/fribidi -DMS_EXTERNAL_LIBS="$SDK_LIB/harfbuzz.lib;$SDK_LIB/uriparser.lib" -DSVG_LIBRARY=$SDK_LIB/libsvg.lib -DSVGCAIRO_LIBRARY=$SDK_LIB/libsvg-cairo.lib -DREGEX_DIR=$REGEX_DIR -DSWIG_EXECUTABLE=$SWIG_EXECUTABLE -DPROTOBUFC_COMPILER=$SDK_BIN/protoc.exe -DPROTOBUFC_LIBRARY=$SDK_LIB/protobuf-c.lib -DPROTOBUFC_INCLUDE_DIR=$SDK_INC/protobuf-c -DWITH_CURL=1 -DWITH_KML=1 -DWITH_SVGCAIRO=1 -DWITH_THREAD_SAFETY=1 -DWITH_SOS=1 -DWITH_CLIENT_WFS=1 -DWITH_CLIENT_WMS=1-DWITH_CSHARP=1 -DWITH_PROTOBUFC=1 -DWITH_POSTGIS=0 -DWITH_PERL=0 -DWITH_MSSQL2008=1 -DWITH_PYTHON=1 -DWITH_PHPNG=0 -DWITH_HARFBUZZ=1 -DMAPSCRIPT_PROPERTYANNOTATIONS=1 -DPROJ_INCLUDE_DIR=$SDK_INC/proj7
+          $env:Path = "$ROOT_FOLDER/build/Release;$ROOT_FOLDER/sdk/swig;$SDK_BIN;" + $env:Path
+          $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"         
+          cmake -G "Visual Studio 17 2022" -A "x64" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$SDK_PREFIX" -DPNG_LIBRARY="$SDK_LIB/libpng16_static.lib" -DHARFBUZZ_INCLUDE_DIR="$SDK_INC/harfbuzz" -DICONV_DLL="$SDK_BIN/iconv.dll" -DFRIBIDI_INCLUDE_DIR="$SDK_INC/fribidi" -DMS_EXTERNAL_LIBS="$SDK_LIB/harfbuzz.lib;$SDK_LIB/uriparser.lib" -DSVG_LIBRARY="$SDK_LIB/libsvg.lib" -DSVGCAIRO_LIBRARY="$SDK_LIB/libsvg-cairo.lib" -DREGEX_DIR="$REGEX_DIR" -DSWIG_EXECUTABLE="$SWIG_EXECUTABLE" -DPROTOBUFC_COMPILER="$SDK_BIN/protoc.exe" -DPROTOBUFC_LIBRARY="$SDK_LIB/protobuf-c.lib" -DPROTOBUFC_INCLUDE_DIR="$SDK_INC/protobuf-c" -DWITH_CURL=1 -DWITH_KML=1 -DWITH_SVGCAIRO=1 -DWITH_THREAD_SAFETY=1 -DWITH_SOS=1 -DWITH_CLIENT_WFS=1 -DWITH_CLIENT_WMS=1-DWITH_CSHARP=1 -DWITH_PROTOBUFC=1 -DWITH_POSTGIS=0 -DWITH_PERL=0 -DWITH_MSSQL2008=1 -DWITH_PYTHON=1 -DWITH_PHPNG=0 -DWITH_HARFBUZZ=1 -DPROJ_INCLUDE_DIR="$SDK_INC/proj7"
+          
           cmake --build . --config Release
           $env:MAPSERVER_DLL_PATH=$ROOT_FOLDER/build/Release;$SDK_BIN
           $env:PROJ_LIB=$SDK_BIN/proj7/SHARE
