@@ -22,7 +22,7 @@ jobs:
         shell: powershell
         # http://download.gisinternals.com/sdk/downloads/release-1930-x64-dev.zip
         run: |
-          $SDK=${{ env.SDK }}
+          $SDK="${{ env.SDK }}"
           $SDK_ZIP="$SDK-dev.zip"
           $SDK_URL="http://download.gisinternals.com/sdk/downloads/$SDK_ZIP"
           mkdir sdk
@@ -33,7 +33,7 @@ jobs:
       - name: Build MapServer
         shell: powershell
         run: |    
-          $SDK=${{ env.SDK }}
+          $SDK="${{ env.SDK }}"
           $ROOT_FOLDER=(Get-Location).path       
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
