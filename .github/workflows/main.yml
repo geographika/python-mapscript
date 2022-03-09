@@ -36,7 +36,7 @@ jobs:
       - name: Configure MapServer
         shell: powershell
         run: |    
-          #$SDK="${{ env.SDK }}"
+          $SDK="${{ env.SDK }}"
           $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
