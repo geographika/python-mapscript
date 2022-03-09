@@ -1,0 +1,43 @@
+name: Build Python MapScript Wheels
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-2022 # includes VS 2022
+    strategy:
+      matrix:
+        python-version: [2.7] # , 3.6, 3.7, 3.8, 3.9
+
+    steps:   
+      - uses: actions/checkout@master
+        with:
+          name: mapserver/mapserver
+          ref: main
+          
+      - name: Get SDK
+        shell: cmd
+        # http://download.gisinternals.com/sdk/downloads/release-1930-x64-dev.zip
+        run: |
+          set SDK=release-1930-x64
+          set SDK_ZIP=%SDK%-dev.zip
+          set SDK_URL=http://download.gisinternals.com/sdk/downloads/%SDK_ZIP%
+          mkdir sdk
+          wget %SDK_URL%
+          7z x %SDK_ZIP% > nul
+
+#  publish:
+#    name: Publish to PyPI
+#    needs: test
+#    runs-on: ubuntu-latest
+#    container: python:3-slim
+#    steps:
+#      - name: Publish package
+#        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+#        uses: pypa/gh-action-pypi-publish@release/v1
+#        with:
+#          user: __token__
+#          password: ${{ secrets.PYPI_API_TOKEN }}
+
+# https://stackoverflow.com/questions/65300378/how-can-i-download-the-build-file-from-github-actions
