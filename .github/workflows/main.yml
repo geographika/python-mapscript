@@ -33,10 +33,10 @@ jobs:
           Invoke-WebRequest -Uri "https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/$SWIG_ZIP" -OutFile $SWIG_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk/swig
           
-      - name: Build MapServer
+      - name: Configure MapServer
         shell: powershell
         run: |    
-          $SDK="${{ env.SDK }}"
+          #$SDK="${{ env.SDK }}"
           $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
@@ -53,9 +53,9 @@ jobs:
           cmake -G "Visual Studio 17 2022" -A "x64" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$SDK_PREFIX" -DPNG_LIBRARY="$SDK_LIB/libpng16_static.lib" -DHARFBUZZ_INCLUDE_DIR="$SDK_INC/harfbuzz" -DICONV_DLL="$SDK_BIN/iconv.dll" -DFRIBIDI_INCLUDE_DIR="$SDK_INC/fribidi" -DMS_EXTERNAL_LIBS="$SDK_LIB/harfbuzz.lib;$SDK_LIB/uriparser.lib" -DSVG_LIBRARY="$SDK_LIB/libsvg.lib" -DSVGCAIRO_LIBRARY="$SDK_LIB/libsvg-cairo.lib" -DREGEX_DIR="$REGEX_DIR" -DSWIG_EXECUTABLE="$SWIG_EXECUTABLE" -DPROTOBUFC_COMPILER="$SDK_BIN/protoc.exe" -DPROTOBUFC_LIBRARY="$SDK_LIB/protobuf-c.lib" -DPROTOBUFC_INCLUDE_DIR="$SDK_INC/protobuf-c" -DWITH_CURL=1 -DWITH_KML=1 -DWITH_SVGCAIRO=1 -DWITH_THREAD_SAFETY=1 -DWITH_SOS=1 -DWITH_CLIENT_WFS=1 -DWITH_CLIENT_WMS=1-DWITH_CSHARP=1 -DWITH_PROTOBUFC=1 -DWITH_POSTGIS=0 -DWITH_PERL=0 -DWITH_MSSQL2008=1 -DWITH_PYTHON=1 -DWITH_PHPNG=0 -DWITH_HARFBUZZ=1 -DPROJ_INCLUDE_DIR="$SDK_INC/proj7"
           
           cmake --build . --config Release
-          $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
-          $env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
-          mapserv -v
+          #$env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
+          #$env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
+          #mapserv -v
       - name: Build Python Wheel
         shell: powershell
         run: | 
