@@ -12,7 +12,12 @@ jobs:
       matrix:
         python-version: [2.7] # , 3.6, 3.7, 3.8, 3.9
 
-    steps:   
+    steps:    
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          
       - name: Get MapServer sourcecode
         shell: powershell
         run: |
@@ -32,6 +37,8 @@ jobs:
           $SWIG_ZIP="swigwin-3.0.12.zip"
           Invoke-WebRequest -Uri "https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/$SWIG_ZIP" -OutFile $SWIG_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk/swig
+          # remove old SWIG version
+          Remove-Item =Path "sdk/swig.exe"
           
       - name: Configure MapServer
         shell: powershell
@@ -55,6 +62,7 @@ jobs:
           $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig/swig.exe"
           #$SWIG_DIR="$ROOT_FOLDER/sdk/swig"
           $REGEX_DIR="$ROOT_FOLDER/sdk/support/regex-0.12"
+          #$PYTHON_ROOT_DIR=
           mkdir build
           cd build
           $env:Path = "$ROOT_FOLDER/build/Release;$ROOT_FOLDER/sdk/swig;$SDK_BIN;" + $env:Path
@@ -67,10 +75,10 @@ jobs:
           $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
           $env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
           cmake --build . --target pythonmapscript-wheel --config Release  
-      - name: Build Python Wheel
-        shell: powershell
-        run: | 
-          cmake --build . --target pythonmapscript-wheel --config Release        
+      #- name: Build Python Wheel
+      #  shell: powershell
+      #  run: | 
+      #    cmake --build . --target pythonmapscript-wheel --config Release        
           
 #  publish:
 #    name: Publish to PyPI
