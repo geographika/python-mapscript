@@ -58,7 +58,7 @@ jobs:
           popd
           echo $PYTHONPATH
           $SDK="${{ env.SDK }}" # $SDK="release-1930-x64"
-          $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
+          $ROOT_FOLDER=(Get-Location).path -replace "\\","/"
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
           $SDK_LIB="$ROOT_FOLDER/sdk/$SDK/lib"
@@ -86,7 +86,7 @@ jobs:
           echo %PYTHONPATH%
           REM call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars64.bat"
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          set SDK="${{ env.SDK }}" 
+          set SDK=${{ env.SDK }}
           REM set SDK=release-1930-x64
           set ROOT_FOLDER=%cd:\=/%
           set SDK_PREFIX=%ROOT_FOLDER%/sdk/%SDK%
@@ -106,7 +106,7 @@ jobs:
           cmake --build . --config Release
           set MAPSERVER_DLL_PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
-          cmake --build . --target pythonmapscript-wheel --config Release     
+          cmake --build . --target pythonmapscript-wheel --config Release
           
 #  publish:
 #    name: Publish to PyPI
