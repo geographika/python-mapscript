@@ -62,8 +62,7 @@ jobs:
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
           $SDK_LIB="$ROOT_FOLDER/sdk/$SDK/lib"
           $SDK_BIN="$ROOT_FOLDER/sdk/$SDK/bin"
-          #$SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
-          #$SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig/swig.exe"
+          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
           #$SWIG_DIR="$ROOT_FOLDER/sdk/swig"
           $REGEX_DIR="$ROOT_FOLDER/sdk/support/regex-0.12"
           #$PYTHON_ROOT_DIR=
