@@ -14,6 +14,7 @@ jobs:
 
     steps:   
       - name: Get MapServer sourcecode
+      - uses: ilammy/msvc-dev-cmd@v1
         shell: powershell
         run: |
           git clone https://github.com/mapserver/mapserver.git --branch main --single-branch .
@@ -36,7 +37,7 @@ jobs:
       - name: Configure MapServer
         shell: cmd
         run: |
-          "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat" && powershell        
+          #"C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat" && powershell        
           $SDK="${{ env.SDK }}"
           $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
