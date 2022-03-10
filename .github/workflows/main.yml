@@ -37,8 +37,9 @@ jobs:
           Invoke-WebRequest -Uri $SDK_URL -OutFile $SDK_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk
           #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
-          $SWIG_ZIP="swigwin-3.0.12.zip"
-          Invoke-WebRequest -Uri "https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/$SWIG_ZIP" -OutFile $SWIG_ZIP
+          $SWIG_ZIP="swigwin-4.0.2.mapserver.zip"
+          # https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/swigwin-3.0.12.zip
+          Invoke-WebRequest -Uri "http://download.osgeo.org/mapserver/docs/$SWIG_ZIP" -OutFile $SWIG_ZIP
           Expand-Archive $SWIG_ZIP -DestinationPath "sdk/swig"
           
       - name: Configure MapServer
