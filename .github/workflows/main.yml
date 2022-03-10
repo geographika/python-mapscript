@@ -15,6 +15,9 @@ jobs:
     steps:    
       - name: Set up Python
         uses: actions/setup-python@v2
+        shell: powershell
+        run: |
+            echo $PYTHONPATH
         with:
           python-version: ${{ matrix.python-version }}
           
@@ -36,9 +39,7 @@ jobs:
           #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
           $SWIG_ZIP="swigwin-3.0.12.zip"
           Invoke-WebRequest -Uri "https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/$SWIG_ZIP" -OutFile $SWIG_ZIP
-          Expand-Archive $SDK_ZIP -DestinationPath sdk/swig
-          # remove old SWIG version
-          Remove-Item -Path "sdk/swig.exe"
+          Expand-Archive $SWIG_ZIP -DestinationPath "sdk/swig"
           
       - name: Configure MapServer
         shell: powershell
@@ -52,6 +53,7 @@ jobs:
             }
           }
           popd
+          echo $PYTHONPATH
           $SDK="${{ env.SDK }}" # $SDK="release-1930-x64"
           $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
