@@ -39,8 +39,9 @@ jobs:
           #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
           $SWIG_ZIP="swigwin-4.0.2.mapserver.zip"
           # https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/swigwin-3.0.12.zip
+          Remove-Item -Path "sdk/swig.exe"
           Invoke-WebRequest -Uri "http://download.osgeo.org/mapserver/docs/$SWIG_ZIP" -OutFile $SWIG_ZIP
-          Expand-Archive $SWIG_ZIP -DestinationPath "sdk/swig"
+          Expand-Archive $SWIG_ZIP -DestinationPath "sdk"
           
       - name: Configure MapServer
         shell: powershell
@@ -62,13 +63,13 @@ jobs:
           $SDK_LIB="$ROOT_FOLDER/sdk/$SDK/lib"
           $SDK_BIN="$ROOT_FOLDER/sdk/$SDK/bin"
           #$SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
-          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig/swig.exe"
-          $SWIG_DIR="$ROOT_FOLDER/sdk/swig"
+          #$SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig/swig.exe"
+          #$SWIG_DIR="$ROOT_FOLDER/sdk/swig"
           $REGEX_DIR="$ROOT_FOLDER/sdk/support/regex-0.12"
           #$PYTHON_ROOT_DIR=
           mkdir build
           cd build
-          $env:Path = "$ROOT_FOLDER/build/Release;$ROOT_FOLDER/sdk/swig;$SDK_BIN;" + $env:Path
+          $env:Path = "$ROOT_FOLDER/build/Release;$SDK_BIN;" + $env:Path
           
           # $env:Path = "$ROOT_FOLDER/build/Release;D:\Tools\cmake-3.19.4-win64-x64\bin;$SDK_BIN;" + $env:Path # local only
           $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"
