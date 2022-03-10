@@ -34,8 +34,9 @@ jobs:
           Expand-Archive $SDK_ZIP -DestinationPath sdk/swig
           
       - name: Configure MapServer
-        shell: powershell
-        run: |    
+        shell: cmd
+        run: |
+          C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat && powershell        
           $SDK="${{ env.SDK }}"
           $ROOT_FOLDER=(Get-Location).path -replace "\\","/"    
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
