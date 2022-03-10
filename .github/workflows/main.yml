@@ -14,7 +14,6 @@ jobs:
 
     steps:   
       - name: Get MapServer sourcecode
-      - uses: ilammy/msvc-dev-cmd@v1
         shell: powershell
         run: |
           git clone https://github.com/mapserver/mapserver.git --branch main --single-branch .
