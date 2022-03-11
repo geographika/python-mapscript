@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-2019 # includes VS 2019
     strategy:
       matrix:
-        python-version: [2.7] # 2.7, 3.6, 3.7, 3.8, 3.9
+        python-version: [3.7] # 2.7, 3.6, 3.7, 3.8, 3.9
 
     steps:    
       - name: Set up Python
@@ -85,7 +85,7 @@ jobs:
         shell: cmd
         run: |
           REM call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          call "C:\Program Files\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars64.bat"
+          call "C:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           REM cd /D D:\Temp\MS
           REM call "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
           set SDK=${{ env.SDK }}
@@ -97,7 +97,8 @@ jobs:
           set SDK_BIN=%ROOT_FOLDER%/sdk/%SDK%/bin
           set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swig.exe
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
-          set PYTHON_ROOT_DIR=%PYTHONPATH%
+          REM set PYTHON_ROOT_DIR=%PYTHONPATH%
+          set PYTHON_ROOT=${{ env.pythonLocation }}
           mkdir build
           cd build
           set PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%;%PATH%
