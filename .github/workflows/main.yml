@@ -81,21 +81,19 @@ jobs:
           )
           cmake --build . --target pythonmapscript-wheel --config Release
 
-      - name: Configure git
-        env:
-          TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-      
       - name: Add Wheel to repo
         run: |
-          git clone https://github.com/geographika/python-mapscript.git --branch main --single-branch main
-          cd main/wheels
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          cp -r ../../build/mapscript/python/release/dist/* .
+          cp -r build/mapscript/python/release/dist/* wheels
           git add .
           git commit -m "Add wheels" -a
-          git push https://github.com/geographika/python-mapscript.git
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
 
 #  publish:
 #    name: Publish to PyPI
