@@ -14,7 +14,7 @@ jobs:
     #runs-on: windows-2019 # includes VS 2019
     strategy:
       matrix:
-        python-version: [3.8] # 2.7, 3.6, 3.7, 3.8, 3.9
+        python-version: [2.7, 3.6, 3.7, 3.8, 3.9, 3.10]
 
     steps:    
       - name: Set up Python
@@ -78,7 +78,15 @@ jobs:
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
           copy %SDK_BIN%\sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
           cmake --build . --target pythonmapscript-wheel --config Release
-          
+      - name: Upload Wheel
+        uses: csexton/release-asset-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
+         pattern: "build/mapscript/python/release/dist/*.whl"
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         release-url: ${{ matrix.python-version }}
+
 #  publish:
 #    name: Publish to PyPI
 #    needs: test
