@@ -92,6 +92,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git fetch
+          git rebase origin/main
           cd wheels
           cp -r ../build/mapscript/python/release/dist/* .
           git add .
