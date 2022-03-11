@@ -99,8 +99,9 @@ jobs:
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
           REM set PYTHON_ROOT_DIR=%PYTHONPATH%
           set PYTHON_ROOT=${{ env.pythonLocation }}
-          rmdir "C:/hostedtoolcache/windows/Python/3.10.2/x64" /S /Q
-          rmdir "C:/hostedtoolcache/windows/Python/3.9.10/x64" /S /Q
+          SET PYTHON_EXECUTABLE=%PYTHON_ROOT%/python.exe
+          REM rmdir "C:/hostedtoolcache/windows/Python/3.10.2/x64" /S /Q
+          REM rmdir "C:/hostedtoolcache/windows/Python/3.9.10/x64" /S /Q
           mkdir build
           cd build
           set PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%;%PATH%
