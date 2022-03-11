@@ -14,13 +14,20 @@ jobs:
     #runs-on: windows-2019 # includes VS 2019
     strategy:
       matrix:
-        python-version: [2.7, 3.6, 3.7, 3.8, 3.9] # "3.10" needs to be in quotes and is currently failing 10 tests
+        python-version: [2.7, 3.7, 3.8, 3.9] # 3.6 "3.10" needs to be in quotes and is currently failing 10 tests
+
 
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+
+       - uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
+           lfs: true
+
       - name: Get MapServer sourcecode
         shell: powershell
         run: |
@@ -85,7 +92,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          cp -r build/mapscript/python/release/dist/* wheels
+          cd wheels
+          cp -r ../build/mapscript/python/release/dist/* .
           git add .
           git commit -m "Add wheels" -a
           
