@@ -85,7 +85,7 @@ jobs:
           cd main/wheels
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          cp -r build/mapscript/python/release/dist/* .
+          cp -r ../../build/mapscript/python/release/dist/* .
           git add .
           git commit -m "Add wheels" -a
           git push https://github.com/geographika/python-mapscript.git
