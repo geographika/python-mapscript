@@ -81,12 +81,10 @@ jobs:
 
       - name: Upload Wheel
         uses: csexton/release-asset-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         with:
-           pattern: "build/mapscript/python/release/dist/*.whl"
-           github-token: ${{ secrets.GITHUB_TOKEN }}
-           release-url: ${{ matrix.python-version }}
+        with:
+          pattern: "build/mapscript/python/release/dist/*.whl"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          release-url: ${{ matrix.python-version }}
 
 #  publish:
 #    name: Publish to PyPI
