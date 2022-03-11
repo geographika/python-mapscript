@@ -35,11 +35,11 @@ jobs:
           Invoke-WebRequest -Uri $SDK_URL -OutFile $SDK_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk
           #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
-          $SWIG_ZIP="swigwin-4.0.2.mapserver.zip"
+          $SWIG_ZIP="swigwin-4.0.2.zip"
           # https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.12/swigwin-3.0.12.zip
-          Remove-Item -Path "sdk/swig.exe"
-          Invoke-WebRequest -Uri "http://download.osgeo.org/mapserver/docs/$SWIG_ZIP" -OutFile $SWIG_ZIP
-          Expand-Archive $SWIG_ZIP -DestinationPath "sdk"
+          #Remove-Item -Path "sdk/swig.exe"
+          Invoke-WebRequest -Uri "https://github.com/geographika/python-mapscript/raw/main/$SWIG_ZIP" -OutFile $SWIG_ZIP
+          Expand-Archive $SWIG_ZIP -DestinationPath "sdk/swigwin"
           
       - name: Configure MapServer with PowerShell
         if: ${{ false }}
@@ -61,7 +61,7 @@ jobs:
           $SDK_INC="$ROOT_FOLDER/sdk/$SDK/include"
           $SDK_LIB="$ROOT_FOLDER/sdk/$SDK/lib"
           $SDK_BIN="$ROOT_FOLDER/sdk/$SDK/bin"
-          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swig.exe"
+          $SWIG_EXECUTABLE="$ROOT_FOLDER/sdk/swigwin/swig.exe"
           #$SWIG_DIR="$ROOT_FOLDER/sdk/swig"
           $REGEX_DIR="$ROOT_FOLDER/sdk/support/regex-0.12"
           #$PYTHON_ROOT_DIR=
