@@ -78,6 +78,7 @@ jobs:
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
           copy %SDK_BIN%\sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
           cmake --build . --target pythonmapscript-wheel --config Release
+
       - name: Upload Wheel
         uses: csexton/release-asset-action@v2
         env:
