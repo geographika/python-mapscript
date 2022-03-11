@@ -92,7 +92,7 @@ jobs:
           set SDK_INC=%SDK_PREFIX%/include
           set SDK_LIB=%SDK_PREFIX%/lib
           set SDK_BIN=%SDK_PREFIX%/bin
-          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swig.exe
+          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swigwin/swig.exe
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
           set PYTHON_ROOT_DIR=${{ env.pythonLocation }}
           REM set PYTHON_ROOT_DIR=C:/Python38
