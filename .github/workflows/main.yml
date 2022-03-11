@@ -2,7 +2,7 @@ name: Build Python MapScript Wheels
 
 on: [push]
 env:
-  SDK: release-1930-x64
+  SDK: release-1928-x64 # release-1930-x64
 
 jobs:
   build:
@@ -84,7 +84,8 @@ jobs:
       - name: Configure MapServer
         shell: cmd
         run: |
-          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          #call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          call "C:\Program Files\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars64.bat"
           REM cd /D D:\Temp\MS
           REM call "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
           set SDK=${{ env.SDK }}
@@ -96,7 +97,7 @@ jobs:
           set SDK_BIN=%ROOT_FOLDER%/sdk/%SDK%/bin
           set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swig.exe
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
-          REM set %PYTHON_ROOT_DIR%=
+          set PYTHON_ROOT_DIR=%PYTHONPATH%
           mkdir build
           cd build
           set PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%;%PATH%
