@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-2019 # includes VS 2019
     strategy:
       matrix:
-        python-version: [3.7] # 2.7, 3.6, 3.7, 3.8, 3.9
+        python-version: [3.8] # 2.7, 3.6, 3.7, 3.8, 3.9
 
     steps:    
       - name: Set up Python
@@ -100,6 +100,7 @@ jobs:
           REM set PYTHON_ROOT_DIR=%PYTHONPATH%
           set PYTHON_ROOT=${{ env.pythonLocation }}
           rmdir "C:/hostedtoolcache/windows/Python/3.10.2/x64" /S /Q
+          rmdir "C:/hostedtoolcache/windows/Python/3.9.10/x64" /S /Q
           mkdir build
           cd build
           set PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%;%PATH%
