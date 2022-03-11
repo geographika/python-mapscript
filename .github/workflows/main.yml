@@ -79,12 +79,16 @@ jobs:
           copy %SDK_BIN%\sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
           cmake --build . --target pythonmapscript-wheel --config Release
 
-      - name: Upload Wheel
-        uses: csexton/release-asset-action@v2
-        with:
-          pattern: "build/mapscript/python/release/dist/*.whl"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          release-url: ${{ matrix.python-version }}
+      - name: Add Wheel to repo
+        run: |
+          git clone https://github.com/geographika/python-mapscript.git --branch main --single-branch main
+          cd main/wheels
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          cp -r build/mapscript/python/release/dist/* .
+          git add .
+          git commit -m "Add wheels" -a
+          git push https://github.com/geographika/python-mapscript.git
 
 #  publish:
 #    name: Publish to PyPI
