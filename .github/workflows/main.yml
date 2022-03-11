@@ -16,7 +16,7 @@ jobs:
       matrix:
         python-version: [2.7, 3.6, 3.7, 3.8, 3.9, 3.10]
 
-    steps:    
+    steps:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -82,10 +82,10 @@ jobs:
         uses: csexton/release-asset-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       with:
-         pattern: "build/mapscript/python/release/dist/*.whl"
-         github-token: ${{ secrets.GITHUB_TOKEN }}
-         release-url: ${{ matrix.python-version }}
+         with:
+           pattern: "build/mapscript/python/release/dist/*.whl"
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           release-url: ${{ matrix.python-version }}
 
 #  publish:
 #    name: Publish to PyPI
