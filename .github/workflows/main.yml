@@ -89,7 +89,6 @@ jobs:
           cmake --build . --target pythonmapscript-wheel --config Release
 
       - name: Add Wheel to repo
-        uses: actions/checkout@v3
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
