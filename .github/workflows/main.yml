@@ -30,22 +30,23 @@ jobs:
       - name: Get MapServer sourcecode
         shell: powershell
         run: |
+          # md D:\MapServer\VS2022
+          # cd D:\MapServer\VS2022
           git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
-          
+
       - name: Download and unzip SDK
         shell: powershell
         # http://download.gisinternals.com/sdk/downloads/release-1930-x64-dev.zip
         run: |
           $SDK="${{ env.SDK }}"
-          # $SDK="release-1928-x64"
+          # $SDK="release-1930-x64"
           $SDK_ZIP="$SDK-dev.zip"
           $SDK_URL="http://download.gisinternals.com/sdk/downloads/$SDK_ZIP"
           $ProgressPreference = 'SilentlyContinue' # remove console output and greatly speeds-up downloading and unzipping
           Invoke-WebRequest -Uri $SDK_URL -OutFile $SDK_ZIP
           Expand-Archive $SDK_ZIP -DestinationPath sdk
           #nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
-          $SWIG_ZIP="swigwin-4.0.2.zip"
-          #Remove-Item -Path "sdk/swig.exe"
+          $SWIG_ZIP="swigwin-4.1.0.zip"
           Invoke-WebRequest -Uri "https://github.com/geographika/python-mapscript/raw/main/$SWIG_ZIP" -OutFile $SWIG_ZIP
           Expand-Archive $SWIG_ZIP -DestinationPath "sdk"
 
@@ -53,27 +54,27 @@ jobs:
         shell: cmd
         run: |
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          
           REM call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          REM call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars64.bat"
-          REM cd /D D:\Temp\MS2
+          REM call "C:\Program Files (x86)\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+          REM cd /D D:\MapServer\VS2022
           REM set VS_VER="Visual Studio 17 2022"
-          REM set PATH=D:/Tools/cmake-3.22.3-windows-x86_64/bin;%PATH%
-          REM set PYTHON_ROOT_DIR=C:/Python38
-          REM set SDK=release-1928-x64
           REM set VS_VER="Visual Studio 16 2019"
-          
+          REM set PATH=D:/Tools/cmake-3.22.3-windows-x86_64/bin;%PATH%
+          REM set PYTHON_ROOT_DIR=C:/Python310
+          REM set SDK=release-1930-x64
+
           set SDK=${{ env.SDK }}
           set VS_VER="${{ env.VS_VER }}"
+          set PYTHON_ROOT_DIR=${{ env.pythonLocation }}
+          
+          set PYTHON_ROOT_DIR=%PYTHON_ROOT_DIR:\=/%
           set ROOT_FOLDER=%cd:\=/%
           set SDK_PREFIX=%ROOT_FOLDER%/sdk/%SDK%
           set SDK_INC=%SDK_PREFIX%/include
           set SDK_LIB=%SDK_PREFIX%/lib
           set SDK_BIN=%SDK_PREFIX%/bin
-          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swigwin-4.0.2/swig.exe
+          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swigwin-4.1.0/swig.exe
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
-          set PYTHON_ROOT_DIR=${{ env.pythonLocation }}
-          set PYTHON_ROOT_DIR=%PYTHON_ROOT_DIR:\=/%
           set PYTHON_EXECUTABLE=%PYTHON_ROOT_DIR%/python.exe
           mkdir build
           cd build
@@ -86,7 +87,7 @@ jobs:
           set MAPSERVER_DLL_PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
           if "${{ matrix.python-version }}" GEQ "3.8" (
-            copy %SDK_BIN%\sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
+            copy %SDK_BIN%/sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
           )
           cmake --build . --target pythonmapscript-wheel --config Release
 
