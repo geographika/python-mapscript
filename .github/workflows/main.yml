@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
 
@@ -89,6 +89,8 @@ jobs:
           cmake --build . --target pythonmapscript-wheel --config Release
 
       - name: Add Wheel to repo
+        uses: actions/checkout@v3
+      - run: |
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -96,15 +98,8 @@ jobs:
           cd wheels
           cp -r ../build/mapscript/python/release/dist/* .
           git add .
-          git commit -m "Add wheels" -a
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        continue-on-error: true
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: true
+          git commit -m "Add wheels"
+          git push
 
 #  publish:
 #    name: Publish to PyPI
