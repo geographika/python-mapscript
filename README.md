@@ -3,6 +3,8 @@
 
 CUSTOMBUILD : error : module or package not found: mapscript.tests (missing __init__.py?) [D:\a\python-mapscript\python-mapscript\build\mapscript\python\pythonmapscript-wheel.vcxproj]
 
+Use SWIG from nuget?
+#nuget install swigwintools -Version 4.0.0 -OutputDirectory sdk/swig
 
 
 ## PowerShell
