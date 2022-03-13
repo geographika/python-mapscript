@@ -108,10 +108,10 @@ jobs:
           git commit -m "Add wheels"
           
           cd "$root/src/${{ matrix.python-version }}"
-          $fld="$root/build/mapscript/python/CMakeFiles/_pythonmapscript.dir/Release"
+          $fld="$root/build/mapscript/python/CMakeFiles/_pythonmapscript.dir"
           if (Test-Path -Path $fld) {
             cp -r "$fld/*" .
-          }          
+          }
           git add .
           git commit -m "Add source files"          
           git push
