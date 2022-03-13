@@ -62,10 +62,12 @@ jobs:
           REM set PATH=D:/Tools/cmake-3.22.3-windows-x86_64/bin;%PATH%
           REM set PYTHON_ROOT_DIR=C:/Python310
           REM set SDK=release-1930-x64
+          REM set SWIG_VER=4.1.0
 
           set SDK=${{ env.SDK }}
           set VS_VER="${{ env.VS_VER }}"
           set PYTHON_ROOT_DIR=${{ env.pythonLocation }}
+          set SWIG_VER=${{ env.SWIG_VER }}
           
           set PYTHON_ROOT_DIR=%PYTHON_ROOT_DIR:\=/%
           set ROOT_FOLDER=%cd:\=/%
@@ -73,7 +75,7 @@ jobs:
           set SDK_INC=%SDK_PREFIX%/include
           set SDK_LIB=%SDK_PREFIX%/lib
           set SDK_BIN=%SDK_PREFIX%/bin
-          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swigwin-4.1.0/swig.exe
+          set SWIG_EXECUTABLE=%ROOT_FOLDER%/sdk/swigwin-%SWIG_VER%/swig.exe
           set REGEX_DIR=%ROOT_FOLDER%/sdk/support/regex-0.12
           set PYTHON_EXECUTABLE=%PYTHON_ROOT_DIR%/python.exe
           mkdir build
