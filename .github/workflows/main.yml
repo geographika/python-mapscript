@@ -92,6 +92,7 @@ jobs:
           cmake --build . --target pythonmapscript-wheel --config Release
 
       - name: Add Wheels and source files to repo
+        if: always() # always upload any files for debugging
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
