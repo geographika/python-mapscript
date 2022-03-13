@@ -95,22 +95,21 @@ jobs:
         if: always() # always upload any files for debugging
         shell: powershell
         run: |
+          $root=(Get-Item .).FullName
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git pull
           cd wheels
-          $fld="../build/mapscript/python/release/dist"
+          $fld="$root/build/mapscript/python/release/dist"
           if (Test-Path -Path $fld) {
             cp -r "$fld/*" .
           }
           git add .
           git commit -m "Add wheels"
-          cd ..
-          cd "src/${{ matrix.python-version }}"
-          $fld="../../build/mapscript/python/CMakeFiles/_pythonmapscript.dir/Release"
+          
+          cd "$root/src/${{ matrix.python-version }}"
+          $fld="$root/build/mapscript/python/CMakeFiles/_pythonmapscript.dir/Release"
           if (Test-Path -Path $fld) {
-            echo "found"
-            dir
             cp -r "$fld/*" .
           }          
           git add .
