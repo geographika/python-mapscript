@@ -99,7 +99,7 @@ jobs:
           git pull
           cd wheels
           set fld=../build/mapscript/python/release/dist
-          if exist $fld% (cp -r %fld%* .)
+          if exist %fld% (cp -r %fld%* .)
           git add .
           git commit -m "Add wheels"
           cd ..
