@@ -91,7 +91,7 @@ jobs:
           )
           cmake --build . --target pythonmapscript-wheel --config Release
 
-      - name: Add Wheel to repo
+      - name: Add Wheels and source files to repo
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -100,6 +100,11 @@ jobs:
           cp -r ../build/mapscript/python/release/dist/* .
           git add .
           git commit -m "Add wheels"
+          cd ..
+          cd src/${{ matrix.python-version }}
+          cp -r ../build/mapscript/python/_pythonmapscript.dir/Release/* .
+          git add .
+          git commit -m "Add source files"          
           git push
 
 #  publish:
