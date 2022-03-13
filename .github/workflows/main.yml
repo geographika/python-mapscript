@@ -93,19 +93,24 @@ jobs:
 
       - name: Add Wheels and source files to repo
         if: always() # always upload any files for debugging
+        shell: powershell
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git pull
           cd wheels
-          set fld=../build/mapscript/python/release/dist
-          if exist %fld% (cp -r %fld%* .)
+          $fld="../build/mapscript/python/release/dist"
+          if (Test-Path -Path $fld) {
+            cp -r $fld/* .
+          }
           git add .
           git commit -m "Add wheels"
           cd ..
-          cd src/${{ matrix.python-version }}
-          set fld=../build/mapscript/python/_pythonmapscript.dir/Release
-          if exist %fld% (cp -r %fld%/* .)
+          cd "src/${{ matrix.python-version }}"
+          $fld="../build/mapscript/python/_pythonmapscript.dir/Release"
+          if (Test-Path -Path $fld) {
+            cp -r $fld/* .
+          }          
           git add .
           git commit -m "Add source files"          
           git push
