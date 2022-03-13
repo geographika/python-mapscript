@@ -98,12 +98,14 @@ jobs:
           git config --local user.name "GitHub Action"
           git pull
           cd wheels
-          cp -r ../build/mapscript/python/release/dist/* .
+          set fld=../build/mapscript/python/release/dist
+          if exist $fld% (cp -r %fld%* .)
           git add .
           git commit -m "Add wheels"
           cd ..
           cd src/${{ matrix.python-version }}
-          cp -r ../build/mapscript/python/_pythonmapscript.dir/Release/* .
+          set fld=../build/mapscript/python/_pythonmapscript.dir/Release
+          if exist %fld% (cp -r %fld%/* .)
           git add .
           git commit -m "Add source files"          
           git push
