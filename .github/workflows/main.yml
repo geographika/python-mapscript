@@ -101,7 +101,7 @@ jobs:
           cd wheels
           $fld="../build/mapscript/python/release/dist"
           if (Test-Path -Path $fld) {
-            cp -r $fld/* .
+            cp -r "$fld/*" .
           }
           git add .
           git commit -m "Add wheels"
@@ -109,7 +109,9 @@ jobs:
           cd "src/${{ matrix.python-version }}"
           $fld="../../build/mapscript/python/CMakeFiles/_pythonmapscript.dir/Release"
           if (Test-Path -Path $fld) {
-            cp -r $fld/* .
+            echo "found"
+            dir
+            cp -r "$fld/*" .
           }          
           git add .
           git commit -m "Add source files"          
