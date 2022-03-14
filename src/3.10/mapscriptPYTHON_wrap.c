@@ -15,6 +15,9 @@
 #endif
 
 
+#define PY_SSIZE_T_CLEAN
+
+
 
 #ifndef SWIGPYTHON
 #define SWIGPYTHON
@@ -4333,7 +4336,7 @@ SWIGINTERN int imageObj_write__SWIG(struct imageObj *self,PyObject *file){
 
 #if PY_MAJOR_VERSION >= 3
             // https://docs.python.org/3/c-api/arg.html
-            noerr = PyObject_CallMethod(file, "write", "y#", imgbuffer, imgsize);
+            noerr = PyObject_CallMethod(file, "write", "y#", imgbuffer, (Py_ssize_t)imgsize);
 #else
             // https://docs.python.org/2/c-api/arg.html
             noerr = PyObject_CallMethod(file, "write", "s#", imgbuffer, imgsize);
