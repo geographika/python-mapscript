@@ -5085,12 +5085,10 @@ SWIGINTERN intarray *mapObj_getLayersDrawingOrder__SWIG(struct mapObj *self){
       int i;
       intarray *order;
       order = new_intarray(self->numlayers);
-      for (i=0; i<self->numlayers; i++)
-          
-          intarray___setitem__(order, i, self->layerorder[i]);
-          
-
-
+      for (i=0; i<self->numlayers; i++) {
+          // see http://www.swig.org/Doc4.0/SWIGDocumentation.html#Library_carrays for %array_class interface
+          order.setitem(i, self->layerorder[i]);
+      }
       return order;
     }
 SWIGINTERN int mapObj_setLayersDrawingOrder__SWIG(struct mapObj *self,int *panIndexes){
