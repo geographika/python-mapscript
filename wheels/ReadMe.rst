@@ -35,3 +35,54 @@ D:/a/python-mapscript/python-mapscript/sdk/swigwin-4.1.0/Lib\swigwarnings.swg(39
 After building SWIG make sure the contents of C:\swig\install2\share\swig\4.1.0 is copied to D:\Tools\swigwin-4.1.0\Lib
 
 swigwarn.swg is only difference?
+
+
+Python 3.6
+
+Broken. Builds ok but fails on test suite:
+
+https://github.com/geographika/python-mapscript/runs/5534457813?check_suite_focus=true
+
+Windows fatal exception: code 0xc0000139
+  
+  Thread 0x000011a0 (most recent call first):
+    File "<frozen importlib._bootstrap>", line 219 in _call_with_frames_removed
+    File "<frozen importlib._bootstrap_external>", line 922 in create_module
+    File "<frozen importlib._bootstrap>", line 571 in module_from_spec
+    File "<frozen importlib._bootstrap>", line 658 in _load_unlocked
+    File "<frozen importlib._bootstrap>", line 955 in _find_and_load_unlocked
+    File "<frozen importlib._bootstrap>", line 971 in _find_and_load
+    File "<frozen importlib._bootstrap>", line 219 in _call_with_frames_removed
+    File "<frozen importlib._bootstrap>", line 1023 in _handle_fromlist
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\mapscript\mapscript.py", line 13 in <module>
+    File "<frozen importlib._bootstrap>", line 219 in _call_with_frames_removed
+    File "<frozen importlib._bootstrap_external>", line 678 in exec_module
+    File "<frozen importlib._bootstrap>", line 665 in _load_unlocked
+    File "<frozen importlib._bootstrap>", line 955 in _find_and_load_unlocked
+    File "<frozen importlib._bootstrap>", line 971 in _find_and_load
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\mapscript\__init__.py", line 32 in <module>
+    File "<frozen importlib._bootstrap>", line 219 in _call_with_frames_removed
+    File "<frozen importlib._bootstrap_external>", line 678 in exec_module
+    File "<frozen importlib._bootstrap>", line 665 in _load_unlocked
+    File "<frozen importlib._bootstrap>", line 955 in _find_and_load_unlocked
+    File "<frozen importlib._bootstrap>", line 971 in _find_and_load
+    File "C:\hostedtoolcache\windows\Python\3.6.8\x64\lib\importlib\util.py", line 88 in find_spec
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 835 in search_pypath
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 879 in resolve_collection_argument
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 638 in perform_collect
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 332 in pytest_collection
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_callers.py", line 39 in _multicall
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_manager.py", line 80 in _hookexec
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_hooks.py", line 265 in __call__
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 321 in _main
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 268 in wrap_session
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\main.py", line 315 in pytest_cmdline_main
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_callers.py", line 39 in _multicall
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_manager.py", line 80 in _hookexec
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pluggy\_hooks.py", line 265 in __call__
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\config\__init__.py", line 166 in main
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\_pytest\config\__init__.py", line 188 in console_main
+    File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pytest\__main__.py", line 5 in <module>
+    File "C:\hostedtoolcache\windows\Python\3.6.8\x64\lib\runpy.py", line 85 in _run_code
+    File "C:\hostedtoolcache\windows\Python\3.6.8\x64\lib\runpy.py", line 193 in _run_module_as_main
+
