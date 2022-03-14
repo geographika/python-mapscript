@@ -93,7 +93,7 @@ jobs:
           if "${{ matrix.python-version }}" GEQ "3.8" (
             copy %SDK_BIN%/sqlite3.dll %MAPSCRIPT_FLD%
           )
-          if "${{ matrix.python-version }}" EQ "3.6" (
+          if "${{ matrix.python-version }}" EQU "3.6" (
             copy %SDK_BIN%/sqlite3.dll %MAPSCRIPT_FLD%
           )          
           cmake --build . --target pythonmapscript-wheel --config Release
