@@ -100,3 +100,16 @@ _mapscript.MapServerError: msProcessProjection(): Projection library error. proj
 
 Check if PROJ_LIB is set in the Mapfile to a relative path
 
+
+SWIG Errors
+
+
+ -features python:annotations=c
+ 
+In CMakeLists this should not be in quotes or get 
+
+CUSTOMBUILD : swig error : Unrecognized option -features python:annotations=c [D:\MapServer\VS2022\build\mapscript\pyth
+on\_pythonmapscript.vcxproj]
+
+Look for swig.exe command in _pythonmapscript.vcxproj (in Notepad++)
+
