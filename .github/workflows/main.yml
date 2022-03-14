@@ -91,6 +91,9 @@ jobs:
           if "${{ matrix.python-version }}" GEQ "3.8" (
             copy %SDK_BIN%/sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
           )
+          if "${{ matrix.python-version }}" EQ "3.6" (
+            copy %SDK_BIN%/sqlite3.dll %ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
+          )          
           cmake --build . --target pythonmapscript-wheel --config Release
 
       - name: Add Wheels and source files to repo
