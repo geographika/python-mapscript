@@ -85,4 +85,18 @@ Windows fatal exception: code 0xc0000139
     File "D:\a\python-mapscript\python-mapscript\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\pytest\__main__.py", line 5 in <module>
     File "C:\hostedtoolcache\windows\Python\3.6.8\x64\lib\runpy.py", line 85 in _run_code
     File "C:\hostedtoolcache\windows\Python\3.6.8\x64\lib\runpy.py", line 193 in _run_module_as_main
+    
+    
+Projection Errors
+
+
+proj_create: Cannot find proj.db
+proj_create: no database context specified
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\VirtualEnvs\hymo\lib\site-packages\mapscript\mapscript.py", line 1433, in __init__
+    _mapscript.mapObj_swiginit(self, _mapscript.new_mapObj(*args))
+_mapscript.MapServerError: msProcessProjection(): Projection library error. proj error "no arguments in initialization list" for "init=epsg:2157"
+
+Check if PROJ_LIB is set in the Mapfile to a relative path
 

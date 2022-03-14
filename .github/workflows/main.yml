@@ -55,7 +55,7 @@ jobs:
         run: |
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           REM call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          REM call "C:\Program Files (x86)\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+          REM call "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
           REM cd /D D:\MapServer\VS2022
           REM set VS_VER="Visual Studio 17 2022"
           REM set VS_VER="Visual Studio 16 2019"
@@ -116,8 +116,14 @@ jobs:
           if (Test-Path -Path $fld) {
             cp -r "$fld/*" .
           }
+
+          $fld="$root/build/mapscript/python/Release"
+          if (Test-Path -Path $fld) {
+            cp -r "$fld/*.py" .
+          }
+
           git add .
-          git commit -m "Add source files"          
+          git commit -m "Add source files"
           git push
 
 #  publish:
