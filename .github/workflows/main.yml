@@ -123,10 +123,15 @@ jobs:
             cp -r "$fld/*" .
           }
 
-          $fld="$root/build/mapscript/python/Release"
-          if (Test-Path -Path $fld) {
-            Get-ChildItem -Path "$fld" -Include *.py -Recurse | Copy-Item -Destination .
+          $pyfile="$root/build/mapscript/python/mapscript.py"
+          if (Test-Path -Path $pyfile) {
+            cp "$pyfile" .
           }
+
+          #$fld="$root/build/mapscript/python/Release"
+          #if (Test-Path -Path $fld) {
+          #  Get-ChildItem -Path "$fld" -Include *.py -Recurse | Copy-Item -Destination .
+          #}
 
           git add .
           git commit -m "Add source files"
