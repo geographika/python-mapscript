@@ -6,7 +6,7 @@ env:
   # VS_VER: "Visual Studio 16 2019"
   SDK: release-1930-x64
   VS_VER: "Visual Studio 17 2022"
-  SWIG_VER: "4.0.2" # "4.1.0"
+  SWIG_VER: "4.1.0" # "4.0.2"
 
 jobs:
   build:
