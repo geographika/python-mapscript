@@ -101,9 +101,12 @@ jobs:
           )
           cmake --build . --target pythonmapscript-wheel --config Release
 
-          cd %ROOT_FOLDER%/build/mapscript/python/Release
-          %PYTHON_EXECUTABLE% setup.py sdist
-          cd %ROOT_FOLDER%
+          REM make sdist for one version of Python as they are identical
+          if "${{ matrix.python-version }}" EQU "3.10" (
+            cd %ROOT_FOLDER%/build/mapscript/python/Release
+            %PYTHON_EXECUTABLE% setup.py sdist
+            cd %ROOT_FOLDER%
+          )
 
       - name: Add Wheels and source files to repo
         if: always() # always upload any files for debugging
