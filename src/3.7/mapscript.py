@@ -5,8 +5,8 @@
 # the SWIG interface file instead.
 
 from sys import version_info as _swig_python_version_info
-if _swig_python_version_info < (3, 0):
-    raise RuntimeError("Python 3.x or later required")
+if _swig_python_version_info < (2, 7, 0):
+    raise RuntimeError("Python 2.7 or later required")
 
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
@@ -65,27 +65,27 @@ class intarray(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
-    def __init__(self, nelements):
+    def __init__(self, nelements: "size_t"):
         _mapscript.intarray_swiginit(self, _mapscript.new_intarray(nelements))
     __swig_destroy__ = _mapscript.delete_intarray
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: "size_t") -> "int":
         return _mapscript.intarray___getitem__(self, index)
 
-    def __setitem__(self, index, value):
+    def __setitem__(self, index: "size_t", value: "int") -> "void":
         return _mapscript.intarray___setitem__(self, index, value)
 
-    def cast(self):
+    def cast(self) -> "int *":
         return _mapscript.intarray_cast(self)
 
     @staticmethod
-    def frompointer(t):
+    def frompointer(t: "int *") -> "intarray *":
         return _mapscript.intarray_frompointer(t)
 
 # Register intarray in _mapscript:
 _mapscript.intarray_swigregister(intarray)
 
-def intarray_frompointer(t):
+def intarray_frompointer(t: "int *") -> "intarray *":
     return _mapscript.intarray_frompointer(t)
 
 
@@ -286,8 +286,8 @@ MS_COMPOP_INVERT_RGB = _mapscript.MS_COMPOP_INVERT_RGB
 class CompositingFilter(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    filter = property(_mapscript.CompositingFilter_filter_get, _mapscript.CompositingFilter_filter_set)
-    next = property(_mapscript.CompositingFilter_next_get, _mapscript.CompositingFilter_next_set)
+    filter: "char *" = property(_mapscript.CompositingFilter_filter_get, _mapscript.CompositingFilter_filter_set)
+    next: "struct _CompositingFilter *" = property(_mapscript.CompositingFilter_next_get, _mapscript.CompositingFilter_next_set)
 
     def __init__(self):
         _mapscript.CompositingFilter_swiginit(self, _mapscript.new_CompositingFilter())
@@ -299,10 +299,10 @@ _mapscript.CompositingFilter_swigregister(CompositingFilter)
 class LayerCompositer(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    comp_op = property(_mapscript.LayerCompositer_comp_op_get, _mapscript.LayerCompositer_comp_op_set)
-    opacity = property(_mapscript.LayerCompositer_opacity_get, _mapscript.LayerCompositer_opacity_set)
-    filter = property(_mapscript.LayerCompositer_filter_get, _mapscript.LayerCompositer_filter_set)
-    next = property(_mapscript.LayerCompositer_next_get, _mapscript.LayerCompositer_next_set)
+    comp_op: "CompositingOperation" = property(_mapscript.LayerCompositer_comp_op_get, _mapscript.LayerCompositer_comp_op_set)
+    opacity: "int" = property(_mapscript.LayerCompositer_opacity_get, _mapscript.LayerCompositer_opacity_set)
+    filter: "CompositingFilter *" = property(_mapscript.LayerCompositer_filter_get, _mapscript.LayerCompositer_filter_set)
+    next: "struct _LayerCompositer *" = property(_mapscript.LayerCompositer_next_get, _mapscript.LayerCompositer_next_set)
 
     def __init__(self):
         _mapscript.LayerCompositer_swiginit(self, _mapscript.new_LayerCompositer())
@@ -340,9 +340,9 @@ MS_LABEL_BINDING_ALIGN = _mapscript.MS_LABEL_BINDING_ALIGN
 class fontSetObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    filename = property(_mapscript.fontSetObj_filename_get)
-    numfonts = property(_mapscript.fontSetObj_numfonts_get)
-    fonts = property(_mapscript.fontSetObj_fonts_get)
+    filename: "char *" = property(_mapscript.fontSetObj_filename_get)
+    numfonts: "int" = property(_mapscript.fontSetObj_numfonts_get)
+    fonts: "hashTableObj" = property(_mapscript.fontSetObj_fonts_get)
 
     def __init__(self):
         _mapscript.fontSetObj_swiginit(self, _mapscript.new_fontSetObj())
@@ -415,26 +415,26 @@ MS_PARSE_TYPE_SLD = _mapscript.MS_PARSE_TYPE_SLD
 class clusterObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    maxdistance = property(_mapscript.clusterObj_maxdistance_get, _mapscript.clusterObj_maxdistance_set)
-    buffer = property(_mapscript.clusterObj_buffer_get, _mapscript.clusterObj_buffer_set)
-    region = property(_mapscript.clusterObj_region_get, _mapscript.clusterObj_region_set)
+    maxdistance: "double" = property(_mapscript.clusterObj_maxdistance_get, _mapscript.clusterObj_maxdistance_set)
+    buffer: "double" = property(_mapscript.clusterObj_buffer_get, _mapscript.clusterObj_buffer_set)
+    region: "char *" = property(_mapscript.clusterObj_region_get, _mapscript.clusterObj_region_set)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.clusterObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.clusterObj_convertToString(self)
 
-    def setGroup(self, group):
+    def setGroup(self, group: "char *") -> "int":
         return _mapscript.clusterObj_setGroup(self, group)
 
-    def getGroupString(self):
+    def getGroupString(self) -> "char *":
         return _mapscript.clusterObj_getGroupString(self)
 
-    def setFilter(self, filter):
+    def setFilter(self, filter: "char *") -> "int":
         return _mapscript.clusterObj_setFilter(self, filter)
 
-    def getFilterString(self):
+    def getFilterString(self) -> "char *":
         return _mapscript.clusterObj_getFilterString(self)
 
     def __init__(self):
@@ -447,40 +447,40 @@ _mapscript.clusterObj_swigregister(clusterObj)
 class outputFormatObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numformatoptions = property(_mapscript.outputFormatObj_numformatoptions_get)
-    name = property(_mapscript.outputFormatObj_name_get, _mapscript.outputFormatObj_name_set)
-    mimetype = property(_mapscript.outputFormatObj_mimetype_get, _mapscript.outputFormatObj_mimetype_set)
-    driver = property(_mapscript.outputFormatObj_driver_get, _mapscript.outputFormatObj_driver_set)
-    extension = property(_mapscript.outputFormatObj_extension_get, _mapscript.outputFormatObj_extension_set)
-    renderer = property(_mapscript.outputFormatObj_renderer_get, _mapscript.outputFormatObj_renderer_set)
-    imagemode = property(_mapscript.outputFormatObj_imagemode_get, _mapscript.outputFormatObj_imagemode_set)
-    transparent = property(_mapscript.outputFormatObj_transparent_get, _mapscript.outputFormatObj_transparent_set)
-    bands = property(_mapscript.outputFormatObj_bands_get, _mapscript.outputFormatObj_bands_set)
-    inmapfile = property(_mapscript.outputFormatObj_inmapfile_get, _mapscript.outputFormatObj_inmapfile_set)
+    numformatoptions: "int" = property(_mapscript.outputFormatObj_numformatoptions_get)
+    name: "char *" = property(_mapscript.outputFormatObj_name_get, _mapscript.outputFormatObj_name_set)
+    mimetype: "char *" = property(_mapscript.outputFormatObj_mimetype_get, _mapscript.outputFormatObj_mimetype_set)
+    driver: "char *" = property(_mapscript.outputFormatObj_driver_get, _mapscript.outputFormatObj_driver_set)
+    extension: "char *" = property(_mapscript.outputFormatObj_extension_get, _mapscript.outputFormatObj_extension_set)
+    renderer: "int" = property(_mapscript.outputFormatObj_renderer_get, _mapscript.outputFormatObj_renderer_set)
+    imagemode: "int" = property(_mapscript.outputFormatObj_imagemode_get, _mapscript.outputFormatObj_imagemode_set)
+    transparent: "int" = property(_mapscript.outputFormatObj_transparent_get, _mapscript.outputFormatObj_transparent_set)
+    bands: "int" = property(_mapscript.outputFormatObj_bands_get, _mapscript.outputFormatObj_bands_set)
+    inmapfile: "int" = property(_mapscript.outputFormatObj_inmapfile_get, _mapscript.outputFormatObj_inmapfile_set)
 
-    def __init__(self, driver, name=None):
+    def __init__(self, driver: "char const *", name: "char *"=None):
         _mapscript.outputFormatObj_swiginit(self, _mapscript.new_outputFormatObj(driver, name))
     __swig_destroy__ = _mapscript.delete_outputFormatObj
 
-    def setExtension(self, extension):
+    def setExtension(self, extension: "char const *") -> "void":
         return _mapscript.outputFormatObj_setExtension(self, extension)
 
-    def setMimetype(self, mimetype):
+    def setMimetype(self, mimetype: "char const *") -> "void":
         return _mapscript.outputFormatObj_setMimetype(self, mimetype)
 
-    def setOption(self, key, value):
+    def setOption(self, key: "char const *", value: "char const *") -> "void":
         return _mapscript.outputFormatObj_setOption(self, key, value)
 
-    def validate(self):
+    def validate(self) -> "int":
         return _mapscript.outputFormatObj_validate(self)
 
-    def getOption(self, *args):
+    def getOption(self, *args) -> "char *":
         return _mapscript.outputFormatObj_getOption(self, *args)
 
-    def getOptionAt(self, i):
+    def getOptionAt(self, i: "int") -> "char *":
         return _mapscript.outputFormatObj_getOptionAt(self, i)
 
-    def attachDevice(self, device):
+    def attachDevice(self, device: "void *") -> "void":
         return _mapscript.outputFormatObj_attachDevice(self, device)
 
 # Register outputFormatObj in _mapscript:
@@ -490,17 +490,17 @@ MS_NOOVERRIDE = _mapscript.MS_NOOVERRIDE
 class queryMapObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    map = property(_mapscript.queryMapObj_map_get)
-    height = property(_mapscript.queryMapObj_height_get, _mapscript.queryMapObj_height_set)
-    width = property(_mapscript.queryMapObj_width_get, _mapscript.queryMapObj_width_set)
-    status = property(_mapscript.queryMapObj_status_get, _mapscript.queryMapObj_status_set)
-    style = property(_mapscript.queryMapObj_style_get, _mapscript.queryMapObj_style_set)
-    color = property(_mapscript.queryMapObj_color_get, _mapscript.queryMapObj_color_set)
+    map: "struct mapObj *" = property(_mapscript.queryMapObj_map_get)
+    height: "int" = property(_mapscript.queryMapObj_height_get, _mapscript.queryMapObj_height_set)
+    width: "int" = property(_mapscript.queryMapObj_width_get, _mapscript.queryMapObj_width_set)
+    status: "int" = property(_mapscript.queryMapObj_status_get, _mapscript.queryMapObj_status_set)
+    style: "int" = property(_mapscript.queryMapObj_style_get, _mapscript.queryMapObj_style_set)
+    color: "colorObj" = property(_mapscript.queryMapObj_color_get, _mapscript.queryMapObj_color_set)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.queryMapObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.queryMapObj_convertToString(self)
 
     def __init__(self):
@@ -513,33 +513,33 @@ _mapscript.queryMapObj_swigregister(queryMapObj)
 class webObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    metadata = property(_mapscript.webObj_metadata_get)
-    validation = property(_mapscript.webObj_validation_get)
-    map = property(_mapscript.webObj_map_get)
-    imagepath = property(_mapscript.webObj_imagepath_get, _mapscript.webObj_imagepath_set)
-    imageurl = property(_mapscript.webObj_imageurl_get, _mapscript.webObj_imageurl_set)
-    temppath = property(_mapscript.webObj_temppath_get, _mapscript.webObj_temppath_set)
-    header = property(_mapscript.webObj_header_get, _mapscript.webObj_header_set)
-    footer = property(_mapscript.webObj_footer_get, _mapscript.webObj_footer_set)
-    empty = property(_mapscript.webObj_empty_get, _mapscript.webObj_empty_set)
-    error = property(_mapscript.webObj_error_get, _mapscript.webObj_error_set)
-    minscaledenom = property(_mapscript.webObj_minscaledenom_get, _mapscript.webObj_minscaledenom_set)
-    maxscaledenom = property(_mapscript.webObj_maxscaledenom_get, _mapscript.webObj_maxscaledenom_set)
-    mintemplate = property(_mapscript.webObj_mintemplate_get, _mapscript.webObj_mintemplate_set)
-    maxtemplate = property(_mapscript.webObj_maxtemplate_get, _mapscript.webObj_maxtemplate_set)
-    queryformat = property(_mapscript.webObj_queryformat_get, _mapscript.webObj_queryformat_set)
-    legendformat = property(_mapscript.webObj_legendformat_get, _mapscript.webObj_legendformat_set)
-    browseformat = property(_mapscript.webObj_browseformat_get, _mapscript.webObj_browseformat_set)
-    template = property(_mapscript.webObj_template_get, _mapscript.webObj_template_set)
+    metadata: "hashTableObj" = property(_mapscript.webObj_metadata_get)
+    validation: "hashTableObj" = property(_mapscript.webObj_validation_get)
+    map: "struct mapObj *" = property(_mapscript.webObj_map_get)
+    imagepath: "char *" = property(_mapscript.webObj_imagepath_get, _mapscript.webObj_imagepath_set)
+    imageurl: "char *" = property(_mapscript.webObj_imageurl_get, _mapscript.webObj_imageurl_set)
+    temppath: "char *" = property(_mapscript.webObj_temppath_get, _mapscript.webObj_temppath_set)
+    header: "char *" = property(_mapscript.webObj_header_get, _mapscript.webObj_header_set)
+    footer: "char *" = property(_mapscript.webObj_footer_get, _mapscript.webObj_footer_set)
+    empty: "char *" = property(_mapscript.webObj_empty_get, _mapscript.webObj_empty_set)
+    error: "char *" = property(_mapscript.webObj_error_get, _mapscript.webObj_error_set)
+    minscaledenom: "double" = property(_mapscript.webObj_minscaledenom_get, _mapscript.webObj_minscaledenom_set)
+    maxscaledenom: "double" = property(_mapscript.webObj_maxscaledenom_get, _mapscript.webObj_maxscaledenom_set)
+    mintemplate: "char *" = property(_mapscript.webObj_mintemplate_get, _mapscript.webObj_mintemplate_set)
+    maxtemplate: "char *" = property(_mapscript.webObj_maxtemplate_get, _mapscript.webObj_maxtemplate_set)
+    queryformat: "char *" = property(_mapscript.webObj_queryformat_get, _mapscript.webObj_queryformat_set)
+    legendformat: "char *" = property(_mapscript.webObj_legendformat_get, _mapscript.webObj_legendformat_set)
+    browseformat: "char *" = property(_mapscript.webObj_browseformat_get, _mapscript.webObj_browseformat_set)
+    template: "char *" = property(_mapscript.webObj_template_get, _mapscript.webObj_template_set)
 
     def __init__(self):
         _mapscript.webObj_swiginit(self, _mapscript.new_webObj())
     __swig_destroy__ = _mapscript.delete_webObj
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.webObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.webObj_convertToString(self)
 
 # Register webObj in _mapscript:
@@ -548,77 +548,77 @@ _mapscript.webObj_swigregister(webObj)
 class styleObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    refcount = property(_mapscript.styleObj_refcount_get)
-    symbolname = property(_mapscript.styleObj_symbolname_get)
-    patternlength = property(_mapscript.styleObj_patternlength_get)
-    angle = property(_mapscript.styleObj_angle_get, _mapscript.styleObj_angle_set)
-    autoangle = property(_mapscript.styleObj_autoangle_get, _mapscript.styleObj_autoangle_set)
-    antialiased = property(_mapscript.styleObj_antialiased_get, _mapscript.styleObj_antialiased_set)
-    color = property(_mapscript.styleObj_color_get, _mapscript.styleObj_color_set)
-    outlinecolor = property(_mapscript.styleObj_outlinecolor_get, _mapscript.styleObj_outlinecolor_set)
-    opacity = property(_mapscript.styleObj_opacity_get, _mapscript.styleObj_opacity_set)
-    mincolor = property(_mapscript.styleObj_mincolor_get, _mapscript.styleObj_mincolor_set)
-    maxcolor = property(_mapscript.styleObj_maxcolor_get, _mapscript.styleObj_maxcolor_set)
-    minvalue = property(_mapscript.styleObj_minvalue_get, _mapscript.styleObj_minvalue_set)
-    maxvalue = property(_mapscript.styleObj_maxvalue_get, _mapscript.styleObj_maxvalue_set)
-    rangeitem = property(_mapscript.styleObj_rangeitem_get, _mapscript.styleObj_rangeitem_set)
-    rangeitemindex = property(_mapscript.styleObj_rangeitemindex_get, _mapscript.styleObj_rangeitemindex_set)
-    symbol = property(_mapscript.styleObj_symbol_get, _mapscript.styleObj_symbol_set)
-    size = property(_mapscript.styleObj_size_get, _mapscript.styleObj_size_set)
-    minsize = property(_mapscript.styleObj_minsize_get, _mapscript.styleObj_minsize_set)
-    maxsize = property(_mapscript.styleObj_maxsize_get, _mapscript.styleObj_maxsize_set)
-    gap = property(_mapscript.styleObj_gap_get, _mapscript.styleObj_gap_set)
-    initialgap = property(_mapscript.styleObj_initialgap_get, _mapscript.styleObj_initialgap_set)
-    linecap = property(_mapscript.styleObj_linecap_get, _mapscript.styleObj_linecap_set)
-    linejoin = property(_mapscript.styleObj_linejoin_get, _mapscript.styleObj_linejoin_set)
-    linejoinmaxsize = property(_mapscript.styleObj_linejoinmaxsize_get, _mapscript.styleObj_linejoinmaxsize_set)
-    width = property(_mapscript.styleObj_width_get, _mapscript.styleObj_width_set)
-    outlinewidth = property(_mapscript.styleObj_outlinewidth_get, _mapscript.styleObj_outlinewidth_set)
-    minwidth = property(_mapscript.styleObj_minwidth_get, _mapscript.styleObj_minwidth_set)
-    maxwidth = property(_mapscript.styleObj_maxwidth_get, _mapscript.styleObj_maxwidth_set)
-    offsetx = property(_mapscript.styleObj_offsetx_get, _mapscript.styleObj_offsetx_set)
-    offsety = property(_mapscript.styleObj_offsety_get, _mapscript.styleObj_offsety_set)
-    polaroffsetpixel = property(_mapscript.styleObj_polaroffsetpixel_get, _mapscript.styleObj_polaroffsetpixel_set)
-    polaroffsetangle = property(_mapscript.styleObj_polaroffsetangle_get, _mapscript.styleObj_polaroffsetangle_set)
-    minscaledenom = property(_mapscript.styleObj_minscaledenom_get, _mapscript.styleObj_minscaledenom_set)
-    maxscaledenom = property(_mapscript.styleObj_maxscaledenom_get, _mapscript.styleObj_maxscaledenom_set)
-    sizeunits = property(_mapscript.styleObj_sizeunits_get, _mapscript.styleObj_sizeunits_set)
+    refcount: "int" = property(_mapscript.styleObj_refcount_get)
+    symbolname: "char *" = property(_mapscript.styleObj_symbolname_get)
+    patternlength: "int" = property(_mapscript.styleObj_patternlength_get)
+    angle: "double" = property(_mapscript.styleObj_angle_get, _mapscript.styleObj_angle_set)
+    autoangle: "int" = property(_mapscript.styleObj_autoangle_get, _mapscript.styleObj_autoangle_set)
+    antialiased: "int" = property(_mapscript.styleObj_antialiased_get, _mapscript.styleObj_antialiased_set)
+    color: "colorObj" = property(_mapscript.styleObj_color_get, _mapscript.styleObj_color_set)
+    outlinecolor: "colorObj" = property(_mapscript.styleObj_outlinecolor_get, _mapscript.styleObj_outlinecolor_set)
+    opacity: "int" = property(_mapscript.styleObj_opacity_get, _mapscript.styleObj_opacity_set)
+    mincolor: "colorObj" = property(_mapscript.styleObj_mincolor_get, _mapscript.styleObj_mincolor_set)
+    maxcolor: "colorObj" = property(_mapscript.styleObj_maxcolor_get, _mapscript.styleObj_maxcolor_set)
+    minvalue: "double" = property(_mapscript.styleObj_minvalue_get, _mapscript.styleObj_minvalue_set)
+    maxvalue: "double" = property(_mapscript.styleObj_maxvalue_get, _mapscript.styleObj_maxvalue_set)
+    rangeitem: "char *" = property(_mapscript.styleObj_rangeitem_get, _mapscript.styleObj_rangeitem_set)
+    rangeitemindex: "int" = property(_mapscript.styleObj_rangeitemindex_get, _mapscript.styleObj_rangeitemindex_set)
+    symbol: "int" = property(_mapscript.styleObj_symbol_get, _mapscript.styleObj_symbol_set)
+    size: "double" = property(_mapscript.styleObj_size_get, _mapscript.styleObj_size_set)
+    minsize: "double" = property(_mapscript.styleObj_minsize_get, _mapscript.styleObj_minsize_set)
+    maxsize: "double" = property(_mapscript.styleObj_maxsize_get, _mapscript.styleObj_maxsize_set)
+    gap: "double" = property(_mapscript.styleObj_gap_get, _mapscript.styleObj_gap_set)
+    initialgap: "double" = property(_mapscript.styleObj_initialgap_get, _mapscript.styleObj_initialgap_set)
+    linecap: "int" = property(_mapscript.styleObj_linecap_get, _mapscript.styleObj_linecap_set)
+    linejoin: "int" = property(_mapscript.styleObj_linejoin_get, _mapscript.styleObj_linejoin_set)
+    linejoinmaxsize: "double" = property(_mapscript.styleObj_linejoinmaxsize_get, _mapscript.styleObj_linejoinmaxsize_set)
+    width: "double" = property(_mapscript.styleObj_width_get, _mapscript.styleObj_width_set)
+    outlinewidth: "double" = property(_mapscript.styleObj_outlinewidth_get, _mapscript.styleObj_outlinewidth_set)
+    minwidth: "double" = property(_mapscript.styleObj_minwidth_get, _mapscript.styleObj_minwidth_set)
+    maxwidth: "double" = property(_mapscript.styleObj_maxwidth_get, _mapscript.styleObj_maxwidth_set)
+    offsetx: "double" = property(_mapscript.styleObj_offsetx_get, _mapscript.styleObj_offsetx_set)
+    offsety: "double" = property(_mapscript.styleObj_offsety_get, _mapscript.styleObj_offsety_set)
+    polaroffsetpixel: "double" = property(_mapscript.styleObj_polaroffsetpixel_get, _mapscript.styleObj_polaroffsetpixel_set)
+    polaroffsetangle: "double" = property(_mapscript.styleObj_polaroffsetangle_get, _mapscript.styleObj_polaroffsetangle_set)
+    minscaledenom: "double" = property(_mapscript.styleObj_minscaledenom_get, _mapscript.styleObj_minscaledenom_set)
+    maxscaledenom: "double" = property(_mapscript.styleObj_maxscaledenom_get, _mapscript.styleObj_maxscaledenom_set)
+    sizeunits: "int" = property(_mapscript.styleObj_sizeunits_get, _mapscript.styleObj_sizeunits_set)
 
-    def __init__(self, parent_class=None):
+    def __init__(self, parent_class: "classObj"=None):
         _mapscript.styleObj_swiginit(self, _mapscript.new_styleObj(parent_class))
     __swig_destroy__ = _mapscript.delete_styleObj
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.styleObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.styleObj_convertToString(self)
 
-    def clone(self):
+    def clone(self) -> "styleObj *":
         return _mapscript.styleObj_clone(self)
 
-    def setSymbolByName(self, map, symbolname):
+    def setSymbolByName(self, map: "mapObj", symbolname: "char *") -> "int":
         return _mapscript.styleObj_setSymbolByName(self, map, symbolname)
 
-    def removeBinding(self, binding):
+    def removeBinding(self, binding: "int") -> "int":
         return _mapscript.styleObj_removeBinding(self, binding)
 
-    def setBinding(self, binding, item):
+    def setBinding(self, binding: "int", item: "char *") -> "int":
         return _mapscript.styleObj_setBinding(self, binding, item)
 
-    def getBinding(self, binding):
+    def getBinding(self, binding: "int") -> "char *":
         return _mapscript.styleObj_getBinding(self, binding)
 
-    def getGeomTransform(self):
+    def getGeomTransform(self) -> "char *":
         return _mapscript.styleObj_getGeomTransform(self)
 
-    def setGeomTransform(self, transform):
+    def setGeomTransform(self, transform: "char *") -> "void":
         return _mapscript.styleObj_setGeomTransform(self, transform)
 
-    def pattern_set(self, nListSize):
+    def pattern_set(self, nListSize: "int") -> "void":
         return _mapscript.styleObj_pattern_set(self, nListSize)
 
-    def pattern_get(self):
+    def pattern_get(self) -> "void":
         return _mapscript.styleObj_pattern_get(self)
 
 
@@ -634,9 +634,9 @@ MS_STYLE_DOUBLE_SIDED_OFFSET = _mapscript.MS_STYLE_DOUBLE_SIDED_OFFSET
 class labelLeaderObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numstyles = property(_mapscript.labelLeaderObj_numstyles_get)
-    maxdistance = property(_mapscript.labelLeaderObj_maxdistance_get, _mapscript.labelLeaderObj_maxdistance_set)
-    gridstep = property(_mapscript.labelLeaderObj_gridstep_get, _mapscript.labelLeaderObj_gridstep_set)
+    numstyles: "int" = property(_mapscript.labelLeaderObj_numstyles_get)
+    maxdistance: "int" = property(_mapscript.labelLeaderObj_maxdistance_get, _mapscript.labelLeaderObj_maxdistance_set)
+    gridstep: "int" = property(_mapscript.labelLeaderObj_gridstep_get, _mapscript.labelLeaderObj_gridstep_set)
 
     def __init__(self):
         _mapscript.labelLeaderObj_swiginit(self, _mapscript.new_labelLeaderObj())
@@ -648,85 +648,85 @@ _mapscript.labelLeaderObj_swigregister(labelLeaderObj)
 class labelObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    refcount = property(_mapscript.labelObj_refcount_get)
-    font = property(_mapscript.labelObj_font_get, _mapscript.labelObj_font_set)
-    color = property(_mapscript.labelObj_color_get, _mapscript.labelObj_color_set)
-    outlinecolor = property(_mapscript.labelObj_outlinecolor_get, _mapscript.labelObj_outlinecolor_set)
-    outlinewidth = property(_mapscript.labelObj_outlinewidth_get, _mapscript.labelObj_outlinewidth_set)
-    shadowcolor = property(_mapscript.labelObj_shadowcolor_get, _mapscript.labelObj_shadowcolor_set)
-    shadowsizex = property(_mapscript.labelObj_shadowsizex_get, _mapscript.labelObj_shadowsizex_set)
-    shadowsizey = property(_mapscript.labelObj_shadowsizey_get, _mapscript.labelObj_shadowsizey_set)
-    size = property(_mapscript.labelObj_size_get, _mapscript.labelObj_size_set)
-    minsize = property(_mapscript.labelObj_minsize_get, _mapscript.labelObj_minsize_set)
-    maxsize = property(_mapscript.labelObj_maxsize_get, _mapscript.labelObj_maxsize_set)
-    position = property(_mapscript.labelObj_position_get, _mapscript.labelObj_position_set)
-    offsetx = property(_mapscript.labelObj_offsetx_get, _mapscript.labelObj_offsetx_set)
-    offsety = property(_mapscript.labelObj_offsety_get, _mapscript.labelObj_offsety_set)
-    angle = property(_mapscript.labelObj_angle_get, _mapscript.labelObj_angle_set)
-    anglemode = property(_mapscript.labelObj_anglemode_get, _mapscript.labelObj_anglemode_set)
-    buffer = property(_mapscript.labelObj_buffer_get, _mapscript.labelObj_buffer_set)
-    align = property(_mapscript.labelObj_align_get, _mapscript.labelObj_align_set)
-    wrap = property(_mapscript.labelObj_wrap_get, _mapscript.labelObj_wrap_set)
-    maxlength = property(_mapscript.labelObj_maxlength_get, _mapscript.labelObj_maxlength_set)
-    space_size_10 = property(_mapscript.labelObj_space_size_10_get, _mapscript.labelObj_space_size_10_set)
-    minfeaturesize = property(_mapscript.labelObj_minfeaturesize_get, _mapscript.labelObj_minfeaturesize_set)
-    autominfeaturesize = property(_mapscript.labelObj_autominfeaturesize_get, _mapscript.labelObj_autominfeaturesize_set)
-    minscaledenom = property(_mapscript.labelObj_minscaledenom_get, _mapscript.labelObj_minscaledenom_set)
-    maxscaledenom = property(_mapscript.labelObj_maxscaledenom_get, _mapscript.labelObj_maxscaledenom_set)
-    mindistance = property(_mapscript.labelObj_mindistance_get, _mapscript.labelObj_mindistance_set)
-    repeatdistance = property(_mapscript.labelObj_repeatdistance_get, _mapscript.labelObj_repeatdistance_set)
-    maxoverlapangle = property(_mapscript.labelObj_maxoverlapangle_get, _mapscript.labelObj_maxoverlapangle_set)
-    partials = property(_mapscript.labelObj_partials_get, _mapscript.labelObj_partials_set)
-    force = property(_mapscript.labelObj_force_get, _mapscript.labelObj_force_set)
-    encoding = property(_mapscript.labelObj_encoding_get, _mapscript.labelObj_encoding_set)
-    priority = property(_mapscript.labelObj_priority_get, _mapscript.labelObj_priority_set)
-    numstyles = property(_mapscript.labelObj_numstyles_get, _mapscript.labelObj_numstyles_set)
-    sizeunits = property(_mapscript.labelObj_sizeunits_get, _mapscript.labelObj_sizeunits_set)
+    refcount: "int" = property(_mapscript.labelObj_refcount_get)
+    font: "char *" = property(_mapscript.labelObj_font_get, _mapscript.labelObj_font_set)
+    color: "colorObj" = property(_mapscript.labelObj_color_get, _mapscript.labelObj_color_set)
+    outlinecolor: "colorObj" = property(_mapscript.labelObj_outlinecolor_get, _mapscript.labelObj_outlinecolor_set)
+    outlinewidth: "int" = property(_mapscript.labelObj_outlinewidth_get, _mapscript.labelObj_outlinewidth_set)
+    shadowcolor: "colorObj" = property(_mapscript.labelObj_shadowcolor_get, _mapscript.labelObj_shadowcolor_set)
+    shadowsizex: "int" = property(_mapscript.labelObj_shadowsizex_get, _mapscript.labelObj_shadowsizex_set)
+    shadowsizey: "int" = property(_mapscript.labelObj_shadowsizey_get, _mapscript.labelObj_shadowsizey_set)
+    size: "int" = property(_mapscript.labelObj_size_get, _mapscript.labelObj_size_set)
+    minsize: "int" = property(_mapscript.labelObj_minsize_get, _mapscript.labelObj_minsize_set)
+    maxsize: "int" = property(_mapscript.labelObj_maxsize_get, _mapscript.labelObj_maxsize_set)
+    position: "int" = property(_mapscript.labelObj_position_get, _mapscript.labelObj_position_set)
+    offsetx: "int" = property(_mapscript.labelObj_offsetx_get, _mapscript.labelObj_offsetx_set)
+    offsety: "int" = property(_mapscript.labelObj_offsety_get, _mapscript.labelObj_offsety_set)
+    angle: "double" = property(_mapscript.labelObj_angle_get, _mapscript.labelObj_angle_set)
+    anglemode: "enum MS_POSITIONS_ENUM" = property(_mapscript.labelObj_anglemode_get, _mapscript.labelObj_anglemode_set)
+    buffer: "int" = property(_mapscript.labelObj_buffer_get, _mapscript.labelObj_buffer_set)
+    align: "int" = property(_mapscript.labelObj_align_get, _mapscript.labelObj_align_set)
+    wrap: "char" = property(_mapscript.labelObj_wrap_get, _mapscript.labelObj_wrap_set)
+    maxlength: "int" = property(_mapscript.labelObj_maxlength_get, _mapscript.labelObj_maxlength_set)
+    space_size_10: "double" = property(_mapscript.labelObj_space_size_10_get, _mapscript.labelObj_space_size_10_set)
+    minfeaturesize: "int" = property(_mapscript.labelObj_minfeaturesize_get, _mapscript.labelObj_minfeaturesize_set)
+    autominfeaturesize: "int" = property(_mapscript.labelObj_autominfeaturesize_get, _mapscript.labelObj_autominfeaturesize_set)
+    minscaledenom: "double" = property(_mapscript.labelObj_minscaledenom_get, _mapscript.labelObj_minscaledenom_set)
+    maxscaledenom: "double" = property(_mapscript.labelObj_maxscaledenom_get, _mapscript.labelObj_maxscaledenom_set)
+    mindistance: "int" = property(_mapscript.labelObj_mindistance_get, _mapscript.labelObj_mindistance_set)
+    repeatdistance: "int" = property(_mapscript.labelObj_repeatdistance_get, _mapscript.labelObj_repeatdistance_set)
+    maxoverlapangle: "double" = property(_mapscript.labelObj_maxoverlapangle_get, _mapscript.labelObj_maxoverlapangle_set)
+    partials: "int" = property(_mapscript.labelObj_partials_get, _mapscript.labelObj_partials_set)
+    force: "int" = property(_mapscript.labelObj_force_get, _mapscript.labelObj_force_set)
+    encoding: "char *" = property(_mapscript.labelObj_encoding_get, _mapscript.labelObj_encoding_set)
+    priority: "int" = property(_mapscript.labelObj_priority_get, _mapscript.labelObj_priority_set)
+    numstyles: "int" = property(_mapscript.labelObj_numstyles_get, _mapscript.labelObj_numstyles_set)
+    sizeunits: "int" = property(_mapscript.labelObj_sizeunits_get, _mapscript.labelObj_sizeunits_set)
 
     def __init__(self):
         _mapscript.labelObj_swiginit(self, _mapscript.new_labelObj())
     __swig_destroy__ = _mapscript.delete_labelObj
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.labelObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.labelObj_convertToString(self)
 
-    def removeBinding(self, binding):
+    def removeBinding(self, binding: "int") -> "int":
         return _mapscript.labelObj_removeBinding(self, binding)
 
-    def getBinding(self, binding):
+    def getBinding(self, binding: "int") -> "char *":
         return _mapscript.labelObj_getBinding(self, binding)
 
-    def setBinding(self, binding, item):
+    def setBinding(self, binding: "int", item: "char *") -> "int":
         return _mapscript.labelObj_setBinding(self, binding, item)
 
-    def setExpression(self, expression):
+    def setExpression(self, expression: "char *") -> "int":
         return _mapscript.labelObj_setExpression(self, expression)
 
-    def getExpressionString(self):
+    def getExpressionString(self) -> "char *":
         return _mapscript.labelObj_getExpressionString(self)
 
-    def setText(self, text):
+    def setText(self, text: "char *") -> "int":
         return _mapscript.labelObj_setText(self, text)
 
-    def getTextString(self):
+    def getTextString(self) -> "char *":
         return _mapscript.labelObj_getTextString(self)
 
-    def getStyle(self, i):
+    def getStyle(self, i: "int") -> "styleObj *":
         return _mapscript.labelObj_getStyle(self, i)
 
-    def insertStyle(self, style, index=-1):
+    def insertStyle(self, style: "styleObj", index: "int"=-1) -> "int":
         return _mapscript.labelObj_insertStyle(self, style, index)
 
-    def removeStyle(self, index):
+    def removeStyle(self, index: "int") -> "styleObj *":
         return _mapscript.labelObj_removeStyle(self, index)
 
-    def moveStyleUp(self, index):
+    def moveStyleUp(self, index: "int") -> "int":
         return _mapscript.labelObj_moveStyleUp(self, index)
 
-    def moveStyleDown(self, index):
+    def moveStyleDown(self, index: "int") -> "int":
         return _mapscript.labelObj_moveStyleDown(self, index)
 
 # Register labelObj in _mapscript:
@@ -737,27 +737,27 @@ MS_LABEL_PERPENDICULAR_TOP_OFFSET = _mapscript.MS_LABEL_PERPENDICULAR_TOP_OFFSET
 class classObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    metadata = property(_mapscript.classObj_metadata_get)
-    validation = property(_mapscript.classObj_validation_get)
-    numstyles = property(_mapscript.classObj_numstyles_get)
-    numlabels = property(_mapscript.classObj_numlabels_get)
-    refcount = property(_mapscript.classObj_refcount_get)
-    layer = property(_mapscript.classObj_layer_get)
-    leader = property(_mapscript.classObj_leader_get)
-    status = property(_mapscript.classObj_status_get, _mapscript.classObj_status_set)
-    isfallback = property(_mapscript.classObj_isfallback_get, _mapscript.classObj_isfallback_set)
-    name = property(_mapscript.classObj_name_get, _mapscript.classObj_name_set)
-    title = property(_mapscript.classObj_title_get, _mapscript.classObj_title_set)
-    minscaledenom = property(_mapscript.classObj_minscaledenom_get, _mapscript.classObj_minscaledenom_set)
-    maxscaledenom = property(_mapscript.classObj_maxscaledenom_get, _mapscript.classObj_maxscaledenom_set)
-    minfeaturesize = property(_mapscript.classObj_minfeaturesize_get, _mapscript.classObj_minfeaturesize_set)
-    debug = property(_mapscript.classObj_debug_get, _mapscript.classObj_debug_set)
-    keyimage = property(_mapscript.classObj_keyimage_get, _mapscript.classObj_keyimage_set)
-    group = property(_mapscript.classObj_group_get, _mapscript.classObj_group_set)
-    sizeunits = property(_mapscript.classObj_sizeunits_get, _mapscript.classObj_sizeunits_set)
-    template = property(_mapscript.classObj_template_get, _mapscript.classObj_template_set)
+    metadata: "hashTableObj" = property(_mapscript.classObj_metadata_get)
+    validation: "hashTableObj" = property(_mapscript.classObj_validation_get)
+    numstyles: "int" = property(_mapscript.classObj_numstyles_get)
+    numlabels: "int" = property(_mapscript.classObj_numlabels_get)
+    refcount: "int" = property(_mapscript.classObj_refcount_get)
+    layer: "struct layerObj *" = property(_mapscript.classObj_layer_get)
+    leader: "labelLeaderObj *" = property(_mapscript.classObj_leader_get)
+    status: "int" = property(_mapscript.classObj_status_get, _mapscript.classObj_status_set)
+    isfallback: "int" = property(_mapscript.classObj_isfallback_get, _mapscript.classObj_isfallback_set)
+    name: "char *" = property(_mapscript.classObj_name_get, _mapscript.classObj_name_set)
+    title: "char *" = property(_mapscript.classObj_title_get, _mapscript.classObj_title_set)
+    minscaledenom: "double" = property(_mapscript.classObj_minscaledenom_get, _mapscript.classObj_minscaledenom_set)
+    maxscaledenom: "double" = property(_mapscript.classObj_maxscaledenom_get, _mapscript.classObj_maxscaledenom_set)
+    minfeaturesize: "int" = property(_mapscript.classObj_minfeaturesize_get, _mapscript.classObj_minfeaturesize_set)
+    debug: "int" = property(_mapscript.classObj_debug_get, _mapscript.classObj_debug_set)
+    keyimage: "char *" = property(_mapscript.classObj_keyimage_get, _mapscript.classObj_keyimage_set)
+    group: "char *" = property(_mapscript.classObj_group_get, _mapscript.classObj_group_set)
+    sizeunits: "int" = property(_mapscript.classObj_sizeunits_get, _mapscript.classObj_sizeunits_set)
+    template: "char *" = property(_mapscript.classObj_template_get, _mapscript.classObj_template_set)
 
-    def __init__(self, layer=None):
+    def __init__(self, layer: "layerObj"=None):
         _mapscript.classObj_swiginit(self, _mapscript.new_classObj(layer))
 
         self.p_layer = None
@@ -767,55 +767,55 @@ class classObj(object):
 
     __swig_destroy__ = _mapscript.delete_classObj
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.classObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.classObj_convertToString(self)
 
-    def clone(self):
+    def clone(self) -> "classObj *":
         return _mapscript.classObj_clone(self)
 
-    def setExpression(self, expression):
+    def setExpression(self, expression: "char *") -> "int":
         return _mapscript.classObj_setExpression(self, expression)
 
-    def getExpressionString(self):
+    def getExpressionString(self) -> "char *":
         return _mapscript.classObj_getExpressionString(self)
 
-    def setText(self, text):
+    def setText(self, text: "char *") -> "int":
         return _mapscript.classObj_setText(self, text)
 
-    def getTextString(self):
+    def getTextString(self) -> "char *":
         return _mapscript.classObj_getTextString(self)
 
-    def drawLegendIcon(self, map, layer, width, height, dstImage, dstX, dstY):
+    def drawLegendIcon(self, map: "mapObj", layer: "layerObj", width: "int", height: "int", dstImage: "imageObj", dstX: "int", dstY: "int") -> "int":
         return _mapscript.classObj_drawLegendIcon(self, map, layer, width, height, dstImage, dstX, dstY)
 
-    def createLegendIcon(self, map, layer, width, height):
+    def createLegendIcon(self, map: "mapObj", layer: "layerObj", width: "int", height: "int") -> "imageObj *":
         return _mapscript.classObj_createLegendIcon(self, map, layer, width, height)
 
-    def getLabel(self, i):
+    def getLabel(self, i: "int") -> "labelObj *":
         return _mapscript.classObj_getLabel(self, i)
 
-    def addLabel(self, label):
+    def addLabel(self, label: "labelObj") -> "int":
         return _mapscript.classObj_addLabel(self, label)
 
-    def removeLabel(self, index):
+    def removeLabel(self, index: "int") -> "labelObj *":
         return _mapscript.classObj_removeLabel(self, index)
 
-    def getStyle(self, i):
+    def getStyle(self, i: "int") -> "styleObj *":
         return _mapscript.classObj_getStyle(self, i)
 
-    def insertStyle(self, style, index=-1):
+    def insertStyle(self, style: "styleObj", index: "int"=-1) -> "int":
         return _mapscript.classObj_insertStyle(self, style, index)
 
-    def removeStyle(self, index):
+    def removeStyle(self, index: "int") -> "styleObj *":
         return _mapscript.classObj_removeStyle(self, index)
 
-    def moveStyleUp(self, index):
+    def moveStyleUp(self, index: "int") -> "int":
         return _mapscript.classObj_moveStyleUp(self, index)
 
-    def moveStyleDown(self, index):
+    def moveStyleDown(self, index: "int") -> "int":
         return _mapscript.classObj_moveStyleDown(self, index)
 
 # Register classObj in _mapscript:
@@ -824,15 +824,15 @@ _mapscript.classObj_swigregister(classObj)
 class labelCacheMemberObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numtextsymbols = property(_mapscript.labelCacheMemberObj_numtextsymbols_get)
-    layerindex = property(_mapscript.labelCacheMemberObj_layerindex_get)
-    classindex = property(_mapscript.labelCacheMemberObj_classindex_get)
-    status = property(_mapscript.labelCacheMemberObj_status_get)
-    markerid = property(_mapscript.labelCacheMemberObj_markerid_get)
-    point = property(_mapscript.labelCacheMemberObj_point_get)
-    bbox = property(_mapscript.labelCacheMemberObj_bbox_get)
-    leaderline = property(_mapscript.labelCacheMemberObj_leaderline_get)
-    leaderbbox = property(_mapscript.labelCacheMemberObj_leaderbbox_get)
+    numtextsymbols: "int" = property(_mapscript.labelCacheMemberObj_numtextsymbols_get)
+    layerindex: "int" = property(_mapscript.labelCacheMemberObj_layerindex_get)
+    classindex: "int" = property(_mapscript.labelCacheMemberObj_classindex_get)
+    status: "int" = property(_mapscript.labelCacheMemberObj_status_get)
+    markerid: "int" = property(_mapscript.labelCacheMemberObj_markerid_get)
+    point: "pointObj" = property(_mapscript.labelCacheMemberObj_point_get)
+    bbox: "rectObj" = property(_mapscript.labelCacheMemberObj_bbox_get)
+    leaderline: "lineObj *" = property(_mapscript.labelCacheMemberObj_leaderline_get)
+    leaderbbox: "rectObj *" = property(_mapscript.labelCacheMemberObj_leaderbbox_get)
 
     def __init__(self):
         _mapscript.labelCacheMemberObj_swiginit(self, _mapscript.new_labelCacheMemberObj())
@@ -844,8 +844,8 @@ _mapscript.labelCacheMemberObj_swigregister(labelCacheMemberObj)
 class markerCacheMemberObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    id = property(_mapscript.markerCacheMemberObj_id_get)
-    bounds = property(_mapscript.markerCacheMemberObj_bounds_get)
+    id: "int" = property(_mapscript.markerCacheMemberObj_id_get)
+    bounds: "rectObj" = property(_mapscript.markerCacheMemberObj_bounds_get)
 
     def __init__(self):
         _mapscript.markerCacheMemberObj_swiginit(self, _mapscript.new_markerCacheMemberObj())
@@ -857,12 +857,12 @@ _mapscript.markerCacheMemberObj_swigregister(markerCacheMemberObj)
 class labelCacheSlotObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numlabels = property(_mapscript.labelCacheSlotObj_numlabels_get)
-    cachesize = property(_mapscript.labelCacheSlotObj_cachesize_get)
-    nummarkers = property(_mapscript.labelCacheSlotObj_nummarkers_get)
-    markercachesize = property(_mapscript.labelCacheSlotObj_markercachesize_get)
-    labels = property(_mapscript.labelCacheSlotObj_labels_get)
-    markers = property(_mapscript.labelCacheSlotObj_markers_get)
+    numlabels: "int" = property(_mapscript.labelCacheSlotObj_numlabels_get)
+    cachesize: "int" = property(_mapscript.labelCacheSlotObj_cachesize_get)
+    nummarkers: "int" = property(_mapscript.labelCacheSlotObj_nummarkers_get)
+    markercachesize: "int" = property(_mapscript.labelCacheSlotObj_markercachesize_get)
+    labels: "labelCacheMemberObj *" = property(_mapscript.labelCacheSlotObj_labels_get)
+    markers: "markerCacheMemberObj *" = property(_mapscript.labelCacheSlotObj_markers_get)
 
     def __init__(self):
         _mapscript.labelCacheSlotObj_swiginit(self, _mapscript.new_labelCacheSlotObj())
@@ -874,9 +874,9 @@ _mapscript.labelCacheSlotObj_swigregister(labelCacheSlotObj)
 class labelCacheObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    num_rendered_members = property(_mapscript.labelCacheObj_num_rendered_members_get)
+    num_rendered_members: "int" = property(_mapscript.labelCacheObj_num_rendered_members_get)
 
-    def freeCache(self):
+    def freeCache(self) -> "void":
         return _mapscript.labelCacheObj_freeCache(self)
 
     def __init__(self):
@@ -889,12 +889,12 @@ _mapscript.labelCacheObj_swigregister(labelCacheObj)
 class resultObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    shapeindex = property(_mapscript.resultObj_shapeindex_get)
-    tileindex = property(_mapscript.resultObj_tileindex_get)
-    resultindex = property(_mapscript.resultObj_resultindex_get)
-    classindex = property(_mapscript.resultObj_classindex_get)
+    shapeindex: "long" = property(_mapscript.resultObj_shapeindex_get)
+    tileindex: "int" = property(_mapscript.resultObj_tileindex_get)
+    resultindex: "int" = property(_mapscript.resultObj_resultindex_get)
+    classindex: "int" = property(_mapscript.resultObj_classindex_get)
 
-    def __init__(self, shapeindex):
+    def __init__(self, shapeindex: "long"):
         _mapscript.resultObj_swiginit(self, _mapscript.new_resultObj(shapeindex))
     __swig_destroy__ = _mapscript.delete_resultObj
 
@@ -904,10 +904,10 @@ _mapscript.resultObj_swigregister(resultObj)
 class resultCacheObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numresults = property(_mapscript.resultCacheObj_numresults_get)
-    bounds = property(_mapscript.resultCacheObj_bounds_get)
+    numresults: "int" = property(_mapscript.resultCacheObj_numresults_get)
+    bounds: "rectObj" = property(_mapscript.resultCacheObj_bounds_get)
 
-    def getResult(self, i):
+    def getResult(self, i: "int") -> "resultObj *":
         return _mapscript.resultCacheObj_getResult(self, i)
 
     def __init__(self):
@@ -920,31 +920,31 @@ _mapscript.resultCacheObj_swigregister(resultCacheObj)
 class symbolSetObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numsymbols = property(_mapscript.symbolSetObj_numsymbols_get)
-    maxsymbols = property(_mapscript.symbolSetObj_maxsymbols_get)
-    filename = property(_mapscript.symbolSetObj_filename_get, _mapscript.symbolSetObj_filename_set)
-    imagecachesize = property(_mapscript.symbolSetObj_imagecachesize_get, _mapscript.symbolSetObj_imagecachesize_set)
+    numsymbols: "int" = property(_mapscript.symbolSetObj_numsymbols_get)
+    maxsymbols: "int" = property(_mapscript.symbolSetObj_maxsymbols_get)
+    filename: "char *" = property(_mapscript.symbolSetObj_filename_get, _mapscript.symbolSetObj_filename_set)
+    imagecachesize: "int" = property(_mapscript.symbolSetObj_imagecachesize_get, _mapscript.symbolSetObj_imagecachesize_set)
 
-    def __init__(self, symbolfile=None):
+    def __init__(self, symbolfile: "char const *"=None):
         _mapscript.symbolSetObj_swiginit(self, _mapscript.new_symbolSetObj(symbolfile))
     __swig_destroy__ = _mapscript.delete_symbolSetObj
 
-    def getSymbol(self, i):
+    def getSymbol(self, i: "int") -> "symbolObj *":
         return _mapscript.symbolSetObj_getSymbol(self, i)
 
-    def getSymbolByName(self, symbolname):
+    def getSymbolByName(self, symbolname: "char *") -> "symbolObj *":
         return _mapscript.symbolSetObj_getSymbolByName(self, symbolname)
 
-    def index(self, symbolname):
+    def index(self, symbolname: "char *") -> "int":
         return _mapscript.symbolSetObj_index(self, symbolname)
 
-    def appendSymbol(self, symbol):
+    def appendSymbol(self, symbol: "symbolObj") -> "int":
         return _mapscript.symbolSetObj_appendSymbol(self, symbol)
 
-    def removeSymbol(self, index):
+    def removeSymbol(self, index: "int") -> "symbolObj *":
         return _mapscript.symbolSetObj_removeSymbol(self, index)
 
-    def save(self, filename):
+    def save(self, filename: "char const *") -> "int":
         return _mapscript.symbolSetObj_save(self, filename)
 
 # Register symbolSetObj in _mapscript:
@@ -953,24 +953,24 @@ _mapscript.symbolSetObj_swigregister(symbolSetObj)
 class referenceMapObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    map = property(_mapscript.referenceMapObj_map_get)
-    extent = property(_mapscript.referenceMapObj_extent_get, _mapscript.referenceMapObj_extent_set)
-    height = property(_mapscript.referenceMapObj_height_get, _mapscript.referenceMapObj_height_set)
-    width = property(_mapscript.referenceMapObj_width_get, _mapscript.referenceMapObj_width_set)
-    color = property(_mapscript.referenceMapObj_color_get, _mapscript.referenceMapObj_color_set)
-    outlinecolor = property(_mapscript.referenceMapObj_outlinecolor_get, _mapscript.referenceMapObj_outlinecolor_set)
-    image = property(_mapscript.referenceMapObj_image_get, _mapscript.referenceMapObj_image_set)
-    status = property(_mapscript.referenceMapObj_status_get, _mapscript.referenceMapObj_status_set)
-    marker = property(_mapscript.referenceMapObj_marker_get, _mapscript.referenceMapObj_marker_set)
-    markername = property(_mapscript.referenceMapObj_markername_get, _mapscript.referenceMapObj_markername_set)
-    markersize = property(_mapscript.referenceMapObj_markersize_get, _mapscript.referenceMapObj_markersize_set)
-    minboxsize = property(_mapscript.referenceMapObj_minboxsize_get, _mapscript.referenceMapObj_minboxsize_set)
-    maxboxsize = property(_mapscript.referenceMapObj_maxboxsize_get, _mapscript.referenceMapObj_maxboxsize_set)
+    map: "struct mapObj *" = property(_mapscript.referenceMapObj_map_get)
+    extent: "rectObj" = property(_mapscript.referenceMapObj_extent_get, _mapscript.referenceMapObj_extent_set)
+    height: "int" = property(_mapscript.referenceMapObj_height_get, _mapscript.referenceMapObj_height_set)
+    width: "int" = property(_mapscript.referenceMapObj_width_get, _mapscript.referenceMapObj_width_set)
+    color: "colorObj" = property(_mapscript.referenceMapObj_color_get, _mapscript.referenceMapObj_color_set)
+    outlinecolor: "colorObj" = property(_mapscript.referenceMapObj_outlinecolor_get, _mapscript.referenceMapObj_outlinecolor_set)
+    image: "char *" = property(_mapscript.referenceMapObj_image_get, _mapscript.referenceMapObj_image_set)
+    status: "int" = property(_mapscript.referenceMapObj_status_get, _mapscript.referenceMapObj_status_set)
+    marker: "int" = property(_mapscript.referenceMapObj_marker_get, _mapscript.referenceMapObj_marker_set)
+    markername: "char *" = property(_mapscript.referenceMapObj_markername_get, _mapscript.referenceMapObj_markername_set)
+    markersize: "int" = property(_mapscript.referenceMapObj_markersize_get, _mapscript.referenceMapObj_markersize_set)
+    minboxsize: "int" = property(_mapscript.referenceMapObj_minboxsize_get, _mapscript.referenceMapObj_minboxsize_set)
+    maxboxsize: "int" = property(_mapscript.referenceMapObj_maxboxsize_get, _mapscript.referenceMapObj_maxboxsize_set)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.referenceMapObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.referenceMapObj_convertToString(self)
 
     def __init__(self):
@@ -991,28 +991,28 @@ MS_SCALEBAR_OFFSET_MAX = _mapscript.MS_SCALEBAR_OFFSET_MAX
 class scalebarObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    transparent = property(_mapscript.scalebarObj_transparent_get, _mapscript.scalebarObj_transparent_set)
-    imagecolor = property(_mapscript.scalebarObj_imagecolor_get, _mapscript.scalebarObj_imagecolor_set)
-    height = property(_mapscript.scalebarObj_height_get, _mapscript.scalebarObj_height_set)
-    width = property(_mapscript.scalebarObj_width_get, _mapscript.scalebarObj_width_set)
-    style = property(_mapscript.scalebarObj_style_get, _mapscript.scalebarObj_style_set)
-    intervals = property(_mapscript.scalebarObj_intervals_get, _mapscript.scalebarObj_intervals_set)
-    label = property(_mapscript.scalebarObj_label_get, _mapscript.scalebarObj_label_set)
-    color = property(_mapscript.scalebarObj_color_get, _mapscript.scalebarObj_color_set)
-    backgroundcolor = property(_mapscript.scalebarObj_backgroundcolor_get, _mapscript.scalebarObj_backgroundcolor_set)
-    outlinecolor = property(_mapscript.scalebarObj_outlinecolor_get, _mapscript.scalebarObj_outlinecolor_set)
-    units = property(_mapscript.scalebarObj_units_get, _mapscript.scalebarObj_units_set)
-    status = property(_mapscript.scalebarObj_status_get, _mapscript.scalebarObj_status_set)
-    position = property(_mapscript.scalebarObj_position_get, _mapscript.scalebarObj_position_set)
-    postlabelcache = property(_mapscript.scalebarObj_postlabelcache_get, _mapscript.scalebarObj_postlabelcache_set)
-    align = property(_mapscript.scalebarObj_align_get, _mapscript.scalebarObj_align_set)
-    offsetx = property(_mapscript.scalebarObj_offsetx_get, _mapscript.scalebarObj_offsetx_set)
-    offsety = property(_mapscript.scalebarObj_offsety_get, _mapscript.scalebarObj_offsety_set)
+    transparent: "int" = property(_mapscript.scalebarObj_transparent_get, _mapscript.scalebarObj_transparent_set)
+    imagecolor: "colorObj" = property(_mapscript.scalebarObj_imagecolor_get, _mapscript.scalebarObj_imagecolor_set)
+    height: "int" = property(_mapscript.scalebarObj_height_get, _mapscript.scalebarObj_height_set)
+    width: "int" = property(_mapscript.scalebarObj_width_get, _mapscript.scalebarObj_width_set)
+    style: "int" = property(_mapscript.scalebarObj_style_get, _mapscript.scalebarObj_style_set)
+    intervals: "int" = property(_mapscript.scalebarObj_intervals_get, _mapscript.scalebarObj_intervals_set)
+    label: "labelObj" = property(_mapscript.scalebarObj_label_get, _mapscript.scalebarObj_label_set)
+    color: "colorObj" = property(_mapscript.scalebarObj_color_get, _mapscript.scalebarObj_color_set)
+    backgroundcolor: "colorObj" = property(_mapscript.scalebarObj_backgroundcolor_get, _mapscript.scalebarObj_backgroundcolor_set)
+    outlinecolor: "colorObj" = property(_mapscript.scalebarObj_outlinecolor_get, _mapscript.scalebarObj_outlinecolor_set)
+    units: "int" = property(_mapscript.scalebarObj_units_get, _mapscript.scalebarObj_units_set)
+    status: "int" = property(_mapscript.scalebarObj_status_get, _mapscript.scalebarObj_status_set)
+    position: "int" = property(_mapscript.scalebarObj_position_get, _mapscript.scalebarObj_position_set)
+    postlabelcache: "int" = property(_mapscript.scalebarObj_postlabelcache_get, _mapscript.scalebarObj_postlabelcache_set)
+    align: "int" = property(_mapscript.scalebarObj_align_get, _mapscript.scalebarObj_align_set)
+    offsetx: "int" = property(_mapscript.scalebarObj_offsetx_get, _mapscript.scalebarObj_offsetx_set)
+    offsety: "int" = property(_mapscript.scalebarObj_offsety_get, _mapscript.scalebarObj_offsety_set)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.scalebarObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.scalebarObj_convertToString(self)
 
     def __init__(self):
@@ -1029,26 +1029,26 @@ MS_LEGEND_KEYSPACING_MAX = _mapscript.MS_LEGEND_KEYSPACING_MAX
 class legendObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    label = property(_mapscript.legendObj_label_get)
-    map = property(_mapscript.legendObj_map_get)
-    transparent = property(_mapscript.legendObj_transparent_get, _mapscript.legendObj_transparent_set)
-    imagecolor = property(_mapscript.legendObj_imagecolor_get, _mapscript.legendObj_imagecolor_set)
-    keysizex = property(_mapscript.legendObj_keysizex_get, _mapscript.legendObj_keysizex_set)
-    keysizey = property(_mapscript.legendObj_keysizey_get, _mapscript.legendObj_keysizey_set)
-    keyspacingx = property(_mapscript.legendObj_keyspacingx_get, _mapscript.legendObj_keyspacingx_set)
-    keyspacingy = property(_mapscript.legendObj_keyspacingy_get, _mapscript.legendObj_keyspacingy_set)
-    outlinecolor = property(_mapscript.legendObj_outlinecolor_get, _mapscript.legendObj_outlinecolor_set)
-    status = property(_mapscript.legendObj_status_get, _mapscript.legendObj_status_set)
-    height = property(_mapscript.legendObj_height_get, _mapscript.legendObj_height_set)
-    width = property(_mapscript.legendObj_width_get, _mapscript.legendObj_width_set)
-    position = property(_mapscript.legendObj_position_get, _mapscript.legendObj_position_set)
-    postlabelcache = property(_mapscript.legendObj_postlabelcache_get, _mapscript.legendObj_postlabelcache_set)
-    template = property(_mapscript.legendObj_template_get, _mapscript.legendObj_template_set)
+    label: "labelObj" = property(_mapscript.legendObj_label_get)
+    map: "struct mapObj *" = property(_mapscript.legendObj_map_get)
+    transparent: "int" = property(_mapscript.legendObj_transparent_get, _mapscript.legendObj_transparent_set)
+    imagecolor: "colorObj" = property(_mapscript.legendObj_imagecolor_get, _mapscript.legendObj_imagecolor_set)
+    keysizex: "int" = property(_mapscript.legendObj_keysizex_get, _mapscript.legendObj_keysizex_set)
+    keysizey: "int" = property(_mapscript.legendObj_keysizey_get, _mapscript.legendObj_keysizey_set)
+    keyspacingx: "int" = property(_mapscript.legendObj_keyspacingx_get, _mapscript.legendObj_keyspacingx_set)
+    keyspacingy: "int" = property(_mapscript.legendObj_keyspacingy_get, _mapscript.legendObj_keyspacingy_set)
+    outlinecolor: "colorObj" = property(_mapscript.legendObj_outlinecolor_get, _mapscript.legendObj_outlinecolor_set)
+    status: "int" = property(_mapscript.legendObj_status_get, _mapscript.legendObj_status_set)
+    height: "int" = property(_mapscript.legendObj_height_get, _mapscript.legendObj_height_set)
+    width: "int" = property(_mapscript.legendObj_width_get, _mapscript.legendObj_width_set)
+    position: "int" = property(_mapscript.legendObj_position_get, _mapscript.legendObj_position_set)
+    postlabelcache: "int" = property(_mapscript.legendObj_postlabelcache_get, _mapscript.legendObj_postlabelcache_set)
+    template: "char *" = property(_mapscript.legendObj_template_get, _mapscript.legendObj_template_set)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.legendObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.legendObj_convertToString(self)
 
     def __init__(self):
@@ -1061,28 +1061,28 @@ _mapscript.legendObj_swigregister(legendObj)
 class imageObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    width = property(_mapscript.imageObj_width_get)
-    height = property(_mapscript.imageObj_height_get)
-    resolution = property(_mapscript.imageObj_resolution_get)
-    resolutionfactor = property(_mapscript.imageObj_resolutionfactor_get)
-    imagepath = property(_mapscript.imageObj_imagepath_get)
-    imageurl = property(_mapscript.imageObj_imageurl_get)
-    format = property(_mapscript.imageObj_format_get)
+    width: "int" = property(_mapscript.imageObj_width_get)
+    height: "int" = property(_mapscript.imageObj_height_get)
+    resolution: "double" = property(_mapscript.imageObj_resolution_get)
+    resolutionfactor: "double" = property(_mapscript.imageObj_resolutionfactor_get)
+    imagepath: "char *" = property(_mapscript.imageObj_imagepath_get)
+    imageurl: "char *" = property(_mapscript.imageObj_imageurl_get)
+    format: "outputFormatObj *" = property(_mapscript.imageObj_format_get)
 
     def __init__(self, *args):
         _mapscript.imageObj_swiginit(self, _mapscript.new_imageObj(*args))
     __swig_destroy__ = _mapscript.delete_imageObj
 
-    def save(self, filename, map=None):
+    def save(self, filename: "char *", map: "mapObj"=None) -> "void":
         return _mapscript.imageObj_save(self, filename, map)
 
-    def getBytes(self):
+    def getBytes(self) -> "gdBuffer":
         return _mapscript.imageObj_getBytes(self)
 
-    def getSize(self):
+    def getSize(self) -> "int":
         return _mapscript.imageObj_getSize(self)
 
-    def write(self, *args):
+    def write(self, *args) -> "int":
         return _mapscript.imageObj_write(self, *args)
 
 # Register imageObj in _mapscript:
@@ -1091,9 +1091,9 @@ _mapscript.imageObj_swigregister(imageObj)
 class scaleTokenEntryObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    minscale = property(_mapscript.scaleTokenEntryObj_minscale_get, _mapscript.scaleTokenEntryObj_minscale_set)
-    maxscale = property(_mapscript.scaleTokenEntryObj_maxscale_get, _mapscript.scaleTokenEntryObj_maxscale_set)
-    value = property(_mapscript.scaleTokenEntryObj_value_get, _mapscript.scaleTokenEntryObj_value_set)
+    minscale: "double" = property(_mapscript.scaleTokenEntryObj_minscale_get, _mapscript.scaleTokenEntryObj_minscale_set)
+    maxscale: "double" = property(_mapscript.scaleTokenEntryObj_maxscale_get, _mapscript.scaleTokenEntryObj_maxscale_set)
+    value: "char *" = property(_mapscript.scaleTokenEntryObj_value_get, _mapscript.scaleTokenEntryObj_value_set)
 
     def __init__(self):
         _mapscript.scaleTokenEntryObj_swiginit(self, _mapscript.new_scaleTokenEntryObj())
@@ -1105,9 +1105,9 @@ _mapscript.scaleTokenEntryObj_swigregister(scaleTokenEntryObj)
 class scaleTokenObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    name = property(_mapscript.scaleTokenObj_name_get, _mapscript.scaleTokenObj_name_set)
-    n_entries = property(_mapscript.scaleTokenObj_n_entries_get, _mapscript.scaleTokenObj_n_entries_set)
-    tokens = property(_mapscript.scaleTokenObj_tokens_get, _mapscript.scaleTokenObj_tokens_set)
+    name: "char *" = property(_mapscript.scaleTokenObj_name_get, _mapscript.scaleTokenObj_name_set)
+    n_entries: "int" = property(_mapscript.scaleTokenObj_n_entries_get, _mapscript.scaleTokenObj_n_entries_set)
+    tokens: "scaleTokenEntryObj *" = property(_mapscript.scaleTokenObj_tokens_get, _mapscript.scaleTokenObj_tokens_set)
 
     def __init__(self):
         _mapscript.scaleTokenObj_swiginit(self, _mapscript.new_scaleTokenObj())
@@ -1119,71 +1119,71 @@ _mapscript.scaleTokenObj_swigregister(scaleTokenObj)
 class layerObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    refcount = property(_mapscript.layerObj_refcount_get)
-    numclasses = property(_mapscript.layerObj_numclasses_get)
-    maxclasses = property(_mapscript.layerObj_maxclasses_get)
-    index = property(_mapscript.layerObj_index_get)
-    map = property(_mapscript.layerObj_map_get)
-    numitems = property(_mapscript.layerObj_numitems_get)
-    metadata = property(_mapscript.layerObj_metadata_get)
-    validation = property(_mapscript.layerObj_validation_get)
-    bindvals = property(_mapscript.layerObj_bindvals_get)
-    connectionoptions = property(_mapscript.layerObj_connectionoptions_get)
-    cluster = property(_mapscript.layerObj_cluster_get)
-    extent = property(_mapscript.layerObj_extent_get)
-    numprocessing = property(_mapscript.layerObj_numprocessing_get)
-    numjoins = property(_mapscript.layerObj_numjoins_get)
-    utfdata = property(_mapscript.layerObj_utfdata_get)
-    compositer = property(_mapscript.layerObj_compositer_get)
-    classitem = property(_mapscript.layerObj_classitem_get, _mapscript.layerObj_classitem_set)
-    header = property(_mapscript.layerObj_header_get, _mapscript.layerObj_header_set)
-    footer = property(_mapscript.layerObj_footer_get, _mapscript.layerObj_footer_set)
-    template = property(_mapscript.layerObj_template_get, _mapscript.layerObj_template_set)
-    name = property(_mapscript.layerObj_name_get, _mapscript.layerObj_name_set)
-    group = property(_mapscript.layerObj_group_get, _mapscript.layerObj_group_set)
-    status = property(_mapscript.layerObj_status_get, _mapscript.layerObj_status_set)
-    rendermode = property(_mapscript.layerObj_rendermode_get, _mapscript.layerObj_rendermode_set)
-    data = property(_mapscript.layerObj_data_get, _mapscript.layerObj_data_set)
-    type = property(_mapscript.layerObj_type_get, _mapscript.layerObj_type_set)
-    connectiontype = property(_mapscript.layerObj_connectiontype_get, _mapscript.layerObj_connectiontype_set)
-    tolerance = property(_mapscript.layerObj_tolerance_get, _mapscript.layerObj_tolerance_set)
-    toleranceunits = property(_mapscript.layerObj_toleranceunits_get, _mapscript.layerObj_toleranceunits_set)
-    symbolscaledenom = property(_mapscript.layerObj_symbolscaledenom_get, _mapscript.layerObj_symbolscaledenom_set)
-    minscaledenom = property(_mapscript.layerObj_minscaledenom_get, _mapscript.layerObj_minscaledenom_set)
-    maxscaledenom = property(_mapscript.layerObj_maxscaledenom_get, _mapscript.layerObj_maxscaledenom_set)
-    minfeaturesize = property(_mapscript.layerObj_minfeaturesize_get, _mapscript.layerObj_minfeaturesize_set)
-    labelminscaledenom = property(_mapscript.layerObj_labelminscaledenom_get, _mapscript.layerObj_labelminscaledenom_set)
-    labelmaxscaledenom = property(_mapscript.layerObj_labelmaxscaledenom_get, _mapscript.layerObj_labelmaxscaledenom_set)
-    mingeowidth = property(_mapscript.layerObj_mingeowidth_get, _mapscript.layerObj_mingeowidth_set)
-    maxgeowidth = property(_mapscript.layerObj_maxgeowidth_get, _mapscript.layerObj_maxgeowidth_set)
-    sizeunits = property(_mapscript.layerObj_sizeunits_get, _mapscript.layerObj_sizeunits_set)
-    maxfeatures = property(_mapscript.layerObj_maxfeatures_get, _mapscript.layerObj_maxfeatures_set)
-    startindex = property(_mapscript.layerObj_startindex_get, _mapscript.layerObj_startindex_set)
-    offsite = property(_mapscript.layerObj_offsite_get, _mapscript.layerObj_offsite_set)
-    transform = property(_mapscript.layerObj_transform_get, _mapscript.layerObj_transform_set)
-    labelcache = property(_mapscript.layerObj_labelcache_get, _mapscript.layerObj_labelcache_set)
-    postlabelcache = property(_mapscript.layerObj_postlabelcache_get, _mapscript.layerObj_postlabelcache_set)
-    labelitem = property(_mapscript.layerObj_labelitem_get, _mapscript.layerObj_labelitem_set)
-    tileitem = property(_mapscript.layerObj_tileitem_get, _mapscript.layerObj_tileitem_set)
-    tileindex = property(_mapscript.layerObj_tileindex_get, _mapscript.layerObj_tileindex_set)
-    tilesrs = property(_mapscript.layerObj_tilesrs_get, _mapscript.layerObj_tilesrs_set)
-    units = property(_mapscript.layerObj_units_get, _mapscript.layerObj_units_set)
-    connection = property(_mapscript.layerObj_connection_get, _mapscript.layerObj_connection_set)
-    plugin_library = property(_mapscript.layerObj_plugin_library_get, _mapscript.layerObj_plugin_library_set)
-    plugin_library_original = property(_mapscript.layerObj_plugin_library_original_get, _mapscript.layerObj_plugin_library_original_set)
-    bandsitem = property(_mapscript.layerObj_bandsitem_get, _mapscript.layerObj_bandsitem_set)
-    filteritem = property(_mapscript.layerObj_filteritem_get, _mapscript.layerObj_filteritem_set)
-    styleitem = property(_mapscript.layerObj_styleitem_get, _mapscript.layerObj_styleitem_set)
-    requires = property(_mapscript.layerObj_requires_get, _mapscript.layerObj_requires_set)
-    labelrequires = property(_mapscript.layerObj_labelrequires_get, _mapscript.layerObj_labelrequires_set)
-    debug = property(_mapscript.layerObj_debug_get, _mapscript.layerObj_debug_set)
-    classgroup = property(_mapscript.layerObj_classgroup_get, _mapscript.layerObj_classgroup_set)
-    mask = property(_mapscript.layerObj_mask_get, _mapscript.layerObj_mask_set)
-    encoding = property(_mapscript.layerObj_encoding_get, _mapscript.layerObj_encoding_set)
-    utfitem = property(_mapscript.layerObj_utfitem_get, _mapscript.layerObj_utfitem_set)
-    utfitemindex = property(_mapscript.layerObj_utfitemindex_get, _mapscript.layerObj_utfitemindex_set)
+    refcount: "int" = property(_mapscript.layerObj_refcount_get)
+    numclasses: "int" = property(_mapscript.layerObj_numclasses_get)
+    maxclasses: "int" = property(_mapscript.layerObj_maxclasses_get)
+    index: "int" = property(_mapscript.layerObj_index_get)
+    map: "struct mapObj *" = property(_mapscript.layerObj_map_get)
+    numitems: "int" = property(_mapscript.layerObj_numitems_get)
+    metadata: "hashTableObj" = property(_mapscript.layerObj_metadata_get)
+    validation: "hashTableObj" = property(_mapscript.layerObj_validation_get)
+    bindvals: "hashTableObj" = property(_mapscript.layerObj_bindvals_get)
+    connectionoptions: "hashTableObj" = property(_mapscript.layerObj_connectionoptions_get)
+    cluster: "clusterObj" = property(_mapscript.layerObj_cluster_get)
+    extent: "rectObj" = property(_mapscript.layerObj_extent_get)
+    numprocessing: "int" = property(_mapscript.layerObj_numprocessing_get)
+    numjoins: "int" = property(_mapscript.layerObj_numjoins_get)
+    utfdata: "expressionObj" = property(_mapscript.layerObj_utfdata_get)
+    compositer: "LayerCompositer *" = property(_mapscript.layerObj_compositer_get)
+    classitem: "char *" = property(_mapscript.layerObj_classitem_get, _mapscript.layerObj_classitem_set)
+    header: "char *" = property(_mapscript.layerObj_header_get, _mapscript.layerObj_header_set)
+    footer: "char *" = property(_mapscript.layerObj_footer_get, _mapscript.layerObj_footer_set)
+    template: "char *" = property(_mapscript.layerObj_template_get, _mapscript.layerObj_template_set)
+    name: "char *" = property(_mapscript.layerObj_name_get, _mapscript.layerObj_name_set)
+    group: "char *" = property(_mapscript.layerObj_group_get, _mapscript.layerObj_group_set)
+    status: "int" = property(_mapscript.layerObj_status_get, _mapscript.layerObj_status_set)
+    rendermode: "enum MS_RENDER_MODE" = property(_mapscript.layerObj_rendermode_get, _mapscript.layerObj_rendermode_set)
+    data: "char *" = property(_mapscript.layerObj_data_get, _mapscript.layerObj_data_set)
+    type: "enum MS_LAYER_TYPE" = property(_mapscript.layerObj_type_get, _mapscript.layerObj_type_set)
+    connectiontype: "enum MS_CONNECTION_TYPE" = property(_mapscript.layerObj_connectiontype_get, _mapscript.layerObj_connectiontype_set)
+    tolerance: "double" = property(_mapscript.layerObj_tolerance_get, _mapscript.layerObj_tolerance_set)
+    toleranceunits: "int" = property(_mapscript.layerObj_toleranceunits_get, _mapscript.layerObj_toleranceunits_set)
+    symbolscaledenom: "double" = property(_mapscript.layerObj_symbolscaledenom_get, _mapscript.layerObj_symbolscaledenom_set)
+    minscaledenom: "double" = property(_mapscript.layerObj_minscaledenom_get, _mapscript.layerObj_minscaledenom_set)
+    maxscaledenom: "double" = property(_mapscript.layerObj_maxscaledenom_get, _mapscript.layerObj_maxscaledenom_set)
+    minfeaturesize: "int" = property(_mapscript.layerObj_minfeaturesize_get, _mapscript.layerObj_minfeaturesize_set)
+    labelminscaledenom: "double" = property(_mapscript.layerObj_labelminscaledenom_get, _mapscript.layerObj_labelminscaledenom_set)
+    labelmaxscaledenom: "double" = property(_mapscript.layerObj_labelmaxscaledenom_get, _mapscript.layerObj_labelmaxscaledenom_set)
+    mingeowidth: "double" = property(_mapscript.layerObj_mingeowidth_get, _mapscript.layerObj_mingeowidth_set)
+    maxgeowidth: "double" = property(_mapscript.layerObj_maxgeowidth_get, _mapscript.layerObj_maxgeowidth_set)
+    sizeunits: "int" = property(_mapscript.layerObj_sizeunits_get, _mapscript.layerObj_sizeunits_set)
+    maxfeatures: "int" = property(_mapscript.layerObj_maxfeatures_get, _mapscript.layerObj_maxfeatures_set)
+    startindex: "int" = property(_mapscript.layerObj_startindex_get, _mapscript.layerObj_startindex_set)
+    offsite: "colorObj" = property(_mapscript.layerObj_offsite_get, _mapscript.layerObj_offsite_set)
+    transform: "int" = property(_mapscript.layerObj_transform_get, _mapscript.layerObj_transform_set)
+    labelcache: "int" = property(_mapscript.layerObj_labelcache_get, _mapscript.layerObj_labelcache_set)
+    postlabelcache: "int" = property(_mapscript.layerObj_postlabelcache_get, _mapscript.layerObj_postlabelcache_set)
+    labelitem: "char *" = property(_mapscript.layerObj_labelitem_get, _mapscript.layerObj_labelitem_set)
+    tileitem: "char *" = property(_mapscript.layerObj_tileitem_get, _mapscript.layerObj_tileitem_set)
+    tileindex: "char *" = property(_mapscript.layerObj_tileindex_get, _mapscript.layerObj_tileindex_set)
+    tilesrs: "char *" = property(_mapscript.layerObj_tilesrs_get, _mapscript.layerObj_tilesrs_set)
+    units: "int" = property(_mapscript.layerObj_units_get, _mapscript.layerObj_units_set)
+    connection: "char *" = property(_mapscript.layerObj_connection_get, _mapscript.layerObj_connection_set)
+    plugin_library: "char *" = property(_mapscript.layerObj_plugin_library_get, _mapscript.layerObj_plugin_library_set)
+    plugin_library_original: "char *" = property(_mapscript.layerObj_plugin_library_original_get, _mapscript.layerObj_plugin_library_original_set)
+    bandsitem: "char *" = property(_mapscript.layerObj_bandsitem_get, _mapscript.layerObj_bandsitem_set)
+    filteritem: "char *" = property(_mapscript.layerObj_filteritem_get, _mapscript.layerObj_filteritem_set)
+    styleitem: "char *" = property(_mapscript.layerObj_styleitem_get, _mapscript.layerObj_styleitem_set)
+    requires: "char *" = property(_mapscript.layerObj_requires_get, _mapscript.layerObj_requires_set)
+    labelrequires: "char *" = property(_mapscript.layerObj_labelrequires_get, _mapscript.layerObj_labelrequires_set)
+    debug: "int" = property(_mapscript.layerObj_debug_get, _mapscript.layerObj_debug_set)
+    classgroup: "char *" = property(_mapscript.layerObj_classgroup_get, _mapscript.layerObj_classgroup_set)
+    mask: "char *" = property(_mapscript.layerObj_mask_get, _mapscript.layerObj_mask_set)
+    encoding: "char *" = property(_mapscript.layerObj_encoding_get, _mapscript.layerObj_encoding_set)
+    utfitem: "char *" = property(_mapscript.layerObj_utfitem_get, _mapscript.layerObj_utfitem_set)
+    utfitemindex: "int" = property(_mapscript.layerObj_utfitemindex_get, _mapscript.layerObj_utfitemindex_set)
 
-    def __init__(self, map=None):
+    def __init__(self, map: "mapObj"=None):
         _mapscript.layerObj_swiginit(self, _mapscript.new_layerObj(map))
 
         self.p_map = None
@@ -1192,20 +1192,20 @@ class layerObj(object):
 
 
 
-    def setOpacity(self, opacity):
+    def setOpacity(self, opacity: "int") -> "void":
         return _mapscript.layerObj_setOpacity(self, opacity)
 
-    def getOpacity(self):
+    def getOpacity(self) -> "int":
         return _mapscript.layerObj_getOpacity(self)
     __swig_destroy__ = _mapscript.delete_layerObj
 
-    def clone(self):
+    def clone(self) -> "layerObj *":
         return _mapscript.layerObj_clone(self)
 
-    def updateFromString(self, snippet):
+    def updateFromString(self, snippet: "char *") -> "int":
         return _mapscript.layerObj_updateFromString(self, snippet)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.layerObj_convertToString(self)
 
     def insertClass(*args):
@@ -1214,31 +1214,31 @@ class layerObj(object):
         return actualIndex
 
 
-    def removeClass(self, index):
+    def removeClass(self, index: "int") -> "classObj *":
         return _mapscript.layerObj_removeClass(self, index)
 
-    def open(self):
+    def open(self) -> "int":
         return _mapscript.layerObj_open(self)
 
-    def whichShapes(self, rect):
+    def whichShapes(self, rect: "rectObj") -> "int":
         return _mapscript.layerObj_whichShapes(self, rect)
 
-    def nextShape(self):
+    def nextShape(self) -> "shapeObj *":
         return _mapscript.layerObj_nextShape(self)
 
-    def close(self):
+    def close(self) -> "void":
         return _mapscript.layerObj_close(self)
 
-    def getShape(self, record):
+    def getShape(self, record: "resultObj") -> "shapeObj *":
         return _mapscript.layerObj_getShape(self, record)
 
-    def getNumResults(self):
+    def getNumResults(self) -> "int":
         return _mapscript.layerObj_getNumResults(self)
 
-    def getResultsBounds(self):
+    def getResultsBounds(self) -> "rectObj *":
         return _mapscript.layerObj_getResultsBounds(self)
 
-    def getResult(self, i):
+    def getResult(self, i: "int") -> "resultObj *":
         return _mapscript.layerObj_getResult(self, i)
 
     def getClass(*args):
@@ -1251,121 +1251,121 @@ class layerObj(object):
         return clazz
 
 
-    def getItem(self, i):
+    def getItem(self, i: "int") -> "char *":
         return _mapscript.layerObj_getItem(self, i)
 
-    def setItems(self, items, numitems):
+    def setItems(self, items: "char **", numitems: "int") -> "int":
         return _mapscript.layerObj_setItems(self, items, numitems)
 
-    def draw(self, map, image):
+    def draw(self, map: "mapObj", image: "imageObj") -> "int":
         return _mapscript.layerObj_draw(self, map, image)
 
-    def drawQuery(self, map, image):
+    def drawQuery(self, map: "mapObj", image: "imageObj") -> "int":
         return _mapscript.layerObj_drawQuery(self, map, image)
 
-    def queryByFilter(self, map, string):
+    def queryByFilter(self, map: "mapObj", string: "char *") -> "int":
         return _mapscript.layerObj_queryByFilter(self, map, string)
 
-    def queryByAttributes(self, map, qitem, qstring, mode):
+    def queryByAttributes(self, map: "mapObj", qitem: "char *", qstring: "char *", mode: "int") -> "int":
         return _mapscript.layerObj_queryByAttributes(self, map, qitem, qstring, mode)
 
-    def queryByPoint(self, map, point, mode, buffer):
+    def queryByPoint(self, map: "mapObj", point: "pointObj", mode: "int", buffer: "double") -> "int":
         return _mapscript.layerObj_queryByPoint(self, map, point, mode, buffer)
 
-    def queryByRect(self, map, rect):
+    def queryByRect(self, map: "mapObj", rect: "rectObj") -> "int":
         return _mapscript.layerObj_queryByRect(self, map, rect)
 
-    def queryByFeatures(self, map, slayer):
+    def queryByFeatures(self, map: "mapObj", slayer: "int") -> "int":
         return _mapscript.layerObj_queryByFeatures(self, map, slayer)
 
-    def queryByShape(self, map, shape):
+    def queryByShape(self, map: "mapObj", shape: "shapeObj") -> "int":
         return _mapscript.layerObj_queryByShape(self, map, shape)
 
-    def queryByIndex(self, map, tileindex, shapeindex, bAddToQuery=0):
+    def queryByIndex(self, map: "mapObj", tileindex: "int", shapeindex: "int", bAddToQuery: "int"=0) -> "int":
         return _mapscript.layerObj_queryByIndex(self, map, tileindex, shapeindex, bAddToQuery)
 
-    def getResults(self):
+    def getResults(self) -> "resultCacheObj *":
         return _mapscript.layerObj_getResults(self)
 
-    def setFilter(self, filter):
+    def setFilter(self, filter: "char *") -> "int":
         return _mapscript.layerObj_setFilter(self, filter)
 
-    def getFilterString(self):
+    def getFilterString(self) -> "char *":
         return _mapscript.layerObj_getFilterString(self)
 
-    def setWKTProjection(self, wkt):
+    def setWKTProjection(self, wkt: "char *") -> "int":
         return _mapscript.layerObj_setWKTProjection(self, wkt)
 
-    def getProjection(self):
+    def getProjection(self) -> "char *":
         return _mapscript.layerObj_getProjection(self)
 
-    def setProjection(self, proj4):
+    def setProjection(self, proj4: "char *") -> "int":
         return _mapscript.layerObj_setProjection(self, proj4)
 
-    def addFeature(self, shape):
+    def addFeature(self, shape: "shapeObj") -> "int":
         return _mapscript.layerObj_addFeature(self, shape)
 
-    def getNumFeatures(self):
+    def getNumFeatures(self) -> "int":
         return _mapscript.layerObj_getNumFeatures(self)
 
-    def getExtent(self):
+    def getExtent(self) -> "rectObj *":
         return _mapscript.layerObj_getExtent(self)
 
-    def setExtent(self, minx=-1.0, miny=-1.0, maxx=-1.0, maxy=-1.0):
+    def setExtent(self, minx: "double"=-1.0, miny: "double"=-1.0, maxx: "double"=-1.0, maxy: "double"=-1.0) -> "int":
         return _mapscript.layerObj_setExtent(self, minx, miny, maxx, maxy)
 
-    def getWMSFeatureInfoURL(self, map, click_x, click_y, feature_count, info_format):
+    def getWMSFeatureInfoURL(self, map: "mapObj", click_x: "int", click_y: "int", feature_count: "int", info_format: "char *") -> "char *":
         return _mapscript.layerObj_getWMSFeatureInfoURL(self, map, click_x, click_y, feature_count, info_format)
 
-    def executeWFSGetFeature(self, layer):
+    def executeWFSGetFeature(self, layer: "layerObj") -> "char *":
         return _mapscript.layerObj_executeWFSGetFeature(self, layer)
 
-    def applySLD(self, sld, stylelayer):
+    def applySLD(self, sld: "char *", stylelayer: "char *") -> "int":
         return _mapscript.layerObj_applySLD(self, sld, stylelayer)
 
-    def applySLDURL(self, sld, stylelayer):
+    def applySLDURL(self, sld: "char *", stylelayer: "char *") -> "int":
         return _mapscript.layerObj_applySLDURL(self, sld, stylelayer)
 
-    def generateSLD(self):
+    def generateSLD(self) -> "char *":
         return _mapscript.layerObj_generateSLD(self)
 
-    def isVisible(self):
+    def isVisible(self) -> "int":
         return _mapscript.layerObj_isVisible(self)
 
-    def moveClassUp(self, index):
+    def moveClassUp(self, index: "int") -> "int":
         return _mapscript.layerObj_moveClassUp(self, index)
 
-    def moveClassDown(self, index):
+    def moveClassDown(self, index: "int") -> "int":
         return _mapscript.layerObj_moveClassDown(self, index)
 
-    def setProcessingKey(self, key, value):
+    def setProcessingKey(self, key: "char const *", value: "char const *") -> "void":
         return _mapscript.layerObj_setProcessingKey(self, key, value)
 
-    def addProcessing(self, directive):
+    def addProcessing(self, directive: "char const *") -> "void":
         return _mapscript.layerObj_addProcessing(self, directive)
 
-    def getProcessing(self, index):
+    def getProcessing(self, index: "int") -> "char *":
         return _mapscript.layerObj_getProcessing(self, index)
 
-    def getProcessingKey(self, key):
+    def getProcessingKey(self, key: "char const *") -> "char *":
         return _mapscript.layerObj_getProcessingKey(self, key)
 
-    def clearProcessing(self):
+    def clearProcessing(self) -> "int":
         return _mapscript.layerObj_clearProcessing(self)
 
-    def setConnectionType(self, connectiontype, library_str):
+    def setConnectionType(self, connectiontype: "int", library_str: "char const *") -> "int":
         return _mapscript.layerObj_setConnectionType(self, connectiontype, library_str)
 
-    def getClassIndex(self, map, shape, classgroup=None, numclasses=0):
+    def getClassIndex(self, map: "mapObj", shape: "shapeObj", classgroup: "int *"=None, numclasses: "int"=0) -> "int":
         return _mapscript.layerObj_getClassIndex(self, map, shape, classgroup, numclasses)
 
-    def getGeomTransform(self):
+    def getGeomTransform(self) -> "char *":
         return _mapscript.layerObj_getGeomTransform(self)
 
-    def setGeomTransform(self, transform):
+    def setGeomTransform(self, transform: "char *") -> "void":
         return _mapscript.layerObj_setGeomTransform(self, transform)
 
-    def getItemType(self, i):
+    def getItemType(self, i: "int") -> "char *":
         return _mapscript.layerObj_getItemType(self, i)
 
 
@@ -1393,47 +1393,47 @@ MS_RESOLUTION_MIN = _mapscript.MS_RESOLUTION_MIN
 class mapObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    refcount = property(_mapscript.mapObj_refcount_get)
-    numlayers = property(_mapscript.mapObj_numlayers_get)
-    maxlayers = property(_mapscript.mapObj_maxlayers_get)
-    configoptions = property(_mapscript.mapObj_configoptions_get)
-    symbolset = property(_mapscript.mapObj_symbolset_get)
-    fontset = property(_mapscript.mapObj_fontset_get)
-    labelcache = property(_mapscript.mapObj_labelcache_get)
-    numoutputformats = property(_mapscript.mapObj_numoutputformats_get)
-    outputformat = property(_mapscript.mapObj_outputformat_get)
-    imagetype = property(_mapscript.mapObj_imagetype_get)
-    reference = property(_mapscript.mapObj_reference_get)
-    scalebar = property(_mapscript.mapObj_scalebar_get)
-    legend = property(_mapscript.mapObj_legend_get)
-    querymap = property(_mapscript.mapObj_querymap_get)
-    web = property(_mapscript.mapObj_web_get)
-    config = property(_mapscript.mapObj_config_get)
-    datapattern = property(_mapscript.mapObj_datapattern_get, _mapscript.mapObj_datapattern_set)
-    templatepattern = property(_mapscript.mapObj_templatepattern_get, _mapscript.mapObj_templatepattern_set)
-    name = property(_mapscript.mapObj_name_get, _mapscript.mapObj_name_set)
-    status = property(_mapscript.mapObj_status_get, _mapscript.mapObj_status_set)
-    height = property(_mapscript.mapObj_height_get, _mapscript.mapObj_height_set)
-    width = property(_mapscript.mapObj_width_get, _mapscript.mapObj_width_set)
-    maxsize = property(_mapscript.mapObj_maxsize_get, _mapscript.mapObj_maxsize_set)
-    extent = property(_mapscript.mapObj_extent_get, _mapscript.mapObj_extent_set)
-    cellsize = property(_mapscript.mapObj_cellsize_get, _mapscript.mapObj_cellsize_set)
-    units = property(_mapscript.mapObj_units_get, _mapscript.mapObj_units_set)
-    scaledenom = property(_mapscript.mapObj_scaledenom_get, _mapscript.mapObj_scaledenom_set)
-    resolution = property(_mapscript.mapObj_resolution_get, _mapscript.mapObj_resolution_set)
-    defresolution = property(_mapscript.mapObj_defresolution_get, _mapscript.mapObj_defresolution_set)
-    shapepath = property(_mapscript.mapObj_shapepath_get, _mapscript.mapObj_shapepath_set)
-    mappath = property(_mapscript.mapObj_mappath_get, _mapscript.mapObj_mappath_set)
-    sldurl = property(_mapscript.mapObj_sldurl_get, _mapscript.mapObj_sldurl_set)
-    imagecolor = property(_mapscript.mapObj_imagecolor_get, _mapscript.mapObj_imagecolor_set)
-    layerorder = property(_mapscript.mapObj_layerorder_get, _mapscript.mapObj_layerorder_set)
-    debug = property(_mapscript.mapObj_debug_get, _mapscript.mapObj_debug_set)
+    refcount: "int" = property(_mapscript.mapObj_refcount_get)
+    numlayers: "int" = property(_mapscript.mapObj_numlayers_get)
+    maxlayers: "int" = property(_mapscript.mapObj_maxlayers_get)
+    configoptions: "hashTableObj" = property(_mapscript.mapObj_configoptions_get)
+    symbolset: "symbolSetObj" = property(_mapscript.mapObj_symbolset_get)
+    fontset: "fontSetObj" = property(_mapscript.mapObj_fontset_get)
+    labelcache: "labelCacheObj" = property(_mapscript.mapObj_labelcache_get)
+    numoutputformats: "int" = property(_mapscript.mapObj_numoutputformats_get)
+    outputformat: "outputFormatObj *" = property(_mapscript.mapObj_outputformat_get)
+    imagetype: "char *" = property(_mapscript.mapObj_imagetype_get)
+    reference: "referenceMapObj" = property(_mapscript.mapObj_reference_get)
+    scalebar: "scalebarObj" = property(_mapscript.mapObj_scalebar_get)
+    legend: "legendObj" = property(_mapscript.mapObj_legend_get)
+    querymap: "queryMapObj" = property(_mapscript.mapObj_querymap_get)
+    web: "webObj" = property(_mapscript.mapObj_web_get)
+    config: "configObj const *" = property(_mapscript.mapObj_config_get)
+    datapattern: "char *" = property(_mapscript.mapObj_datapattern_get, _mapscript.mapObj_datapattern_set)
+    templatepattern: "char *" = property(_mapscript.mapObj_templatepattern_get, _mapscript.mapObj_templatepattern_set)
+    name: "char *" = property(_mapscript.mapObj_name_get, _mapscript.mapObj_name_set)
+    status: "int" = property(_mapscript.mapObj_status_get, _mapscript.mapObj_status_set)
+    height: "int" = property(_mapscript.mapObj_height_get, _mapscript.mapObj_height_set)
+    width: "int" = property(_mapscript.mapObj_width_get, _mapscript.mapObj_width_set)
+    maxsize: "int" = property(_mapscript.mapObj_maxsize_get, _mapscript.mapObj_maxsize_set)
+    extent: "rectObj" = property(_mapscript.mapObj_extent_get, _mapscript.mapObj_extent_set)
+    cellsize: "double" = property(_mapscript.mapObj_cellsize_get, _mapscript.mapObj_cellsize_set)
+    units: "enum MS_UNITS" = property(_mapscript.mapObj_units_get, _mapscript.mapObj_units_set)
+    scaledenom: "double" = property(_mapscript.mapObj_scaledenom_get, _mapscript.mapObj_scaledenom_set)
+    resolution: "double" = property(_mapscript.mapObj_resolution_get, _mapscript.mapObj_resolution_set)
+    defresolution: "double" = property(_mapscript.mapObj_defresolution_get, _mapscript.mapObj_defresolution_set)
+    shapepath: "char *" = property(_mapscript.mapObj_shapepath_get, _mapscript.mapObj_shapepath_set)
+    mappath: "char *" = property(_mapscript.mapObj_mappath_get, _mapscript.mapObj_mappath_set)
+    sldurl: "char *" = property(_mapscript.mapObj_sldurl_get, _mapscript.mapObj_sldurl_set)
+    imagecolor: "colorObj" = property(_mapscript.mapObj_imagecolor_get, _mapscript.mapObj_imagecolor_set)
+    layerorder: "int *" = property(_mapscript.mapObj_layerorder_get, _mapscript.mapObj_layerorder_set)
+    debug: "int" = property(_mapscript.mapObj_debug_get, _mapscript.mapObj_debug_set)
 
     def __init__(self, *args):
         _mapscript.mapObj_swiginit(self, _mapscript.new_mapObj(*args))
     __swig_destroy__ = _mapscript.delete_mapObj
 
-    def clone(self):
+    def clone(self) -> "mapObj *":
         return _mapscript.mapObj_clone(self)
 
     def insertLayer(*args):
@@ -1442,31 +1442,31 @@ class mapObj(object):
         return actualIndex
 
 
-    def removeLayer(self, index):
+    def removeLayer(self, index: "int") -> "layerObj *":
         return _mapscript.mapObj_removeLayer(self, index)
 
-    def setExtent(self, minx, miny, maxx, maxy):
+    def setExtent(self, minx: "double", miny: "double", maxx: "double", maxy: "double") -> "int":
         return _mapscript.mapObj_setExtent(self, minx, miny, maxx, maxy)
 
-    def offsetExtent(self, x, y):
+    def offsetExtent(self, x: "double", y: "double") -> "int":
         return _mapscript.mapObj_offsetExtent(self, x, y)
 
-    def scaleExtent(self, zoomfactor, minscaledenom, maxscaledenom):
+    def scaleExtent(self, zoomfactor: "double", minscaledenom: "double", maxscaledenom: "double") -> "int":
         return _mapscript.mapObj_scaleExtent(self, zoomfactor, minscaledenom, maxscaledenom)
 
-    def setCenter(self, center):
+    def setCenter(self, center: "pointObj") -> "int":
         return _mapscript.mapObj_setCenter(self, center)
 
-    def setSize(self, width, height):
+    def setSize(self, width: "int", height: "int") -> "int":
         return _mapscript.mapObj_setSize(self, width, height)
 
-    def pixelToGeoref(self, pixPosX, pixPosY, geoPos):
+    def pixelToGeoref(self, pixPosX: "double", pixPosY: "double", geoPos: "pointObj") -> "void":
         return _mapscript.mapObj_pixelToGeoref(self, pixPosX, pixPosY, geoPos)
 
-    def getRotation(self):
+    def getRotation(self) -> "double":
         return _mapscript.mapObj_getRotation(self)
 
-    def setRotation(self, rotation_angle):
+    def setRotation(self, rotation_angle: "double") -> "int":
         return _mapscript.mapObj_setRotation(self, rotation_angle)
 
     def getLayer(*args):
@@ -1489,184 +1489,184 @@ class mapObj(object):
         return layer
 
 
-    def getSymbolByName(self, name):
+    def getSymbolByName(self, name: "char *") -> "int":
         return _mapscript.mapObj_getSymbolByName(self, name)
 
-    def prepareQuery(self):
+    def prepareQuery(self) -> "void":
         return _mapscript.mapObj_prepareQuery(self)
 
-    def prepareImage(self):
+    def prepareImage(self) -> "imageObj *":
         return _mapscript.mapObj_prepareImage(self)
 
-    def setImageType(self, imagetype):
+    def setImageType(self, imagetype: "char *") -> "void":
         return _mapscript.mapObj_setImageType(self, imagetype)
 
-    def selectOutputFormat(self, imagetype):
+    def selectOutputFormat(self, imagetype: "char *") -> "void":
         return _mapscript.mapObj_selectOutputFormat(self, imagetype)
 
-    def getOutputFormat(self, i):
+    def getOutputFormat(self, i: "int") -> "outputFormatObj *":
         return _mapscript.mapObj_getOutputFormat(self, i)
 
-    def setOutputFormat(self, format):
+    def setOutputFormat(self, format: "outputFormatObj") -> "void":
         return _mapscript.mapObj_setOutputFormat(self, format)
 
-    def draw(self):
+    def draw(self) -> "imageObj *":
         return _mapscript.mapObj_draw(self)
 
-    def drawQuery(self):
+    def drawQuery(self) -> "imageObj *":
         return _mapscript.mapObj_drawQuery(self)
 
-    def drawLegend(self, scale_independent=0):
+    def drawLegend(self, scale_independent: "int"=0) -> "imageObj *":
         return _mapscript.mapObj_drawLegend(self, scale_independent)
 
-    def drawScalebar(self):
+    def drawScalebar(self) -> "imageObj *":
         return _mapscript.mapObj_drawScalebar(self)
 
-    def drawReferenceMap(self):
+    def drawReferenceMap(self) -> "imageObj *":
         return _mapscript.mapObj_drawReferenceMap(self)
 
-    def embedScalebar(self, image):
+    def embedScalebar(self, image: "imageObj") -> "int":
         return _mapscript.mapObj_embedScalebar(self, image)
 
-    def embedLegend(self, image):
+    def embedLegend(self, image: "imageObj") -> "int":
         return _mapscript.mapObj_embedLegend(self, image)
 
-    def drawLabelCache(self, image):
+    def drawLabelCache(self, image: "imageObj") -> "int":
         return _mapscript.mapObj_drawLabelCache(self, image)
 
-    def queryByFilter(self, string):
+    def queryByFilter(self, string: "char *") -> "int":
         return _mapscript.mapObj_queryByFilter(self, string)
 
-    def queryByPoint(self, point, mode, buffer):
+    def queryByPoint(self, point: "pointObj", mode: "int", buffer: "double") -> "int":
         return _mapscript.mapObj_queryByPoint(self, point, mode, buffer)
 
-    def queryByRect(self, rect):
+    def queryByRect(self, rect: "rectObj") -> "int":
         return _mapscript.mapObj_queryByRect(self, rect)
 
-    def queryByFeatures(self, slayer):
+    def queryByFeatures(self, slayer: "int") -> "int":
         return _mapscript.mapObj_queryByFeatures(self, slayer)
 
-    def queryByShape(self, shape):
+    def queryByShape(self, shape: "shapeObj") -> "int":
         return _mapscript.mapObj_queryByShape(self, shape)
 
-    def setWKTProjection(self, wkt):
+    def setWKTProjection(self, wkt: "char *") -> "int":
         return _mapscript.mapObj_setWKTProjection(self, wkt)
 
-    def getProjection(self):
+    def getProjection(self) -> "char *":
         return _mapscript.mapObj_getProjection(self)
 
-    def setProjection(self, proj4):
+    def setProjection(self, proj4: "char *") -> "int":
         return _mapscript.mapObj_setProjection(self, proj4)
 
-    def save(self, filename):
+    def save(self, filename: "char *") -> "int":
         return _mapscript.mapObj_save(self, filename)
 
-    def saveQuery(self, filename, results=0):
+    def saveQuery(self, filename: "char *", results: "int"=0) -> "int":
         return _mapscript.mapObj_saveQuery(self, filename, results)
 
-    def loadQuery(self, filename):
+    def loadQuery(self, filename: "char *") -> "int":
         return _mapscript.mapObj_loadQuery(self, filename)
 
-    def freeQuery(self, qlayer=-1):
+    def freeQuery(self, qlayer: "int"=-1) -> "void":
         return _mapscript.mapObj_freeQuery(self, qlayer)
 
-    def saveQueryAsGML(self, *args):
+    def saveQueryAsGML(self, *args) -> "int":
         return _mapscript.mapObj_saveQueryAsGML(self, *args)
 
-    def setSymbolSet(self, szFileName):
+    def setSymbolSet(self, szFileName: "char *") -> "int":
         return _mapscript.mapObj_setSymbolSet(self, szFileName)
 
-    def getNumSymbols(self):
+    def getNumSymbols(self) -> "int":
         return _mapscript.mapObj_getNumSymbols(self)
 
-    def setFontSet(self, filename):
+    def setFontSet(self, filename: "char *") -> "int":
         return _mapscript.mapObj_setFontSet(self, filename)
 
-    def saveMapContext(self, szFileName):
+    def saveMapContext(self, szFileName: "char *") -> "int":
         return _mapscript.mapObj_saveMapContext(self, szFileName)
 
-    def loadMapContext(self, szFileName, useUniqueNames=0):
+    def loadMapContext(self, szFileName: "char *", useUniqueNames: "int"=0) -> "int":
         return _mapscript.mapObj_loadMapContext(self, szFileName, useUniqueNames)
 
-    def moveLayerUp(self, layerindex):
+    def moveLayerUp(self, layerindex: "int") -> "int":
         return _mapscript.mapObj_moveLayerUp(self, layerindex)
 
-    def moveLayerDown(self, layerindex):
+    def moveLayerDown(self, layerindex: "int") -> "int":
         return _mapscript.mapObj_moveLayerDown(self, layerindex)
 
-    def getLayersDrawingOrder(self):
+    def getLayersDrawingOrder(self) -> "intarray *":
         return _mapscript.mapObj_getLayersDrawingOrder(self)
 
-    def setLayersDrawingOrder(self, panIndexes):
+    def setLayersDrawingOrder(self, panIndexes: "int *") -> "int":
         return _mapscript.mapObj_setLayersDrawingOrder(self, panIndexes)
 
-    def setConfigOption(self, key, value):
+    def setConfigOption(self, key: "char *", value: "char *") -> "void":
         return _mapscript.mapObj_setConfigOption(self, key, value)
 
-    def getConfigOption(self, key):
+    def getConfigOption(self, key: "char *") -> "char *":
         return _mapscript.mapObj_getConfigOption(self, key)
 
-    def applyConfigOptions(self):
+    def applyConfigOptions(self) -> "void":
         return _mapscript.mapObj_applyConfigOptions(self)
 
-    def applySLD(self, sld):
+    def applySLD(self, sld: "char *") -> "int":
         return _mapscript.mapObj_applySLD(self, sld)
 
-    def applySLDURL(self, sld):
+    def applySLDURL(self, sld: "char *") -> "int":
         return _mapscript.mapObj_applySLDURL(self, sld)
 
-    def generateSLD(self, sldVersion=None):
+    def generateSLD(self, sldVersion: "char *"=None) -> "char *":
         return _mapscript.mapObj_generateSLD(self, sldVersion)
 
-    def processTemplate(self, bGenerateImages, names, values, numentries):
+    def processTemplate(self, bGenerateImages: "int", names: "char **", values: "char **", numentries: "int") -> "char *":
         return _mapscript.mapObj_processTemplate(self, bGenerateImages, names, values, numentries)
 
-    def processLegendTemplate(self, names, values, numentries):
+    def processLegendTemplate(self, names: "char **", values: "char **", numentries: "int") -> "char *":
         return _mapscript.mapObj_processLegendTemplate(self, names, values, numentries)
 
-    def processQueryTemplate(self, names, values, numentries):
+    def processQueryTemplate(self, names: "char **", values: "char **", numentries: "int") -> "char *":
         return _mapscript.mapObj_processQueryTemplate(self, names, values, numentries)
 
-    def getOutputFormatByName(self, name):
+    def getOutputFormatByName(self, name: "char *") -> "outputFormatObj *":
         return _mapscript.mapObj_getOutputFormatByName(self, name)
 
-    def appendOutputFormat(self, format):
+    def appendOutputFormat(self, format: "outputFormatObj") -> "int":
         return _mapscript.mapObj_appendOutputFormat(self, format)
 
-    def removeOutputFormat(self, name):
+    def removeOutputFormat(self, name: "char *") -> "int":
         return _mapscript.mapObj_removeOutputFormat(self, name)
 
-    def loadOWSParameters(self, *args):
+    def loadOWSParameters(self, *args) -> "int":
         return _mapscript.mapObj_loadOWSParameters(self, *args)
 
-    def OWSDispatch(self, req):
+    def OWSDispatch(self, req: "OWSRequest") -> "int":
         return _mapscript.mapObj_OWSDispatch(self, req)
 
-    def convertToString(self):
+    def convertToString(self) -> "char *":
         return _mapscript.mapObj_convertToString(self)
 
-    def applyDefaultSubstitutions(self):
+    def applyDefaultSubstitutions(self) -> "void":
         return _mapscript.mapObj_applyDefaultSubstitutions(self)
 
-    def applySubstitutions(self, names):
+    def applySubstitutions(self, names: "char **") -> "void":
         return _mapscript.mapObj_applySubstitutions(self, names)
 
-    def zoomPoint(self, zoomfactor, poPixPos, width, height, poGeorefExt, poMaxGeorefExt):
+    def zoomPoint(self, zoomfactor: "int", poPixPos: "pointObj", width: "int", height: "int", poGeorefExt: "rectObj", poMaxGeorefExt: "rectObj") -> "int":
         return _mapscript.mapObj_zoomPoint(self, zoomfactor, poPixPos, width, height, poGeorefExt, poMaxGeorefExt)
 
-    def zoomRectangle(self, poPixRect, width, height, poGeorefExt, poMaxGeorefExt):
+    def zoomRectangle(self, poPixRect: "rectObj", width: "int", height: "int", poGeorefExt: "rectObj", poMaxGeorefExt: "rectObj") -> "int":
         return _mapscript.mapObj_zoomRectangle(self, poPixRect, width, height, poGeorefExt, poMaxGeorefExt)
 
-    def zoomScale(self, scale, poPixPos, width, height, poGeorefExt, poMaxGeorefExt):
+    def zoomScale(self, scale: "double", poPixPos: "pointObj", width: "int", height: "int", poGeorefExt: "rectObj", poMaxGeorefExt: "rectObj") -> "int":
         return _mapscript.mapObj_zoomScale(self, scale, poPixPos, width, height, poGeorefExt, poMaxGeorefExt)
 
-    def getLayerOrder(self):
+    def getLayerOrder(self) -> "PyObject *":
         return _mapscript.mapObj_getLayerOrder(self)
 
-    def setLayerOrder(self, order):
+    def setLayerOrder(self, order: "PyObject *") -> "int":
         return _mapscript.mapObj_setLayerOrder(self, order)
 
-    def getSize(self):
+    def getSize(self) -> "PyObject *":
         return _mapscript.mapObj_getSize(self)
 
 
@@ -1707,19 +1707,19 @@ class mapObj(object):
 _mapscript.mapObj_swigregister(mapObj)
 
 
-def msSaveImage(map, img, filename):
+def msSaveImage(map: "mapObj", img: "imageObj", filename: "char const *") -> "int":
     return _mapscript.msSaveImage(map, img, filename)
 
-def msFreeImage(img):
+def msFreeImage(img: "imageObj") -> "void":
     return _mapscript.msFreeImage(img)
 
-def msSetup():
+def msSetup() -> "int":
     return _mapscript.msSetup()
 
-def msCleanup():
+def msCleanup() -> "void":
     return _mapscript.msCleanup()
 
-def msLoadMapFromString(buffer, new_mappath):
+def msLoadMapFromString(buffer: "char *", new_mappath: "char *") -> "mapObj *":
     return _mapscript.msLoadMapFromString(buffer, new_mappath)
 MS_VERSION_MAJOR = _mapscript.MS_VERSION_MAJOR
 MS_VERSION_MINOR = _mapscript.MS_VERSION_MINOR
@@ -1729,31 +1729,31 @@ MS_VERSION_NUM = _mapscript.MS_VERSION_NUM
 class rectObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    minx = property(_mapscript.rectObj_minx_get, _mapscript.rectObj_minx_set)
-    miny = property(_mapscript.rectObj_miny_get, _mapscript.rectObj_miny_set)
-    maxx = property(_mapscript.rectObj_maxx_get, _mapscript.rectObj_maxx_set)
-    maxy = property(_mapscript.rectObj_maxy_get, _mapscript.rectObj_maxy_set)
+    minx: "double" = property(_mapscript.rectObj_minx_get, _mapscript.rectObj_minx_set)
+    miny: "double" = property(_mapscript.rectObj_miny_get, _mapscript.rectObj_miny_set)
+    maxx: "double" = property(_mapscript.rectObj_maxx_get, _mapscript.rectObj_maxx_set)
+    maxy: "double" = property(_mapscript.rectObj_maxy_get, _mapscript.rectObj_maxy_set)
 
-    def __init__(self, minx=-1.0, miny=-1.0, maxx=-1.0, maxy=-1.0, imageunits=0):
+    def __init__(self, minx: "double"=-1.0, miny: "double"=-1.0, maxx: "double"=-1.0, maxy: "double"=-1.0, imageunits: "int"=0):
         _mapscript.rectObj_swiginit(self, _mapscript.new_rectObj(minx, miny, maxx, maxy, imageunits))
     __swig_destroy__ = _mapscript.delete_rectObj
 
-    def project(self, projin, projout):
+    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
         return _mapscript.rectObj_project(self, projin, projout)
 
-    def fit(self, width, height):
+    def fit(self, width: "int", height: "int") -> "double":
         return _mapscript.rectObj_fit(self, width, height)
 
-    def draw(self, map, layer, image, classindex, text):
+    def draw(self, map: "mapObj", layer: "layerObj", image: "imageObj", classindex: "int", text: "char *") -> "int":
         return _mapscript.rectObj_draw(self, map, layer, image, classindex, text)
 
-    def getCenter(self):
+    def getCenter(self) -> "pointObj *":
         return _mapscript.rectObj_getCenter(self)
 
-    def toPolygon(self):
+    def toPolygon(self) -> "shapeObj *":
         return _mapscript.rectObj_toPolygon(self)
 
-    def toString(self):
+    def toString(self) -> "char *":
         return _mapscript.rectObj_toString(self)
 
 
@@ -1779,43 +1779,43 @@ _mapscript.rectObj_swigregister(rectObj)
 class pointObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    x = property(_mapscript.pointObj_x_get, _mapscript.pointObj_x_set)
-    y = property(_mapscript.pointObj_y_get, _mapscript.pointObj_y_set)
-    z = property(_mapscript.pointObj_z_get, _mapscript.pointObj_z_set)
-    m = property(_mapscript.pointObj_m_get, _mapscript.pointObj_m_set)
+    x: "double" = property(_mapscript.pointObj_x_get, _mapscript.pointObj_x_set)
+    y: "double" = property(_mapscript.pointObj_y_get, _mapscript.pointObj_y_set)
+    z: "double" = property(_mapscript.pointObj_z_get, _mapscript.pointObj_z_set)
+    m: "double" = property(_mapscript.pointObj_m_get, _mapscript.pointObj_m_set)
 
-    def __init__(self, x=0.0, y=0.0, z=0.0, m=-2e38):
+    def __init__(self, x: "double"=0.0, y: "double"=0.0, z: "double"=0.0, m: "double"=-2e38):
         _mapscript.pointObj_swiginit(self, _mapscript.new_pointObj(x, y, z, m))
     __swig_destroy__ = _mapscript.delete_pointObj
 
-    def project(self, projin, projout):
+    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
         return _mapscript.pointObj_project(self, projin, projout)
 
-    def draw(self, map, layer, image, classindex, text):
+    def draw(self, map: "mapObj", layer: "layerObj", image: "imageObj", classindex: "int", text: "char *") -> "int":
         return _mapscript.pointObj_draw(self, map, layer, image, classindex, text)
 
-    def distanceToPoint(self, point):
+    def distanceToPoint(self, point: "pointObj") -> "double":
         return _mapscript.pointObj_distanceToPoint(self, point)
 
-    def distanceToSegment(self, a, b):
+    def distanceToSegment(self, a: "pointObj", b: "pointObj") -> "double":
         return _mapscript.pointObj_distanceToSegment(self, a, b)
 
-    def distanceToShape(self, shape):
+    def distanceToShape(self, shape: "shapeObj") -> "double":
         return _mapscript.pointObj_distanceToShape(self, shape)
 
-    def setXY(self, x, y, m=-2e38):
+    def setXY(self, x: "double", y: "double", m: "double"=-2e38) -> "int":
         return _mapscript.pointObj_setXY(self, x, y, m)
 
-    def setXYZ(self, x, y, z, m=-2e38):
+    def setXYZ(self, x: "double", y: "double", z: "double", m: "double"=-2e38) -> "int":
         return _mapscript.pointObj_setXYZ(self, x, y, z, m)
 
-    def setXYZM(self, x, y, z, m):
+    def setXYZM(self, x: "double", y: "double", z: "double", m: "double") -> "int":
         return _mapscript.pointObj_setXYZM(self, x, y, z, m)
 
-    def toString(self):
+    def toString(self) -> "char *":
         return _mapscript.pointObj_toString(self)
 
-    def toShape(self):
+    def toShape(self) -> "shapeObj *":
         return _mapscript.pointObj_toShape(self)
 
 
@@ -1840,22 +1840,22 @@ _mapscript.pointObj_swigregister(pointObj)
 class lineObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numpoints = property(_mapscript.lineObj_numpoints_get)
+    numpoints: "int" = property(_mapscript.lineObj_numpoints_get)
 
     def __init__(self):
         _mapscript.lineObj_swiginit(self, _mapscript.new_lineObj())
     __swig_destroy__ = _mapscript.delete_lineObj
 
-    def project(self, projin, projout):
+    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
         return _mapscript.lineObj_project(self, projin, projout)
 
-    def get(self, i):
+    def get(self, i: "int") -> "pointObj *":
         return _mapscript.lineObj_get(self, i)
 
-    def add(self, p):
+    def add(self, p: "pointObj") -> "int":
         return _mapscript.lineObj_add(self, p)
 
-    def set(self, i, p):
+    def set(self, i: "int", p: "pointObj") -> "int":
         return _mapscript.lineObj_set(self, i, p)
 
 
@@ -1879,125 +1879,125 @@ _mapscript.lineObj_swigregister(lineObj)
 class shapeObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numlines = property(_mapscript.shapeObj_numlines_get)
-    numvalues = property(_mapscript.shapeObj_numvalues_get)
-    bounds = property(_mapscript.shapeObj_bounds_get, _mapscript.shapeObj_bounds_set)
-    type = property(_mapscript.shapeObj_type_get, _mapscript.shapeObj_type_set)
-    index = property(_mapscript.shapeObj_index_get, _mapscript.shapeObj_index_set)
-    tileindex = property(_mapscript.shapeObj_tileindex_get, _mapscript.shapeObj_tileindex_set)
-    classindex = property(_mapscript.shapeObj_classindex_get, _mapscript.shapeObj_classindex_set)
-    text = property(_mapscript.shapeObj_text_get, _mapscript.shapeObj_text_set)
-    scratch = property(_mapscript.shapeObj_scratch_get, _mapscript.shapeObj_scratch_set)
-    resultindex = property(_mapscript.shapeObj_resultindex_get, _mapscript.shapeObj_resultindex_set)
+    numlines: "int" = property(_mapscript.shapeObj_numlines_get)
+    numvalues: "int" = property(_mapscript.shapeObj_numvalues_get)
+    bounds: "rectObj" = property(_mapscript.shapeObj_bounds_get, _mapscript.shapeObj_bounds_set)
+    type: "int" = property(_mapscript.shapeObj_type_get, _mapscript.shapeObj_type_set)
+    index: "long" = property(_mapscript.shapeObj_index_get, _mapscript.shapeObj_index_set)
+    tileindex: "int" = property(_mapscript.shapeObj_tileindex_get, _mapscript.shapeObj_tileindex_set)
+    classindex: "int" = property(_mapscript.shapeObj_classindex_get, _mapscript.shapeObj_classindex_set)
+    text: "char *" = property(_mapscript.shapeObj_text_get, _mapscript.shapeObj_text_set)
+    scratch: "int" = property(_mapscript.shapeObj_scratch_get, _mapscript.shapeObj_scratch_set)
+    resultindex: "int" = property(_mapscript.shapeObj_resultindex_get, _mapscript.shapeObj_resultindex_set)
 
-    def __init__(self, type=MS_SHAPE_NULL):
+    def __init__(self, type: "int"=MS_SHAPE_NULL):
         _mapscript.shapeObj_swiginit(self, _mapscript.new_shapeObj(type))
     __swig_destroy__ = _mapscript.delete_shapeObj
 
     @staticmethod
-    def fromWKT(wkt):
+    def fromWKT(wkt: "char *") -> "shapeObj *":
         return _mapscript.shapeObj_fromWKT(wkt)
 
-    def project(self, projin, projout):
+    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
         return _mapscript.shapeObj_project(self, projin, projout)
 
-    def get(self, i):
+    def get(self, i: "int") -> "lineObj *":
         return _mapscript.shapeObj_get(self, i)
 
-    def add(self, line):
+    def add(self, line: "lineObj") -> "int":
         return _mapscript.shapeObj_add(self, line)
 
-    def draw(self, map, layer, image):
+    def draw(self, map: "mapObj", layer: "layerObj", image: "imageObj") -> "int":
         return _mapscript.shapeObj_draw(self, map, layer, image)
 
-    def setBounds(self):
+    def setBounds(self) -> "void":
         return _mapscript.shapeObj_setBounds(self)
 
-    def clone(self):
+    def clone(self) -> "shapeObj *":
         return _mapscript.shapeObj_clone(self)
 
-    def copy(self, dest):
+    def copy(self, dest: "shapeObj") -> "int":
         return _mapscript.shapeObj_copy(self, dest)
 
-    def toWKT(self):
+    def toWKT(self) -> "char *":
         return _mapscript.shapeObj_toWKT(self)
 
-    def buffer(self, width):
+    def buffer(self, width: "double") -> "shapeObj *":
         return _mapscript.shapeObj_buffer(self, width)
 
-    def simplify(self, tolerance):
+    def simplify(self, tolerance: "double") -> "shapeObj *":
         return _mapscript.shapeObj_simplify(self, tolerance)
 
-    def topologyPreservingSimplify(self, tolerance):
+    def topologyPreservingSimplify(self, tolerance: "double") -> "shapeObj *":
         return _mapscript.shapeObj_topologyPreservingSimplify(self, tolerance)
 
-    def convexHull(self):
+    def convexHull(self) -> "shapeObj *":
         return _mapscript.shapeObj_convexHull(self)
 
-    def boundary(self):
+    def boundary(self) -> "shapeObj *":
         return _mapscript.shapeObj_boundary(self)
 
-    def getCentroid(self):
+    def getCentroid(self) -> "pointObj *":
         return _mapscript.shapeObj_getCentroid(self)
 
-    def Union(self, shape):
+    def Union(self, shape: "shapeObj") -> "shapeObj *":
         return _mapscript.shapeObj_Union(self, shape)
 
-    def intersection(self, shape):
+    def intersection(self, shape: "shapeObj") -> "shapeObj *":
         return _mapscript.shapeObj_intersection(self, shape)
 
-    def difference(self, shape):
+    def difference(self, shape: "shapeObj") -> "shapeObj *":
         return _mapscript.shapeObj_difference(self, shape)
 
-    def symDifference(self, shape):
+    def symDifference(self, shape: "shapeObj") -> "shapeObj *":
         return _mapscript.shapeObj_symDifference(self, shape)
 
-    def overlaps(self, shape):
+    def overlaps(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_overlaps(self, shape)
 
-    def within(self, shape):
+    def within(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_within(self, shape)
 
-    def crosses(self, shape):
+    def crosses(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_crosses(self, shape)
 
-    def intersects(self, shape):
+    def intersects(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_intersects(self, shape)
 
-    def touches(self, shape):
+    def touches(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_touches(self, shape)
 
-    def equals(self, shape):
+    def equals(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_equals(self, shape)
 
-    def disjoint(self, shape):
+    def disjoint(self, shape: "shapeObj") -> "int":
         return _mapscript.shapeObj_disjoint(self, shape)
 
-    def getArea(self):
+    def getArea(self) -> "double":
         return _mapscript.shapeObj_getArea(self)
 
-    def getLength(self):
+    def getLength(self) -> "double":
         return _mapscript.shapeObj_getLength(self)
 
-    def getValue(self, i):
+    def getValue(self, i: "int") -> "char *":
         return _mapscript.shapeObj_getValue(self, i)
 
-    def contains(self, *args):
+    def contains(self, *args) -> "int":
         return _mapscript.shapeObj_contains(self, *args)
 
-    def distanceToPoint(self, point):
+    def distanceToPoint(self, point: "pointObj") -> "double":
         return _mapscript.shapeObj_distanceToPoint(self, point)
 
-    def distanceToShape(self, shape):
+    def distanceToShape(self, shape: "shapeObj") -> "double":
         return _mapscript.shapeObj_distanceToShape(self, shape)
 
-    def getLabelPoint(self):
+    def getLabelPoint(self) -> "pointObj *":
         return _mapscript.shapeObj_getLabelPoint(self)
 
-    def setValue(self, i, value):
+    def setValue(self, i: "int", value: "char *") -> "int":
         return _mapscript.shapeObj_setValue(self, i, value)
 
-    def initValues(self, numvalues):
+    def initValues(self, numvalues: "int") -> "void":
         return _mapscript.shapeObj_initValues(self, numvalues)
 
 
@@ -2102,7 +2102,7 @@ class shapeObj(object):
 # Register shapeObj in _mapscript:
 _mapscript.shapeObj_swigregister(shapeObj)
 
-def shapeObj_fromWKT(wkt):
+def shapeObj_fromWKT(wkt: "char *") -> "shapeObj *":
     return _mapscript.shapeObj_fromWKT(wkt)
 
 MS_NOERR = _mapscript.MS_NOERR
@@ -2156,36 +2156,36 @@ MS_ERROR_LANGUAGE = _mapscript.MS_ERROR_LANGUAGE
 class errorObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    code = property(_mapscript.errorObj_code_get, _mapscript.errorObj_code_set)
-    routine = property(_mapscript.errorObj_routine_get, _mapscript.errorObj_routine_set)
-    message = property(_mapscript.errorObj_message_get, _mapscript.errorObj_message_set)
-    isreported = property(_mapscript.errorObj_isreported_get, _mapscript.errorObj_isreported_set)
-    errorcount = property(_mapscript.errorObj_errorcount_get, _mapscript.errorObj_errorcount_set)
+    code: "int" = property(_mapscript.errorObj_code_get, _mapscript.errorObj_code_set)
+    routine: "char [64]" = property(_mapscript.errorObj_routine_get, _mapscript.errorObj_routine_set)
+    message: "char [2048]" = property(_mapscript.errorObj_message_get, _mapscript.errorObj_message_set)
+    isreported: "int" = property(_mapscript.errorObj_isreported_get, _mapscript.errorObj_isreported_set)
+    errorcount: "int" = property(_mapscript.errorObj_errorcount_get, _mapscript.errorObj_errorcount_set)
 
     def __init__(self):
         _mapscript.errorObj_swiginit(self, _mapscript.new_errorObj())
     __swig_destroy__ = _mapscript.delete_errorObj
 
-    def next(self):
+    def next(self) -> "errorObj *":
         return _mapscript.errorObj_next(self)
 
 # Register errorObj in _mapscript:
 _mapscript.errorObj_swigregister(errorObj)
 
 
-def msGetErrorObj():
+def msGetErrorObj() -> "errorObj *":
     return _mapscript.msGetErrorObj()
 
-def msResetErrorList():
+def msResetErrorList() -> "void":
     return _mapscript.msResetErrorList()
 
-def msGetVersion():
+def msGetVersion() -> "char *":
     return _mapscript.msGetVersion()
 
-def msGetVersionInt():
+def msGetVersionInt() -> "int":
     return _mapscript.msGetVersionInt()
 
-def msGetErrorString(delimiter):
+def msGetErrorString(delimiter: "char const *") -> "char *":
     return _mapscript.msGetErrorString(delimiter)
 MS_DEBUGLEVEL_ERRORSONLY = _mapscript.MS_DEBUGLEVEL_ERRORSONLY
 MS_DEBUGLEVEL_DEBUG = _mapscript.MS_DEBUGLEVEL_DEBUG
@@ -2210,19 +2210,19 @@ MS_SHP_MULTIPOINTM = _mapscript.MS_SHP_MULTIPOINTM
 class DBFInfo(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    nRecords = property(_mapscript.DBFInfo_nRecords_get)
-    nFields = property(_mapscript.DBFInfo_nFields_get)
+    nRecords: "int" = property(_mapscript.DBFInfo_nRecords_get)
+    nFields: "int" = property(_mapscript.DBFInfo_nFields_get)
 
-    def getFieldName(self, iField):
+    def getFieldName(self, iField: "int") -> "char *":
         return _mapscript.DBFInfo_getFieldName(self, iField)
 
-    def getFieldWidth(self, iField):
+    def getFieldWidth(self, iField: "int") -> "int":
         return _mapscript.DBFInfo_getFieldWidth(self, iField)
 
-    def getFieldDecimals(self, iField):
+    def getFieldDecimals(self, iField: "int") -> "int":
         return _mapscript.DBFInfo_getFieldDecimals(self, iField)
 
-    def getFieldType(self, iField):
+    def getFieldType(self, iField: "int") -> "int":
         return _mapscript.DBFInfo_getFieldType(self, iField)
 
     def __init__(self):
@@ -2239,36 +2239,36 @@ FTInvalid = _mapscript.FTInvalid
 class shapefileObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    type = property(_mapscript.shapefileObj_type_get)
-    numshapes = property(_mapscript.shapefileObj_numshapes_get)
-    bounds = property(_mapscript.shapefileObj_bounds_get)
+    type: "int" = property(_mapscript.shapefileObj_type_get)
+    numshapes: "int" = property(_mapscript.shapefileObj_numshapes_get)
+    bounds: "rectObj" = property(_mapscript.shapefileObj_bounds_get)
 
-    def __init__(self, filename, type=-1):
+    def __init__(self, filename: "char *", type: "int"=-1):
         _mapscript.shapefileObj_swiginit(self, _mapscript.new_shapefileObj(filename, type))
     __swig_destroy__ = _mapscript.delete_shapefileObj
 
-    def get(self, i, shape):
+    def get(self, i: "int", shape: "shapeObj") -> "int":
         return _mapscript.shapefileObj_get(self, i, shape)
 
-    def getShape(self, i):
+    def getShape(self, i: "int") -> "shapeObj *":
         return _mapscript.shapefileObj_getShape(self, i)
 
-    def getPoint(self, i, point):
+    def getPoint(self, i: "int", point: "pointObj") -> "int":
         return _mapscript.shapefileObj_getPoint(self, i, point)
 
-    def getTransformed(self, map, i, shape):
+    def getTransformed(self, map: "mapObj", i: "int", shape: "shapeObj") -> "int":
         return _mapscript.shapefileObj_getTransformed(self, map, i, shape)
 
-    def getExtent(self, i, rect):
+    def getExtent(self, i: "int", rect: "rectObj") -> "void":
         return _mapscript.shapefileObj_getExtent(self, i, rect)
 
-    def add(self, shape):
+    def add(self, shape: "shapeObj") -> "int":
         return _mapscript.shapefileObj_add(self, shape)
 
-    def addPoint(self, point):
+    def addPoint(self, point: "pointObj") -> "int":
         return _mapscript.shapefileObj_addPoint(self, point)
 
-    def getDBF(self):
+    def getDBF(self) -> "DBFInfo *":
         return _mapscript.shapefileObj_getDBF(self)
 
 # Register shapefileObj in _mapscript:
@@ -2280,18 +2280,18 @@ wkp_gmerc = _mapscript.wkp_gmerc
 class projectionObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numargs = property(_mapscript.projectionObj_numargs_get)
-    automatic = property(_mapscript.projectionObj_automatic_get)
-    wellknownprojection = property(_mapscript.projectionObj_wellknownprojection_get, _mapscript.projectionObj_wellknownprojection_set)
+    numargs: "int" = property(_mapscript.projectionObj_numargs_get)
+    automatic: "int" = property(_mapscript.projectionObj_automatic_get)
+    wellknownprojection: "int" = property(_mapscript.projectionObj_wellknownprojection_get, _mapscript.projectionObj_wellknownprojection_set)
 
-    def __init__(self, proj4):
+    def __init__(self, proj4: "char *"):
         _mapscript.projectionObj_swiginit(self, _mapscript.new_projectionObj(proj4))
     __swig_destroy__ = _mapscript.delete_projectionObj
 
-    def setWKTProjection(self, wkt):
+    def setWKTProjection(self, wkt: "char *") -> "int":
         return _mapscript.projectionObj_setWKTProjection(self, wkt)
 
-    def getUnits(self):
+    def getUnits(self) -> "int":
         return _mapscript.projectionObj_getUnits(self)
 
 # Register projectionObj in _mapscript:
@@ -2313,23 +2313,23 @@ class colorObj(object):
 
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    red = property(_mapscript.colorObj_red_get, _mapscript.colorObj_red_set, doc=r"""Red component of color in range [0-255]""")
-    green = property(_mapscript.colorObj_green_get, _mapscript.colorObj_green_set, doc=r"""Green component of color in range [0-255]""")
-    blue = property(_mapscript.colorObj_blue_get, _mapscript.colorObj_blue_set, doc=r"""Blue component of color in range [0-255]""")
-    alpha = property(_mapscript.colorObj_alpha_get, _mapscript.colorObj_alpha_set, doc=r"""Alpha (opacity) component of color in range [0-255]""")
+    red: "int" = property(_mapscript.colorObj_red_get, _mapscript.colorObj_red_set, doc=r"""Red component of color in range [0-255]""")
+    green: "int" = property(_mapscript.colorObj_green_get, _mapscript.colorObj_green_set, doc=r"""Green component of color in range [0-255]""")
+    blue: "int" = property(_mapscript.colorObj_blue_get, _mapscript.colorObj_blue_set, doc=r"""Blue component of color in range [0-255]""")
+    alpha: "int" = property(_mapscript.colorObj_alpha_get, _mapscript.colorObj_alpha_set, doc=r"""Alpha (opacity) component of color in range [0-255]""")
 
-    def __init__(self, red=0, green=0, blue=0, alpha=255):
+    def __init__(self, red: "int"=0, green: "int"=0, blue: "int"=0, alpha: "int"=255):
         r"""An object representing a color."""
         _mapscript.colorObj_swiginit(self, _mapscript.new_colorObj(red, green, blue, alpha))
     __swig_destroy__ = _mapscript.delete_colorObj
 
-    def setRGB(self, red, green, blue, alpha=255):
+    def setRGB(self, red: "int", green: "int", blue: "int", alpha: "int"=255) -> "int":
         return _mapscript.colorObj_setRGB(self, red, green, blue, alpha)
 
-    def setHex(self, psHexColor):
+    def setHex(self, psHexColor: "char *") -> "int":
         return _mapscript.colorObj_setHex(self, psHexColor)
 
-    def toHex(self):
+    def toHex(self) -> "char *":
         return _mapscript.colorObj_toHex(self)
 
 # Register colorObj in _mapscript:
@@ -2338,43 +2338,43 @@ _mapscript.colorObj_swigregister(colorObj)
 class symbolObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    refcount = property(_mapscript.symbolObj_refcount_get)
-    numpoints = property(_mapscript.symbolObj_numpoints_get)
-    imagepath = property(_mapscript.symbolObj_imagepath_get)
-    name = property(_mapscript.symbolObj_name_get, _mapscript.symbolObj_name_set)
-    type = property(_mapscript.symbolObj_type_get, _mapscript.symbolObj_type_set)
-    inmapfile = property(_mapscript.symbolObj_inmapfile_get, _mapscript.symbolObj_inmapfile_set)
-    sizex = property(_mapscript.symbolObj_sizex_get, _mapscript.symbolObj_sizex_set)
-    sizey = property(_mapscript.symbolObj_sizey_get, _mapscript.symbolObj_sizey_set)
-    minx = property(_mapscript.symbolObj_minx_get, _mapscript.symbolObj_minx_set)
-    miny = property(_mapscript.symbolObj_miny_get, _mapscript.symbolObj_miny_set)
-    maxx = property(_mapscript.symbolObj_maxx_get, _mapscript.symbolObj_maxx_set)
-    maxy = property(_mapscript.symbolObj_maxy_get, _mapscript.symbolObj_maxy_set)
-    filled = property(_mapscript.symbolObj_filled_get, _mapscript.symbolObj_filled_set)
-    anchorpoint_x = property(_mapscript.symbolObj_anchorpoint_x_get, _mapscript.symbolObj_anchorpoint_x_set)
-    anchorpoint_y = property(_mapscript.symbolObj_anchorpoint_y_get, _mapscript.symbolObj_anchorpoint_y_set)
-    transparent = property(_mapscript.symbolObj_transparent_get, _mapscript.symbolObj_transparent_set)
-    transparentcolor = property(_mapscript.symbolObj_transparentcolor_get, _mapscript.symbolObj_transparentcolor_set)
-    character = property(_mapscript.symbolObj_character_get, _mapscript.symbolObj_character_set)
-    font = property(_mapscript.symbolObj_font_get, _mapscript.symbolObj_font_set)
+    refcount: "int" = property(_mapscript.symbolObj_refcount_get)
+    numpoints: "int" = property(_mapscript.symbolObj_numpoints_get)
+    imagepath: "char *" = property(_mapscript.symbolObj_imagepath_get)
+    name: "char *" = property(_mapscript.symbolObj_name_get, _mapscript.symbolObj_name_set)
+    type: "int" = property(_mapscript.symbolObj_type_get, _mapscript.symbolObj_type_set)
+    inmapfile: "int" = property(_mapscript.symbolObj_inmapfile_get, _mapscript.symbolObj_inmapfile_set)
+    sizex: "double" = property(_mapscript.symbolObj_sizex_get, _mapscript.symbolObj_sizex_set)
+    sizey: "double" = property(_mapscript.symbolObj_sizey_get, _mapscript.symbolObj_sizey_set)
+    minx: "double" = property(_mapscript.symbolObj_minx_get, _mapscript.symbolObj_minx_set)
+    miny: "double" = property(_mapscript.symbolObj_miny_get, _mapscript.symbolObj_miny_set)
+    maxx: "double" = property(_mapscript.symbolObj_maxx_get, _mapscript.symbolObj_maxx_set)
+    maxy: "double" = property(_mapscript.symbolObj_maxy_get, _mapscript.symbolObj_maxy_set)
+    filled: "int" = property(_mapscript.symbolObj_filled_get, _mapscript.symbolObj_filled_set)
+    anchorpoint_x: "double" = property(_mapscript.symbolObj_anchorpoint_x_get, _mapscript.symbolObj_anchorpoint_x_set)
+    anchorpoint_y: "double" = property(_mapscript.symbolObj_anchorpoint_y_get, _mapscript.symbolObj_anchorpoint_y_set)
+    transparent: "int" = property(_mapscript.symbolObj_transparent_get, _mapscript.symbolObj_transparent_set)
+    transparentcolor: "int" = property(_mapscript.symbolObj_transparentcolor_get, _mapscript.symbolObj_transparentcolor_set)
+    character: "char *" = property(_mapscript.symbolObj_character_get, _mapscript.symbolObj_character_set)
+    font: "char *" = property(_mapscript.symbolObj_font_get, _mapscript.symbolObj_font_set)
 
-    def __init__(self, symbolname, imagefile=None):
+    def __init__(self, symbolname: "char *", imagefile: "char const *"=None):
         _mapscript.symbolObj_swiginit(self, _mapscript.new_symbolObj(symbolname, imagefile))
     __swig_destroy__ = _mapscript.delete_symbolObj
 
-    def setImagepath(self, imagefile):
+    def setImagepath(self, imagefile: "char const *") -> "int":
         return _mapscript.symbolObj_setImagepath(self, imagefile)
 
-    def setPoints(self, line):
+    def setPoints(self, line: "lineObj") -> "int":
         return _mapscript.symbolObj_setPoints(self, line)
 
-    def getPoints(self):
+    def getPoints(self) -> "lineObj *":
         return _mapscript.symbolObj_getPoints(self)
 
-    def getImage(self, input_format):
+    def getImage(self, input_format: "outputFormatObj") -> "imageObj *":
         return _mapscript.symbolObj_getImage(self, input_format)
 
-    def setImage(self, image):
+    def setImage(self, image: "imageObj") -> "int":
         return _mapscript.symbolObj_setImage(self, image)
 
 # Register symbolObj in _mapscript:
@@ -2384,25 +2384,25 @@ MS_HASHSIZE = _mapscript.MS_HASHSIZE
 class hashTableObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    numitems = property(_mapscript.hashTableObj_numitems_get)
+    numitems: "int" = property(_mapscript.hashTableObj_numitems_get)
 
     def __init__(self):
         _mapscript.hashTableObj_swiginit(self, _mapscript.new_hashTableObj())
     __swig_destroy__ = _mapscript.delete_hashTableObj
 
-    def set(self, key, value):
+    def set(self, key: "char *", value: "char *") -> "int":
         return _mapscript.hashTableObj_set(self, key, value)
 
-    def get(self, key, default_value=None):
+    def get(self, key: "char *", default_value: "char *"=None) -> "char *":
         return _mapscript.hashTableObj_get(self, key, default_value)
 
-    def remove(self, key):
+    def remove(self, key: "char *") -> "int":
         return _mapscript.hashTableObj_remove(self, key)
 
-    def clear(self):
+    def clear(self) -> "void":
         return _mapscript.hashTableObj_clear(self)
 
-    def nextKey(self, prevkey=None):
+    def nextKey(self, prevkey: "char *"=None) -> "char const *":
         return _mapscript.hashTableObj_nextKey(self, prevkey)
 
 
@@ -2451,11 +2451,11 @@ MS_CONFIG_SECTION_PLUGINS = _mapscript.MS_CONFIG_SECTION_PLUGINS
 class configObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    env = property(_mapscript.configObj_env_get, _mapscript.configObj_env_set)
-    maps = property(_mapscript.configObj_maps_get, _mapscript.configObj_maps_set)
-    plugins = property(_mapscript.configObj_plugins_get, _mapscript.configObj_plugins_set)
+    env: "hashTableObj" = property(_mapscript.configObj_env_get, _mapscript.configObj_env_set)
+    maps: "hashTableObj" = property(_mapscript.configObj_maps_get, _mapscript.configObj_maps_set)
+    plugins: "hashTableObj" = property(_mapscript.configObj_plugins_get, _mapscript.configObj_plugins_set)
 
-    def __init__(self, filename=None):
+    def __init__(self, filename: "char *"=None):
         _mapscript.configObj_swiginit(self, _mapscript.new_configObj(filename))
     __swig_destroy__ = _mapscript.delete_configObj
 
@@ -2463,19 +2463,19 @@ class configObj(object):
 _mapscript.configObj_swigregister(configObj)
 
 
-def msLoadConfig(ms_config_file):
+def msLoadConfig(ms_config_file: "char const *") -> "configObj *":
     return _mapscript.msLoadConfig(ms_config_file)
 
-def msFreeConfig(config):
+def msFreeConfig(config: "configObj") -> "void":
     return _mapscript.msFreeConfig(config)
 
-def msConfigGetEnv(config, key):
+def msConfigGetEnv(config: "configObj", key: "char const *") -> "char const *":
     return _mapscript.msConfigGetEnv(config, key)
 
-def msConfigGetMap(config, key):
+def msConfigGetMap(config: "configObj", key: "char const *") -> "char const *":
     return _mapscript.msConfigGetMap(config, key)
 
-def msConfigGetPlugin(config, key):
+def msConfigGetPlugin(config: "configObj", key: "char const *") -> "char const *":
     return _mapscript.msConfigGetPlugin(config, key)
 MS_DEFAULT_CGI_PARAMS = _mapscript.MS_DEFAULT_CGI_PARAMS
 MS_GET_REQUEST = _mapscript.MS_GET_REQUEST
@@ -2483,69 +2483,69 @@ MS_POST_REQUEST = _mapscript.MS_POST_REQUEST
 class OWSRequest(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
-    NumParams = property(_mapscript.OWSRequest_NumParams_get)
-    type = property(_mapscript.OWSRequest_type_get, _mapscript.OWSRequest_type_set)
-    contenttype = property(_mapscript.OWSRequest_contenttype_get, _mapscript.OWSRequest_contenttype_set)
-    postrequest = property(_mapscript.OWSRequest_postrequest_get, _mapscript.OWSRequest_postrequest_set)
-    httpcookiedata = property(_mapscript.OWSRequest_httpcookiedata_get, _mapscript.OWSRequest_httpcookiedata_set)
+    NumParams: "int" = property(_mapscript.OWSRequest_NumParams_get)
+    type: "enum MS_REQUEST_TYPE" = property(_mapscript.OWSRequest_type_get, _mapscript.OWSRequest_type_set)
+    contenttype: "char *" = property(_mapscript.OWSRequest_contenttype_get, _mapscript.OWSRequest_contenttype_set)
+    postrequest: "char *" = property(_mapscript.OWSRequest_postrequest_get, _mapscript.OWSRequest_postrequest_set)
+    httpcookiedata: "char *" = property(_mapscript.OWSRequest_httpcookiedata_get, _mapscript.OWSRequest_httpcookiedata_set)
 
     def __init__(self):
         _mapscript.OWSRequest_swiginit(self, _mapscript.new_OWSRequest())
     __swig_destroy__ = _mapscript.delete_OWSRequest
 
-    def loadParams(self):
+    def loadParams(self) -> "int":
         return _mapscript.OWSRequest_loadParams(self)
 
-    def loadParamsFromURL(self, url):
+    def loadParamsFromURL(self, url: "char const *") -> "int":
         return _mapscript.OWSRequest_loadParamsFromURL(self, url)
 
-    def loadParamsFromPost(self, postData, url):
+    def loadParamsFromPost(self, postData: "char *", url: "char const *") -> "int":
         return _mapscript.OWSRequest_loadParamsFromPost(self, postData, url)
 
-    def setParameter(self, name, value):
+    def setParameter(self, name: "char *", value: "char *") -> "void":
         return _mapscript.OWSRequest_setParameter(self, name, value)
 
-    def addParameter(self, name, value):
+    def addParameter(self, name: "char *", value: "char *") -> "void":
         return _mapscript.OWSRequest_addParameter(self, name, value)
 
-    def getName(self, index):
+    def getName(self, index: "int") -> "char *":
         return _mapscript.OWSRequest_getName(self, index)
 
-    def getValue(self, index):
+    def getValue(self, index: "int") -> "char *":
         return _mapscript.OWSRequest_getValue(self, index)
 
-    def getValueByName(self, name):
+    def getValueByName(self, name: "char const *") -> "char *":
         return _mapscript.OWSRequest_getValueByName(self, name)
 
 # Register OWSRequest in _mapscript:
 _mapscript.OWSRequest_swigregister(OWSRequest)
 
 
-def msConnPoolCloseUnreferenced():
+def msConnPoolCloseUnreferenced() -> "void":
     return _mapscript.msConnPoolCloseUnreferenced()
 
-def msIO_resetHandlers():
+def msIO_resetHandlers() -> "void":
     return _mapscript.msIO_resetHandlers()
 
-def msIO_installStdoutToBuffer():
+def msIO_installStdoutToBuffer() -> "void":
     return _mapscript.msIO_installStdoutToBuffer()
 
-def msIO_installStdinFromBuffer():
+def msIO_installStdinFromBuffer() -> "void":
     return _mapscript.msIO_installStdinFromBuffer()
 
-def msIO_stripStdoutBufferContentType():
+def msIO_stripStdoutBufferContentType() -> "char const *":
     return _mapscript.msIO_stripStdoutBufferContentType()
 
-def msIO_stripStdoutBufferContentHeaders():
+def msIO_stripStdoutBufferContentHeaders() -> "void":
     return _mapscript.msIO_stripStdoutBufferContentHeaders()
 
-def msIO_getStdoutBufferString():
+def msIO_getStdoutBufferString() -> "char const *":
     return _mapscript.msIO_getStdoutBufferString()
 
-def msIO_getStdoutBufferBytes():
+def msIO_getStdoutBufferBytes() -> "gdBuffer":
     return _mapscript.msIO_getStdoutBufferBytes()
 
-def msIO_getAndStripStdoutBufferMimeHeaders():
+def msIO_getAndStripStdoutBufferMimeHeaders() -> "hashTableObj *":
     return _mapscript.msIO_getAndStripStdoutBufferMimeHeaders()
 
 def fromstring(data, mappath=None):
