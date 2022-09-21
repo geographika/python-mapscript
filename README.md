@@ -47,3 +47,17 @@ Use SWIG from nuget?
           $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
           $env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
           cmake --build . --target pythonmapscript-wheel --config Release
+          
+          
+Debug Builds
+------------
+
+
+https://stackoverflow.com/a/29295896/179520
+
+harfbuzz.lib(harfbuzz.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in mapwms.obj [D:\MapServer\VS2022\build\mapserver.vcxproj]
+
+Add _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH under C/C++ >> Preprocessor >> PreprocessorDefinitions
+To the mapserver project in VS (not mapserv)
+
+harfbuzz.lib(harfbuzz.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in mapwms.obj [D:\MapServer\VS2022\build\mapserver.vcxproj]
