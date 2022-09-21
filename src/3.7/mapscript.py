@@ -199,6 +199,7 @@ MS_UVRASTER = _mapscript.MS_UVRASTER
 MS_CONTOUR = _mapscript.MS_CONTOUR
 MS_KERNELDENSITY = _mapscript.MS_KERNELDENSITY
 MS_IDW = _mapscript.MS_IDW
+MS_FLATGEOBUF = _mapscript.MS_FLATGEOBUF
 MS_DB_XBASE = _mapscript.MS_DB_XBASE
 MS_DB_CSV = _mapscript.MS_DB_CSV
 MS_DB_MYSQL = _mapscript.MS_DB_MYSQL
@@ -1738,8 +1739,8 @@ class rectObj(object):
         _mapscript.rectObj_swiginit(self, _mapscript.new_rectObj(minx, miny, maxx, maxy, imageunits))
     __swig_destroy__ = _mapscript.delete_rectObj
 
-    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
-        return _mapscript.rectObj_project(self, projin, projout)
+    def project(self, *args) -> "int":
+        return _mapscript.rectObj_project(self, *args)
 
     def fit(self, width: "int", height: "int") -> "double":
         return _mapscript.rectObj_fit(self, width, height)
@@ -1788,8 +1789,8 @@ class pointObj(object):
         _mapscript.pointObj_swiginit(self, _mapscript.new_pointObj(x, y, z, m))
     __swig_destroy__ = _mapscript.delete_pointObj
 
-    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
-        return _mapscript.pointObj_project(self, projin, projout)
+    def project(self, *args) -> "int":
+        return _mapscript.pointObj_project(self, *args)
 
     def draw(self, map: "mapObj", layer: "layerObj", image: "imageObj", classindex: "int", text: "char *") -> "int":
         return _mapscript.pointObj_draw(self, map, layer, image, classindex, text)
@@ -1846,8 +1847,8 @@ class lineObj(object):
         _mapscript.lineObj_swiginit(self, _mapscript.new_lineObj())
     __swig_destroy__ = _mapscript.delete_lineObj
 
-    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
-        return _mapscript.lineObj_project(self, projin, projout)
+    def project(self, *args) -> "int":
+        return _mapscript.lineObj_project(self, *args)
 
     def get(self, i: "int") -> "pointObj *":
         return _mapscript.lineObj_get(self, i)
@@ -1898,8 +1899,8 @@ class shapeObj(object):
     def fromWKT(wkt: "char *") -> "shapeObj *":
         return _mapscript.shapeObj_fromWKT(wkt)
 
-    def project(self, projin: "projectionObj", projout: "projectionObj") -> "int":
-        return _mapscript.shapeObj_project(self, projin, projout)
+    def project(self, *args) -> "int":
+        return _mapscript.shapeObj_project(self, *args)
 
     def get(self, i: "int") -> "lineObj *":
         return _mapscript.shapeObj_get(self, i)
@@ -2149,6 +2150,7 @@ MS_OGLERR = _mapscript.MS_OGLERR
 MS_RENDERERERR = _mapscript.MS_RENDERERERR
 MS_V8ERR = _mapscript.MS_V8ERR
 MS_OGCAPIERR = _mapscript.MS_OGCAPIERR
+MS_FGBERR = _mapscript.MS_FGBERR
 MS_NUMERRORCODES = _mapscript.MS_NUMERRORCODES
 MESSAGELENGTH = _mapscript.MESSAGELENGTH
 ROUTINELENGTH = _mapscript.ROUTINELENGTH
@@ -2296,6 +2298,17 @@ class projectionObj(object):
 
 # Register projectionObj in _mapscript:
 _mapscript.projectionObj_swigregister(projectionObj)
+
+class reprojectionObj(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self, _in: "projectionObj", out: "projectionObj"):
+        _mapscript.reprojectionObj_swiginit(self, _mapscript.new_reprojectionObj(_in, out))
+    __swig_destroy__ = _mapscript.delete_reprojectionObj
+
+# Register reprojectionObj in _mapscript:
+_mapscript.reprojectionObj_swigregister(reprojectionObj)
 
 MS_SYMBOL_SIMPLE = _mapscript.MS_SYMBOL_SIMPLE
 MS_SYMBOL_VECTOR = _mapscript.MS_SYMBOL_VECTOR
