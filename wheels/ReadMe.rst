@@ -132,6 +132,8 @@ pip install D:\MapServer\VS2022\build\mapscript\python\Release\dist\mapscript-8.
 
 
 
-
+cfgpth = r"C:\MapServer\apps\mapserver.conf"
+s = "MAP NAME TEST END"
+mapscript.fromstring(s, "", cfgpth)
 
 
