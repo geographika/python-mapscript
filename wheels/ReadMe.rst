@@ -113,3 +113,25 @@ on\_pythonmapscript.vcxproj]
 
 Look for swig.exe command in _pythonmapscript.vcxproj (in Notepad++)
 
+Testing Python MapScript
+------------------------
+
+D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate
+
+REM SET PATH=D:\MapServer\VS2022\build\Release;D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
+
+set MAPSERVER_DLL_PATH=D:\MapServer\VS2022\build\Release;D:\MapServer\VS2022\sdk\release-1930-x64\bin;
+
+python -c "import mapscript;print(mapscript.msGetVersion())"
+
+
+
+C:\Python310\scripts\virtualenv C:\VirtualEnvs\mapscript8-test
+C:\VirtualEnvs\mapscript8-test\Scripts\activate
+pip install D:\MapServer\VS2022\build\mapscript\python\Release\dist\mapscript-8.1.0-cp310-cp310-win_amd64.whl
+
+
+
+
+
+
