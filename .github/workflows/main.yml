@@ -95,10 +95,10 @@ jobs:
           set MAPSERVER_DLL_PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
           
-          set MAPSCRIPT_FLD=%ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
-          if "${{ matrix.python-version }}" GEQ "3.8" (
-            copy %SDK_BIN%/sqlite3.dll %MAPSCRIPT_FLD%
-          )
+          #set MAPSCRIPT_FLD=%ROOT_FOLDER%/build/mapscript/python/Release/mapscriptvenv/Lib/site-packages/mapscript
+          #if "${{ matrix.python-version }}" GEQ "3.8" (
+          #  copy %SDK_BIN%/sqlite3.dll %MAPSCRIPT_FLD%
+          #)
           cmake --build . --target pythonmapscript-wheel --config Release
 
           REM make sdist for one version of Python as they are identical
