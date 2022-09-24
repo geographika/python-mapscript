@@ -34,8 +34,8 @@ jobs:
         run: |
           # md D:\MapServer\VS2022
           # cd D:\MapServer\VS2022
-          #git clone https://github.com/geographika/mapserver.git --branch branch-8-0 --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
+          git clone https://github.com/geographika/mapserver.git --branch webObj --single-branch mapserver
+          #git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
 
       - name: Download and unzip SDK
         shell: powershell
@@ -117,7 +117,8 @@ jobs:
 
           #cmake --build . --config Release
           # cannot use DEBUG here - see https://github.com/gisinternals/buildsystem/issues/195
-          cmake --build . --config RelWithDebInfo
+          # can use RelWithDebInfo
+          cmake --build . --config Release
           
           set MAPSERVER_DLL_PATH=%ROOT_FOLDER%/build/Release;%SDK_BIN%
           set PROJ_LIB=%SDK_BIN%/proj7/SHARE
