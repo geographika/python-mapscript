@@ -166,7 +166,7 @@ jobs:
           git add .
           git commit -m "Add source files"
           git pull
-          git push
+          git push --force
 
 #  publish:
 #    name: Publish to PyPI
