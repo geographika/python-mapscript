@@ -117,14 +117,9 @@ Testing Python MapScript
 ------------------------
 
 D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate
-
-REM SET PATH=D:\MapServer\VS2022\build\Release;D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
-
 set MAPSERVER_DLL_PATH=D:\MapServer\VS2022\build\Release;D:\MapServer\VS2022\sdk\release-1930-x64\bin;
-
+set PROJ_LIB=D:\MapServer\VS2022\sdk\bin\proj7\share
 python -c "import mapscript;print(mapscript.msGetVersion())"
-
-
 
 C:\Python310\scripts\virtualenv C:\VirtualEnvs\mapscript8-test
 C:\VirtualEnvs\mapscript8-test\Scripts\activate
@@ -134,6 +129,66 @@ pip install D:\MapServer\VS2022\build\mapscript\python\Release\dist\mapscript-8.
 
 cfgpth = r"C:\MapServer\apps\mapserver.conf"
 s = "MAP NAME TEST END"
-mapscript.fromstring(s, "", cfgpth)
+map = mapscript.fromstring(s, "", cfgpth)
 
+
+
+
+import mapscript
+s = "MAP NAME TEST END"
+map = mapscript.fromstring(s, "")
+new_format = mapscript.outputFormatObj('GDAL/GTiff', 'gtiffx')
+# assert new_format.refcount == 1, new_format.refcount
+map.appendOutputFormat(new_format)
+map.selectOutputFormat('gtiffx')
+map.save('testAppendNewOutputFormat.map')
+
+import mapscript
+p = r"D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Lib\site-packages\mapscript\tests\data\test.map"
+m = mapscript.mapObj(p)
+m.convertToString()
+
+Debugging MapScript
+-------------------
+
+D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate
+set MAPSERVER_DLL_PATH=D:\MapServer\VS2022\build\RelWithDebInfo;D:\MapServer\VS2022\sdk\release-1930-x64\bin;
+set PROJ_LIB=D:\MapServer\VS2022\sdk\bin\proj7\share
+python -c "import mapscript;print(mapscript.msGetVersion())"
+
+
+Attach to process
+Add debugger in source files.
+
+
+Uploading to PyPI
+-----------------
+
+Now upload to testpypi
+
+pip install twine
+cd /D D:\GitHub\python-mapscript\wheels
+twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.0.0*
+
+https://test.pypi.org/project/mapscript/
+
+twine upload --repository-url https://upload.pypi.org/legacy/ mapscript-8.0.0*
+
+https://pypi.org/project/mapscript/8.0.0/
+
+
+Debugging in Visual Studio
+--------------------------
+
+Set to RelWithDebInfo
+
+Properties > Debugging > Environment
+
+PROJ_LIB=D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj7\SHARE
+PATH=D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
+MAPSERVER_CONFIG_FILE=C:\MapServer\apps\mapserver.conf
+
+Properties > Debugging > Command Arguments
+
+map2img -m D:/GitHub/mapserver/msautotest/misc/ogrbrush.map -o D:\Temp\test.png
 
