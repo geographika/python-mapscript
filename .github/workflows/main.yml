@@ -79,12 +79,11 @@ jobs:
           
           # following lines for local testing
           #cd D:\MapServer\VS2022
-
-          $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
-          $VS_VER="Visual Studio 17 2022"
-          $PYTHON_ROOT_DIR="C:/Python310"
-          $SDK="release-1930-x64"
-          $SWIG_VER="4.1.0"
+          #$env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
+          #$VS_VER="Visual Studio 17 2022"
+          #$PYTHON_ROOT_DIR="C:/Python310"
+          #$SDK="release-1930-x64"
+          #$SWIG_VER="4.1.0"
 
           # as above for GHA
           $SDK=${{ env.SDK }}
@@ -163,8 +162,9 @@ jobs:
           if ("${{ matrix.python-version }}" -eq "3.10")
           {
             cd "$ROOT_FOLDER/build/mapscript/python/Release"
-            "$PYTHON_EXECUTABLE" setup.py sdist
-            cd "$ROOT_FOLDER"
+            $params = "setup.py", "sdist"
+            & $PYTHON_EXECUTABLE $params
+            cd $ROOT_FOLDER
           }
 
       - name: Configure MapServer
