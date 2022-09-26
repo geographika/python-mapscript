@@ -52,23 +52,17 @@ jobs:
           $SWIG_ZIP="swigwin-${{ env.SWIG_VER }}.zip"
           Expand-Archive $SWIG_ZIP -DestinationPath "sdk"
 
-#      - name: Configure MapServer
-#        shell: powershell
-#        run: |
-#        # https://stackoverflow.com/questions/2124753/how-can-i-use-powershell-with-the-visual-studio-command-prompt
-#        cmd.exe /c "call `"C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat`" && set > %temp%\vcvars.txt"
-#        Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
-#          if ($_ -match "^(.*?)=(.*)$") {
-#            Set-Content "env:\$($matches[1])" $matches[2]
-#          }
-#        }
-#        # dir env:
-
       - name: Configure MapServer
         shell: powershell
         run: |
           # https://stackoverflow.com/questions/2124753/how-can-i-use-powershell-with-the-visual-studio-command-prompt
-          cmd.exe /c "call `"C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat`" && set > %temp%\vcvars.txt"
+          
+          # remote
+          $VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          # local
+          #$VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+
+          cmd.exe /c "call `"$VCVARS`" && set > %temp%\vcvars.txt"
           Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
             if ($_ -match "^(.*?)=(.*)$") {
                 Set-Content "env:\$($matches[1])" $matches[2]
