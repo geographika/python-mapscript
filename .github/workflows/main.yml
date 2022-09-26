@@ -14,7 +14,7 @@ jobs:
     runs-on: windows-2022 # includes VS 2022
     #runs-on: windows-2019 # includes VS 2019
     strategy:
-      fail-fast: false
+      fail-fast: true # default is true, set to false to see which builds run
       matrix:
         python-version: [2.7, 3.7, 3.8, 3.9, "3.10"] # 3.6 "3.10" needs to be in quotes and is currently failing 10 tests
 
@@ -80,10 +80,10 @@ jobs:
           #$SWIG_VER="4.1.0"
 
           # as above for GHA
-          $SDK=${{ env.SDK }}
+          $SDK="${{ env.SDK }}"
           $VS_VER="${{ env.VS_VER }}"
-          $PYTHON_ROOT_DIR=${{ env.pythonLocation }} -replace "\\","/"
-          $SWIG_VER=${{ env.SWIG_VER }}
+          $PYTHON_ROOT_DIR="${{ env.pythonLocation }}" -replace "\\","/"
+          $SWIG_VER="${{ env.SWIG_VER }}"
 
 
           # following commands for both local and GHA
