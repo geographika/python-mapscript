@@ -149,7 +149,7 @@ jobs:
           cmake --build . --config Release
           
           $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
-          $PROJ_LIB="$SDK_BIN/proj7/SHARE"
+          $env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
 
           cmake --build . --target pythonmapscript-wheel --config Release
 
