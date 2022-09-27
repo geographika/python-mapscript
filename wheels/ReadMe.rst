@@ -148,6 +148,39 @@ p = r"D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Lib\site-
 m = mapscript.mapObj(p)
 m.convertToString()
 
+Testing in PowerShell
+---------------------
+
+$ROOT_FOLDER="D:/MapServer/VS2022"
+$SDK_BIN="D:/MapServer/VS2022/sdk/release-1930-x64/bin"
+$MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
+$PROJ_LIB="$ROOT_FOLDER/sdk/bin/proj7/share"
+
+D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate.ps1
+
+python -c "import mapscript;print(mapscript.msGetVersion())"
+
+# check DLL
+$env:PATH="$MAPSERVER_DLL_PATH;" + $env:PATH
+mapserv -v
+map2img -m D:/GitHub/mapserver/msautotest/misc/ogrbrush.map -o D:\Temp\test.png
+
+# venv from scratch
+
+C:\Python310\scripts\virtualenv C:\VirtualEnvs\mapscript8-test
+C:\VirtualEnvs\mapscript8-test\Scripts\activate.ps1
+pip install D:\MapServer\VS2022\build\mapscript\python\Release\dist\mapscript-8.1.0-cp310-cp310-win_amd64.whl
+
+$ROOT_FOLDER="D:/MapServer/VS2022"
+$SDK_BIN="D:/MapServer/VS2022/sdk/release-1930-x64/bin"
+$MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
+$PROJ_LIB="$ROOT_FOLDER/sdk/bin/proj7/share"
+
+$env:MAPSERVER_DLL_PATH="$MAPSERVER_DLL_PATH"
+
+python -c "import mapscript;print(mapscript.msGetVersion())"
+
+
 Debugging MapScript
 -------------------
 

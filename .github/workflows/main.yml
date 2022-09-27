@@ -4,7 +4,7 @@ on: [push]
 env:
   # SDK: release-1928-x64
   # VS_VER: "Visual Studio 16 2019"
-  SDK: release-1930-x64
+  SDK: "release-1930-x64"
   VS_VER: "Visual Studio 17 2022"
   SWIG_VER: "4.1.0" # "4.0.2"
 
@@ -87,7 +87,7 @@ jobs:
 
 
           # following commands for both local and GHA
-          $ROOT_FOLDER = (Get-Location).tostring() -replace "\\","/"
+          $ROOT_FOLDER = (Get-Location).ToString() -replace "\\","/"
           $SDK_PREFIX="$ROOT_FOLDER/sdk/$SDK"
           $SDK_INC="$SDK_PREFIX/include"
           $SDK_LIB="$SDK_PREFIX/lib"
@@ -98,7 +98,8 @@ jobs:
           mkdir build
           cd build
           $env:PATH="$ROOT_FOLDER/build/Release;$SDK_BIN;" + $env:PATH
-          $PROJECT_BINARY_DIR="$ROOT_FOLDER%/build"
+          # TODO is the following used?
+          $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"
           $SWIG_PYTHON_INTERPRETER_NO_DEBUG=1
 
           $PYMAPSCRIPT_ANNOTATIONS=1
@@ -147,7 +148,7 @@ jobs:
           # can use RelWithDebInfo
           cmake --build . --config Release
           
-          $MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
+          $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
           $PROJ_LIB="$SDK_BIN/proj7/SHARE"
 
           cmake --build . --target pythonmapscript-wheel --config Release
