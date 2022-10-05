@@ -5,9 +5,6 @@
 # the SWIG interface file instead.
 
 from sys import version_info as _swig_python_version_info
-if _swig_python_version_info < (2, 7, 0):
-    raise RuntimeError("Python 2.7 or later required")
-
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
     from . import _mapscript
@@ -29,10 +26,10 @@ def _swig_repr(self):
 
 def _swig_setattr_nondynamic_instance_variable(set):
     def set_instance_attr(self, name, value):
-        if name == "thisown":
-            self.this.own(value)
-        elif name == "this":
+        if name == "this":
             set(self, name, value)
+        elif name == "thisown":
+            self.this.own(value)
         elif hasattr(self, name) and isinstance(getattr(type(self), name), property):
             set(self, name, value)
         else:
@@ -84,10 +81,6 @@ class intarray(object):
 
 # Register intarray in _mapscript:
 _mapscript.intarray_swigregister(intarray)
-
-def intarray_frompointer(t: "int *") -> "intarray *":
-    return _mapscript.intarray_frompointer(t)
-
 
 MapServerError = _mapscript.MapServerError
 MapServerChildError = _mapscript.MapServerChildError
@@ -296,7 +289,6 @@ class CompositingFilter(object):
 
 # Register CompositingFilter in _mapscript:
 _mapscript.CompositingFilter_swigregister(CompositingFilter)
-
 class LayerCompositer(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -311,7 +303,6 @@ class LayerCompositer(object):
 
 # Register LayerCompositer in _mapscript:
 _mapscript.LayerCompositer_swigregister(LayerCompositer)
-
 MS_STYLE_BINDING_LENGTH = _mapscript.MS_STYLE_BINDING_LENGTH
 MS_STYLE_BINDING_SIZE = _mapscript.MS_STYLE_BINDING_SIZE
 MS_STYLE_BINDING_WIDTH = _mapscript.MS_STYLE_BINDING_WIDTH
@@ -351,7 +342,6 @@ class fontSetObj(object):
 
 # Register fontSetObj in _mapscript:
 _mapscript.fontSetObj_swigregister(fontSetObj)
-
 MS_TOKEN_LOGICAL_AND = _mapscript.MS_TOKEN_LOGICAL_AND
 MS_TOKEN_LOGICAL_OR = _mapscript.MS_TOKEN_LOGICAL_OR
 MS_TOKEN_LOGICAL_NOT = _mapscript.MS_TOKEN_LOGICAL_NOT
@@ -444,7 +434,6 @@ class clusterObj(object):
 
 # Register clusterObj in _mapscript:
 _mapscript.clusterObj_swigregister(clusterObj)
-
 class outputFormatObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -486,7 +475,6 @@ class outputFormatObj(object):
 
 # Register outputFormatObj in _mapscript:
 _mapscript.outputFormatObj_swigregister(outputFormatObj)
-
 MS_NOOVERRIDE = _mapscript.MS_NOOVERRIDE
 class queryMapObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
@@ -510,7 +498,6 @@ class queryMapObj(object):
 
 # Register queryMapObj in _mapscript:
 _mapscript.queryMapObj_swigregister(queryMapObj)
-
 class webObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -545,7 +532,6 @@ class webObj(object):
 
 # Register webObj in _mapscript:
 _mapscript.webObj_swigregister(webObj)
-
 class styleObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -629,7 +615,6 @@ class styleObj(object):
 
 # Register styleObj in _mapscript:
 _mapscript.styleObj_swigregister(styleObj)
-
 MS_STYLE_SINGLE_SIDED_OFFSET = _mapscript.MS_STYLE_SINGLE_SIDED_OFFSET
 MS_STYLE_DOUBLE_SIDED_OFFSET = _mapscript.MS_STYLE_DOUBLE_SIDED_OFFSET
 class labelLeaderObj(object):
@@ -645,7 +630,6 @@ class labelLeaderObj(object):
 
 # Register labelLeaderObj in _mapscript:
 _mapscript.labelLeaderObj_swigregister(labelLeaderObj)
-
 class labelObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -732,7 +716,6 @@ class labelObj(object):
 
 # Register labelObj in _mapscript:
 _mapscript.labelObj_swigregister(labelObj)
-
 MS_LABEL_PERPENDICULAR_OFFSET = _mapscript.MS_LABEL_PERPENDICULAR_OFFSET
 MS_LABEL_PERPENDICULAR_TOP_OFFSET = _mapscript.MS_LABEL_PERPENDICULAR_TOP_OFFSET
 class classObj(object):
@@ -821,7 +804,6 @@ class classObj(object):
 
 # Register classObj in _mapscript:
 _mapscript.classObj_swigregister(classObj)
-
 class labelCacheMemberObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -841,7 +823,6 @@ class labelCacheMemberObj(object):
 
 # Register labelCacheMemberObj in _mapscript:
 _mapscript.labelCacheMemberObj_swigregister(labelCacheMemberObj)
-
 class markerCacheMemberObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -854,7 +835,6 @@ class markerCacheMemberObj(object):
 
 # Register markerCacheMemberObj in _mapscript:
 _mapscript.markerCacheMemberObj_swigregister(markerCacheMemberObj)
-
 class labelCacheSlotObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -871,7 +851,6 @@ class labelCacheSlotObj(object):
 
 # Register labelCacheSlotObj in _mapscript:
 _mapscript.labelCacheSlotObj_swigregister(labelCacheSlotObj)
-
 class labelCacheObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -886,7 +865,6 @@ class labelCacheObj(object):
 
 # Register labelCacheObj in _mapscript:
 _mapscript.labelCacheObj_swigregister(labelCacheObj)
-
 class resultObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -901,7 +879,6 @@ class resultObj(object):
 
 # Register resultObj in _mapscript:
 _mapscript.resultObj_swigregister(resultObj)
-
 class resultCacheObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -917,7 +894,6 @@ class resultCacheObj(object):
 
 # Register resultCacheObj in _mapscript:
 _mapscript.resultCacheObj_swigregister(resultCacheObj)
-
 class symbolSetObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -950,7 +926,6 @@ class symbolSetObj(object):
 
 # Register symbolSetObj in _mapscript:
 _mapscript.symbolSetObj_swigregister(symbolSetObj)
-
 class referenceMapObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -980,7 +955,6 @@ class referenceMapObj(object):
 
 # Register referenceMapObj in _mapscript:
 _mapscript.referenceMapObj_swigregister(referenceMapObj)
-
 MS_SCALEBAR_INTERVALS_MIN = _mapscript.MS_SCALEBAR_INTERVALS_MIN
 MS_SCALEBAR_INTERVALS_MAX = _mapscript.MS_SCALEBAR_INTERVALS_MAX
 MS_SCALEBAR_WIDTH_MIN = _mapscript.MS_SCALEBAR_WIDTH_MIN
@@ -1022,7 +996,6 @@ class scalebarObj(object):
 
 # Register scalebarObj in _mapscript:
 _mapscript.scalebarObj_swigregister(scalebarObj)
-
 MS_LEGEND_KEYSIZE_MIN = _mapscript.MS_LEGEND_KEYSIZE_MIN
 MS_LEGEND_KEYSIZE_MAX = _mapscript.MS_LEGEND_KEYSIZE_MAX
 MS_LEGEND_KEYSPACING_MIN = _mapscript.MS_LEGEND_KEYSPACING_MIN
@@ -1058,7 +1031,6 @@ class legendObj(object):
 
 # Register legendObj in _mapscript:
 _mapscript.legendObj_swigregister(legendObj)
-
 class imageObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1088,7 +1060,6 @@ class imageObj(object):
 
 # Register imageObj in _mapscript:
 _mapscript.imageObj_swigregister(imageObj)
-
 class scaleTokenEntryObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1102,7 +1073,6 @@ class scaleTokenEntryObj(object):
 
 # Register scaleTokenEntryObj in _mapscript:
 _mapscript.scaleTokenEntryObj_swigregister(scaleTokenEntryObj)
-
 class scaleTokenObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1116,7 +1086,6 @@ class scaleTokenObj(object):
 
 # Register scaleTokenObj in _mapscript:
 _mapscript.scaleTokenObj_swigregister(scaleTokenObj)
-
 class layerObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1388,7 +1357,6 @@ class layerObj(object):
 
 # Register layerObj in _mapscript:
 _mapscript.layerObj_swigregister(layerObj)
-
 MS_RESOLUTION_MAX = _mapscript.MS_RESOLUTION_MAX
 MS_RESOLUTION_MIN = _mapscript.MS_RESOLUTION_MIN
 class mapObj(object):
@@ -1707,7 +1675,6 @@ class mapObj(object):
 # Register mapObj in _mapscript:
 _mapscript.mapObj_swigregister(mapObj)
 
-
 def msSaveImage(map: "mapObj", img: "imageObj", filename: "char const *") -> "int":
     return _mapscript.msSaveImage(map, img, filename)
 
@@ -1720,8 +1687,8 @@ def msSetup() -> "int":
 def msCleanup() -> "void":
     return _mapscript.msCleanup()
 
-def msLoadMapFromString(buffer: "char *", new_mappath: "char *") -> "mapObj *":
-    return _mapscript.msLoadMapFromString(buffer, new_mappath)
+def msLoadMapFromString(buffer: "char *", new_mappath: "char *", config: "configObj") -> "mapObj *":
+    return _mapscript.msLoadMapFromString(buffer, new_mappath, config)
 MS_VERSION_MAJOR = _mapscript.MS_VERSION_MAJOR
 MS_VERSION_MINOR = _mapscript.MS_VERSION_MINOR
 MS_VERSION_REV = _mapscript.MS_VERSION_REV
@@ -1776,7 +1743,6 @@ class rectObj(object):
 
 # Register rectObj in _mapscript:
 _mapscript.rectObj_swigregister(rectObj)
-
 class pointObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1837,7 +1803,6 @@ class pointObj(object):
 
 # Register pointObj in _mapscript:
 _mapscript.pointObj_swigregister(pointObj)
-
 class lineObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -1876,7 +1841,6 @@ class lineObj(object):
 
 # Register lineObj in _mapscript:
 _mapscript.lineObj_swigregister(lineObj)
-
 class shapeObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -2102,10 +2066,6 @@ class shapeObj(object):
 
 # Register shapeObj in _mapscript:
 _mapscript.shapeObj_swigregister(shapeObj)
-
-def shapeObj_fromWKT(wkt: "char *") -> "shapeObj *":
-    return _mapscript.shapeObj_fromWKT(wkt)
-
 MS_NOERR = _mapscript.MS_NOERR
 MS_IOERR = _mapscript.MS_IOERR
 MS_MEMERR = _mapscript.MS_MEMERR
@@ -2174,7 +2134,6 @@ class errorObj(object):
 # Register errorObj in _mapscript:
 _mapscript.errorObj_swigregister(errorObj)
 
-
 def msGetErrorObj() -> "errorObj *":
     return _mapscript.msGetErrorObj()
 
@@ -2233,7 +2192,6 @@ class DBFInfo(object):
 
 # Register DBFInfo in _mapscript:
 _mapscript.DBFInfo_swigregister(DBFInfo)
-
 FTString = _mapscript.FTString
 FTInteger = _mapscript.FTInteger
 FTDouble = _mapscript.FTDouble
@@ -2275,7 +2233,6 @@ class shapefileObj(object):
 
 # Register shapefileObj in _mapscript:
 _mapscript.shapefileObj_swigregister(shapefileObj)
-
 wkp_none = _mapscript.wkp_none
 wkp_lonlat = _mapscript.wkp_lonlat
 wkp_gmerc = _mapscript.wkp_gmerc
@@ -2298,7 +2255,6 @@ class projectionObj(object):
 
 # Register projectionObj in _mapscript:
 _mapscript.projectionObj_swigregister(projectionObj)
-
 class reprojectionObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -2309,7 +2265,6 @@ class reprojectionObj(object):
 
 # Register reprojectionObj in _mapscript:
 _mapscript.reprojectionObj_swigregister(reprojectionObj)
-
 MS_SYMBOL_SIMPLE = _mapscript.MS_SYMBOL_SIMPLE
 MS_SYMBOL_VECTOR = _mapscript.MS_SYMBOL_VECTOR
 MS_SYMBOL_ELLIPSE = _mapscript.MS_SYMBOL_ELLIPSE
@@ -2347,7 +2302,6 @@ class colorObj(object):
 
 # Register colorObj in _mapscript:
 _mapscript.colorObj_swigregister(colorObj)
-
 class symbolObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -2392,7 +2346,6 @@ class symbolObj(object):
 
 # Register symbolObj in _mapscript:
 _mapscript.symbolObj_swigregister(symbolObj)
-
 MS_HASHSIZE = _mapscript.MS_HASHSIZE
 class hashTableObj(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
@@ -2456,7 +2409,6 @@ class hashTableObj(object):
 
 # Register hashTableObj in _mapscript:
 _mapscript.hashTableObj_swigregister(hashTableObj)
-
 MS_CONFIG_SECTION = _mapscript.MS_CONFIG_SECTION
 MS_CONFIG_SECTION_ENV = _mapscript.MS_CONFIG_SECTION_ENV
 MS_CONFIG_SECTION_MAPS = _mapscript.MS_CONFIG_SECTION_MAPS
@@ -2474,7 +2426,6 @@ class configObj(object):
 
 # Register configObj in _mapscript:
 _mapscript.configObj_swigregister(configObj)
-
 
 def msLoadConfig(ms_config_file: "char const *") -> "configObj *":
     return _mapscript.msLoadConfig(ms_config_file)
@@ -2533,7 +2484,6 @@ class OWSRequest(object):
 # Register OWSRequest in _mapscript:
 _mapscript.OWSRequest_swigregister(OWSRequest)
 
-
 def msConnPoolCloseUnreferenced() -> "void":
     return _mapscript.msConnPoolCloseUnreferenced()
 
@@ -2561,7 +2511,7 @@ def msIO_getStdoutBufferBytes() -> "gdBuffer":
 def msIO_getAndStripStdoutBufferMimeHeaders() -> "hashTableObj *":
     return _mapscript.msIO_getAndStripStdoutBufferMimeHeaders()
 
-def fromstring(data, mappath=None):
+def fromstring(data, mappath=None, configpath=None):
     """Creates map objects from mapfile strings.
 
     Parameters
@@ -2578,8 +2528,13 @@ def fromstring(data, mappath=None):
     'test'
     """
     import re
-    if re.search(r"^\s*MAP", data, re.I): 
-        return msLoadMapFromString(data, mappath)
+    if re.search(r"^\s*MAP", data, re.I):
+# create a config object if a path is supplied
+        if configpath:
+             config = configObj(configpath)
+        else:
+             config = None
+        return msLoadMapFromString(data, mappath, config)
     elif re.search(r"^\s*LAYER", data, re.I):
         ob = layerObj()
         ob.updateFromString(data)
@@ -2594,6 +2549,5 @@ def fromstring(data, mappath=None):
         return ob
     else:
         raise ValueError("No map, layer, class, or style found. Can not load from provided string")
-
 
 
