@@ -148,6 +148,7 @@ p = r"D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Lib\site-
 m = mapscript.mapObj(p)
 m.convertToString()
 
+
 Testing in PowerShell
 ---------------------
 
@@ -164,7 +165,7 @@ python -c "import mapscript;print(mapscript.msGetVersion())"
 $env:PATH="$MAPSERVER_DLL_PATH;" + $env:PATH
 mapserv -v
 map2img -m D:/GitHub/mapserver/msautotest/misc/ogrbrush.map -o D:\Temp\test.png
-
+map2img -m D:/Temp/broken.map -o D:\Temp\test.png
 # venv from scratch
 
 C:\Python310\scripts\virtualenv C:\VirtualEnvs\mapscript8-test
@@ -189,9 +190,24 @@ set MAPSERVER_DLL_PATH=D:\MapServer\VS2022\build\RelWithDebInfo;D:\MapServer\VS2
 set PROJ_LIB=D:\MapServer\VS2022\sdk\bin\proj7\share
 python -c "import mapscript;print(mapscript.msGetVersion())"
 
+Start an interactive Python
 
 Attach to process
 Add debugger in source files.
+
+import mapscript
+p = r"D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Lib\site-packages\mapscript\tests\data\test.map"
+m = mapscript.mapObj(p)
+#print(m.getLayer(0).convertToString())
+print(m.convertToString())
+
+print("Done!")
+
+Save to script and run:
+
+
+python D:\Temp\test2.py
+
 
 
 Uploading to PyPI
