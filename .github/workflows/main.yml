@@ -104,6 +104,8 @@ jobs:
           $SWIG_PYTHON_INTERPRETER_NO_DEBUG=1
 
           $PYMAPSCRIPT_ANNOTATIONS=1
+          
+          # following only for GHA
           if ("${{ matrix.python-version }}" -eq "2.7")
           {
             $PYMAPSCRIPT_ANNOTATIONS=0
@@ -238,7 +240,7 @@ jobs:
 
       - name: Add Wheels and source files to repo
         #if: always() # always upload any files for debugging
-        # only check-in the wheels if the keyword upload-wheels is present in the commit message        
+        # only check-in the wheels if the keyword upload-wheels is present in the commit message
         if: contains(github.event.head_commit.message, 'upload-wheels')
         shell: powershell
         run: |
