@@ -2,17 +2,17 @@ name: Build Python MapScript Wheels
 
 on: [push]
 env:
-  # SDK: release-1928-x64
-  # VS_VER: "Visual Studio 16 2019"
-  SDK: "release-1930-x64"
-  VS_VER: "Visual Studio 17 2022"
+  SDK: release-1928-x64
+  VS_VER: "Visual Studio 16 2019"
+  #SDK: "release-1930-x64"
+  #VS_VER: "Visual Studio 17 2022"
   SWIG_VER: "4.1.0" # "4.0.2"
 
 jobs:
   build:
 
-    runs-on: windows-2022 # includes VS 2022
-    #runs-on: windows-2019 # includes VS 2019
+    #runs-on: windows-2022 # includes VS 2022
+    runs-on: windows-2019 # includes VS 2019
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
