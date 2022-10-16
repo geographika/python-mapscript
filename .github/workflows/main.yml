@@ -15,8 +15,8 @@ env:
 jobs:
   build:
 
-    #runs-on: windows-2022 # includes VS 2022
-    runs-on: windows-2019 # includes VS 2019
+    runs-on: windows-2022 # includes VS 2022
+    #runs-on: windows-2019 # includes VS 2019
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
@@ -63,8 +63,8 @@ jobs:
           # https://stackoverflow.com/questions/2124753/how-can-i-use-powershell-with-the-visual-studio-command-prompt
           
           # remote
-          #$VCVARS = "${{ env.VC_VARS }}"
-          $VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          $VCVARS = "${{ env.VC_VARS }}"
+
           # local
           # $VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
 
