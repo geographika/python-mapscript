@@ -151,10 +151,10 @@ jobs:
           -DPython_EXECUTABLE="$PYTHON_EXECUTABLE" `
           -DWITH_PYMAPSCRIPT_ANNOTATIONS=$PYMAPSCRIPT_ANNOTATIONS
 
-          #cmake --build . --config Release
+          cmake --build . --config Release
           # cannot use DEBUG here - see https://github.com/gisinternals/buildsystem/issues/195
           # can use RelWithDebInfo
-          cmake --build . --config Release
+          # cmake --build . --config RelWithDebInfo
           
           $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
           $env:PROJ_LIB="$SDK_BIN/proj7/SHARE"

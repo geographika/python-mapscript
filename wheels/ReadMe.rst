@@ -231,3 +231,7 @@ Properties > Debugging > Command Arguments
 
 map2img -m D:/GitHub/mapserver/msautotest/misc/ogrbrush.map -o D:\Temp\test.png
 
+mapserv -nh "QUERY_STRING=map=d:\tfs\lgcsb\main\python\pms-maps\mapfiles\generated\tipperary.map&SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&OUTPUTFORMAT=FileGDB&TYPENAME=RoadSchedule&SRSNAME=EPSG:2157&startIndex=0&count=2000"
+
+\tipperary.map&SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&OUTPUTFORMAT=FileGDB&TYPENAME=RoadSchedule&SRSNAME=EPSG:2157"
+mapserv -nh "QUERY_STRING=map=d:\tfs\lgcsb\main\python\pms-maps\mapfiles\generated\tipperary.map&SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&OUTPUTFORMAT=GeoJSON&TYPENAME=RoadSchedule&SRSNAME=EPSG:2157"
