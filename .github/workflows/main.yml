@@ -10,7 +10,7 @@ env:
   VS_VER: "Visual Studio 17 2022"
   VC_VARS: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
 
-  SWIG_VER: "4.1.0" # "4.0.2"
+  SWIG_VER: "4.1.1"
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
-        python-version: [2.7, 3.7, 3.8, 3.9, "3.10"] # 3.6 "3.10" needs to be in quotes and is currently failing 10 tests
+        python-version: [2.7, 3.7, 3.8, 3.9, "3.10", "3.11"] # 3.6 "3.10" needs to be in quotes and is currently failing 10 tests
 
 
     steps:
@@ -40,7 +40,8 @@ jobs:
           # cd D:\MapServer\VS2022
           #git clone https://github.com/geographika/mapserver.git --branch main --single-branch mapserver
           #git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
+          # git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
+          git clone https://github.com/mapserver/mapserver.git --branch rel-8-0-1 --single-branch mapserver
           
       - name: Download and unzip SDK
         shell: powershell

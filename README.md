@@ -63,12 +63,5 @@ To the mapserver project in VS (not mapserv)
 harfbuzz.lib(harfbuzz.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in mapwms.obj [D:\MapServer\VS2022\build\mapserver.vcxproj]
 
 
-Environment Settings
---------------------
 
-mapserv Properties > Debugging > Environment
-
-PROJ_LIB=D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj7\SHARE
-PATH=D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
-MAPSERVER_CONFIG_FILE=C:\MapServer\apps\mapserver.conf
 

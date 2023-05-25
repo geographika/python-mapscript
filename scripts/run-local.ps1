@@ -1,14 +1,23 @@
 # local
-$VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
+# in later versions of VS2022 the bat file no longer is deployed by default?!
+# need to manually install "MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.29-16.11)"
+# https://developercommunity.visualstudio.com/t/vcvarsallbat-fails-after-upgrade-from-2022-preview/1477538
+# https://developercommunity.visualstudio.com/t/Provide-a-PowerShell-version-of-vcvarsal/10238319?q=vcvarsall.bat+missing&sort=relevance
+#VCVARS = "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat"
 
-cmd.exe /c "call `"$VCVARS`" && set > %temp%\vcvars.txt"
-Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
-	if ($_ -match "^(.*?)=(.*)$") {
-		Set-Content "env:\$($matches[1])" $matches[2]
-	}
-}
+#cmd.exe /c "call `"$VCVARS`" && set > %temp%\vcvars.txt"
+#Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
+#	if ($_ -match "^(.*?)=(.*)$") {
+#		Set-Content "env:\$($matches[1])" $matches[2]
+#	}
+#}
 
+# run from within "Developer PowerShell for VS2022"
+# C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools
+# or run following from a command prompt (not PowerShell!)
+# C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Module """C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"""; Enter-VsDevShell 7683f8b4  -SkipAutomaticLocation -DevCmdArguments """-arch=x64 -host_arch=x64"""}"
 
+# https://stackoverflow.com/questions/74674641/how-to-integrate-developer-command-prompt-for-vs-2022-as-terminal-in-vs-code
          
 # following lines for local testing
 cd D:\MapServer\VS2022
@@ -72,7 +81,7 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 -DWITH_PYTHON=1 `
 -DWITH_PHPNG=0 `
 -DWITH_HARFBUZZ=1 `
--DPROJ_INCLUDE_DIR="$SDK_INC/proj7" `
+-DPROJ_INCLUDE_DIR="$SDK_INC/proj9" `
 -DPython_ROOT_DIR="$PYTHON_ROOT_DIR" `
 -DPython_EXECUTABLE="$PYTHON_EXECUTABLE" `
 -DWITH_PYMAPSCRIPT_ANNOTATIONS=$PYMAPSCRIPT_ANNOTATIONS
@@ -82,8 +91,13 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 # can use RelWithDebInfo
 cmake --build . --config RelWithDebInfo
 
+
+$env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/RelWithDebInfo;$SDK_BIN"
 $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
-$env:PROJ_LIB="$SDK_BIN/proj7/SHARE"
+
+$env:PATH="$ROOT_FOLDER/build/RelWithDebInfo;$env:PATH"
+
+$env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
 
 # cmake --build . --target pythonmapscript-wheel --config Release
-
+cmake --build . --target pythonmapscript-wheel --config Release
