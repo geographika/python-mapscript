@@ -205,15 +205,18 @@ Uploading to PyPI
 
 Now upload to testpypi
 
+$VENV="C:\VirtualEnvs\mapscript-Python311"
+.$VENV\Scripts\activate.ps1
+
 pip install twine
-cd /D D:\GitHub\python-mapscript\wheels
-twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.0.0*
+cd D:\GitHub\python-mapscript\wheels
+twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.0.1*
 
 https://test.pypi.org/project/mapscript/
 
-twine upload --repository-url https://upload.pypi.org/legacy/ mapscript-8.0.0*
+twine upload --repository-url https://upload.pypi.org/legacy/ mapscript-8.0.1*
 
-https://pypi.org/project/mapscript/8.0.0/
+https://pypi.org/project/mapscript/8.0.1/
 
 
 Debugging in Visual Studio
