@@ -39,8 +39,8 @@ jobs:
           # md D:\MapServer\VS2022
           # cd D:\MapServer\VS2022
           #git clone https://github.com/geographika/mapserver.git --branch main --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
-          # git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
+          # git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
+          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
           # git clone https://github.com/mapserver/mapserver.git --branch rel-8-0-1 --single-branch mapserver
           
       - name: Download and unzip SDK
