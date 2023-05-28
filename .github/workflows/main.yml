@@ -261,9 +261,10 @@ jobs:
           }
           git add .
           git commit -m "Add wheels"
-          
+
           cd "$root/src/${{ matrix.python-version }}"
-          $fld="$root/build/mapscript/python/CMakeFiles/_pythonmapscript.dir"
+          dir
+          $fld="$root/build/mapscript/python/CMakeFiles/pythonmapscript.dir"
           if (Test-Path -Path $fld) {
             cp -r "$fld/*" .
           }
