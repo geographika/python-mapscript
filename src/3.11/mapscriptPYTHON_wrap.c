@@ -48525,1016 +48525,1795 @@ static PyMethodDef SwigMethods[] = {
 	 { "delete_LayerCompositer", _wrap_delete_LayerCompositer, METH_O, NULL},
 	 { "LayerCompositer_swigregister", LayerCompositer_swigregister, METH_O, NULL},
 	 { "LayerCompositer_swiginit", LayerCompositer_swiginit, METH_VARARGS, NULL},
-	 { "fontSetObj_filename_get", _wrap_fontSetObj_filename_get, METH_O, NULL},
-	 { "fontSetObj_numfonts_get", _wrap_fontSetObj_numfonts_get, METH_O, NULL},
-	 { "fontSetObj_fonts_get", _wrap_fontSetObj_fonts_get, METH_O, NULL},
+	 { "fontSetObj_filename_get", _wrap_fontSetObj_filename_get, METH_O, " The filename of the fonset"},
+	 { "fontSetObj_numfonts_get", _wrap_fontSetObj_numfonts_get, METH_O, " The number of fonts in the fontset"},
+	 { "fontSetObj_fonts_get", _wrap_fontSetObj_fonts_get, METH_O, " Key, value pairs of font name and font file"},
 	 { "new_fontSetObj", _wrap_new_fontSetObj, METH_NOARGS, NULL},
 	 { "delete_fontSetObj", _wrap_delete_fontSetObj, METH_O, NULL},
 	 { "fontSetObj_swigregister", fontSetObj_swigregister, METH_O, NULL},
 	 { "fontSetObj_swiginit", fontSetObj_swiginit, METH_VARARGS, NULL},
-	 { "clusterObj_maxdistance_set", _wrap_clusterObj_maxdistance_set, METH_VARARGS, NULL},
-	 { "clusterObj_maxdistance_get", _wrap_clusterObj_maxdistance_get, METH_O, NULL},
-	 { "clusterObj_buffer_set", _wrap_clusterObj_buffer_set, METH_VARARGS, NULL},
-	 { "clusterObj_buffer_get", _wrap_clusterObj_buffer_get, METH_O, NULL},
-	 { "clusterObj_region_set", _wrap_clusterObj_region_set, METH_VARARGS, NULL},
-	 { "clusterObj_region_get", _wrap_clusterObj_region_get, METH_O, NULL},
-	 { "clusterObj_updateFromString", _wrap_clusterObj_updateFromString, METH_VARARGS, NULL},
-	 { "clusterObj_convertToString", _wrap_clusterObj_convertToString, METH_O, NULL},
-	 { "clusterObj_setGroup", _wrap_clusterObj_setGroup, METH_VARARGS, NULL},
-	 { "clusterObj_getGroupString", _wrap_clusterObj_getGroupString, METH_O, NULL},
-	 { "clusterObj_setFilter", _wrap_clusterObj_setFilter, METH_VARARGS, NULL},
+	 { "clusterObj_maxdistance_set", _wrap_clusterObj_maxdistance_set, METH_VARARGS, " Maximum distance between clusters - see :ref:`MAXDISTANCE <mapfile-cluster-maxdistance>`"},
+	 { "clusterObj_maxdistance_get", _wrap_clusterObj_maxdistance_get, METH_O, " Maximum distance between clusters - see :ref:`MAXDISTANCE <mapfile-cluster-maxdistance>`"},
+	 { "clusterObj_buffer_set", _wrap_clusterObj_buffer_set, METH_VARARGS, " The buffer size around the selection area - see :ref:`BUFFER <mapfile-cluster-buffer>`"},
+	 { "clusterObj_buffer_get", _wrap_clusterObj_buffer_get, METH_O, " The buffer size around the selection area - see :ref:`BUFFER <mapfile-cluster-buffer>`"},
+	 { "clusterObj_region_set", _wrap_clusterObj_region_set, METH_VARARGS, " The type of the cluster region (rectangle or ellipse) - see :ref:`REGION <mapfile-cluster-region>`"},
+	 { "clusterObj_region_get", _wrap_clusterObj_region_get, METH_O, " The type of the cluster region (rectangle or ellipse) - see :ref:`REGION <mapfile-cluster-region>`"},
+	 { "clusterObj_updateFromString", _wrap_clusterObj_updateFromString, METH_VARARGS, " Update a cluster from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "clusterObj_convertToString", _wrap_clusterObj_convertToString, METH_O, " Output the :ref:`cluster` as a Mapfile string"},
+	 { "clusterObj_setGroup", _wrap_clusterObj_setGroup, METH_VARARGS, "\n"
+		"Set :ref:`GROUP <mapfile-cluster-group>` string where `group` is a MapServer text expression.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "clusterObj_getGroupString", _wrap_clusterObj_getGroupString, METH_O, " Return a string representation of :ref:`GROUP <mapfile-cluster-group>`"},
+	 { "clusterObj_setFilter", _wrap_clusterObj_setFilter, METH_VARARGS, "\n"
+		"Set :ref:`FILTER <mapfile-cluster-filter>` string where `filter` is a MapServer text expression.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
 	 { "clusterObj_getFilterString", _wrap_clusterObj_getFilterString, METH_O, NULL},
 	 { "new_clusterObj", _wrap_new_clusterObj, METH_NOARGS, NULL},
 	 { "delete_clusterObj", _wrap_delete_clusterObj, METH_O, NULL},
 	 { "clusterObj_swigregister", clusterObj_swigregister, METH_O, NULL},
 	 { "clusterObj_swiginit", clusterObj_swiginit, METH_VARARGS, NULL},
-	 { "outputFormatObj_numformatoptions_get", _wrap_outputFormatObj_numformatoptions_get, METH_O, NULL},
-	 { "outputFormatObj_name_set", _wrap_outputFormatObj_name_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_name_get", _wrap_outputFormatObj_name_get, METH_O, NULL},
-	 { "outputFormatObj_mimetype_set", _wrap_outputFormatObj_mimetype_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_mimetype_get", _wrap_outputFormatObj_mimetype_get, METH_O, NULL},
-	 { "outputFormatObj_driver_set", _wrap_outputFormatObj_driver_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_driver_get", _wrap_outputFormatObj_driver_get, METH_O, NULL},
-	 { "outputFormatObj_extension_set", _wrap_outputFormatObj_extension_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_extension_get", _wrap_outputFormatObj_extension_get, METH_O, NULL},
-	 { "outputFormatObj_renderer_set", _wrap_outputFormatObj_renderer_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_renderer_get", _wrap_outputFormatObj_renderer_get, METH_O, NULL},
-	 { "outputFormatObj_imagemode_set", _wrap_outputFormatObj_imagemode_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_imagemode_get", _wrap_outputFormatObj_imagemode_get, METH_O, NULL},
-	 { "outputFormatObj_transparent_set", _wrap_outputFormatObj_transparent_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_transparent_get", _wrap_outputFormatObj_transparent_get, METH_O, NULL},
-	 { "outputFormatObj_bands_set", _wrap_outputFormatObj_bands_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_bands_get", _wrap_outputFormatObj_bands_get, METH_O, NULL},
-	 { "outputFormatObj_inmapfile_set", _wrap_outputFormatObj_inmapfile_set, METH_VARARGS, NULL},
-	 { "outputFormatObj_inmapfile_get", _wrap_outputFormatObj_inmapfile_get, METH_O, NULL},
-	 { "new_outputFormatObj", _wrap_new_outputFormatObj, METH_VARARGS, NULL},
+	 { "outputFormatObj_numformatoptions_get", _wrap_outputFormatObj_numformatoptions_get, METH_O, "\n"
+		"The number of option values set on this format - can be used to\n"
+		"iterate over the options array in conjunction with :func:`outputFormatObj.getOptionAt`\n"
+		""},
+	 { "outputFormatObj_name_set", _wrap_outputFormatObj_name_set, METH_VARARGS, " See :ref:`NAME <mapfile-outputformat-name>`"},
+	 { "outputFormatObj_name_get", _wrap_outputFormatObj_name_get, METH_O, " See :ref:`NAME <mapfile-outputformat-name>`"},
+	 { "outputFormatObj_mimetype_set", _wrap_outputFormatObj_mimetype_set, METH_VARARGS, " See :ref:`MIMETYPE <mapfile-outputformat-mimetype>`"},
+	 { "outputFormatObj_mimetype_get", _wrap_outputFormatObj_mimetype_get, METH_O, " See :ref:`MIMETYPE <mapfile-outputformat-mimetype>`"},
+	 { "outputFormatObj_driver_set", _wrap_outputFormatObj_driver_set, METH_VARARGS, " See :ref:`DRIVER <mapfile-outputformat-driver>`"},
+	 { "outputFormatObj_driver_get", _wrap_outputFormatObj_driver_get, METH_O, " See :ref:`DRIVER <mapfile-outputformat-driver>`"},
+	 { "outputFormatObj_extension_set", _wrap_outputFormatObj_extension_set, METH_VARARGS, " See :ref:`EXTENSION <mapfile-outputformat-extension>`"},
+	 { "outputFormatObj_extension_get", _wrap_outputFormatObj_extension_get, METH_O, " See :ref:`EXTENSION <mapfile-outputformat-extension>`"},
+	 { "outputFormatObj_renderer_set", _wrap_outputFormatObj_renderer_set, METH_VARARGS, " A :ref:`render mode constant<mapfile-constants-render>` - normally set internally based on the driver and some other setting in the constructor."},
+	 { "outputFormatObj_renderer_get", _wrap_outputFormatObj_renderer_get, METH_O, " A :ref:`render mode constant<mapfile-constants-render>` - normally set internally based on the driver and some other setting in the constructor."},
+	 { "outputFormatObj_imagemode_set", _wrap_outputFormatObj_imagemode_set, METH_VARARGS, " An :ref:`Image mode constant<mapfile-constants-imagemode>` - see :ref:`IMAGEMODE <mapfile-outputformat-imagemode>`"},
+	 { "outputFormatObj_imagemode_get", _wrap_outputFormatObj_imagemode_get, METH_O, " An :ref:`Image mode constant<mapfile-constants-imagemode>` - see :ref:`IMAGEMODE <mapfile-outputformat-imagemode>`"},
+	 { "outputFormatObj_transparent_set", _wrap_outputFormatObj_transparent_set, METH_VARARGS, " See :ref:`TRANSPARENT <mapfile-outputformat-transparent>`"},
+	 { "outputFormatObj_transparent_get", _wrap_outputFormatObj_transparent_get, METH_O, " See :ref:`TRANSPARENT <mapfile-outputformat-transparent>`"},
+	 { "outputFormatObj_bands_set", _wrap_outputFormatObj_bands_set, METH_VARARGS, "\n"
+		"The number of bands in the raster, normally set via the BAND_COUNT formatoption - this field should be considered read-only\n"
+		"Only used for the \"raw\" modes, MS_IMAGEMODE_BYTE, MS_IMAGEMODE_INT16, and MS_IMAGEMODE_FLOAT32\n"
+		""},
+	 { "outputFormatObj_bands_get", _wrap_outputFormatObj_bands_get, METH_O, "\n"
+		"The number of bands in the raster, normally set via the BAND_COUNT formatoption - this field should be considered read-only\n"
+		"Only used for the \"raw\" modes, MS_IMAGEMODE_BYTE, MS_IMAGEMODE_INT16, and MS_IMAGEMODE_FLOAT32\n"
+		""},
+	 { "outputFormatObj_inmapfile_set", _wrap_outputFormatObj_inmapfile_set, METH_VARARGS, " Boolean value indicating if the format is in the Mapfile"},
+	 { "outputFormatObj_inmapfile_get", _wrap_outputFormatObj_inmapfile_get, METH_O, " Boolean value indicating if the format is in the Mapfile"},
+	 { "new_outputFormatObj", _wrap_new_outputFormatObj, METH_VARARGS, " Create new instance. If name is not provided, the value of driver is used as a name."},
 	 { "delete_outputFormatObj", _wrap_delete_outputFormatObj, METH_O, NULL},
-	 { "outputFormatObj_setExtension", _wrap_outputFormatObj_setExtension, METH_VARARGS, NULL},
-	 { "outputFormatObj_setMimetype", _wrap_outputFormatObj_setMimetype, METH_VARARGS, NULL},
-	 { "outputFormatObj_setOption", _wrap_outputFormatObj_setOption, METH_VARARGS, NULL},
-	 { "outputFormatObj_validate", _wrap_outputFormatObj_validate, METH_O, NULL},
-	 { "outputFormatObj_getOption", _wrap_outputFormatObj_getOption, METH_VARARGS, NULL},
-	 { "outputFormatObj_getOptionAt", _wrap_outputFormatObj_getOptionAt, METH_VARARGS, NULL},
-	 { "outputFormatObj_attachDevice", _wrap_outputFormatObj_attachDevice, METH_VARARGS, NULL},
+	 { "outputFormatObj_setExtension", _wrap_outputFormatObj_setExtension, METH_VARARGS, "\n"
+		"Set file extension for output format such as  'png' or 'jpg'.\n"
+		"Method could probably be deprecated since the extension attribute is mutable.\n"
+		"Not in Java extension.\n"
+		""},
+	 { "outputFormatObj_setMimetype", _wrap_outputFormatObj_setMimetype, METH_VARARGS, "\n"
+		"Set mimetype for output format such as ``image/png`` or ``image/jpeg``.\n"
+		"Method could probably be deprecated since the mimetype attribute is mutable.\n"
+		"Not in Java extension\n"
+		""},
+	 { "outputFormatObj_setOption", _wrap_outputFormatObj_setOption, METH_VARARGS, " Set the format option at ``key`` to ``value``. Format options are mostly driver specific."},
+	 { "outputFormatObj_validate", _wrap_outputFormatObj_validate, METH_O, "\n"
+		"Checks some internal consistency issues, and returns :data:`MS_TRUE`\n"
+		"if things are OK and :data:`MS_FALSE` if there are problems.\n"
+		"Some problems are fixed up internally. May produce debug output if issues encountered.\n"
+		""},
+	 { "outputFormatObj_getOption", _wrap_outputFormatObj_getOption, METH_VARARGS, "\n"
+		"Return the format option at ``key`` or ``defaultvalue``\n"
+		"if key is not a valid hash index.\n"
+		""},
+	 { "outputFormatObj_getOptionAt", _wrap_outputFormatObj_getOptionAt, METH_VARARGS, "\n"
+		"Returns the option at ``idx`` or NULL if the index is beyond the array bounds.\n"
+		"The option is returned as the original KEY=VALUE string.\n"
+		"The number of available options can be obtained via :attr:`outputFormatObj.numformatoptions`\n"
+		""},
+	 { "outputFormatObj_attachDevice", _wrap_outputFormatObj_attachDevice, METH_VARARGS, " Set the device property of the output format"},
 	 { "outputFormatObj_swigregister", outputFormatObj_swigregister, METH_O, NULL},
 	 { "outputFormatObj_swiginit", outputFormatObj_swiginit, METH_VARARGS, NULL},
-	 { "queryMapObj_map_get", _wrap_queryMapObj_map_get, METH_O, NULL},
-	 { "queryMapObj_height_set", _wrap_queryMapObj_height_set, METH_VARARGS, NULL},
-	 { "queryMapObj_height_get", _wrap_queryMapObj_height_get, METH_O, NULL},
-	 { "queryMapObj_width_set", _wrap_queryMapObj_width_set, METH_VARARGS, NULL},
-	 { "queryMapObj_width_get", _wrap_queryMapObj_width_get, METH_O, NULL},
-	 { "queryMapObj_status_set", _wrap_queryMapObj_status_set, METH_VARARGS, NULL},
-	 { "queryMapObj_status_get", _wrap_queryMapObj_status_get, METH_O, NULL},
-	 { "queryMapObj_style_set", _wrap_queryMapObj_style_set, METH_VARARGS, NULL},
-	 { "queryMapObj_style_get", _wrap_queryMapObj_style_get, METH_O, NULL},
-	 { "queryMapObj_color_set", _wrap_queryMapObj_color_set, METH_VARARGS, NULL},
-	 { "queryMapObj_color_get", _wrap_queryMapObj_color_get, METH_O, NULL},
-	 { "queryMapObj_updateFromString", _wrap_queryMapObj_updateFromString, METH_VARARGS, NULL},
-	 { "queryMapObj_convertToString", _wrap_queryMapObj_convertToString, METH_O, NULL},
+	 { "queryMapObj_map_get", _wrap_queryMapObj_map_get, METH_O, " Reference to parent :class:`mapObj`"},
+	 { "queryMapObj_height_set", _wrap_queryMapObj_height_set, METH_VARARGS, " See :ref:`SIZE <mapfile-querymap-size>`"},
+	 { "queryMapObj_height_get", _wrap_queryMapObj_height_get, METH_O, " See :ref:`SIZE <mapfile-querymap-size>`"},
+	 { "queryMapObj_width_set", _wrap_queryMapObj_width_set, METH_VARARGS, " See :ref:`SIZE <mapfile-querymap-size>`"},
+	 { "queryMapObj_width_get", _wrap_queryMapObj_width_get, METH_O, " See :ref:`SIZE <mapfile-querymap-size>`"},
+	 { "queryMapObj_status_set", _wrap_queryMapObj_status_set, METH_VARARGS, " See :ref:`STATUS <mapfile-querymap-status>`"},
+	 { "queryMapObj_status_get", _wrap_queryMapObj_status_get, METH_O, " See :ref:`STATUS <mapfile-querymap-status>`"},
+	 { "queryMapObj_style_set", _wrap_queryMapObj_style_set, METH_VARARGS, " ``HILITE``, ``SELECTED`` or ``NORMAL`` - see :ref:`STYLE <mapfile-querymap-style>`"},
+	 { "queryMapObj_style_get", _wrap_queryMapObj_style_get, METH_O, " ``HILITE``, ``SELECTED`` or ``NORMAL`` - see :ref:`STYLE <mapfile-querymap-style>`"},
+	 { "queryMapObj_color_set", _wrap_queryMapObj_color_set, METH_VARARGS, " See :ref:`COLOR <mapfile-querymap-color>`"},
+	 { "queryMapObj_color_get", _wrap_queryMapObj_color_get, METH_O, " See :ref:`COLOR <mapfile-querymap-color>`"},
+	 { "queryMapObj_updateFromString", _wrap_queryMapObj_updateFromString, METH_VARARGS, "\n"
+		"Update a querymap from a string snippet.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "queryMapObj_convertToString", _wrap_queryMapObj_convertToString, METH_O, " Saves the object to a string. Provides the inverse option for :func:`queryMapObj.updateFromString`."},
 	 { "new_queryMapObj", _wrap_new_queryMapObj, METH_NOARGS, NULL},
 	 { "delete_queryMapObj", _wrap_delete_queryMapObj, METH_O, NULL},
 	 { "queryMapObj_swigregister", queryMapObj_swigregister, METH_O, NULL},
 	 { "queryMapObj_swiginit", queryMapObj_swiginit, METH_VARARGS, NULL},
-	 { "webObj_metadata_get", _wrap_webObj_metadata_get, METH_O, NULL},
-	 { "webObj_validation_get", _wrap_webObj_validation_get, METH_O, NULL},
-	 { "webObj_map_get", _wrap_webObj_map_get, METH_O, NULL},
-	 { "webObj_imagepath_set", _wrap_webObj_imagepath_set, METH_VARARGS, NULL},
-	 { "webObj_imagepath_get", _wrap_webObj_imagepath_get, METH_O, NULL},
-	 { "webObj_imageurl_set", _wrap_webObj_imageurl_set, METH_VARARGS, NULL},
-	 { "webObj_imageurl_get", _wrap_webObj_imageurl_get, METH_O, NULL},
-	 { "webObj_temppath_set", _wrap_webObj_temppath_set, METH_VARARGS, NULL},
-	 { "webObj_temppath_get", _wrap_webObj_temppath_get, METH_O, NULL},
-	 { "webObj_header_set", _wrap_webObj_header_set, METH_VARARGS, NULL},
-	 { "webObj_header_get", _wrap_webObj_header_get, METH_O, NULL},
-	 { "webObj_footer_set", _wrap_webObj_footer_set, METH_VARARGS, NULL},
-	 { "webObj_footer_get", _wrap_webObj_footer_get, METH_O, NULL},
-	 { "webObj_empty_set", _wrap_webObj_empty_set, METH_VARARGS, NULL},
-	 { "webObj_empty_get", _wrap_webObj_empty_get, METH_O, NULL},
-	 { "webObj_error_set", _wrap_webObj_error_set, METH_VARARGS, NULL},
-	 { "webObj_error_get", _wrap_webObj_error_get, METH_O, NULL},
-	 { "webObj_minscaledenom_set", _wrap_webObj_minscaledenom_set, METH_VARARGS, NULL},
-	 { "webObj_minscaledenom_get", _wrap_webObj_minscaledenom_get, METH_O, NULL},
-	 { "webObj_maxscaledenom_set", _wrap_webObj_maxscaledenom_set, METH_VARARGS, NULL},
-	 { "webObj_maxscaledenom_get", _wrap_webObj_maxscaledenom_get, METH_O, NULL},
-	 { "webObj_mintemplate_set", _wrap_webObj_mintemplate_set, METH_VARARGS, NULL},
-	 { "webObj_mintemplate_get", _wrap_webObj_mintemplate_get, METH_O, NULL},
-	 { "webObj_maxtemplate_set", _wrap_webObj_maxtemplate_set, METH_VARARGS, NULL},
-	 { "webObj_maxtemplate_get", _wrap_webObj_maxtemplate_get, METH_O, NULL},
-	 { "webObj_queryformat_set", _wrap_webObj_queryformat_set, METH_VARARGS, NULL},
-	 { "webObj_queryformat_get", _wrap_webObj_queryformat_get, METH_O, NULL},
-	 { "webObj_legendformat_set", _wrap_webObj_legendformat_set, METH_VARARGS, NULL},
-	 { "webObj_legendformat_get", _wrap_webObj_legendformat_get, METH_O, NULL},
-	 { "webObj_browseformat_set", _wrap_webObj_browseformat_set, METH_VARARGS, NULL},
-	 { "webObj_browseformat_get", _wrap_webObj_browseformat_get, METH_O, NULL},
-	 { "webObj_template_set", _wrap_webObj_template_set, METH_VARARGS, NULL},
-	 { "webObj_template_get", _wrap_webObj_template_get, METH_O, NULL},
-	 { "new_webObj", _wrap_new_webObj, METH_NOARGS, NULL},
+	 { "webObj_metadata_get", _wrap_webObj_metadata_get, METH_O, " Metadata hash table - see :ref:`METADATA <mapfile-web-metadata>`"},
+	 { "webObj_validation_get", _wrap_webObj_validation_get, METH_O, " See :ref:`VALIDATION <mapfile-web-validation>`"},
+	 { "webObj_map_get", _wrap_webObj_map_get, METH_O, " Reference to parent :class:`mapObj`"},
+	 { "webObj_imagepath_set", _wrap_webObj_imagepath_set, METH_VARARGS, " Filesystem path to temporary image location - see :ref:`IMAGEPATH <mapfile-web-imagepath>`"},
+	 { "webObj_imagepath_get", _wrap_webObj_imagepath_get, METH_O, " Filesystem path to temporary image location - see :ref:`IMAGEPATH <mapfile-web-imagepath>`"},
+	 { "webObj_imageurl_set", _wrap_webObj_imageurl_set, METH_VARARGS, " URL to temporary image location - see :ref:`IMAGEURL <mapfile-web-imageurl>`"},
+	 { "webObj_imageurl_get", _wrap_webObj_imageurl_get, METH_O, " URL to temporary image location - see :ref:`IMAGEURL <mapfile-web-imageurl>`"},
+	 { "webObj_temppath_set", _wrap_webObj_temppath_set, METH_VARARGS, " See :ref:`TEMPPATH <mapfile-web-temppath>`"},
+	 { "webObj_temppath_get", _wrap_webObj_temppath_get, METH_O, " See :ref:`TEMPPATH <mapfile-web-temppath>`"},
+	 { "webObj_header_set", _wrap_webObj_header_set, METH_VARARGS, " Path to header document - see :ref:`HEADER <mapfile-web-header>`"},
+	 { "webObj_header_get", _wrap_webObj_header_get, METH_O, " Path to header document - see :ref:`HEADER <mapfile-web-header>`"},
+	 { "webObj_footer_set", _wrap_webObj_footer_set, METH_VARARGS, " Path to footer document - see :ref:`FOOTER <mapfile-web-footer>`"},
+	 { "webObj_footer_get", _wrap_webObj_footer_get, METH_O, " Path to footer document - see :ref:`FOOTER <mapfile-web-footer>`"},
+	 { "webObj_empty_set", _wrap_webObj_empty_set, METH_VARARGS, " See :ref:`EMPTY <mapfile-web-empty>`"},
+	 { "webObj_empty_get", _wrap_webObj_empty_get, METH_O, " See :ref:`EMPTY <mapfile-web-empty>`"},
+	 { "webObj_error_set", _wrap_webObj_error_set, METH_VARARGS, " Error handling - see :ref:`ERROR <mapfile-web-error>`"},
+	 { "webObj_error_get", _wrap_webObj_error_get, METH_O, " Error handling - see :ref:`ERROR <mapfile-web-error>`"},
+	 { "webObj_minscaledenom_set", _wrap_webObj_minscaledenom_set, METH_VARARGS, " Maximum map scale - see :ref:`MINSCALEDENOM <mapfile-web-minscaledenom>`"},
+	 { "webObj_minscaledenom_get", _wrap_webObj_minscaledenom_get, METH_O, " Maximum map scale - see :ref:`MINSCALEDENOM <mapfile-web-minscaledenom>`"},
+	 { "webObj_maxscaledenom_set", _wrap_webObj_maxscaledenom_set, METH_VARARGS, " Minimum map scale - see :ref:`MAXSCALEDENOM <mapfile-web-maxscaledenom>`"},
+	 { "webObj_maxscaledenom_get", _wrap_webObj_maxscaledenom_get, METH_O, " Minimum map scale - see :ref:`MAXSCALEDENOM <mapfile-web-maxscaledenom>`"},
+	 { "webObj_mintemplate_set", _wrap_webObj_mintemplate_set, METH_VARARGS, " See :ref:`MINTEMPLATE <mapfile-web-mintemplate>`"},
+	 { "webObj_mintemplate_get", _wrap_webObj_mintemplate_get, METH_O, " See :ref:`MINTEMPLATE <mapfile-web-mintemplate>`"},
+	 { "webObj_maxtemplate_set", _wrap_webObj_maxtemplate_set, METH_VARARGS, " See :ref:`MAXTEMPLATE <mapfile-web-maxtemplate>`"},
+	 { "webObj_maxtemplate_get", _wrap_webObj_maxtemplate_get, METH_O, " See :ref:`MAXTEMPLATE <mapfile-web-maxtemplate>`"},
+	 { "webObj_queryformat_set", _wrap_webObj_queryformat_set, METH_VARARGS, " See :ref:`QUERYFORMAT <mapfile-web-queryformat>` /* what format is the query to be returned, given as a MIME type"},
+	 { "webObj_queryformat_get", _wrap_webObj_queryformat_get, METH_O, " See :ref:`QUERYFORMAT <mapfile-web-queryformat>` /* what format is the query to be returned, given as a MIME type"},
+	 { "webObj_legendformat_set", _wrap_webObj_legendformat_set, METH_VARARGS, " See :ref:`LEGENDFORMAT <mapfile-web-legendformat>`"},
+	 { "webObj_legendformat_get", _wrap_webObj_legendformat_get, METH_O, " See :ref:`LEGENDFORMAT <mapfile-web-legendformat>`"},
+	 { "webObj_browseformat_set", _wrap_webObj_browseformat_set, METH_VARARGS, " See :ref:`BROWSEFORMAT <mapfile-web-browseformat>`"},
+	 { "webObj_browseformat_get", _wrap_webObj_browseformat_get, METH_O, " See :ref:`BROWSEFORMAT <mapfile-web-browseformat>`"},
+	 { "webObj_template_set", _wrap_webObj_template_set, METH_VARARGS, " Path to template document - see :ref:`TEMPLATE <mapfile-web-template>`"},
+	 { "webObj_template_get", _wrap_webObj_template_get, METH_O, " Path to template document - see :ref:`TEMPLATE <mapfile-web-template>`"},
+	 { "new_webObj", _wrap_new_webObj, METH_NOARGS, "\n"
+		"Instances of :class:`webObj` are always are always embedded inside the :class:`mapObj`.\n"
+		"Has no other existence than as an attribute of a :class:`mapObj`. Serves as a container for various run-time\n"
+		"web application definitions like temporary file paths, template paths, etc.\n"
+		""},
 	 { "delete_webObj", _wrap_delete_webObj, METH_O, NULL},
-	 { "webObj_updateFromString", _wrap_webObj_updateFromString, METH_VARARGS, NULL},
-	 { "webObj_convertToString", _wrap_webObj_convertToString, METH_O, NULL},
+	 { "webObj_updateFromString", _wrap_webObj_updateFromString, METH_VARARGS, " Update a :class:`webObj` from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "webObj_convertToString", _wrap_webObj_convertToString, METH_O, " Output the :ref:`web` object as a Mapfile string. Provides the inverse option for :func:`webObj.updateFromString`."},
 	 { "webObj_swigregister", webObj_swigregister, METH_O, NULL},
 	 { "webObj_swiginit", webObj_swiginit, METH_VARARGS, NULL},
-	 { "styleObj_refcount_get", _wrap_styleObj_refcount_get, METH_O, NULL},
-	 { "styleObj_symbolname_get", _wrap_styleObj_symbolname_get, METH_O, NULL},
-	 { "styleObj_patternlength_get", _wrap_styleObj_patternlength_get, METH_O, NULL},
-	 { "styleObj_angle_set", _wrap_styleObj_angle_set, METH_VARARGS, NULL},
-	 { "styleObj_angle_get", _wrap_styleObj_angle_get, METH_O, NULL},
-	 { "styleObj_autoangle_set", _wrap_styleObj_autoangle_set, METH_VARARGS, NULL},
-	 { "styleObj_autoangle_get", _wrap_styleObj_autoangle_get, METH_O, NULL},
-	 { "styleObj_antialiased_set", _wrap_styleObj_antialiased_set, METH_VARARGS, NULL},
-	 { "styleObj_antialiased_get", _wrap_styleObj_antialiased_get, METH_O, NULL},
-	 { "styleObj_color_set", _wrap_styleObj_color_set, METH_VARARGS, NULL},
-	 { "styleObj_color_get", _wrap_styleObj_color_get, METH_O, NULL},
-	 { "styleObj_outlinecolor_set", _wrap_styleObj_outlinecolor_set, METH_VARARGS, NULL},
-	 { "styleObj_outlinecolor_get", _wrap_styleObj_outlinecolor_get, METH_O, NULL},
-	 { "styleObj_opacity_set", _wrap_styleObj_opacity_set, METH_VARARGS, NULL},
-	 { "styleObj_opacity_get", _wrap_styleObj_opacity_get, METH_O, NULL},
-	 { "styleObj_mincolor_set", _wrap_styleObj_mincolor_set, METH_VARARGS, NULL},
-	 { "styleObj_mincolor_get", _wrap_styleObj_mincolor_get, METH_O, NULL},
-	 { "styleObj_maxcolor_set", _wrap_styleObj_maxcolor_set, METH_VARARGS, NULL},
-	 { "styleObj_maxcolor_get", _wrap_styleObj_maxcolor_get, METH_O, NULL},
-	 { "styleObj_minvalue_set", _wrap_styleObj_minvalue_set, METH_VARARGS, NULL},
-	 { "styleObj_minvalue_get", _wrap_styleObj_minvalue_get, METH_O, NULL},
-	 { "styleObj_maxvalue_set", _wrap_styleObj_maxvalue_set, METH_VARARGS, NULL},
-	 { "styleObj_maxvalue_get", _wrap_styleObj_maxvalue_get, METH_O, NULL},
-	 { "styleObj_rangeitem_set", _wrap_styleObj_rangeitem_set, METH_VARARGS, NULL},
-	 { "styleObj_rangeitem_get", _wrap_styleObj_rangeitem_get, METH_O, NULL},
-	 { "styleObj_rangeitemindex_set", _wrap_styleObj_rangeitemindex_set, METH_VARARGS, NULL},
-	 { "styleObj_rangeitemindex_get", _wrap_styleObj_rangeitemindex_get, METH_O, NULL},
-	 { "styleObj_symbol_set", _wrap_styleObj_symbol_set, METH_VARARGS, NULL},
-	 { "styleObj_symbol_get", _wrap_styleObj_symbol_get, METH_O, NULL},
-	 { "styleObj_size_set", _wrap_styleObj_size_set, METH_VARARGS, NULL},
-	 { "styleObj_size_get", _wrap_styleObj_size_get, METH_O, NULL},
-	 { "styleObj_minsize_set", _wrap_styleObj_minsize_set, METH_VARARGS, NULL},
-	 { "styleObj_minsize_get", _wrap_styleObj_minsize_get, METH_O, NULL},
-	 { "styleObj_maxsize_set", _wrap_styleObj_maxsize_set, METH_VARARGS, NULL},
-	 { "styleObj_maxsize_get", _wrap_styleObj_maxsize_get, METH_O, NULL},
-	 { "styleObj_gap_set", _wrap_styleObj_gap_set, METH_VARARGS, NULL},
-	 { "styleObj_gap_get", _wrap_styleObj_gap_get, METH_O, NULL},
-	 { "styleObj_initialgap_set", _wrap_styleObj_initialgap_set, METH_VARARGS, NULL},
-	 { "styleObj_initialgap_get", _wrap_styleObj_initialgap_get, METH_O, NULL},
-	 { "styleObj_linecap_set", _wrap_styleObj_linecap_set, METH_VARARGS, NULL},
-	 { "styleObj_linecap_get", _wrap_styleObj_linecap_get, METH_O, NULL},
-	 { "styleObj_linejoin_set", _wrap_styleObj_linejoin_set, METH_VARARGS, NULL},
-	 { "styleObj_linejoin_get", _wrap_styleObj_linejoin_get, METH_O, NULL},
-	 { "styleObj_linejoinmaxsize_set", _wrap_styleObj_linejoinmaxsize_set, METH_VARARGS, NULL},
-	 { "styleObj_linejoinmaxsize_get", _wrap_styleObj_linejoinmaxsize_get, METH_O, NULL},
-	 { "styleObj_width_set", _wrap_styleObj_width_set, METH_VARARGS, NULL},
-	 { "styleObj_width_get", _wrap_styleObj_width_get, METH_O, NULL},
-	 { "styleObj_outlinewidth_set", _wrap_styleObj_outlinewidth_set, METH_VARARGS, NULL},
-	 { "styleObj_outlinewidth_get", _wrap_styleObj_outlinewidth_get, METH_O, NULL},
-	 { "styleObj_minwidth_set", _wrap_styleObj_minwidth_set, METH_VARARGS, NULL},
-	 { "styleObj_minwidth_get", _wrap_styleObj_minwidth_get, METH_O, NULL},
-	 { "styleObj_maxwidth_set", _wrap_styleObj_maxwidth_set, METH_VARARGS, NULL},
-	 { "styleObj_maxwidth_get", _wrap_styleObj_maxwidth_get, METH_O, NULL},
-	 { "styleObj_offsetx_set", _wrap_styleObj_offsetx_set, METH_VARARGS, NULL},
-	 { "styleObj_offsetx_get", _wrap_styleObj_offsetx_get, METH_O, NULL},
-	 { "styleObj_offsety_set", _wrap_styleObj_offsety_set, METH_VARARGS, NULL},
-	 { "styleObj_offsety_get", _wrap_styleObj_offsety_get, METH_O, NULL},
-	 { "styleObj_polaroffsetpixel_set", _wrap_styleObj_polaroffsetpixel_set, METH_VARARGS, NULL},
-	 { "styleObj_polaroffsetpixel_get", _wrap_styleObj_polaroffsetpixel_get, METH_O, NULL},
-	 { "styleObj_polaroffsetangle_set", _wrap_styleObj_polaroffsetangle_set, METH_VARARGS, NULL},
-	 { "styleObj_polaroffsetangle_get", _wrap_styleObj_polaroffsetangle_get, METH_O, NULL},
-	 { "styleObj_minscaledenom_set", _wrap_styleObj_minscaledenom_set, METH_VARARGS, NULL},
-	 { "styleObj_minscaledenom_get", _wrap_styleObj_minscaledenom_get, METH_O, NULL},
-	 { "styleObj_maxscaledenom_set", _wrap_styleObj_maxscaledenom_set, METH_VARARGS, NULL},
-	 { "styleObj_maxscaledenom_get", _wrap_styleObj_maxscaledenom_get, METH_O, NULL},
-	 { "styleObj_sizeunits_set", _wrap_styleObj_sizeunits_set, METH_VARARGS, NULL},
-	 { "styleObj_sizeunits_get", _wrap_styleObj_sizeunits_get, METH_O, NULL},
-	 { "new_styleObj", _wrap_new_styleObj, METH_VARARGS, NULL},
+	 { "styleObj_refcount_get", _wrap_styleObj_refcount_get, METH_O, " number of references to this object"},
+	 { "styleObj_symbolname_get", _wrap_styleObj_symbolname_get, METH_O, " Name of the style's symbol - see :ref:`symbolname <mapfile-style-symbol>`"},
+	 { "styleObj_patternlength_get", _wrap_styleObj_patternlength_get, METH_O, " Number of elements in the pattern attribute"},
+	 { "styleObj_angle_set", _wrap_styleObj_angle_set, METH_VARARGS, "\n"
+		"Angle, given in degrees, to draw the line work, default is 0, for symbols of Type HATCH, this is the angle of the\n"
+		"hatched lines - see :ref:`ANGLE <mapfile-style-angle>`\n"
+		""},
+	 { "styleObj_angle_get", _wrap_styleObj_angle_get, METH_O, "\n"
+		"Angle, given in degrees, to draw the line work, default is 0, for symbols of Type HATCH, this is the angle of the\n"
+		"hatched lines - see :ref:`ANGLE <mapfile-style-angle>`\n"
+		""},
+	 { "styleObj_autoangle_set", _wrap_styleObj_autoangle_set, METH_VARARGS, " If the angle is set to ``AUTO`` - see :ref:`ANGLE <mapfile-style-angle>`"},
+	 { "styleObj_autoangle_get", _wrap_styleObj_autoangle_get, METH_O, " If the angle is set to ``AUTO`` - see :ref:`ANGLE <mapfile-style-angle>`"},
+	 { "styleObj_antialiased_set", _wrap_styleObj_antialiased_set, METH_VARARGS, " See :ref:`ANTIALIAS <mapfile-style-antialias>`"},
+	 { "styleObj_antialiased_get", _wrap_styleObj_antialiased_get, METH_O, " See :ref:`ANTIALIAS <mapfile-style-antialias>`"},
+	 { "styleObj_color_set", _wrap_styleObj_color_set, METH_VARARGS, " Foreground or fill pen color - see :ref:`COLOR <mapfile-style-color>`"},
+	 { "styleObj_color_get", _wrap_styleObj_color_get, METH_O, " Foreground or fill pen color - see :ref:`COLOR <mapfile-style-color>`"},
+	 { "styleObj_outlinecolor_set", _wrap_styleObj_outlinecolor_set, METH_VARARGS, " Outline pen color - see :ref:`OUTLINECOLOR <mapfile-style-outlinecolor>`"},
+	 { "styleObj_outlinecolor_get", _wrap_styleObj_outlinecolor_get, METH_O, " Outline pen color - see :ref:`OUTLINECOLOR <mapfile-style-outlinecolor>`"},
+	 { "styleObj_opacity_set", _wrap_styleObj_opacity_set, METH_VARARGS, " See :ref:`OPACITY <mapfile-style-opacity>`"},
+	 { "styleObj_opacity_get", _wrap_styleObj_opacity_get, METH_O, " See :ref:`OPACITY <mapfile-style-opacity>`"},
+	 { "styleObj_mincolor_set", _wrap_styleObj_mincolor_set, METH_VARARGS, " Minimum color in the :ref:`COLORRANGE <mapfile-style-colorrange>`"},
+	 { "styleObj_mincolor_get", _wrap_styleObj_mincolor_get, METH_O, " Minimum color in the :ref:`COLORRANGE <mapfile-style-colorrange>`"},
+	 { "styleObj_maxcolor_set", _wrap_styleObj_maxcolor_set, METH_VARARGS, " Maximum color in the :ref:`COLORRANGE <mapfile-style-colorrange>`"},
+	 { "styleObj_maxcolor_get", _wrap_styleObj_maxcolor_get, METH_O, " Maximum color in the :ref:`COLORRANGE <mapfile-style-colorrange>`"},
+	 { "styleObj_minvalue_set", _wrap_styleObj_minvalue_set, METH_VARARGS, " related to color ranges"},
+	 { "styleObj_minvalue_get", _wrap_styleObj_minvalue_get, METH_O, " related to color ranges"},
+	 { "styleObj_maxvalue_set", _wrap_styleObj_maxvalue_set, METH_VARARGS, " related to color ranges"},
+	 { "styleObj_maxvalue_get", _wrap_styleObj_maxvalue_get, METH_O, " related to color ranges"},
+	 { "styleObj_rangeitem_set", _wrap_styleObj_rangeitem_set, METH_VARARGS, " Attribute/field that stores the values for the Color Range Mapping  - see :ref:`RANGEITEM <mapfile-style-rangeitem>`"},
+	 { "styleObj_rangeitem_get", _wrap_styleObj_rangeitem_get, METH_O, " Attribute/field that stores the values for the Color Range Mapping  - see :ref:`RANGEITEM <mapfile-style-rangeitem>`"},
+	 { "styleObj_rangeitemindex_set", _wrap_styleObj_rangeitemindex_set, METH_VARARGS, " The index of the range item - see :ref:`RANGEITEM <mapfile-style-rangeitem>`"},
+	 { "styleObj_rangeitemindex_get", _wrap_styleObj_rangeitemindex_get, METH_O, " The index of the range item - see :ref:`RANGEITEM <mapfile-style-rangeitem>`"},
+	 { "styleObj_symbol_set", _wrap_styleObj_symbol_set, METH_VARARGS, " The index within the map symbolset of the style's symbol - see :ref:`SYMBOL <mapfile-style-symbol>`"},
+	 { "styleObj_symbol_get", _wrap_styleObj_symbol_get, METH_O, " The index within the map symbolset of the style's symbol - see :ref:`SYMBOL <mapfile-style-symbol>`"},
+	 { "styleObj_size_set", _wrap_styleObj_size_set, METH_VARARGS, " Pixel width of the style's pen or symbol - see :ref:`SIZE <mapfile-style-size>`"},
+	 { "styleObj_size_get", _wrap_styleObj_size_get, METH_O, " Pixel width of the style's pen or symbol - see :ref:`SIZE <mapfile-style-size>`"},
+	 { "styleObj_minsize_set", _wrap_styleObj_minsize_set, METH_VARARGS, " Minimum pen or symbol width for scaling styles - see :ref:`MINSIZE <mapfile-style-minsize>`"},
+	 { "styleObj_minsize_get", _wrap_styleObj_minsize_get, METH_O, " Minimum pen or symbol width for scaling styles - see :ref:`MINSIZE <mapfile-style-minsize>`"},
+	 { "styleObj_maxsize_set", _wrap_styleObj_maxsize_set, METH_VARARGS, " Maximum pen or symbol width for scaling - see :ref:`MAXSIZE <mapfile-style-maxsize>`"},
+	 { "styleObj_maxsize_get", _wrap_styleObj_maxsize_get, METH_O, " Maximum pen or symbol width for scaling - see :ref:`MAXSIZE <mapfile-style-maxsize>`"},
+	 { "styleObj_gap_set", _wrap_styleObj_gap_set, METH_VARARGS, " See :ref:`GAP <mapfile-style-gap>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_gap_get", _wrap_styleObj_gap_get, METH_O, " See :ref:`GAP <mapfile-style-gap>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_initialgap_set", _wrap_styleObj_initialgap_set, METH_VARARGS, " See :ref:`INITIALGAP <mapfile-style-initialgap>`"},
+	 { "styleObj_initialgap_get", _wrap_styleObj_initialgap_get, METH_O, " See :ref:`INITIALGAP <mapfile-style-initialgap>`"},
+	 { "styleObj_linecap_set", _wrap_styleObj_linecap_set, METH_VARARGS, " See :ref:`LINECAP <mapfile-style-linecap>`"},
+	 { "styleObj_linecap_get", _wrap_styleObj_linecap_get, METH_O, " See :ref:`LINECAP <mapfile-style-linecap>`"},
+	 { "styleObj_linejoin_set", _wrap_styleObj_linejoin_set, METH_VARARGS, " See :ref:`LINEJOIN <mapfile-style-linejoin>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_linejoin_get", _wrap_styleObj_linejoin_get, METH_O, " See :ref:`LINEJOIN <mapfile-style-linejoin>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_linejoinmaxsize_set", _wrap_styleObj_linejoinmaxsize_set, METH_VARARGS, " See :ref:`LINEJOINMAXSIZE <mapfile-style-linejoinmaxsize>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_linejoinmaxsize_get", _wrap_styleObj_linejoinmaxsize_get, METH_O, " See :ref:`LINEJOINMAXSIZE <mapfile-style-linejoinmaxsize>` - moved from symbolObj in version 6.0"},
+	 { "styleObj_width_set", _wrap_styleObj_width_set, METH_VARARGS, "\n"
+		"Width refers to the thickness of line work drawn, in pixels - default is 1,\n"
+		"for symbols of type ``HATCH``, the with is how thick the hatched lines are - see :ref:`WIDTH <mapfile-style-width>`\n"
+		""},
+	 { "styleObj_width_get", _wrap_styleObj_width_get, METH_O, "\n"
+		"Width refers to the thickness of line work drawn, in pixels - default is 1,\n"
+		"for symbols of type ``HATCH``, the with is how thick the hatched lines are - see :ref:`WIDTH <mapfile-style-width>`\n"
+		""},
+	 { "styleObj_outlinewidth_set", _wrap_styleObj_outlinewidth_set, METH_VARARGS, " See :ref:`OUTLINEWIDTH <mapfile-style-outlinewidth>`"},
+	 { "styleObj_outlinewidth_get", _wrap_styleObj_outlinewidth_get, METH_O, " See :ref:`OUTLINEWIDTH <mapfile-style-outlinewidth>`"},
+	 { "styleObj_minwidth_set", _wrap_styleObj_minwidth_set, METH_VARARGS, " Minimum width of the symbol - see :ref:`MINWIDTH <mapfile-style-minwidth>`"},
+	 { "styleObj_minwidth_get", _wrap_styleObj_minwidth_get, METH_O, " Minimum width of the symbol - see :ref:`MINWIDTH <mapfile-style-minwidth>`"},
+	 { "styleObj_maxwidth_set", _wrap_styleObj_maxwidth_set, METH_VARARGS, " Maximum width of the symbol - see :ref:`MAXWIDTH <mapfile-style-maxwidth>`"},
+	 { "styleObj_maxwidth_get", _wrap_styleObj_maxwidth_get, METH_O, " Maximum width of the symbol - see :ref:`MAXWIDTH <mapfile-style-maxwidth>`"},
+	 { "styleObj_offsetx_set", _wrap_styleObj_offsetx_set, METH_VARARGS, " Draw with pen or symbol offset from map data, for shadows, hollow symbols, etc - see :ref:`OFFSET <mapfile-style-offset>`"},
+	 { "styleObj_offsetx_get", _wrap_styleObj_offsetx_get, METH_O, " Draw with pen or symbol offset from map data, for shadows, hollow symbols, etc - see :ref:`OFFSET <mapfile-style-offset>`"},
+	 { "styleObj_offsety_set", _wrap_styleObj_offsety_set, METH_VARARGS, " Draw with pen or symbol offset from map data, for shadows, hollow symbols, etc - see :ref:`OFFSET <mapfile-style-offset>`"},
+	 { "styleObj_offsety_get", _wrap_styleObj_offsety_get, METH_O, " Draw with pen or symbol offset from map data, for shadows, hollow symbols, etc - see :ref:`OFFSET <mapfile-style-offset>`"},
+	 { "styleObj_polaroffsetpixel_set", _wrap_styleObj_polaroffsetpixel_set, METH_VARARGS, " Specifies the radius/distance - see :ref:`POLAROFFSET <mapfile-style-polaroffset>`"},
+	 { "styleObj_polaroffsetpixel_get", _wrap_styleObj_polaroffsetpixel_get, METH_O, " Specifies the radius/distance - see :ref:`POLAROFFSET <mapfile-style-polaroffset>`"},
+	 { "styleObj_polaroffsetangle_set", _wrap_styleObj_polaroffsetangle_set, METH_VARARGS, " Specified the angle - see :ref:`POLAROFFSET <mapfile-style-polaroffset>`"},
+	 { "styleObj_polaroffsetangle_get", _wrap_styleObj_polaroffsetangle_get, METH_O, " Specified the angle - see :ref:`POLAROFFSET <mapfile-style-polaroffset>`"},
+	 { "styleObj_minscaledenom_set", _wrap_styleObj_minscaledenom_set, METH_VARARGS, " See :ref:`MINSCALEDENOM <mapfile-style-minscaledenom>`"},
+	 { "styleObj_minscaledenom_get", _wrap_styleObj_minscaledenom_get, METH_O, " See :ref:`MINSCALEDENOM <mapfile-style-minscaledenom>`"},
+	 { "styleObj_maxscaledenom_set", _wrap_styleObj_maxscaledenom_set, METH_VARARGS, " See :ref:`MAXSCALEDENOM <mapfile-style-maxscaledenom>`"},
+	 { "styleObj_maxscaledenom_get", _wrap_styleObj_maxscaledenom_get, METH_O, " See :ref:`MAXSCALEDENOM <mapfile-style-maxscaledenom>`"},
+	 { "styleObj_sizeunits_set", _wrap_styleObj_sizeunits_set, METH_VARARGS, " Supersedes class's :ref:`SIZEUNITS <mapfile-layer-sizeunits>` to allow fine-grained sizing for improved SLD (RFC 124)"},
+	 { "styleObj_sizeunits_get", _wrap_styleObj_sizeunits_get, METH_O, " Supersedes class's :ref:`SIZEUNITS <mapfile-layer-sizeunits>` to allow fine-grained sizing for improved SLD (RFC 124)"},
+	 { "new_styleObj", _wrap_new_styleObj, METH_VARARGS, " Returns new default :class:`styleObj` instance. The ``parent_class`` is optional."},
 	 { "delete_styleObj", _wrap_delete_styleObj, METH_O, NULL},
-	 { "styleObj_updateFromString", _wrap_styleObj_updateFromString, METH_VARARGS, NULL},
-	 { "styleObj_convertToString", _wrap_styleObj_convertToString, METH_O, NULL},
-	 { "styleObj_clone", _wrap_styleObj_clone, METH_O, NULL},
-	 { "styleObj_setSymbolByName", _wrap_styleObj_setSymbolByName, METH_VARARGS, NULL},
-	 { "styleObj_removeBinding", _wrap_styleObj_removeBinding, METH_VARARGS, NULL},
-	 { "styleObj_setBinding", _wrap_styleObj_setBinding, METH_VARARGS, NULL},
-	 { "styleObj_getBinding", _wrap_styleObj_getBinding, METH_VARARGS, NULL},
-	 { "styleObj_getGeomTransform", _wrap_styleObj_getGeomTransform, METH_O, NULL},
-	 { "styleObj_setGeomTransform", _wrap_styleObj_setGeomTransform, METH_VARARGS, NULL},
-	 { "styleObj_pattern_set", _wrap_styleObj_pattern_set, METH_VARARGS, NULL},
-	 { "styleObj_pattern_get", _wrap_styleObj_pattern_get, METH_O, NULL},
+	 { "styleObj_updateFromString", _wrap_styleObj_updateFromString, METH_VARARGS, "\n"
+		"Update a style from a string snippet.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "styleObj_convertToString", _wrap_styleObj_convertToString, METH_O, " Saves the object to a string. Provides the inverse option for :func:`styleObj.updateFromString`"},
+	 { "styleObj_clone", _wrap_styleObj_clone, METH_O, "\n"
+		"Return an independent copy of the style with no parent class.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    In the Java & PHP modules this method is named ``cloneStyle``.\n"
+		""},
+	 { "styleObj_setSymbolByName", _wrap_styleObj_setSymbolByName, METH_VARARGS, "\n"
+		"Setting the symbol of the :class:`styleObj` given the reference of the map\n"
+		"object and the symbol name.\n"
+		""},
+	 { "styleObj_removeBinding", _wrap_styleObj_removeBinding, METH_VARARGS, " Remove the attribute binding for a specified style property."},
+	 { "styleObj_setBinding", _wrap_styleObj_setBinding, METH_VARARGS, " Remove the attribute binding for a specified style property."},
+	 { "styleObj_getBinding", _wrap_styleObj_getBinding, METH_VARARGS, "\n"
+		"Get the attribute binding for a specified style property.\n"
+		"Returns NULL if there is no binding for this property.\n"
+		""},
+	 { "styleObj_getGeomTransform", _wrap_styleObj_getGeomTransform, METH_O, " Get the :ref:`GEOMTRANSFORM <mapfile-style-geomtransform>` for the style."},
+	 { "styleObj_setGeomTransform", _wrap_styleObj_setGeomTransform, METH_VARARGS, " Set the :ref:`GEOMTRANSFORM <mapfile-style-geomtransform>` for the style."},
+	 { "styleObj_pattern_set", _wrap_styleObj_pattern_set, METH_VARARGS, "Python Only** Set the pattern for the style."},
+	 { "styleObj_pattern_get", _wrap_styleObj_pattern_get, METH_O, "Python Only** Get the pattern for the style."},
 	 { "styleObj_swigregister", styleObj_swigregister, METH_O, NULL},
 	 { "styleObj_swiginit", styleObj_swiginit, METH_VARARGS, NULL},
-	 { "labelLeaderObj_numstyles_get", _wrap_labelLeaderObj_numstyles_get, METH_O, NULL},
-	 { "labelLeaderObj_maxdistance_set", _wrap_labelLeaderObj_maxdistance_set, METH_VARARGS, NULL},
-	 { "labelLeaderObj_maxdistance_get", _wrap_labelLeaderObj_maxdistance_get, METH_O, NULL},
-	 { "labelLeaderObj_gridstep_set", _wrap_labelLeaderObj_gridstep_set, METH_VARARGS, NULL},
-	 { "labelLeaderObj_gridstep_get", _wrap_labelLeaderObj_gridstep_get, METH_O, NULL},
+	 { "labelLeaderObj_numstyles_get", _wrap_labelLeaderObj_numstyles_get, METH_O, " Number of styles used"},
+	 { "labelLeaderObj_maxdistance_set", _wrap_labelLeaderObj_maxdistance_set, METH_VARARGS, " See :ref:`MAXDISTANCE <mapfile-leader-maxdistance>`"},
+	 { "labelLeaderObj_maxdistance_get", _wrap_labelLeaderObj_maxdistance_get, METH_O, " See :ref:`MAXDISTANCE <mapfile-leader-maxdistance>`"},
+	 { "labelLeaderObj_gridstep_set", _wrap_labelLeaderObj_gridstep_set, METH_VARARGS, " See :ref:`GRIDSTEP <mapfile-leader-gridstep>`"},
+	 { "labelLeaderObj_gridstep_get", _wrap_labelLeaderObj_gridstep_get, METH_O, " See :ref:`GRIDSTEP <mapfile-leader-gridstep>`"},
 	 { "new_labelLeaderObj", _wrap_new_labelLeaderObj, METH_NOARGS, NULL},
 	 { "delete_labelLeaderObj", _wrap_delete_labelLeaderObj, METH_O, NULL},
 	 { "labelLeaderObj_swigregister", labelLeaderObj_swigregister, METH_O, NULL},
 	 { "labelLeaderObj_swiginit", labelLeaderObj_swiginit, METH_VARARGS, NULL},
 	 { "labelObj_refcount_get", _wrap_labelObj_refcount_get, METH_O, NULL},
-	 { "labelObj_font_set", _wrap_labelObj_font_set, METH_VARARGS, NULL},
-	 { "labelObj_font_get", _wrap_labelObj_font_get, METH_O, NULL},
-	 { "labelObj_color_set", _wrap_labelObj_color_set, METH_VARARGS, NULL},
-	 { "labelObj_color_get", _wrap_labelObj_color_get, METH_O, NULL},
-	 { "labelObj_outlinecolor_set", _wrap_labelObj_outlinecolor_set, METH_VARARGS, NULL},
-	 { "labelObj_outlinecolor_get", _wrap_labelObj_outlinecolor_get, METH_O, NULL},
-	 { "labelObj_outlinewidth_set", _wrap_labelObj_outlinewidth_set, METH_VARARGS, NULL},
-	 { "labelObj_outlinewidth_get", _wrap_labelObj_outlinewidth_get, METH_O, NULL},
-	 { "labelObj_shadowcolor_set", _wrap_labelObj_shadowcolor_set, METH_VARARGS, NULL},
-	 { "labelObj_shadowcolor_get", _wrap_labelObj_shadowcolor_get, METH_O, NULL},
-	 { "labelObj_shadowsizex_set", _wrap_labelObj_shadowsizex_set, METH_VARARGS, NULL},
-	 { "labelObj_shadowsizex_get", _wrap_labelObj_shadowsizex_get, METH_O, NULL},
-	 { "labelObj_shadowsizey_set", _wrap_labelObj_shadowsizey_set, METH_VARARGS, NULL},
-	 { "labelObj_shadowsizey_get", _wrap_labelObj_shadowsizey_get, METH_O, NULL},
-	 { "labelObj_size_set", _wrap_labelObj_size_set, METH_VARARGS, NULL},
-	 { "labelObj_size_get", _wrap_labelObj_size_get, METH_O, NULL},
-	 { "labelObj_minsize_set", _wrap_labelObj_minsize_set, METH_VARARGS, NULL},
-	 { "labelObj_minsize_get", _wrap_labelObj_minsize_get, METH_O, NULL},
-	 { "labelObj_maxsize_set", _wrap_labelObj_maxsize_set, METH_VARARGS, NULL},
-	 { "labelObj_maxsize_get", _wrap_labelObj_maxsize_get, METH_O, NULL},
-	 { "labelObj_position_set", _wrap_labelObj_position_set, METH_VARARGS, NULL},
-	 { "labelObj_position_get", _wrap_labelObj_position_get, METH_O, NULL},
-	 { "labelObj_offsetx_set", _wrap_labelObj_offsetx_set, METH_VARARGS, NULL},
-	 { "labelObj_offsetx_get", _wrap_labelObj_offsetx_get, METH_O, NULL},
-	 { "labelObj_offsety_set", _wrap_labelObj_offsety_set, METH_VARARGS, NULL},
-	 { "labelObj_offsety_get", _wrap_labelObj_offsety_get, METH_O, NULL},
-	 { "labelObj_angle_set", _wrap_labelObj_angle_set, METH_VARARGS, NULL},
-	 { "labelObj_angle_get", _wrap_labelObj_angle_get, METH_O, NULL},
-	 { "labelObj_anglemode_set", _wrap_labelObj_anglemode_set, METH_VARARGS, NULL},
-	 { "labelObj_anglemode_get", _wrap_labelObj_anglemode_get, METH_O, NULL},
-	 { "labelObj_buffer_set", _wrap_labelObj_buffer_set, METH_VARARGS, NULL},
-	 { "labelObj_buffer_get", _wrap_labelObj_buffer_get, METH_O, NULL},
-	 { "labelObj_align_set", _wrap_labelObj_align_set, METH_VARARGS, NULL},
-	 { "labelObj_align_get", _wrap_labelObj_align_get, METH_O, NULL},
-	 { "labelObj_wrap_set", _wrap_labelObj_wrap_set, METH_VARARGS, NULL},
-	 { "labelObj_wrap_get", _wrap_labelObj_wrap_get, METH_O, NULL},
-	 { "labelObj_maxlength_set", _wrap_labelObj_maxlength_set, METH_VARARGS, NULL},
-	 { "labelObj_maxlength_get", _wrap_labelObj_maxlength_get, METH_O, NULL},
-	 { "labelObj_space_size_10_set", _wrap_labelObj_space_size_10_set, METH_VARARGS, NULL},
-	 { "labelObj_space_size_10_get", _wrap_labelObj_space_size_10_get, METH_O, NULL},
-	 { "labelObj_minfeaturesize_set", _wrap_labelObj_minfeaturesize_set, METH_VARARGS, NULL},
-	 { "labelObj_minfeaturesize_get", _wrap_labelObj_minfeaturesize_get, METH_O, NULL},
-	 { "labelObj_autominfeaturesize_set", _wrap_labelObj_autominfeaturesize_set, METH_VARARGS, NULL},
-	 { "labelObj_autominfeaturesize_get", _wrap_labelObj_autominfeaturesize_get, METH_O, NULL},
-	 { "labelObj_minscaledenom_set", _wrap_labelObj_minscaledenom_set, METH_VARARGS, NULL},
-	 { "labelObj_minscaledenom_get", _wrap_labelObj_minscaledenom_get, METH_O, NULL},
-	 { "labelObj_maxscaledenom_set", _wrap_labelObj_maxscaledenom_set, METH_VARARGS, NULL},
-	 { "labelObj_maxscaledenom_get", _wrap_labelObj_maxscaledenom_get, METH_O, NULL},
-	 { "labelObj_mindistance_set", _wrap_labelObj_mindistance_set, METH_VARARGS, NULL},
-	 { "labelObj_mindistance_get", _wrap_labelObj_mindistance_get, METH_O, NULL},
-	 { "labelObj_repeatdistance_set", _wrap_labelObj_repeatdistance_set, METH_VARARGS, NULL},
-	 { "labelObj_repeatdistance_get", _wrap_labelObj_repeatdistance_get, METH_O, NULL},
-	 { "labelObj_maxoverlapangle_set", _wrap_labelObj_maxoverlapangle_set, METH_VARARGS, NULL},
-	 { "labelObj_maxoverlapangle_get", _wrap_labelObj_maxoverlapangle_get, METH_O, NULL},
-	 { "labelObj_partials_set", _wrap_labelObj_partials_set, METH_VARARGS, NULL},
-	 { "labelObj_partials_get", _wrap_labelObj_partials_get, METH_O, NULL},
-	 { "labelObj_force_set", _wrap_labelObj_force_set, METH_VARARGS, NULL},
-	 { "labelObj_force_get", _wrap_labelObj_force_get, METH_O, NULL},
-	 { "labelObj_encoding_set", _wrap_labelObj_encoding_set, METH_VARARGS, NULL},
-	 { "labelObj_encoding_get", _wrap_labelObj_encoding_get, METH_O, NULL},
-	 { "labelObj_priority_set", _wrap_labelObj_priority_set, METH_VARARGS, NULL},
-	 { "labelObj_priority_get", _wrap_labelObj_priority_get, METH_O, NULL},
-	 { "labelObj_numstyles_set", _wrap_labelObj_numstyles_set, METH_VARARGS, NULL},
-	 { "labelObj_numstyles_get", _wrap_labelObj_numstyles_get, METH_O, NULL},
-	 { "labelObj_sizeunits_set", _wrap_labelObj_sizeunits_set, METH_VARARGS, NULL},
-	 { "labelObj_sizeunits_get", _wrap_labelObj_sizeunits_get, METH_O, NULL},
-	 { "new_labelObj", _wrap_new_labelObj, METH_NOARGS, NULL},
+	 { "labelObj_font_set", _wrap_labelObj_font_set, METH_VARARGS, " Name of TrueType font  see :ref:`FONT <mapfile-label-font>`"},
+	 { "labelObj_font_get", _wrap_labelObj_font_get, METH_O, " Name of TrueType font  see :ref:`FONT <mapfile-label-font>`"},
+	 { "labelObj_color_set", _wrap_labelObj_color_set, METH_VARARGS, " Foreground color - see :ref:`COLOR <mapfile-label-color>`"},
+	 { "labelObj_color_get", _wrap_labelObj_color_get, METH_O, " Foreground color - see :ref:`COLOR <mapfile-label-color>`"},
+	 { "labelObj_outlinecolor_set", _wrap_labelObj_outlinecolor_set, METH_VARARGS, " Color of one point outline - see :ref:`OUTLINECOLOR <mapfile-label-outlinecolor>`"},
+	 { "labelObj_outlinecolor_get", _wrap_labelObj_outlinecolor_get, METH_O, " Color of one point outline - see :ref:`OUTLINECOLOR <mapfile-label-outlinecolor>`"},
+	 { "labelObj_outlinewidth_set", _wrap_labelObj_outlinewidth_set, METH_VARARGS, " See :ref:`OUTLINEWIDTH <mapfile-label-outlinewidth>`"},
+	 { "labelObj_outlinewidth_get", _wrap_labelObj_outlinewidth_get, METH_O, " See :ref:`OUTLINEWIDTH <mapfile-label-outlinewidth>`"},
+	 { "labelObj_shadowcolor_set", _wrap_labelObj_shadowcolor_set, METH_VARARGS, " See :ref:`SHADOWCOLOR <mapfile-label-shadowcolor>`"},
+	 { "labelObj_shadowcolor_get", _wrap_labelObj_shadowcolor_get, METH_O, " See :ref:`SHADOWCOLOR <mapfile-label-shadowcolor>`"},
+	 { "labelObj_shadowsizex_set", _wrap_labelObj_shadowsizex_set, METH_VARARGS, " See :ref:`SHADOWSIZE <mapfile-label-shadowsize>`"},
+	 { "labelObj_shadowsizex_get", _wrap_labelObj_shadowsizex_get, METH_O, " See :ref:`SHADOWSIZE <mapfile-label-shadowsize>`"},
+	 { "labelObj_shadowsizey_set", _wrap_labelObj_shadowsizey_set, METH_VARARGS, " See :ref:`SHADOWSIZE <mapfile-label-shadowsize>`"},
+	 { "labelObj_shadowsizey_get", _wrap_labelObj_shadowsizey_get, METH_O, " See :ref:`SHADOWSIZE <mapfile-label-shadowsize>`"},
+	 { "labelObj_size_set", _wrap_labelObj_size_set, METH_VARARGS, " Annotation height in pixels - see :ref:`SIZE <mapfile-label-size>`"},
+	 { "labelObj_size_get", _wrap_labelObj_size_get, METH_O, " Annotation height in pixels - see :ref:`SIZE <mapfile-label-size>`"},
+	 { "labelObj_minsize_set", _wrap_labelObj_minsize_set, METH_VARARGS, " Minimum height in pixels - see :ref:`MINSIZE <mapfile-label-minsize>`"},
+	 { "labelObj_minsize_get", _wrap_labelObj_minsize_get, METH_O, " Minimum height in pixels - see :ref:`MINSIZE <mapfile-label-minsize>`"},
+	 { "labelObj_maxsize_set", _wrap_labelObj_maxsize_set, METH_VARARGS, " Maximum height in pixels for scaled labels. See :ref:`MAXSIZE <mapfile-label-maxsize>`"},
+	 { "labelObj_maxsize_get", _wrap_labelObj_maxsize_get, METH_O, " Maximum height in pixels for scaled labels. See :ref:`MAXSIZE <mapfile-label-maxsize>`"},
+	 { "labelObj_position_set", _wrap_labelObj_position_set, METH_VARARGS, " See :ref:`POSTION <mapfile-label-position>`"},
+	 { "labelObj_position_get", _wrap_labelObj_position_get, METH_O, " See :ref:`POSTION <mapfile-label-position>`"},
+	 { "labelObj_offsetx_set", _wrap_labelObj_offsetx_set, METH_VARARGS, " Horizontal offset of label - see :ref:`OFFSET <mapfile-label-offset>`"},
+	 { "labelObj_offsetx_get", _wrap_labelObj_offsetx_get, METH_O, " Horizontal offset of label - see :ref:`OFFSET <mapfile-label-offset>`"},
+	 { "labelObj_offsety_set", _wrap_labelObj_offsety_set, METH_VARARGS, " Vertical offset of label - see :ref:`OFFSET <mapfile-label-offset>`"},
+	 { "labelObj_offsety_get", _wrap_labelObj_offsety_get, METH_O, " Vertical offset of label - see :ref:`OFFSET <mapfile-label-offset>`"},
+	 { "labelObj_angle_set", _wrap_labelObj_angle_set, METH_VARARGS, " See :ref:`ANGLE <mapfile-label-angle>`"},
+	 { "labelObj_angle_get", _wrap_labelObj_angle_get, METH_O, " See :ref:`ANGLE <mapfile-label-angle>`"},
+	 { "labelObj_anglemode_set", _wrap_labelObj_anglemode_set, METH_VARARGS, " One of :data:`AUTO` :data:`AUTO2`, or :data:`FOLLOW` - see :ref:`ANGLE <mapfile-label-angle>`"},
+	 { "labelObj_anglemode_get", _wrap_labelObj_anglemode_get, METH_O, " One of :data:`AUTO` :data:`AUTO2`, or :data:`FOLLOW` - see :ref:`ANGLE <mapfile-label-angle>`"},
+	 { "labelObj_buffer_set", _wrap_labelObj_buffer_set, METH_VARARGS, " Space to reserve around a label (padding) - see :ref:`BUFFER <mapfile-label-buffer>`"},
+	 { "labelObj_buffer_get", _wrap_labelObj_buffer_get, METH_O, " Space to reserve around a label (padding) - see :ref:`BUFFER <mapfile-label-buffer>`"},
+	 { "labelObj_align_set", _wrap_labelObj_align_set, METH_VARARGS, " See :ref:`ALIGN <mapfile-label-align>`"},
+	 { "labelObj_align_get", _wrap_labelObj_align_get, METH_O, " See :ref:`ALIGN <mapfile-label-align>`"},
+	 { "labelObj_wrap_set", _wrap_labelObj_wrap_set, METH_VARARGS, " See :ref:`WRAP <mapfile-label-wrap>`"},
+	 { "labelObj_wrap_get", _wrap_labelObj_wrap_get, METH_O, " See :ref:`WRAP <mapfile-label-wrap>`"},
+	 { "labelObj_maxlength_set", _wrap_labelObj_maxlength_set, METH_VARARGS, " See :ref:`MAXLENGTH <mapfile-label-maxlength>`"},
+	 { "labelObj_maxlength_get", _wrap_labelObj_maxlength_get, METH_O, " See :ref:`MAXLENGTH <mapfile-label-maxlength>`"},
+	 { "labelObj_space_size_10_set", _wrap_labelObj_space_size_10_set, METH_VARARGS, " Cached size of a single space character used for label text alignment of rfc40"},
+	 { "labelObj_space_size_10_get", _wrap_labelObj_space_size_10_get, METH_O, " Cached size of a single space character used for label text alignment of rfc40"},
+	 { "labelObj_minfeaturesize_set", _wrap_labelObj_minfeaturesize_set, METH_VARARGS, "\n"
+		"Minimum feature size (in pixels) to label, features of this size or greater will be\n"
+		"labeled - see :ref:`MINFEATURESIZE  <mapfile-label-minfeaturesize>`\n"
+		""},
+	 { "labelObj_minfeaturesize_get", _wrap_labelObj_minfeaturesize_get, METH_O, "\n"
+		"Minimum feature size (in pixels) to label, features of this size or greater will be\n"
+		"labeled - see :ref:`MINFEATURESIZE  <mapfile-label-minfeaturesize>`\n"
+		""},
+	 { "labelObj_autominfeaturesize_set", _wrap_labelObj_autominfeaturesize_set, METH_VARARGS, " :data:`MS_TRUE` or :data:`MS_FALSE`"},
+	 { "labelObj_autominfeaturesize_get", _wrap_labelObj_autominfeaturesize_get, METH_O, " :data:`MS_TRUE` or :data:`MS_FALSE`"},
+	 { "labelObj_minscaledenom_set", _wrap_labelObj_minscaledenom_set, METH_VARARGS, " See :ref:`MINSCALEDENOM  <mapfile-label-minscaledenom>`"},
+	 { "labelObj_minscaledenom_get", _wrap_labelObj_minscaledenom_get, METH_O, " See :ref:`MINSCALEDENOM  <mapfile-label-minscaledenom>`"},
+	 { "labelObj_maxscaledenom_set", _wrap_labelObj_maxscaledenom_set, METH_VARARGS, " See :ref:`MAXSCALEDENOM  <mapfile-label-maxscaledenom>`"},
+	 { "labelObj_maxscaledenom_get", _wrap_labelObj_maxscaledenom_get, METH_O, " See :ref:`MAXSCALEDENOM  <mapfile-label-maxscaledenom>`"},
+	 { "labelObj_mindistance_set", _wrap_labelObj_mindistance_set, METH_VARARGS, " Minimum distance in pixels between duplicate labels - see :ref:`MINDISTANCE <mapfile-label-mindistance>`"},
+	 { "labelObj_mindistance_get", _wrap_labelObj_mindistance_get, METH_O, " Minimum distance in pixels between duplicate labels - see :ref:`MINDISTANCE <mapfile-label-mindistance>`"},
+	 { "labelObj_repeatdistance_set", _wrap_labelObj_repeatdistance_set, METH_VARARGS, " See :ref:`REPEATDISTANCE <mapfile-label-repeatdistance>`"},
+	 { "labelObj_repeatdistance_get", _wrap_labelObj_repeatdistance_get, METH_O, " See :ref:`REPEATDISTANCE <mapfile-label-repeatdistance>`"},
+	 { "labelObj_maxoverlapangle_set", _wrap_labelObj_maxoverlapangle_set, METH_VARARGS, " See :ref:`MAXOVERLAPANGLE <mapfile-label-maxoverlapangle>`"},
+	 { "labelObj_maxoverlapangle_get", _wrap_labelObj_maxoverlapangle_get, METH_O, " See :ref:`MAXOVERLAPANGLE <mapfile-label-maxoverlapangle>`"},
+	 { "labelObj_partials_set", _wrap_labelObj_partials_set, METH_VARARGS, "\n"
+		"Indicates if labels can run off the edge of an image, either :data:`MS_TRUE`\n"
+		"or :data:`MS_FALSE` (default) - see :ref:`PARTIALS <mapfile-label-partials>`\n"
+		""},
+	 { "labelObj_partials_get", _wrap_labelObj_partials_get, METH_O, "\n"
+		"Indicates if labels can run off the edge of an image, either :data:`MS_TRUE`\n"
+		"or :data:`MS_FALSE` (default) - see :ref:`PARTIALS <mapfile-label-partials>`\n"
+		""},
+	 { "labelObj_force_set", _wrap_labelObj_force_set, METH_VARARGS, " Indicates if labels **must** be drawn - see :ref:`FORCE <mapfile-label-force>`"},
+	 { "labelObj_force_get", _wrap_labelObj_force_get, METH_O, " Indicates if labels **must** be drawn - see :ref:`FORCE <mapfile-label-force>`"},
+	 { "labelObj_encoding_set", _wrap_labelObj_encoding_set, METH_VARARGS, " Supported encoding format to be used for labels - see :ref:`ENCODING <mapfile-label-encoding>`"},
+	 { "labelObj_encoding_get", _wrap_labelObj_encoding_get, METH_O, " Supported encoding format to be used for labels - see :ref:`ENCODING <mapfile-label-encoding>`"},
+	 { "labelObj_priority_set", _wrap_labelObj_priority_set, METH_VARARGS, " Priority level 1 to :data:`MS_MAX_LABEL_PRIORITY`, default=1 - see :ref:`PRIORITY <mapfile-label-priority>`"},
+	 { "labelObj_priority_get", _wrap_labelObj_priority_get, METH_O, " Priority level 1 to :data:`MS_MAX_LABEL_PRIORITY`, default=1 - see :ref:`PRIORITY <mapfile-label-priority>`"},
+	 { "labelObj_numstyles_set", _wrap_labelObj_numstyles_set, METH_VARARGS, " The number of styles associated with the label"},
+	 { "labelObj_numstyles_get", _wrap_labelObj_numstyles_get, METH_O, " The number of styles associated with the label"},
+	 { "labelObj_sizeunits_set", _wrap_labelObj_sizeunits_set, METH_VARARGS, " Supersedes class's sizeunits, defaults to :data:`MS_INHERIT`."},
+	 { "labelObj_sizeunits_get", _wrap_labelObj_sizeunits_get, METH_O, " Supersedes class's sizeunits, defaults to :data:`MS_INHERIT`."},
+	 { "new_labelObj", _wrap_new_labelObj, METH_NOARGS, "\n"
+		"Create a new :class:`labelObj`. A :class:`labelObj` is associated with a\n"
+		":class:`classObj` a :class:`scalebarObj` or a :class:`legendObj`.\n"
+		"An instance of :class:`labelObj` can exist outside of a :class:`classObj` container and be\n"
+		"explicitly inserted into the :class:`classObj`:\n"
+		"\n"
+		">>> new_label = new labelObj()\n"
+		"\n"
+		">>> the_class.addLabel(new_label)\n"
+		""},
 	 { "delete_labelObj", _wrap_delete_labelObj, METH_O, NULL},
-	 { "labelObj_updateFromString", _wrap_labelObj_updateFromString, METH_VARARGS, NULL},
-	 { "labelObj_convertToString", _wrap_labelObj_convertToString, METH_O, NULL},
-	 { "labelObj_removeBinding", _wrap_labelObj_removeBinding, METH_VARARGS, NULL},
-	 { "labelObj_getBinding", _wrap_labelObj_getBinding, METH_VARARGS, NULL},
-	 { "labelObj_setBinding", _wrap_labelObj_setBinding, METH_VARARGS, NULL},
-	 { "labelObj_setExpression", _wrap_labelObj_setExpression, METH_VARARGS, NULL},
+	 { "labelObj_updateFromString", _wrap_labelObj_updateFromString, METH_VARARGS, " Update a :class:`labelObj` from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "labelObj_convertToString", _wrap_labelObj_convertToString, METH_O, " Output the :class:`labelObj` object as a Mapfile string. Provides the inverse option for :func:`labelObj.updateFromString`."},
+	 { "labelObj_removeBinding", _wrap_labelObj_removeBinding, METH_VARARGS, " Remove the attribute binding for a specified label property."},
+	 { "labelObj_getBinding", _wrap_labelObj_getBinding, METH_VARARGS, " Get the attribute binding for a specified label property. Returns NULL if there is no binding for this property."},
+	 { "labelObj_setBinding", _wrap_labelObj_setBinding, METH_VARARGS, "\n"
+		"Set the attribute binding for a specified label property. Binding constants look like this: ``MS_LABEL_BINDING_[attribute name]``:\n"
+		"\n"
+		">>> new_label.setBinding(MS_LABEL_BINDING_COLOR, \"FIELD_NAME_COLOR\")\n"
+		""},
+	 { "labelObj_setExpression", _wrap_labelObj_setExpression, METH_VARARGS, " Set the label expression."},
 	 { "labelObj_getExpressionString", _wrap_labelObj_getExpressionString, METH_O, NULL},
-	 { "labelObj_setText", _wrap_labelObj_setText, METH_VARARGS, NULL},
+	 { "labelObj_setText", _wrap_labelObj_setText, METH_VARARGS, " Set the label text."},
 	 { "labelObj_getTextString", _wrap_labelObj_getTextString, METH_O, NULL},
-	 { "labelObj_getStyle", _wrap_labelObj_getStyle, METH_VARARGS, NULL},
-	 { "labelObj_insertStyle", _wrap_labelObj_insertStyle, METH_VARARGS, NULL},
-	 { "labelObj_removeStyle", _wrap_labelObj_removeStyle, METH_VARARGS, NULL},
-	 { "labelObj_moveStyleUp", _wrap_labelObj_moveStyleUp, METH_VARARGS, NULL},
-	 { "labelObj_moveStyleDown", _wrap_labelObj_moveStyleDown, METH_VARARGS, NULL},
+	 { "labelObj_getStyle", _wrap_labelObj_getStyle, METH_VARARGS, " Return a reference to the :class:`styleObj` at index *i* in the styles array."},
+	 { "labelObj_insertStyle", _wrap_labelObj_insertStyle, METH_VARARGS, "\n"
+		"Insert a copy of style into the styles array at index *index*.\n"
+		"Default is -1, or the end of the array. Returns the index at which the style was inserted.\n"
+		""},
+	 { "labelObj_removeStyle", _wrap_labelObj_removeStyle, METH_VARARGS, " Remove the styleObj at *index* from the styles array and return a copy."},
+	 { "labelObj_moveStyleUp", _wrap_labelObj_moveStyleUp, METH_VARARGS, " Swap the styleObj at *index* with the styleObj index - 1."},
+	 { "labelObj_moveStyleDown", _wrap_labelObj_moveStyleDown, METH_VARARGS, " Swap the styleObj at *index* with the styleObj index + 1."},
 	 { "labelObj_swigregister", labelObj_swigregister, METH_O, NULL},
 	 { "labelObj_swiginit", labelObj_swiginit, METH_VARARGS, NULL},
-	 { "classObj_metadata_get", _wrap_classObj_metadata_get, METH_O, NULL},
-	 { "classObj_validation_get", _wrap_classObj_validation_get, METH_O, NULL},
-	 { "classObj_numstyles_get", _wrap_classObj_numstyles_get, METH_O, NULL},
-	 { "classObj_numlabels_get", _wrap_classObj_numlabels_get, METH_O, NULL},
-	 { "classObj_refcount_get", _wrap_classObj_refcount_get, METH_O, NULL},
-	 { "classObj_layer_get", _wrap_classObj_layer_get, METH_O, NULL},
-	 { "classObj_leader_get", _wrap_classObj_leader_get, METH_O, NULL},
-	 { "classObj_status_set", _wrap_classObj_status_set, METH_VARARGS, NULL},
-	 { "classObj_status_get", _wrap_classObj_status_get, METH_O, NULL},
-	 { "classObj_isfallback_set", _wrap_classObj_isfallback_set, METH_VARARGS, NULL},
-	 { "classObj_isfallback_get", _wrap_classObj_isfallback_get, METH_O, NULL},
-	 { "classObj_name_set", _wrap_classObj_name_set, METH_VARARGS, NULL},
-	 { "classObj_name_get", _wrap_classObj_name_get, METH_O, NULL},
-	 { "classObj_title_set", _wrap_classObj_title_set, METH_VARARGS, NULL},
-	 { "classObj_title_get", _wrap_classObj_title_get, METH_O, NULL},
-	 { "classObj_minscaledenom_set", _wrap_classObj_minscaledenom_set, METH_VARARGS, NULL},
-	 { "classObj_minscaledenom_get", _wrap_classObj_minscaledenom_get, METH_O, NULL},
-	 { "classObj_maxscaledenom_set", _wrap_classObj_maxscaledenom_set, METH_VARARGS, NULL},
-	 { "classObj_maxscaledenom_get", _wrap_classObj_maxscaledenom_get, METH_O, NULL},
-	 { "classObj_minfeaturesize_set", _wrap_classObj_minfeaturesize_set, METH_VARARGS, NULL},
-	 { "classObj_minfeaturesize_get", _wrap_classObj_minfeaturesize_get, METH_O, NULL},
-	 { "classObj_debug_set", _wrap_classObj_debug_set, METH_VARARGS, NULL},
-	 { "classObj_debug_get", _wrap_classObj_debug_get, METH_O, NULL},
-	 { "classObj_keyimage_set", _wrap_classObj_keyimage_set, METH_VARARGS, NULL},
-	 { "classObj_keyimage_get", _wrap_classObj_keyimage_get, METH_O, NULL},
-	 { "classObj_group_set", _wrap_classObj_group_set, METH_VARARGS, NULL},
-	 { "classObj_group_get", _wrap_classObj_group_get, METH_O, NULL},
-	 { "classObj_sizeunits_set", _wrap_classObj_sizeunits_set, METH_VARARGS, NULL},
-	 { "classObj_sizeunits_get", _wrap_classObj_sizeunits_get, METH_O, NULL},
-	 { "classObj_template_set", _wrap_classObj_template_set, METH_VARARGS, NULL},
-	 { "classObj_template_get", _wrap_classObj_template_get, METH_O, NULL},
-	 { "new_classObj", _wrap_new_classObj, METH_VARARGS, NULL},
+	 { "classObj_metadata_get", _wrap_classObj_metadata_get, METH_O, " see :ref:`METADATA <mapfile-class-metadata>`"},
+	 { "classObj_validation_get", _wrap_classObj_validation_get, METH_O, " see :ref:`VALIDATION <mapfile-class-validation>`"},
+	 { "classObj_numstyles_get", _wrap_classObj_numstyles_get, METH_O, " number of styles for class"},
+	 { "classObj_numlabels_get", _wrap_classObj_numlabels_get, METH_O, " number of labels for class"},
+	 { "classObj_refcount_get", _wrap_classObj_refcount_get, METH_O, " number of references to this object"},
+	 { "classObj_layer_get", _wrap_classObj_layer_get, METH_O, " reference to the parent layer"},
+	 { "classObj_leader_get", _wrap_classObj_leader_get, METH_O, " see :ref:`LEADER <mapfile-class-leader>`"},
+	 { "classObj_status_set", _wrap_classObj_status_set, METH_VARARGS, " :data:`MS_ON` or :data:`MS_OFF` - draw features of this class or do not - see :ref:`STATUS <mapfile-class-status>`"},
+	 { "classObj_status_get", _wrap_classObj_status_get, METH_O, " :data:`MS_ON` or :data:`MS_OFF` - draw features of this class or do not - see :ref:`STATUS <mapfile-class-status>`"},
+	 { "classObj_isfallback_set", _wrap_classObj_isfallback_set, METH_VARARGS, " :data:`MS_TRUE` or :data:`MS_FALSE` use :data:`MS_TRUE` if this class should be applied if and only if no other class is applicable"},
+	 { "classObj_isfallback_get", _wrap_classObj_isfallback_get, METH_O, " :data:`MS_TRUE` or :data:`MS_FALSE` use :data:`MS_TRUE` if this class should be applied if and only if no other class is applicable"},
+	 { "classObj_name_set", _wrap_classObj_name_set, METH_VARARGS, " See :ref:`NAME <mapfile-class-name>` should be unique within a layer"},
+	 { "classObj_name_get", _wrap_classObj_name_get, METH_O, " See :ref:`NAME <mapfile-class-name>` should be unique within a layer"},
+	 { "classObj_title_set", _wrap_classObj_title_set, METH_VARARGS, " See :ref:`TITLE <mapfile-class-title>`"},
+	 { "classObj_title_get", _wrap_classObj_title_get, METH_O, " See :ref:`TITLE <mapfile-class-title>`"},
+	 { "classObj_minscaledenom_set", _wrap_classObj_minscaledenom_set, METH_VARARGS, " See :ref:`MINSCALEDENOM <mapfile-class-minscaledenom>`"},
+	 { "classObj_minscaledenom_get", _wrap_classObj_minscaledenom_get, METH_O, " See :ref:`MINSCALEDENOM <mapfile-class-minscaledenom>`"},
+	 { "classObj_maxscaledenom_set", _wrap_classObj_maxscaledenom_set, METH_VARARGS, " See :ref:`MAXSCALEDENOM <mapfile-CLASS-maxscaledenom>`"},
+	 { "classObj_maxscaledenom_get", _wrap_classObj_maxscaledenom_get, METH_O, " See :ref:`MAXSCALEDENOM <mapfile-CLASS-maxscaledenom>`"},
+	 { "classObj_minfeaturesize_set", _wrap_classObj_minfeaturesize_set, METH_VARARGS, " See :ref:`MINFEATURESIZE <mapfile-class-minfeaturesize>` minimum feature size in pixels"},
+	 { "classObj_minfeaturesize_get", _wrap_classObj_minfeaturesize_get, METH_O, " See :ref:`MINFEATURESIZE <mapfile-class-minfeaturesize>` minimum feature size in pixels"},
+	 { "classObj_debug_set", _wrap_classObj_debug_set, METH_VARARGS, " :data:`MS_TRUE` or :data:`MS_FALSE` - see :ref:`DEBUG <mapfile-class-debug>`"},
+	 { "classObj_debug_get", _wrap_classObj_debug_get, METH_O, " :data:`MS_TRUE` or :data:`MS_FALSE` - see :ref:`DEBUG <mapfile-class-debug>`"},
+	 { "classObj_keyimage_set", _wrap_classObj_keyimage_set, METH_VARARGS, " See :ref:`KEYIMAGE <mapfile-class-keyimage>`"},
+	 { "classObj_keyimage_get", _wrap_classObj_keyimage_get, METH_O, " See :ref:`KEYIMAGE <mapfile-class-keyimage>`"},
+	 { "classObj_group_set", _wrap_classObj_group_set, METH_VARARGS, " See :ref:`GROUP <mapfile-class-group>`"},
+	 { "classObj_group_get", _wrap_classObj_group_get, METH_O, " See :ref:`GROUP <mapfile-class-group>`"},
+	 { "classObj_sizeunits_set", _wrap_classObj_sizeunits_set, METH_VARARGS, " Supersedes layer's sizeunits and applies to all styles and labels - see :ref:`LAYER SIZEUNITS <mapfile-layer-sizeunits>`"},
+	 { "classObj_sizeunits_get", _wrap_classObj_sizeunits_get, METH_O, " Supersedes layer's sizeunits and applies to all styles and labels - see :ref:`LAYER SIZEUNITS <mapfile-layer-sizeunits>`"},
+	 { "classObj_template_set", _wrap_classObj_template_set, METH_VARARGS, " See :ref:`TEMPLATE <mapfile-class-template>`"},
+	 { "classObj_template_get", _wrap_classObj_template_get, METH_O, " See :ref:`TEMPLATE <mapfile-class-template>`"},
+	 { "new_classObj", _wrap_new_classObj, METH_VARARGS, "\n"
+		"Create a new child classObj instance at the tail (highest index) of the\n"
+		"class array of the parent_layer. A class can be created outside the\n"
+		"context of a parent layer by omitting the layerObj constructor argument\n"
+		""},
 	 { "delete_classObj", _wrap_delete_classObj, METH_O, NULL},
-	 { "classObj_updateFromString", _wrap_classObj_updateFromString, METH_VARARGS, NULL},
-	 { "classObj_convertToString", _wrap_classObj_convertToString, METH_O, NULL},
-	 { "classObj_clone", _wrap_classObj_clone, METH_O, NULL},
-	 { "classObj_setExpression", _wrap_classObj_setExpression, METH_VARARGS, NULL},
-	 { "classObj_getExpressionString", _wrap_classObj_getExpressionString, METH_O, NULL},
-	 { "classObj_setText", _wrap_classObj_setText, METH_VARARGS, NULL},
-	 { "classObj_getTextString", _wrap_classObj_getTextString, METH_O, NULL},
-	 { "classObj_drawLegendIcon", _wrap_classObj_drawLegendIcon, METH_VARARGS, NULL},
-	 { "classObj_createLegendIcon", _wrap_classObj_createLegendIcon, METH_VARARGS, NULL},
-	 { "classObj_getLabel", _wrap_classObj_getLabel, METH_VARARGS, NULL},
-	 { "classObj_addLabel", _wrap_classObj_addLabel, METH_VARARGS, NULL},
-	 { "classObj_removeLabel", _wrap_classObj_removeLabel, METH_VARARGS, NULL},
-	 { "classObj_getStyle", _wrap_classObj_getStyle, METH_VARARGS, NULL},
-	 { "classObj_insertStyle", _wrap_classObj_insertStyle, METH_VARARGS, NULL},
-	 { "classObj_removeStyle", _wrap_classObj_removeStyle, METH_VARARGS, NULL},
-	 { "classObj_moveStyleUp", _wrap_classObj_moveStyleUp, METH_VARARGS, NULL},
-	 { "classObj_moveStyleDown", _wrap_classObj_moveStyleDown, METH_VARARGS, NULL},
+	 { "classObj_updateFromString", _wrap_classObj_updateFromString, METH_VARARGS, " Update a class from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "classObj_convertToString", _wrap_classObj_convertToString, METH_O, " Output the CLASS as a Mapfile string"},
+	 { "classObj_clone", _wrap_classObj_clone, METH_O, "\n"
+		"Return an independent copy of the class without a parent layer\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    In the Java & PHP modules this method is named ``cloneClass``.\n"
+		""},
+	 { "classObj_setExpression", _wrap_classObj_setExpression, METH_VARARGS, "\n"
+		"Set :ref:`EXPRESSION <mapfile-class-expression>` string where `expression` is a MapServer regular,\n"
+		"logical or string expression. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "classObj_getExpressionString", _wrap_classObj_getExpressionString, METH_O, "\n"
+		"Return a string representation of the :ref:`EXPRESSION <mapfile-class-expression>` enclosed in\n"
+		"the quote characters appropriate to the expression type\n"
+		""},
+	 { "classObj_setText", _wrap_classObj_setText, METH_VARARGS, "\n"
+		"Set :ref:`TEXT <mapfile-class-text>` string where `text` is a MapServer text expression.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "classObj_getTextString", _wrap_classObj_getTextString, METH_O, " Return a string representation of :ref:`TEXT <mapfile-class-text>`"},
+	 { "classObj_drawLegendIcon", _wrap_classObj_drawLegendIcon, METH_VARARGS, " Draw the legend icon onto *image* at *dstx*, *dsty*.  Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "classObj_createLegendIcon", _wrap_classObj_createLegendIcon, METH_VARARGS, " Draw and return a new legend icon"},
+	 { "classObj_getLabel", _wrap_classObj_getLabel, METH_VARARGS, " Return a reference to the :class:`labelObj` at *index* in the labels array"},
+	 { "classObj_addLabel", _wrap_classObj_addLabel, METH_VARARGS, " Add a :class:`labelObj` to the :class:`classObj` and return its index in the labels array"},
+	 { "classObj_removeLabel", _wrap_classObj_removeLabel, METH_VARARGS, "\n"
+		"Remove the :class:`labelObj` at *index* from the labels array and return a\n"
+		"reference to the :class:`labelObj`. numlabels is decremented, and the array is updated\n"
+		""},
+	 { "classObj_getStyle", _wrap_classObj_getStyle, METH_VARARGS, " Return a reference to the :class:`styleObj` at *index* in the styles array"},
+	 { "classObj_insertStyle", _wrap_classObj_insertStyle, METH_VARARGS, "\n"
+		"Insert a **copy** of *style* into the styles array at index *index*\n"
+		"Default is -1, or the end of the array.  Returns the index at which the style was inserted.\n"
+		""},
+	 { "classObj_removeStyle", _wrap_classObj_removeStyle, METH_VARARGS, " Remove the :class:`styleObj` at *index* from the styles array and return a copy."},
+	 { "classObj_moveStyleUp", _wrap_classObj_moveStyleUp, METH_VARARGS, " Swap the :class:`styleObj` at *index* with the styleObj at *index* - 1"},
+	 { "classObj_moveStyleDown", _wrap_classObj_moveStyleDown, METH_VARARGS, " Swap the :class:`styleObj` at *index* with the :class:`styleObj` at *index* + 1"},
 	 { "classObj_swigregister", classObj_swigregister, METH_O, NULL},
 	 { "classObj_swiginit", classObj_swiginit, METH_VARARGS, NULL},
-	 { "labelCacheMemberObj_numtextsymbols_get", _wrap_labelCacheMemberObj_numtextsymbols_get, METH_O, NULL},
-	 { "labelCacheMemberObj_layerindex_get", _wrap_labelCacheMemberObj_layerindex_get, METH_O, NULL},
-	 { "labelCacheMemberObj_classindex_get", _wrap_labelCacheMemberObj_classindex_get, METH_O, NULL},
-	 { "labelCacheMemberObj_status_get", _wrap_labelCacheMemberObj_status_get, METH_O, NULL},
-	 { "labelCacheMemberObj_markerid_get", _wrap_labelCacheMemberObj_markerid_get, METH_O, NULL},
-	 { "labelCacheMemberObj_point_get", _wrap_labelCacheMemberObj_point_get, METH_O, NULL},
-	 { "labelCacheMemberObj_bbox_get", _wrap_labelCacheMemberObj_bbox_get, METH_O, NULL},
-	 { "labelCacheMemberObj_leaderline_get", _wrap_labelCacheMemberObj_leaderline_get, METH_O, NULL},
-	 { "labelCacheMemberObj_leaderbbox_get", _wrap_labelCacheMemberObj_leaderbbox_get, METH_O, NULL},
+	 { "labelCacheMemberObj_numtextsymbols_get", _wrap_labelCacheMemberObj_numtextsymbols_get, METH_O, " Number of text symbols found in textsymbols"},
+	 { "labelCacheMemberObj_layerindex_get", _wrap_labelCacheMemberObj_layerindex_get, METH_O, " The index of the layer of the labelled feature"},
+	 { "labelCacheMemberObj_classindex_get", _wrap_labelCacheMemberObj_classindex_get, METH_O, " Index of the class of the labelled feature"},
+	 { "labelCacheMemberObj_status_get", _wrap_labelCacheMemberObj_status_get, METH_O, " Has this label been drawn or not?"},
+	 { "labelCacheMemberObj_markerid_get", _wrap_labelCacheMemberObj_markerid_get, METH_O, " Corresponding marker (POINT layers only)"},
+	 { "labelCacheMemberObj_point_get", _wrap_labelCacheMemberObj_point_get, METH_O, " Label point"},
+	 { "labelCacheMemberObj_bbox_get", _wrap_labelCacheMemberObj_bbox_get, METH_O, " Bounds of the whole cachePtr. Individual text and symbol sub bounds are found in textsymbols"},
+	 { "labelCacheMemberObj_leaderline_get", _wrap_labelCacheMemberObj_leaderline_get, METH_O, " Leader lineObj"},
+	 { "labelCacheMemberObj_leaderbbox_get", _wrap_labelCacheMemberObj_leaderbbox_get, METH_O, " Leader rectObj"},
 	 { "new_labelCacheMemberObj", _wrap_new_labelCacheMemberObj, METH_NOARGS, NULL},
 	 { "delete_labelCacheMemberObj", _wrap_delete_labelCacheMemberObj, METH_O, NULL},
 	 { "labelCacheMemberObj_swigregister", labelCacheMemberObj_swigregister, METH_O, NULL},
 	 { "labelCacheMemberObj_swiginit", labelCacheMemberObj_swiginit, METH_VARARGS, NULL},
-	 { "markerCacheMemberObj_id_get", _wrap_markerCacheMemberObj_id_get, METH_O, NULL},
-	 { "markerCacheMemberObj_bounds_get", _wrap_markerCacheMemberObj_bounds_get, METH_O, NULL},
+	 { "markerCacheMemberObj_id_get", _wrap_markerCacheMemberObj_id_get, METH_O, " Corresponding label"},
+	 { "markerCacheMemberObj_bounds_get", _wrap_markerCacheMemberObj_bounds_get, METH_O, " Bounds of the markerCacheMemberObj"},
 	 { "new_markerCacheMemberObj", _wrap_new_markerCacheMemberObj, METH_NOARGS, NULL},
 	 { "delete_markerCacheMemberObj", _wrap_delete_markerCacheMemberObj, METH_O, NULL},
 	 { "markerCacheMemberObj_swigregister", markerCacheMemberObj_swigregister, METH_O, NULL},
 	 { "markerCacheMemberObj_swiginit", markerCacheMemberObj_swiginit, METH_VARARGS, NULL},
-	 { "labelCacheSlotObj_numlabels_get", _wrap_labelCacheSlotObj_numlabels_get, METH_O, NULL},
-	 { "labelCacheSlotObj_cachesize_get", _wrap_labelCacheSlotObj_cachesize_get, METH_O, NULL},
-	 { "labelCacheSlotObj_nummarkers_get", _wrap_labelCacheSlotObj_nummarkers_get, METH_O, NULL},
-	 { "labelCacheSlotObj_markercachesize_get", _wrap_labelCacheSlotObj_markercachesize_get, METH_O, NULL},
+	 { "labelCacheSlotObj_numlabels_get", _wrap_labelCacheSlotObj_numlabels_get, METH_O, " Number of label members"},
+	 { "labelCacheSlotObj_cachesize_get", _wrap_labelCacheSlotObj_cachesize_get, METH_O, " TODO"},
+	 { "labelCacheSlotObj_nummarkers_get", _wrap_labelCacheSlotObj_nummarkers_get, METH_O, " Number of marker members"},
+	 { "labelCacheSlotObj_markercachesize_get", _wrap_labelCacheSlotObj_markercachesize_get, METH_O, " TODO"},
 	 { "labelCacheSlotObj_labels_get", _wrap_labelCacheSlotObj_labels_get, METH_O, NULL},
 	 { "labelCacheSlotObj_markers_get", _wrap_labelCacheSlotObj_markers_get, METH_O, NULL},
 	 { "new_labelCacheSlotObj", _wrap_new_labelCacheSlotObj, METH_NOARGS, NULL},
 	 { "delete_labelCacheSlotObj", _wrap_delete_labelCacheSlotObj, METH_O, NULL},
 	 { "labelCacheSlotObj_swigregister", labelCacheSlotObj_swigregister, METH_O, NULL},
 	 { "labelCacheSlotObj_swiginit", labelCacheSlotObj_swiginit, METH_VARARGS, NULL},
-	 { "labelCacheObj_num_rendered_members_get", _wrap_labelCacheObj_num_rendered_members_get, METH_O, NULL},
-	 { "labelCacheObj_freeCache", _wrap_labelCacheObj_freeCache, METH_O, NULL},
+	 { "labelCacheObj_num_rendered_members_get", _wrap_labelCacheObj_num_rendered_members_get, METH_O, " Number of rendered labels"},
+	 { "labelCacheObj_freeCache", _wrap_labelCacheObj_freeCache, METH_O, " Free the labelCache"},
 	 { "new_labelCacheObj", _wrap_new_labelCacheObj, METH_NOARGS, NULL},
 	 { "delete_labelCacheObj", _wrap_delete_labelCacheObj, METH_O, NULL},
 	 { "labelCacheObj_swigregister", labelCacheObj_swigregister, METH_O, NULL},
 	 { "labelCacheObj_swiginit", labelCacheObj_swiginit, METH_VARARGS, NULL},
-	 { "resultObj_shapeindex_get", _wrap_resultObj_shapeindex_get, METH_O, NULL},
-	 { "resultObj_tileindex_get", _wrap_resultObj_tileindex_get, METH_O, NULL},
-	 { "resultObj_resultindex_get", _wrap_resultObj_resultindex_get, METH_O, NULL},
-	 { "resultObj_classindex_get", _wrap_resultObj_classindex_get, METH_O, NULL},
-	 { "new_resultObj", _wrap_new_resultObj, METH_O, NULL},
+	 { "resultObj_shapeindex_get", _wrap_resultObj_shapeindex_get, METH_O, " The shape index of the result"},
+	 { "resultObj_tileindex_get", _wrap_resultObj_tileindex_get, METH_O, " The tile index of the result"},
+	 { "resultObj_resultindex_get", _wrap_resultObj_resultindex_get, METH_O, " The index of the result"},
+	 { "resultObj_classindex_get", _wrap_resultObj_classindex_get, METH_O, " The class index of the result"},
+	 { "new_resultObj", _wrap_new_resultObj, METH_O, "\n"
+		"The result object is a handle, of sorts, for a feature of the layer, having\n"
+		"``shapeindex`` and ``tileindex`` attributes that can be used as arguments to\n"
+		"``getFeature``\n"
+		""},
 	 { "delete_resultObj", _wrap_delete_resultObj, METH_O, NULL},
 	 { "resultObj_swigregister", resultObj_swigregister, METH_O, NULL},
 	 { "resultObj_swiginit", resultObj_swiginit, METH_VARARGS, NULL},
-	 { "resultCacheObj_numresults_get", _wrap_resultCacheObj_numresults_get, METH_O, NULL},
-	 { "resultCacheObj_bounds_get", _wrap_resultCacheObj_bounds_get, METH_O, NULL},
-	 { "resultCacheObj_getResult", _wrap_resultCacheObj_getResult, METH_VARARGS, NULL},
+	 { "resultCacheObj_numresults_get", _wrap_resultCacheObj_numresults_get, METH_O, " Length of result set"},
+	 { "resultCacheObj_bounds_get", _wrap_resultCacheObj_bounds_get, METH_O, " Bounding box of query results"},
+	 { "resultCacheObj_getResult", _wrap_resultCacheObj_getResult, METH_VARARGS, "\n"
+		"Returns the result at index i, like :meth:`layerObj.getResult`,\n"
+		"or ``NULL`` if index is outside the range of results.\n"
+		""},
 	 { "new_resultCacheObj", _wrap_new_resultCacheObj, METH_NOARGS, NULL},
 	 { "delete_resultCacheObj", _wrap_delete_resultCacheObj, METH_O, NULL},
 	 { "resultCacheObj_swigregister", resultCacheObj_swigregister, METH_O, NULL},
 	 { "resultCacheObj_swiginit", resultCacheObj_swiginit, METH_VARARGS, NULL},
-	 { "symbolSetObj_numsymbols_get", _wrap_symbolSetObj_numsymbols_get, METH_O, NULL},
-	 { "symbolSetObj_maxsymbols_get", _wrap_symbolSetObj_maxsymbols_get, METH_O, NULL},
-	 { "symbolSetObj_filename_set", _wrap_symbolSetObj_filename_set, METH_VARARGS, NULL},
-	 { "symbolSetObj_filename_get", _wrap_symbolSetObj_filename_get, METH_O, NULL},
-	 { "symbolSetObj_imagecachesize_set", _wrap_symbolSetObj_imagecachesize_set, METH_VARARGS, NULL},
-	 { "symbolSetObj_imagecachesize_get", _wrap_symbolSetObj_imagecachesize_get, METH_O, NULL},
-	 { "new_symbolSetObj", _wrap_new_symbolSetObj, METH_VARARGS, NULL},
+	 { "symbolSetObj_numsymbols_get", _wrap_symbolSetObj_numsymbols_get, METH_O, " Number of symbols in the set"},
+	 { "symbolSetObj_maxsymbols_get", _wrap_symbolSetObj_maxsymbols_get, METH_O, " Maximum number of allowed symbols"},
+	 { "symbolSetObj_filename_set", _wrap_symbolSetObj_filename_set, METH_VARARGS, " Symbolset filename"},
+	 { "symbolSetObj_filename_get", _wrap_symbolSetObj_filename_get, METH_O, " Symbolset filename"},
+	 { "symbolSetObj_imagecachesize_set", _wrap_symbolSetObj_imagecachesize_set, METH_VARARGS, " Symbols in the cache"},
+	 { "symbolSetObj_imagecachesize_get", _wrap_symbolSetObj_imagecachesize_get, METH_O, " Symbols in the cache"},
+	 { "new_symbolSetObj", _wrap_new_symbolSetObj, METH_VARARGS, "\n"
+		"Create new :class:`symbolSetObj` instance. If symbolfile is specified, symbols will be\n"
+		"loaded from the file.\n"
+		""},
 	 { "delete_symbolSetObj", _wrap_delete_symbolSetObj, METH_O, NULL},
-	 { "symbolSetObj_getSymbol", _wrap_symbolSetObj_getSymbol, METH_VARARGS, NULL},
-	 { "symbolSetObj_getSymbolByName", _wrap_symbolSetObj_getSymbolByName, METH_VARARGS, NULL},
-	 { "symbolSetObj_index", _wrap_symbolSetObj_index, METH_VARARGS, NULL},
-	 { "symbolSetObj_appendSymbol", _wrap_symbolSetObj_appendSymbol, METH_VARARGS, NULL},
-	 { "symbolSetObj_removeSymbol", _wrap_symbolSetObj_removeSymbol, METH_VARARGS, NULL},
-	 { "symbolSetObj_save", _wrap_symbolSetObj_save, METH_VARARGS, NULL},
+	 { "symbolSetObj_getSymbol", _wrap_symbolSetObj_getSymbol, METH_VARARGS, " Returns a reference to the symbol at index."},
+	 { "symbolSetObj_getSymbolByName", _wrap_symbolSetObj_getSymbolByName, METH_VARARGS, " Returns a reference to the symbol named name."},
+	 { "symbolSetObj_index", _wrap_symbolSetObj_index, METH_VARARGS, "\n"
+		"Return the index of the symbol named name or -1 in the case that no such\n"
+		"symbol is found.\n"
+		""},
+	 { "symbolSetObj_appendSymbol", _wrap_symbolSetObj_appendSymbol, METH_VARARGS, " Add a copy of symbol to the symbolset and return its index."},
+	 { "symbolSetObj_removeSymbol", _wrap_symbolSetObj_removeSymbol, METH_VARARGS, " Remove the symbol at index and return a copy of the symbol."},
+	 { "symbolSetObj_save", _wrap_symbolSetObj_save, METH_VARARGS, " Save symbol set to a file. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
 	 { "symbolSetObj_swigregister", symbolSetObj_swigregister, METH_O, NULL},
 	 { "symbolSetObj_swiginit", symbolSetObj_swiginit, METH_VARARGS, NULL},
-	 { "referenceMapObj_map_get", _wrap_referenceMapObj_map_get, METH_O, NULL},
-	 { "referenceMapObj_extent_set", _wrap_referenceMapObj_extent_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_extent_get", _wrap_referenceMapObj_extent_get, METH_O, NULL},
-	 { "referenceMapObj_height_set", _wrap_referenceMapObj_height_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_height_get", _wrap_referenceMapObj_height_get, METH_O, NULL},
-	 { "referenceMapObj_width_set", _wrap_referenceMapObj_width_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_width_get", _wrap_referenceMapObj_width_get, METH_O, NULL},
-	 { "referenceMapObj_color_set", _wrap_referenceMapObj_color_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_color_get", _wrap_referenceMapObj_color_get, METH_O, NULL},
-	 { "referenceMapObj_outlinecolor_set", _wrap_referenceMapObj_outlinecolor_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_outlinecolor_get", _wrap_referenceMapObj_outlinecolor_get, METH_O, NULL},
-	 { "referenceMapObj_image_set", _wrap_referenceMapObj_image_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_image_get", _wrap_referenceMapObj_image_get, METH_O, NULL},
-	 { "referenceMapObj_status_set", _wrap_referenceMapObj_status_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_status_get", _wrap_referenceMapObj_status_get, METH_O, NULL},
-	 { "referenceMapObj_marker_set", _wrap_referenceMapObj_marker_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_marker_get", _wrap_referenceMapObj_marker_get, METH_O, NULL},
-	 { "referenceMapObj_markername_set", _wrap_referenceMapObj_markername_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_markername_get", _wrap_referenceMapObj_markername_get, METH_O, NULL},
-	 { "referenceMapObj_markersize_set", _wrap_referenceMapObj_markersize_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_markersize_get", _wrap_referenceMapObj_markersize_get, METH_O, NULL},
-	 { "referenceMapObj_minboxsize_set", _wrap_referenceMapObj_minboxsize_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_minboxsize_get", _wrap_referenceMapObj_minboxsize_get, METH_O, NULL},
-	 { "referenceMapObj_maxboxsize_set", _wrap_referenceMapObj_maxboxsize_set, METH_VARARGS, NULL},
-	 { "referenceMapObj_maxboxsize_get", _wrap_referenceMapObj_maxboxsize_get, METH_O, NULL},
-	 { "referenceMapObj_updateFromString", _wrap_referenceMapObj_updateFromString, METH_VARARGS, NULL},
-	 { "referenceMapObj_convertToString", _wrap_referenceMapObj_convertToString, METH_O, NULL},
+	 { "referenceMapObj_map_get", _wrap_referenceMapObj_map_get, METH_O, " Reference to parent :class:`mapObj`"},
+	 { "referenceMapObj_extent_set", _wrap_referenceMapObj_extent_set, METH_VARARGS, " Spatial extent of reference in units of parent map - see :ref:`EXTENT <mapfile-reference-extent>`"},
+	 { "referenceMapObj_extent_get", _wrap_referenceMapObj_extent_get, METH_O, " Spatial extent of reference in units of parent map - see :ref:`EXTENT <mapfile-reference-extent>`"},
+	 { "referenceMapObj_height_set", _wrap_referenceMapObj_height_set, METH_VARARGS, " Height of reference map in pixels - see :ref:`SIZE <mapfile-reference-size>`"},
+	 { "referenceMapObj_height_get", _wrap_referenceMapObj_height_get, METH_O, " Height of reference map in pixels - see :ref:`SIZE <mapfile-reference-size>`"},
+	 { "referenceMapObj_width_set", _wrap_referenceMapObj_width_set, METH_VARARGS, " Width of reference map in pixels - see :ref:`SIZE <mapfile-reference-size>`"},
+	 { "referenceMapObj_width_get", _wrap_referenceMapObj_width_get, METH_O, " Width of reference map in pixels - see :ref:`SIZE <mapfile-reference-size>`"},
+	 { "referenceMapObj_color_set", _wrap_referenceMapObj_color_set, METH_VARARGS, " Color of reference box - see :ref:`COLOR <mapfile-reference-color>`"},
+	 { "referenceMapObj_color_get", _wrap_referenceMapObj_color_get, METH_O, " Color of reference box - see :ref:`COLOR <mapfile-reference-color>`"},
+	 { "referenceMapObj_outlinecolor_set", _wrap_referenceMapObj_outlinecolor_set, METH_VARARGS, " Outline color of reference box - see :ref:`OUTLINECOLOR <mapfile-reference-outlinecolor>`"},
+	 { "referenceMapObj_outlinecolor_get", _wrap_referenceMapObj_outlinecolor_get, METH_O, " Outline color of reference box - see :ref:`OUTLINECOLOR <mapfile-reference-outlinecolor>`"},
+	 { "referenceMapObj_image_set", _wrap_referenceMapObj_image_set, METH_VARARGS, " Filename of reference map image - see :ref:`IMAGE <mapfile-reference-image>`"},
+	 { "referenceMapObj_image_get", _wrap_referenceMapObj_image_get, METH_O, " Filename of reference map image - see :ref:`IMAGE <mapfile-reference-image>`"},
+	 { "referenceMapObj_status_set", _wrap_referenceMapObj_status_set, METH_VARARGS, " :data:`MS_ON` or :data:`MS_OFF` - see :ref:`STATUS <mapfile-reference-status>`"},
+	 { "referenceMapObj_status_get", _wrap_referenceMapObj_status_get, METH_O, " :data:`MS_ON` or :data:`MS_OFF` - see :ref:`STATUS <mapfile-reference-status>`"},
+	 { "referenceMapObj_marker_set", _wrap_referenceMapObj_marker_set, METH_VARARGS, " Index of a symbol in the map symbol set to use for marker - see :ref:`MARKER <mapfile-reference-marker>`"},
+	 { "referenceMapObj_marker_get", _wrap_referenceMapObj_marker_get, METH_O, " Index of a symbol in the map symbol set to use for marker - see :ref:`MARKER <mapfile-reference-marker>`"},
+	 { "referenceMapObj_markername_set", _wrap_referenceMapObj_markername_set, METH_VARARGS, " Name of a symbol - see :ref:`MARKER <mapfile-reference-marker>`"},
+	 { "referenceMapObj_markername_get", _wrap_referenceMapObj_markername_get, METH_O, " Name of a symbol - see :ref:`MARKER <mapfile-reference-marker>`"},
+	 { "referenceMapObj_markersize_set", _wrap_referenceMapObj_markersize_set, METH_VARARGS, " Size of marker - see :ref:`MARKERSIZE <mapfile-reference-markersize>`"},
+	 { "referenceMapObj_markersize_get", _wrap_referenceMapObj_markersize_get, METH_O, " Size of marker - see :ref:`MARKERSIZE <mapfile-reference-markersize>`"},
+	 { "referenceMapObj_minboxsize_set", _wrap_referenceMapObj_minboxsize_set, METH_VARARGS, " In pixels - see :ref:`MINBOXSIZE <mapfile-reference-minboxsize>`"},
+	 { "referenceMapObj_minboxsize_get", _wrap_referenceMapObj_minboxsize_get, METH_O, " In pixels - see :ref:`MINBOXSIZE <mapfile-reference-minboxsize>`"},
+	 { "referenceMapObj_maxboxsize_set", _wrap_referenceMapObj_maxboxsize_set, METH_VARARGS, " In pixels - see :ref:`MAXBOXSIZE <mapfile-reference-maxboxsize>`"},
+	 { "referenceMapObj_maxboxsize_get", _wrap_referenceMapObj_maxboxsize_get, METH_O, " In pixels - see :ref:`MAXBOXSIZE <mapfile-reference-maxboxsize>`"},
+	 { "referenceMapObj_updateFromString", _wrap_referenceMapObj_updateFromString, METH_VARARGS, "\n"
+		"Update a reference map from a string snippet.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "referenceMapObj_convertToString", _wrap_referenceMapObj_convertToString, METH_O, " Saves the object to a string. Provides the inverse option for :func:`referenceMapObj.updateFromString`."},
 	 { "new_referenceMapObj", _wrap_new_referenceMapObj, METH_NOARGS, NULL},
 	 { "delete_referenceMapObj", _wrap_delete_referenceMapObj, METH_O, NULL},
 	 { "referenceMapObj_swigregister", referenceMapObj_swigregister, METH_O, NULL},
 	 { "referenceMapObj_swiginit", referenceMapObj_swiginit, METH_VARARGS, NULL},
-	 { "scalebarObj_transparent_set", _wrap_scalebarObj_transparent_set, METH_VARARGS, NULL},
-	 { "scalebarObj_transparent_get", _wrap_scalebarObj_transparent_get, METH_O, NULL},
-	 { "scalebarObj_imagecolor_set", _wrap_scalebarObj_imagecolor_set, METH_VARARGS, NULL},
-	 { "scalebarObj_imagecolor_get", _wrap_scalebarObj_imagecolor_get, METH_O, NULL},
-	 { "scalebarObj_height_set", _wrap_scalebarObj_height_set, METH_VARARGS, NULL},
-	 { "scalebarObj_height_get", _wrap_scalebarObj_height_get, METH_O, NULL},
-	 { "scalebarObj_width_set", _wrap_scalebarObj_width_set, METH_VARARGS, NULL},
-	 { "scalebarObj_width_get", _wrap_scalebarObj_width_get, METH_O, NULL},
-	 { "scalebarObj_style_set", _wrap_scalebarObj_style_set, METH_VARARGS, NULL},
-	 { "scalebarObj_style_get", _wrap_scalebarObj_style_get, METH_O, NULL},
-	 { "scalebarObj_intervals_set", _wrap_scalebarObj_intervals_set, METH_VARARGS, NULL},
-	 { "scalebarObj_intervals_get", _wrap_scalebarObj_intervals_get, METH_O, NULL},
-	 { "scalebarObj_label_set", _wrap_scalebarObj_label_set, METH_VARARGS, NULL},
-	 { "scalebarObj_label_get", _wrap_scalebarObj_label_get, METH_O, NULL},
-	 { "scalebarObj_color_set", _wrap_scalebarObj_color_set, METH_VARARGS, NULL},
-	 { "scalebarObj_color_get", _wrap_scalebarObj_color_get, METH_O, NULL},
-	 { "scalebarObj_backgroundcolor_set", _wrap_scalebarObj_backgroundcolor_set, METH_VARARGS, NULL},
-	 { "scalebarObj_backgroundcolor_get", _wrap_scalebarObj_backgroundcolor_get, METH_O, NULL},
-	 { "scalebarObj_outlinecolor_set", _wrap_scalebarObj_outlinecolor_set, METH_VARARGS, NULL},
-	 { "scalebarObj_outlinecolor_get", _wrap_scalebarObj_outlinecolor_get, METH_O, NULL},
-	 { "scalebarObj_units_set", _wrap_scalebarObj_units_set, METH_VARARGS, NULL},
-	 { "scalebarObj_units_get", _wrap_scalebarObj_units_get, METH_O, NULL},
-	 { "scalebarObj_status_set", _wrap_scalebarObj_status_set, METH_VARARGS, NULL},
-	 { "scalebarObj_status_get", _wrap_scalebarObj_status_get, METH_O, NULL},
-	 { "scalebarObj_position_set", _wrap_scalebarObj_position_set, METH_VARARGS, NULL},
-	 { "scalebarObj_position_get", _wrap_scalebarObj_position_get, METH_O, NULL},
-	 { "scalebarObj_postlabelcache_set", _wrap_scalebarObj_postlabelcache_set, METH_VARARGS, NULL},
-	 { "scalebarObj_postlabelcache_get", _wrap_scalebarObj_postlabelcache_get, METH_O, NULL},
-	 { "scalebarObj_align_set", _wrap_scalebarObj_align_set, METH_VARARGS, NULL},
-	 { "scalebarObj_align_get", _wrap_scalebarObj_align_get, METH_O, NULL},
-	 { "scalebarObj_offsetx_set", _wrap_scalebarObj_offsetx_set, METH_VARARGS, NULL},
-	 { "scalebarObj_offsetx_get", _wrap_scalebarObj_offsetx_get, METH_O, NULL},
-	 { "scalebarObj_offsety_set", _wrap_scalebarObj_offsety_set, METH_VARARGS, NULL},
-	 { "scalebarObj_offsety_get", _wrap_scalebarObj_offsety_get, METH_O, NULL},
-	 { "scalebarObj_updateFromString", _wrap_scalebarObj_updateFromString, METH_VARARGS, NULL},
-	 { "scalebarObj_convertToString", _wrap_scalebarObj_convertToString, METH_O, NULL},
+	 { "scalebarObj_transparent_set", _wrap_scalebarObj_transparent_set, METH_VARARGS, " Allows transparency for an embedded scalebar - see :ref:`TRANSPARENT <mapfile-scalebar-transparent>`"},
+	 { "scalebarObj_transparent_get", _wrap_scalebarObj_transparent_get, METH_O, " Allows transparency for an embedded scalebar - see :ref:`TRANSPARENT <mapfile-scalebar-transparent>`"},
+	 { "scalebarObj_imagecolor_set", _wrap_scalebarObj_imagecolor_set, METH_VARARGS, " Background color of scalebar - see :ref:`IMAGECOLOR <mapfile-scalebar-imagecolor>`"},
+	 { "scalebarObj_imagecolor_get", _wrap_scalebarObj_imagecolor_get, METH_O, " Background color of scalebar - see :ref:`IMAGECOLOR <mapfile-scalebar-imagecolor>`"},
+	 { "scalebarObj_height_set", _wrap_scalebarObj_height_set, METH_VARARGS, " Height in pixels - see :ref:`SIZE <mapfile-scalebar-size>`"},
+	 { "scalebarObj_height_get", _wrap_scalebarObj_height_get, METH_O, " Height in pixels - see :ref:`SIZE <mapfile-scalebar-size>`"},
+	 { "scalebarObj_width_set", _wrap_scalebarObj_width_set, METH_VARARGS, " Height in pixels - see :ref:`SIZE <mapfile-scalebar-size>`"},
+	 { "scalebarObj_width_get", _wrap_scalebarObj_width_get, METH_O, " Height in pixels - see :ref:`SIZE <mapfile-scalebar-size>`"},
+	 { "scalebarObj_style_set", _wrap_scalebarObj_style_set, METH_VARARGS, " 0 or 1 - see :ref:`STYLE <mapfile-scalebar-style>`"},
+	 { "scalebarObj_style_get", _wrap_scalebarObj_style_get, METH_O, " 0 or 1 - see :ref:`STYLE <mapfile-scalebar-style>`"},
+	 { "scalebarObj_intervals_set", _wrap_scalebarObj_intervals_set, METH_VARARGS, " Number of intervals - see :ref:`INTERVALS <mapfile-scalebar-intervals>`"},
+	 { "scalebarObj_intervals_get", _wrap_scalebarObj_intervals_get, METH_O, " Number of intervals - see :ref:`INTERVALS <mapfile-scalebar-intervals>`"},
+	 { "scalebarObj_label_set", _wrap_scalebarObj_label_set, METH_VARARGS, " Scalebar label - see :ref:`LABEL <mapfile-scalebar-label>`"},
+	 { "scalebarObj_label_get", _wrap_scalebarObj_label_get, METH_O, " Scalebar label - see :ref:`LABEL <mapfile-scalebar-label>`"},
+	 { "scalebarObj_color_set", _wrap_scalebarObj_color_set, METH_VARARGS, " Scalebar foreground color - see :ref:`COLOR <mapfile-scalebar-color>`"},
+	 { "scalebarObj_color_get", _wrap_scalebarObj_color_get, METH_O, " Scalebar foreground color - see :ref:`COLOR <mapfile-scalebar-color>`"},
+	 { "scalebarObj_backgroundcolor_set", _wrap_scalebarObj_backgroundcolor_set, METH_VARARGS, " Scalebar background color - see :ref:`BACKGROUNDCOLOR <mapfile-scalebar-backgroundcolor>`"},
+	 { "scalebarObj_backgroundcolor_get", _wrap_scalebarObj_backgroundcolor_get, METH_O, " Scalebar background color - see :ref:`BACKGROUNDCOLOR <mapfile-scalebar-backgroundcolor>`"},
+	 { "scalebarObj_outlinecolor_set", _wrap_scalebarObj_outlinecolor_set, METH_VARARGS, " Foreground outline color - see :ref:`OUTLINECOLOR <mapfile-scalebar-outlinecolor>`"},
+	 { "scalebarObj_outlinecolor_get", _wrap_scalebarObj_outlinecolor_get, METH_O, " Foreground outline color - see :ref:`OUTLINECOLOR <mapfile-scalebar-outlinecolor>`"},
+	 { "scalebarObj_units_set", _wrap_scalebarObj_units_set, METH_VARARGS, " See :ref:`UNITS <mapfile-scalebar-units>`"},
+	 { "scalebarObj_units_get", _wrap_scalebarObj_units_get, METH_O, " See :ref:`UNITS <mapfile-scalebar-units>`"},
+	 { "scalebarObj_status_set", _wrap_scalebarObj_status_set, METH_VARARGS, " ON, OFF or EMBED - see :ref:`STATUS <mapfile-scalebar-status>` - :data:`MS_ON`, :data:`MS_OFF`, or :data:`MS_EMBED`."},
+	 { "scalebarObj_status_get", _wrap_scalebarObj_status_get, METH_O, " ON, OFF or EMBED - see :ref:`STATUS <mapfile-scalebar-status>` - :data:`MS_ON`, :data:`MS_OFF`, or :data:`MS_EMBED`."},
+	 { "scalebarObj_position_set", _wrap_scalebarObj_position_set, METH_VARARGS, "\n"
+		"For embeded scalebars - see :ref:`POSITION <mapfile-scalebar-position>` -\n"
+		":data:`MS_UL`, :data:`MS_UC`, :data:`MS_UR`, :data:`MS_LL`, :data:`MS_LC`, or :data:`MS_LR`\n"
+		""},
+	 { "scalebarObj_position_get", _wrap_scalebarObj_position_get, METH_O, "\n"
+		"For embeded scalebars - see :ref:`POSITION <mapfile-scalebar-position>` -\n"
+		":data:`MS_UL`, :data:`MS_UC`, :data:`MS_UR`, :data:`MS_LL`, :data:`MS_LC`, or :data:`MS_LR`\n"
+		""},
+	 { "scalebarObj_postlabelcache_set", _wrap_scalebarObj_postlabelcache_set, METH_VARARGS, " See :ref:`POSTLABELCACHE <mapfile-scalebar-postlabelcache>` - :data:`MS_TRUE` or :data:`MS_FALSE`"},
+	 { "scalebarObj_postlabelcache_get", _wrap_scalebarObj_postlabelcache_get, METH_O, " See :ref:`POSTLABELCACHE <mapfile-scalebar-postlabelcache>` - :data:`MS_TRUE` or :data:`MS_FALSE`"},
+	 { "scalebarObj_align_set", _wrap_scalebarObj_align_set, METH_VARARGS, " See :ref:`ALIGN <mapfile-scalebar-align>`"},
+	 { "scalebarObj_align_get", _wrap_scalebarObj_align_get, METH_O, " See :ref:`ALIGN <mapfile-scalebar-align>`"},
+	 { "scalebarObj_offsetx_set", _wrap_scalebarObj_offsetx_set, METH_VARARGS, " See :ref:`OFFSET <mapfile-scalebar-offset>`"},
+	 { "scalebarObj_offsetx_get", _wrap_scalebarObj_offsetx_get, METH_O, " See :ref:`OFFSET <mapfile-scalebar-offset>`"},
+	 { "scalebarObj_offsety_set", _wrap_scalebarObj_offsety_set, METH_VARARGS, " See :ref:`OFFSET <mapfile-scalebar-offset>`"},
+	 { "scalebarObj_offsety_get", _wrap_scalebarObj_offsety_get, METH_O, " See :ref:`OFFSET <mapfile-scalebar-offset>`"},
+	 { "scalebarObj_updateFromString", _wrap_scalebarObj_updateFromString, METH_VARARGS, "\n"
+		"Update a scalebar from a string snippet.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "scalebarObj_convertToString", _wrap_scalebarObj_convertToString, METH_O, " Saves the object to a string. Provides the inverse option for updateFromString."},
 	 { "new_scalebarObj", _wrap_new_scalebarObj, METH_NOARGS, NULL},
 	 { "delete_scalebarObj", _wrap_delete_scalebarObj, METH_O, NULL},
 	 { "scalebarObj_swigregister", scalebarObj_swigregister, METH_O, NULL},
 	 { "scalebarObj_swiginit", scalebarObj_swiginit, METH_VARARGS, NULL},
-	 { "legendObj_label_get", _wrap_legendObj_label_get, METH_O, NULL},
-	 { "legendObj_map_get", _wrap_legendObj_map_get, METH_O, NULL},
-	 { "legendObj_transparent_set", _wrap_legendObj_transparent_set, METH_VARARGS, NULL},
-	 { "legendObj_transparent_get", _wrap_legendObj_transparent_get, METH_O, NULL},
-	 { "legendObj_imagecolor_set", _wrap_legendObj_imagecolor_set, METH_VARARGS, NULL},
-	 { "legendObj_imagecolor_get", _wrap_legendObj_imagecolor_get, METH_O, NULL},
-	 { "legendObj_keysizex_set", _wrap_legendObj_keysizex_set, METH_VARARGS, NULL},
-	 { "legendObj_keysizex_get", _wrap_legendObj_keysizex_get, METH_O, NULL},
-	 { "legendObj_keysizey_set", _wrap_legendObj_keysizey_set, METH_VARARGS, NULL},
-	 { "legendObj_keysizey_get", _wrap_legendObj_keysizey_get, METH_O, NULL},
-	 { "legendObj_keyspacingx_set", _wrap_legendObj_keyspacingx_set, METH_VARARGS, NULL},
-	 { "legendObj_keyspacingx_get", _wrap_legendObj_keyspacingx_get, METH_O, NULL},
-	 { "legendObj_keyspacingy_set", _wrap_legendObj_keyspacingy_set, METH_VARARGS, NULL},
-	 { "legendObj_keyspacingy_get", _wrap_legendObj_keyspacingy_get, METH_O, NULL},
-	 { "legendObj_outlinecolor_set", _wrap_legendObj_outlinecolor_set, METH_VARARGS, NULL},
-	 { "legendObj_outlinecolor_get", _wrap_legendObj_outlinecolor_get, METH_O, NULL},
-	 { "legendObj_status_set", _wrap_legendObj_status_set, METH_VARARGS, NULL},
-	 { "legendObj_status_get", _wrap_legendObj_status_get, METH_O, NULL},
-	 { "legendObj_height_set", _wrap_legendObj_height_set, METH_VARARGS, NULL},
-	 { "legendObj_height_get", _wrap_legendObj_height_get, METH_O, NULL},
-	 { "legendObj_width_set", _wrap_legendObj_width_set, METH_VARARGS, NULL},
-	 { "legendObj_width_get", _wrap_legendObj_width_get, METH_O, NULL},
-	 { "legendObj_position_set", _wrap_legendObj_position_set, METH_VARARGS, NULL},
-	 { "legendObj_position_get", _wrap_legendObj_position_get, METH_O, NULL},
-	 { "legendObj_postlabelcache_set", _wrap_legendObj_postlabelcache_set, METH_VARARGS, NULL},
-	 { "legendObj_postlabelcache_get", _wrap_legendObj_postlabelcache_get, METH_O, NULL},
-	 { "legendObj_template_set", _wrap_legendObj_template_set, METH_VARARGS, NULL},
-	 { "legendObj_template_get", _wrap_legendObj_template_get, METH_O, NULL},
-	 { "legendObj_updateFromString", _wrap_legendObj_updateFromString, METH_VARARGS, NULL},
-	 { "legendObj_convertToString", _wrap_legendObj_convertToString, METH_O, NULL},
+	 { "legendObj_label_get", _wrap_legendObj_label_get, METH_O, " See :ref:`LABEL <mapfile-legend-label>`"},
+	 { "legendObj_map_get", _wrap_legendObj_map_get, METH_O, " Instances of legendObj are always are always embedded inside the mapObj"},
+	 { "legendObj_transparent_set", _wrap_legendObj_transparent_set, METH_VARARGS, " Allows transparency for an embedded legend - see :ref:`TRANSPARENT <mapfile-legend-transparent>`"},
+	 { "legendObj_transparent_get", _wrap_legendObj_transparent_get, METH_O, " Allows transparency for an embedded legend - see :ref:`TRANSPARENT <mapfile-legend-transparent>`"},
+	 { "legendObj_imagecolor_set", _wrap_legendObj_imagecolor_set, METH_VARARGS, " Legend background color - see :ref:`IMAGECOLOR <mapfile-legend-imagecolor>`"},
+	 { "legendObj_imagecolor_get", _wrap_legendObj_imagecolor_get, METH_O, " Legend background color - see :ref:`IMAGECOLOR <mapfile-legend-imagecolor>`"},
+	 { "legendObj_keysizex_set", _wrap_legendObj_keysizex_set, METH_VARARGS, " Width in pixels of legend keys - see :ref:`KEYSIZE <mapfile-legend-keysize>`"},
+	 { "legendObj_keysizex_get", _wrap_legendObj_keysizex_get, METH_O, " Width in pixels of legend keys - see :ref:`KEYSIZE <mapfile-legend-keysize>`"},
+	 { "legendObj_keysizey_set", _wrap_legendObj_keysizey_set, METH_VARARGS, " Height in pixels of legend keys - see :ref:`KEYSIZE <mapfile-legend-keysize>`"},
+	 { "legendObj_keysizey_get", _wrap_legendObj_keysizey_get, METH_O, " Height in pixels of legend keys - see :ref:`KEYSIZE <mapfile-legend-keysize>`"},
+	 { "legendObj_keyspacingx_set", _wrap_legendObj_keyspacingx_set, METH_VARARGS, " Horizontal padding around keys in pixels - see :ref:`KEYSPACING <mapfile-legend-keyspacing>`"},
+	 { "legendObj_keyspacingx_get", _wrap_legendObj_keyspacingx_get, METH_O, " Horizontal padding around keys in pixels - see :ref:`KEYSPACING <mapfile-legend-keyspacing>`"},
+	 { "legendObj_keyspacingy_set", _wrap_legendObj_keyspacingy_set, METH_VARARGS, " Vertical padding around keys in pixels - see :ref:`KEYSPACING <mapfile-legend-keyspacing>`"},
+	 { "legendObj_keyspacingy_get", _wrap_legendObj_keyspacingy_get, METH_O, " Vertical padding around keys in pixels - see :ref:`KEYSPACING <mapfile-legend-keyspacing>`"},
+	 { "legendObj_outlinecolor_set", _wrap_legendObj_outlinecolor_set, METH_VARARGS, " Key outline color, -1 for no outline - see :ref:`OUTLINECOLOR <mapfile-legend-outlinecolor>`"},
+	 { "legendObj_outlinecolor_get", _wrap_legendObj_outlinecolor_get, METH_O, " Key outline color, -1 for no outline - see :ref:`OUTLINECOLOR <mapfile-legend-outlinecolor>`"},
+	 { "legendObj_status_set", _wrap_legendObj_status_set, METH_VARARGS, " :data:`MS_ON`, :data:`MS_OFF` or :data:`MS_EMBED`- see :ref:`STATUS <mapfile-legend-status>`"},
+	 { "legendObj_status_get", _wrap_legendObj_status_get, METH_O, " :data:`MS_ON`, :data:`MS_OFF` or :data:`MS_EMBED`- see :ref:`STATUS <mapfile-legend-status>`"},
+	 { "legendObj_height_set", _wrap_legendObj_height_set, METH_VARARGS, " Legend height"},
+	 { "legendObj_height_get", _wrap_legendObj_height_get, METH_O, " Legend height"},
+	 { "legendObj_width_set", _wrap_legendObj_width_set, METH_VARARGS, " Legend width"},
+	 { "legendObj_width_get", _wrap_legendObj_width_get, METH_O, " Legend width"},
+	 { "legendObj_position_set", _wrap_legendObj_position_set, METH_VARARGS, " Used for embedded legends, see :ref:`POSITION  <mapfile-legend-position>`"},
+	 { "legendObj_position_get", _wrap_legendObj_position_get, METH_O, " Used for embedded legends, see :ref:`POSITION  <mapfile-legend-position>`"},
+	 { "legendObj_postlabelcache_set", _wrap_legendObj_postlabelcache_set, METH_VARARGS, " :data:`MS_TRUE`, :data:`MS_FALSE` - see :ref:`POSTLABELCACHE  <mapfile-legend-postlabelcache>`"},
+	 { "legendObj_postlabelcache_get", _wrap_legendObj_postlabelcache_get, METH_O, " :data:`MS_TRUE`, :data:`MS_FALSE` - see :ref:`POSTLABELCACHE  <mapfile-legend-postlabelcache>`"},
+	 { "legendObj_template_set", _wrap_legendObj_template_set, METH_VARARGS, " See :ref:`TEMPLATE <mapfile-legend-template>`"},
+	 { "legendObj_template_get", _wrap_legendObj_template_get, METH_O, " See :ref:`TEMPLATE <mapfile-legend-template>`"},
+	 { "legendObj_updateFromString", _wrap_legendObj_updateFromString, METH_VARARGS, " Update a :class:`legendObj` from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "legendObj_convertToString", _wrap_legendObj_convertToString, METH_O, " Output the :class:`legendObj` object as a Mapfile string. Provides the inverse option for :func:`legendObj.updateFromString`."},
 	 { "new_legendObj", _wrap_new_legendObj, METH_NOARGS, NULL},
 	 { "delete_legendObj", _wrap_delete_legendObj, METH_O, NULL},
 	 { "legendObj_swigregister", legendObj_swigregister, METH_O, NULL},
 	 { "legendObj_swiginit", legendObj_swiginit, METH_VARARGS, NULL},
-	 { "imageObj_width_get", _wrap_imageObj_width_get, METH_O, NULL},
-	 { "imageObj_height_get", _wrap_imageObj_height_get, METH_O, NULL},
-	 { "imageObj_resolution_get", _wrap_imageObj_resolution_get, METH_O, NULL},
-	 { "imageObj_resolutionfactor_get", _wrap_imageObj_resolutionfactor_get, METH_O, NULL},
-	 { "imageObj_imagepath_get", _wrap_imageObj_imagepath_get, METH_O, NULL},
-	 { "imageObj_imageurl_get", _wrap_imageObj_imageurl_get, METH_O, NULL},
-	 { "imageObj_format_get", _wrap_imageObj_format_get, METH_O, NULL},
-	 { "new_imageObj", _wrap_new_imageObj, METH_VARARGS, NULL},
+	 { "imageObj_width_get", _wrap_imageObj_width_get, METH_O, " image width in pixels"},
+	 { "imageObj_height_get", _wrap_imageObj_height_get, METH_O, " image height in pixels"},
+	 { "imageObj_resolution_get", _wrap_imageObj_resolution_get, METH_O, " image resolution in pixels per inch"},
+	 { "imageObj_resolutionfactor_get", _wrap_imageObj_resolutionfactor_get, METH_O, " resolution factor"},
+	 { "imageObj_imagepath_get", _wrap_imageObj_imagepath_get, METH_O, " if image is drawn by :func:`mapObj.draw` this is :ref:`IMAGEPATH <mapfile-web-imagepath>`"},
+	 { "imageObj_imageurl_get", _wrap_imageObj_imageurl_get, METH_O, " if image is drawn by :func:`mapObj.draw` this is :ref:`IMAGEURL <mapfile-web-imageurl>`"},
+	 { "imageObj_format_get", _wrap_imageObj_format_get, METH_O, " an :class:`outputFormatObj` representing the output format of the image"},
+	 { "new_imageObj", _wrap_new_imageObj, METH_VARARGS, "\n"
+		"Create a new :class:`imageObj` instance. If *filename* is specified, an imageObj\n"
+		"is created from the file and any specified *width*, *height*, and *format* parameters\n"
+		"will be overridden by values of the image in *filename*.  Otherwise, if *format* is specified (as an :class:`outputFormatObj`) an imageObj is created\n"
+		"using that format. If *filename* is not specified, then *width* and *height* should be specified.\n"
+		"The default resolution is currently 72 and defined by :data:`MS_DEFAULT_RESOLUTION` - this setting is\n"
+		"not available in MapScript.\n"
+		""},
 	 { "delete_imageObj", _wrap_delete_imageObj, METH_O, NULL},
-	 { "imageObj_save", _wrap_imageObj_save, METH_VARARGS, NULL},
-	 { "imageObj_getBytes", _wrap_imageObj_getBytes, METH_O, NULL},
-	 { "imageObj_getSize", _wrap_imageObj_getSize, METH_O, NULL},
-	 { "imageObj_write", _wrap_imageObj_write, METH_VARARGS, NULL},
+	 { "imageObj_save", _wrap_imageObj_save, METH_VARARGS, "\n"
+		"Save image to filename. The optional map parameter must be specified if\n"
+		"saving GeoTIFF images.\n"
+		""},
+	 { "imageObj_getBytes", _wrap_imageObj_getBytes, METH_O, "\n"
+		"Returns the image contents as a binary buffer. The exact form of this buffer will\n"
+		"vary by MapScript language (e.g. a string in Python, byte[] array in Java and C#, unhandled in Perl)\n"
+		""},
+	 { "imageObj_getSize", _wrap_imageObj_getSize, METH_O, "\n"
+		"Returns the size of the binary buffer representing the image buffer\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    The getSize method is inefficient as it does a call to getBytes and\n"
+		"    then computes the size of the byte array. The byte array is then immediately discarded.\n"
+		"    In most cases it is more efficient to call getBytes directly.\n"
+		""},
+	 { "imageObj_write", _wrap_imageObj_write, METH_VARARGS, "\n"
+		"Write image data to an open file handle. Replaces\n"
+		"the removed saveToString function.  See ``python/pyextend.i`` for the Python specific\n"
+		"version of this method.\n"
+		""},
 	 { "imageObj_swigregister", imageObj_swigregister, METH_O, NULL},
 	 { "imageObj_swiginit", imageObj_swiginit, METH_VARARGS, NULL},
-	 { "scaleTokenEntryObj_minscale_set", _wrap_scaleTokenEntryObj_minscale_set, METH_VARARGS, NULL},
-	 { "scaleTokenEntryObj_minscale_get", _wrap_scaleTokenEntryObj_minscale_get, METH_O, NULL},
-	 { "scaleTokenEntryObj_maxscale_set", _wrap_scaleTokenEntryObj_maxscale_set, METH_VARARGS, NULL},
-	 { "scaleTokenEntryObj_maxscale_get", _wrap_scaleTokenEntryObj_maxscale_get, METH_O, NULL},
-	 { "scaleTokenEntryObj_value_set", _wrap_scaleTokenEntryObj_value_set, METH_VARARGS, NULL},
-	 { "scaleTokenEntryObj_value_get", _wrap_scaleTokenEntryObj_value_get, METH_O, NULL},
+	 { "scaleTokenEntryObj_minscale_set", _wrap_scaleTokenEntryObj_minscale_set, METH_VARARGS, " The minimum scale for the replacement"},
+	 { "scaleTokenEntryObj_minscale_get", _wrap_scaleTokenEntryObj_minscale_get, METH_O, " The minimum scale for the replacement"},
+	 { "scaleTokenEntryObj_maxscale_set", _wrap_scaleTokenEntryObj_maxscale_set, METH_VARARGS, " The maximum scale for the replacement"},
+	 { "scaleTokenEntryObj_maxscale_get", _wrap_scaleTokenEntryObj_maxscale_get, METH_O, " The maximum scale for the replacement"},
+	 { "scaleTokenEntryObj_value_set", _wrap_scaleTokenEntryObj_value_set, METH_VARARGS, " The token replacement value"},
+	 { "scaleTokenEntryObj_value_get", _wrap_scaleTokenEntryObj_value_get, METH_O, " The token replacement value"},
 	 { "new_scaleTokenEntryObj", _wrap_new_scaleTokenEntryObj, METH_NOARGS, NULL},
 	 { "delete_scaleTokenEntryObj", _wrap_delete_scaleTokenEntryObj, METH_O, NULL},
 	 { "scaleTokenEntryObj_swigregister", scaleTokenEntryObj_swigregister, METH_O, NULL},
 	 { "scaleTokenEntryObj_swiginit", scaleTokenEntryObj_swiginit, METH_VARARGS, NULL},
-	 { "scaleTokenObj_name_set", _wrap_scaleTokenObj_name_set, METH_VARARGS, NULL},
-	 { "scaleTokenObj_name_get", _wrap_scaleTokenObj_name_get, METH_O, NULL},
-	 { "scaleTokenObj_n_entries_set", _wrap_scaleTokenObj_n_entries_set, METH_VARARGS, NULL},
-	 { "scaleTokenObj_n_entries_get", _wrap_scaleTokenObj_n_entries_get, METH_O, NULL},
-	 { "scaleTokenObj_tokens_set", _wrap_scaleTokenObj_tokens_set, METH_VARARGS, NULL},
-	 { "scaleTokenObj_tokens_get", _wrap_scaleTokenObj_tokens_get, METH_O, NULL},
+	 { "scaleTokenObj_name_set", _wrap_scaleTokenObj_name_set, METH_VARARGS, " The name of the token to replace in the :ref:`DATA <mapfile-layer-data>` statement"},
+	 { "scaleTokenObj_name_get", _wrap_scaleTokenObj_name_get, METH_O, " The name of the token to replace in the :ref:`DATA <mapfile-layer-data>` statement"},
+	 { "scaleTokenObj_n_entries_set", _wrap_scaleTokenObj_n_entries_set, METH_VARARGS, " The number of values within the scaletoken"},
+	 { "scaleTokenObj_n_entries_get", _wrap_scaleTokenObj_n_entries_get, METH_O, " The number of values within the scaletoken"},
+	 { "scaleTokenObj_tokens_set", _wrap_scaleTokenObj_tokens_set, METH_VARARGS, " A reference to the values"},
+	 { "scaleTokenObj_tokens_get", _wrap_scaleTokenObj_tokens_get, METH_O, " A reference to the values"},
 	 { "new_scaleTokenObj", _wrap_new_scaleTokenObj, METH_NOARGS, NULL},
 	 { "delete_scaleTokenObj", _wrap_delete_scaleTokenObj, METH_O, NULL},
 	 { "scaleTokenObj_swigregister", scaleTokenObj_swigregister, METH_O, NULL},
 	 { "scaleTokenObj_swiginit", scaleTokenObj_swiginit, METH_VARARGS, NULL},
-	 { "layerObj_refcount_get", _wrap_layerObj_refcount_get, METH_O, NULL},
-	 { "layerObj_numclasses_get", _wrap_layerObj_numclasses_get, METH_O, NULL},
-	 { "layerObj_maxclasses_get", _wrap_layerObj_maxclasses_get, METH_O, NULL},
-	 { "layerObj_index_get", _wrap_layerObj_index_get, METH_O, NULL},
-	 { "layerObj_map_get", _wrap_layerObj_map_get, METH_O, NULL},
-	 { "layerObj_numitems_get", _wrap_layerObj_numitems_get, METH_O, NULL},
-	 { "layerObj_metadata_get", _wrap_layerObj_metadata_get, METH_O, NULL},
-	 { "layerObj_validation_get", _wrap_layerObj_validation_get, METH_O, NULL},
-	 { "layerObj_bindvals_get", _wrap_layerObj_bindvals_get, METH_O, NULL},
-	 { "layerObj_connectionoptions_get", _wrap_layerObj_connectionoptions_get, METH_O, NULL},
-	 { "layerObj_cluster_get", _wrap_layerObj_cluster_get, METH_O, NULL},
-	 { "layerObj_extent_get", _wrap_layerObj_extent_get, METH_O, NULL},
-	 { "layerObj_numprocessing_get", _wrap_layerObj_numprocessing_get, METH_O, NULL},
-	 { "layerObj_numjoins_get", _wrap_layerObj_numjoins_get, METH_O, NULL},
-	 { "layerObj_utfdata_get", _wrap_layerObj_utfdata_get, METH_O, NULL},
-	 { "layerObj_compositer_get", _wrap_layerObj_compositer_get, METH_O, NULL},
-	 { "layerObj_classitem_set", _wrap_layerObj_classitem_set, METH_VARARGS, NULL},
-	 { "layerObj_classitem_get", _wrap_layerObj_classitem_get, METH_O, NULL},
-	 { "layerObj_header_set", _wrap_layerObj_header_set, METH_VARARGS, NULL},
-	 { "layerObj_header_get", _wrap_layerObj_header_get, METH_O, NULL},
-	 { "layerObj_footer_set", _wrap_layerObj_footer_set, METH_VARARGS, NULL},
-	 { "layerObj_footer_get", _wrap_layerObj_footer_get, METH_O, NULL},
-	 { "layerObj_template_set", _wrap_layerObj_template_set, METH_VARARGS, NULL},
-	 { "layerObj_template_get", _wrap_layerObj_template_get, METH_O, NULL},
-	 { "layerObj_name_set", _wrap_layerObj_name_set, METH_VARARGS, NULL},
-	 { "layerObj_name_get", _wrap_layerObj_name_get, METH_O, NULL},
-	 { "layerObj_group_set", _wrap_layerObj_group_set, METH_VARARGS, NULL},
-	 { "layerObj_group_get", _wrap_layerObj_group_get, METH_O, NULL},
-	 { "layerObj_status_set", _wrap_layerObj_status_set, METH_VARARGS, NULL},
-	 { "layerObj_status_get", _wrap_layerObj_status_get, METH_O, NULL},
-	 { "layerObj_rendermode_set", _wrap_layerObj_rendermode_set, METH_VARARGS, NULL},
-	 { "layerObj_rendermode_get", _wrap_layerObj_rendermode_get, METH_O, NULL},
-	 { "layerObj_data_set", _wrap_layerObj_data_set, METH_VARARGS, NULL},
-	 { "layerObj_data_get", _wrap_layerObj_data_get, METH_O, NULL},
-	 { "layerObj_type_set", _wrap_layerObj_type_set, METH_VARARGS, NULL},
-	 { "layerObj_type_get", _wrap_layerObj_type_get, METH_O, NULL},
-	 { "layerObj_connectiontype_set", _wrap_layerObj_connectiontype_set, METH_VARARGS, NULL},
-	 { "layerObj_connectiontype_get", _wrap_layerObj_connectiontype_get, METH_O, NULL},
-	 { "layerObj_tolerance_set", _wrap_layerObj_tolerance_set, METH_VARARGS, NULL},
-	 { "layerObj_tolerance_get", _wrap_layerObj_tolerance_get, METH_O, NULL},
-	 { "layerObj_toleranceunits_set", _wrap_layerObj_toleranceunits_set, METH_VARARGS, NULL},
-	 { "layerObj_toleranceunits_get", _wrap_layerObj_toleranceunits_get, METH_O, NULL},
-	 { "layerObj_symbolscaledenom_set", _wrap_layerObj_symbolscaledenom_set, METH_VARARGS, NULL},
-	 { "layerObj_symbolscaledenom_get", _wrap_layerObj_symbolscaledenom_get, METH_O, NULL},
-	 { "layerObj_minscaledenom_set", _wrap_layerObj_minscaledenom_set, METH_VARARGS, NULL},
-	 { "layerObj_minscaledenom_get", _wrap_layerObj_minscaledenom_get, METH_O, NULL},
-	 { "layerObj_maxscaledenom_set", _wrap_layerObj_maxscaledenom_set, METH_VARARGS, NULL},
-	 { "layerObj_maxscaledenom_get", _wrap_layerObj_maxscaledenom_get, METH_O, NULL},
-	 { "layerObj_minfeaturesize_set", _wrap_layerObj_minfeaturesize_set, METH_VARARGS, NULL},
-	 { "layerObj_minfeaturesize_get", _wrap_layerObj_minfeaturesize_get, METH_O, NULL},
-	 { "layerObj_labelminscaledenom_set", _wrap_layerObj_labelminscaledenom_set, METH_VARARGS, NULL},
-	 { "layerObj_labelminscaledenom_get", _wrap_layerObj_labelminscaledenom_get, METH_O, NULL},
-	 { "layerObj_labelmaxscaledenom_set", _wrap_layerObj_labelmaxscaledenom_set, METH_VARARGS, NULL},
-	 { "layerObj_labelmaxscaledenom_get", _wrap_layerObj_labelmaxscaledenom_get, METH_O, NULL},
-	 { "layerObj_mingeowidth_set", _wrap_layerObj_mingeowidth_set, METH_VARARGS, NULL},
-	 { "layerObj_mingeowidth_get", _wrap_layerObj_mingeowidth_get, METH_O, NULL},
-	 { "layerObj_maxgeowidth_set", _wrap_layerObj_maxgeowidth_set, METH_VARARGS, NULL},
-	 { "layerObj_maxgeowidth_get", _wrap_layerObj_maxgeowidth_get, METH_O, NULL},
-	 { "layerObj_sizeunits_set", _wrap_layerObj_sizeunits_set, METH_VARARGS, NULL},
-	 { "layerObj_sizeunits_get", _wrap_layerObj_sizeunits_get, METH_O, NULL},
-	 { "layerObj_maxfeatures_set", _wrap_layerObj_maxfeatures_set, METH_VARARGS, NULL},
-	 { "layerObj_maxfeatures_get", _wrap_layerObj_maxfeatures_get, METH_O, NULL},
-	 { "layerObj_startindex_set", _wrap_layerObj_startindex_set, METH_VARARGS, NULL},
-	 { "layerObj_startindex_get", _wrap_layerObj_startindex_get, METH_O, NULL},
-	 { "layerObj_offsite_set", _wrap_layerObj_offsite_set, METH_VARARGS, NULL},
-	 { "layerObj_offsite_get", _wrap_layerObj_offsite_get, METH_O, NULL},
-	 { "layerObj_transform_set", _wrap_layerObj_transform_set, METH_VARARGS, NULL},
-	 { "layerObj_transform_get", _wrap_layerObj_transform_get, METH_O, NULL},
-	 { "layerObj_labelcache_set", _wrap_layerObj_labelcache_set, METH_VARARGS, NULL},
-	 { "layerObj_labelcache_get", _wrap_layerObj_labelcache_get, METH_O, NULL},
-	 { "layerObj_postlabelcache_set", _wrap_layerObj_postlabelcache_set, METH_VARARGS, NULL},
-	 { "layerObj_postlabelcache_get", _wrap_layerObj_postlabelcache_get, METH_O, NULL},
-	 { "layerObj_labelitem_set", _wrap_layerObj_labelitem_set, METH_VARARGS, NULL},
-	 { "layerObj_labelitem_get", _wrap_layerObj_labelitem_get, METH_O, NULL},
-	 { "layerObj_tileitem_set", _wrap_layerObj_tileitem_set, METH_VARARGS, NULL},
-	 { "layerObj_tileitem_get", _wrap_layerObj_tileitem_get, METH_O, NULL},
-	 { "layerObj_tileindex_set", _wrap_layerObj_tileindex_set, METH_VARARGS, NULL},
-	 { "layerObj_tileindex_get", _wrap_layerObj_tileindex_get, METH_O, NULL},
-	 { "layerObj_tilesrs_set", _wrap_layerObj_tilesrs_set, METH_VARARGS, NULL},
-	 { "layerObj_tilesrs_get", _wrap_layerObj_tilesrs_get, METH_O, NULL},
-	 { "layerObj_units_set", _wrap_layerObj_units_set, METH_VARARGS, NULL},
-	 { "layerObj_units_get", _wrap_layerObj_units_get, METH_O, NULL},
-	 { "layerObj_connection_set", _wrap_layerObj_connection_set, METH_VARARGS, NULL},
-	 { "layerObj_connection_get", _wrap_layerObj_connection_get, METH_O, NULL},
-	 { "layerObj_plugin_library_set", _wrap_layerObj_plugin_library_set, METH_VARARGS, NULL},
-	 { "layerObj_plugin_library_get", _wrap_layerObj_plugin_library_get, METH_O, NULL},
-	 { "layerObj_plugin_library_original_set", _wrap_layerObj_plugin_library_original_set, METH_VARARGS, NULL},
-	 { "layerObj_plugin_library_original_get", _wrap_layerObj_plugin_library_original_get, METH_O, NULL},
-	 { "layerObj_bandsitem_set", _wrap_layerObj_bandsitem_set, METH_VARARGS, NULL},
-	 { "layerObj_bandsitem_get", _wrap_layerObj_bandsitem_get, METH_O, NULL},
-	 { "layerObj_filteritem_set", _wrap_layerObj_filteritem_set, METH_VARARGS, NULL},
-	 { "layerObj_filteritem_get", _wrap_layerObj_filteritem_get, METH_O, NULL},
-	 { "layerObj_styleitem_set", _wrap_layerObj_styleitem_set, METH_VARARGS, NULL},
-	 { "layerObj_styleitem_get", _wrap_layerObj_styleitem_get, METH_O, NULL},
-	 { "layerObj_requires_set", _wrap_layerObj_requires_set, METH_VARARGS, NULL},
-	 { "layerObj_requires_get", _wrap_layerObj_requires_get, METH_O, NULL},
-	 { "layerObj_labelrequires_set", _wrap_layerObj_labelrequires_set, METH_VARARGS, NULL},
-	 { "layerObj_labelrequires_get", _wrap_layerObj_labelrequires_get, METH_O, NULL},
-	 { "layerObj_debug_set", _wrap_layerObj_debug_set, METH_VARARGS, NULL},
-	 { "layerObj_debug_get", _wrap_layerObj_debug_get, METH_O, NULL},
-	 { "layerObj_classgroup_set", _wrap_layerObj_classgroup_set, METH_VARARGS, NULL},
-	 { "layerObj_classgroup_get", _wrap_layerObj_classgroup_get, METH_O, NULL},
-	 { "layerObj_mask_set", _wrap_layerObj_mask_set, METH_VARARGS, NULL},
-	 { "layerObj_mask_get", _wrap_layerObj_mask_get, METH_O, NULL},
-	 { "layerObj_encoding_set", _wrap_layerObj_encoding_set, METH_VARARGS, NULL},
-	 { "layerObj_encoding_get", _wrap_layerObj_encoding_get, METH_O, NULL},
-	 { "layerObj_utfitem_set", _wrap_layerObj_utfitem_set, METH_VARARGS, NULL},
-	 { "layerObj_utfitem_get", _wrap_layerObj_utfitem_get, METH_O, NULL},
-	 { "layerObj_utfitemindex_set", _wrap_layerObj_utfitemindex_set, METH_VARARGS, NULL},
-	 { "layerObj_utfitemindex_get", _wrap_layerObj_utfitemindex_get, METH_O, NULL},
-	 { "new_layerObj", _wrap_new_layerObj, METH_VARARGS, NULL},
-	 { "layerObj_setOpacity", _wrap_layerObj_setOpacity, METH_VARARGS, NULL},
-	 { "layerObj_getOpacity", _wrap_layerObj_getOpacity, METH_O, NULL},
+	 { "layerObj_refcount_get", _wrap_layerObj_refcount_get, METH_O, " reference counting, RFC24"},
+	 { "layerObj_numclasses_get", _wrap_layerObj_numclasses_get, METH_O, " Number of layer classes"},
+	 { "layerObj_maxclasses_get", _wrap_layerObj_maxclasses_get, METH_O, " Used to track of the maximum number of classes - see RFC-17"},
+	 { "layerObj_index_get", _wrap_layerObj_index_get, METH_O, " Index of layer within parent map's layers array"},
+	 { "layerObj_map_get", _wrap_layerObj_map_get, METH_O, " Reference to parent map"},
+	 { "layerObj_numitems_get", _wrap_layerObj_numitems_get, METH_O, " Number of layer feature attributes (items)"},
+	 { "layerObj_metadata_get", _wrap_layerObj_metadata_get, METH_O, " See :ref:`METADATA <mapfile-layer-metadata>`"},
+	 { "layerObj_validation_get", _wrap_layerObj_validation_get, METH_O, " See :ref:`VALIDATION <mapfile-layer-validation>`"},
+	 { "layerObj_bindvals_get", _wrap_layerObj_bindvals_get, METH_O, " Relates to RFC59"},
+	 { "layerObj_connectionoptions_get", _wrap_layerObj_connectionoptions_get, METH_O, " See :ref:`CONNECTIONOPTIONS <mapfile-layer-connectionoptions>`"},
+	 { "layerObj_cluster_get", _wrap_layerObj_cluster_get, METH_O, " See :ref:`CLUSTER <mapfile-layer-cluster>`"},
+	 { "layerObj_extent_get", _wrap_layerObj_extent_get, METH_O, " optional limiting extent for layer features - see :ref:`EXTENT <mapfile-layer-extent>`"},
+	 { "layerObj_numprocessing_get", _wrap_layerObj_numprocessing_get, METH_O, " Number of raster processing directives"},
+	 { "layerObj_numjoins_get", _wrap_layerObj_numjoins_get, METH_O, " Number of layer joins"},
+	 { "layerObj_utfdata_get", _wrap_layerObj_utfdata_get, METH_O, " See :ref:`UTFDATA <mapfile-layer-utfdata>`"},
+	 { "layerObj_compositer_get", _wrap_layerObj_compositer_get, METH_O, " See :ref:`COMPOSITE <mapfile-layer-composite>`"},
+	 { "layerObj_classitem_set", _wrap_layerObj_classitem_set, METH_VARARGS, " the attribute used to classify layer data - see :ref:`CLASSITEM <mapfile-layer-classitem>`"},
+	 { "layerObj_classitem_get", _wrap_layerObj_classitem_get, METH_O, " the attribute used to classify layer data - see :ref:`CLASSITEM <mapfile-layer-classitem>`"},
+	 { "layerObj_header_set", _wrap_layerObj_header_set, METH_VARARGS, " filename to a template for result's header - see :ref:`HEADER <mapfile-layer-header>`"},
+	 { "layerObj_header_get", _wrap_layerObj_header_get, METH_O, " filename to a template for result's header - see :ref:`HEADER <mapfile-layer-header>`"},
+	 { "layerObj_footer_set", _wrap_layerObj_footer_set, METH_VARARGS, " filename to a template for result's footer - see :ref:`FOOTER <mapfile-layer-footer>`"},
+	 { "layerObj_footer_get", _wrap_layerObj_footer_get, METH_O, " filename to a template for result's footer - see :ref:`FOOTER <mapfile-layer-footer>`"},
+	 { "layerObj_template_set", _wrap_layerObj_template_set, METH_VARARGS, " See :ref:`TEMPLATE <mapfile-layer-template>` - global template, used across all classes"},
+	 { "layerObj_template_get", _wrap_layerObj_template_get, METH_O, " See :ref:`TEMPLATE <mapfile-layer-template>` - global template, used across all classes"},
+	 { "layerObj_name_set", _wrap_layerObj_name_set, METH_VARARGS, " See :ref:`NAME <mapfile-layer-name>` - should be unique"},
+	 { "layerObj_name_get", _wrap_layerObj_name_get, METH_O, " See :ref:`NAME <mapfile-layer-name>` - should be unique"},
+	 { "layerObj_group_set", _wrap_layerObj_group_set, METH_VARARGS, " Name of a group of layers - see :ref:`GROUP <mapfile-layer-group>`"},
+	 { "layerObj_group_get", _wrap_layerObj_group_get, METH_O, " Name of a group of layers - see :ref:`GROUP <mapfile-layer-group>`"},
+	 { "layerObj_status_set", _wrap_layerObj_status_set, METH_VARARGS, " See :ref:`STATUS <mapfile-layer-status>`:data:`MS_ON`, :data:`MS_OFF` or :data:`MS_DEFAULT`"},
+	 { "layerObj_status_get", _wrap_layerObj_status_get, METH_O, " See :ref:`STATUS <mapfile-layer-status>`:data:`MS_ON`, :data:`MS_OFF` or :data:`MS_DEFAULT`"},
+	 { "layerObj_rendermode_set", _wrap_layerObj_rendermode_set, METH_VARARGS, " :data:`MS_FIRST_MATCHING_CLASS` - default and historic MapServer behavior, :data:`MS_ALL_MATCHING_CLASSES` - SLD behavior"},
+	 { "layerObj_rendermode_get", _wrap_layerObj_rendermode_get, METH_O, " :data:`MS_FIRST_MATCHING_CLASS` - default and historic MapServer behavior, :data:`MS_ALL_MATCHING_CLASSES` - SLD behavior"},
+	 { "layerObj_data_set", _wrap_layerObj_data_set, METH_VARARGS, " Layer data definition, values depend upon connectiontype - see :ref:`DATA <mapfile-layer-data>`"},
+	 { "layerObj_data_get", _wrap_layerObj_data_get, METH_O, " Layer data definition, values depend upon connectiontype - see :ref:`DATA <mapfile-layer-data>`"},
+	 { "layerObj_type_set", _wrap_layerObj_type_set, METH_VARARGS, " the layer type - see :ref:`TYPE <mapfile-layer-type>`"},
+	 { "layerObj_type_get", _wrap_layerObj_type_get, METH_O, " the layer type - see :ref:`TYPE <mapfile-layer-type>`"},
+	 { "layerObj_connectiontype_set", _wrap_layerObj_connectiontype_set, METH_VARARGS, " the layer connection type - see :ref:`CONNECTIONTYPE <mapfile-layer-connectiontype>`"},
+	 { "layerObj_connectiontype_get", _wrap_layerObj_connectiontype_get, METH_O, " the layer connection type - see :ref:`CONNECTIONTYPE <mapfile-layer-connectiontype>`"},
+	 { "layerObj_tolerance_set", _wrap_layerObj_tolerance_set, METH_VARARGS, " search buffer for point and line queries (in toleranceunits) - see :ref:`TOLERANCE <mapfile-layer-tolerance>`"},
+	 { "layerObj_tolerance_get", _wrap_layerObj_tolerance_get, METH_O, " search buffer for point and line queries (in toleranceunits) - see :ref:`TOLERANCE <mapfile-layer-tolerance>`"},
+	 { "layerObj_toleranceunits_set", _wrap_layerObj_toleranceunits_set, METH_VARARGS, " See :ref:`TOLERANCEUNITS <mapfile-layer-toleranceunits>`"},
+	 { "layerObj_toleranceunits_get", _wrap_layerObj_toleranceunits_get, METH_O, " See :ref:`TOLERANCEUNITS <mapfile-layer-toleranceunits>`"},
+	 { "layerObj_symbolscaledenom_set", _wrap_layerObj_symbolscaledenom_set, METH_VARARGS, " scale at which symbols are default size - see :ref:`SYMBOLSCALEDENOM <mapfile-layer-symbolscaledenom>`"},
+	 { "layerObj_symbolscaledenom_get", _wrap_layerObj_symbolscaledenom_get, METH_O, " scale at which symbols are default size - see :ref:`SYMBOLSCALEDENOM <mapfile-layer-symbolscaledenom>`"},
+	 { "layerObj_minscaledenom_set", _wrap_layerObj_minscaledenom_set, METH_VARARGS, " Maximum scale at which layer will be drawn - see :ref:`MINSCALEDENOM <mapfile-layer-minscaledenom>`"},
+	 { "layerObj_minscaledenom_get", _wrap_layerObj_minscaledenom_get, METH_O, " Maximum scale at which layer will be drawn - see :ref:`MINSCALEDENOM <mapfile-layer-minscaledenom>`"},
+	 { "layerObj_maxscaledenom_set", _wrap_layerObj_maxscaledenom_set, METH_VARARGS, " Minimum scale at which layer will be drawn - see :ref:`MAXSCALEDENOM <mapfile-layer-maxscaledenom>`"},
+	 { "layerObj_maxscaledenom_get", _wrap_layerObj_maxscaledenom_get, METH_O, " Minimum scale at which layer will be drawn - see :ref:`MAXSCALEDENOM <mapfile-layer-maxscaledenom>`"},
+	 { "layerObj_minfeaturesize_set", _wrap_layerObj_minfeaturesize_set, METH_VARARGS, " minimum feature size (in pixels) for shape"},
+	 { "layerObj_minfeaturesize_get", _wrap_layerObj_minfeaturesize_get, METH_O, " minimum feature size (in pixels) for shape"},
+	 { "layerObj_labelminscaledenom_set", _wrap_layerObj_labelminscaledenom_set, METH_VARARGS, " See :ref:`LABELMINSCALEDENOM <mapfile-layer-labelminscaledenom>`"},
+	 { "layerObj_labelminscaledenom_get", _wrap_layerObj_labelminscaledenom_get, METH_O, " See :ref:`LABELMINSCALEDENOM <mapfile-layer-labelminscaledenom>`"},
+	 { "layerObj_labelmaxscaledenom_set", _wrap_layerObj_labelmaxscaledenom_set, METH_VARARGS, " See :ref:`LABELMAXSCALEDENOM <mapfile-layer-labelmaxscaledenom>`"},
+	 { "layerObj_labelmaxscaledenom_get", _wrap_layerObj_labelmaxscaledenom_get, METH_O, " See :ref:`LABELMAXSCALEDENOM <mapfile-layer-labelmaxscaledenom>`"},
+	 { "layerObj_mingeowidth_set", _wrap_layerObj_mingeowidth_set, METH_VARARGS, " min map width (in map units) at which the layer should be drawn - see :ref:`MAXGEOWIDTH <mapfile-layer-maxgeowidth>`"},
+	 { "layerObj_mingeowidth_get", _wrap_layerObj_mingeowidth_get, METH_O, " min map width (in map units) at which the layer should be drawn - see :ref:`MAXGEOWIDTH <mapfile-layer-maxgeowidth>`"},
+	 { "layerObj_maxgeowidth_set", _wrap_layerObj_maxgeowidth_set, METH_VARARGS, " max map width (in map units) at which the layer should be drawn - see :ref:`MAXGEOWIDTH <mapfile-layer-maxgeowidth>`"},
+	 { "layerObj_maxgeowidth_get", _wrap_layerObj_maxgeowidth_get, METH_O, " max map width (in map units) at which the layer should be drawn - see :ref:`MAXGEOWIDTH <mapfile-layer-maxgeowidth>`"},
+	 { "layerObj_sizeunits_set", _wrap_layerObj_sizeunits_set, METH_VARARGS, " applies to all classes - see :ref:`SIZEUNITS <mapfile-layer-sizeunits>`"},
+	 { "layerObj_sizeunits_get", _wrap_layerObj_sizeunits_get, METH_O, " applies to all classes - see :ref:`SIZEUNITS <mapfile-layer-sizeunits>`"},
+	 { "layerObj_maxfeatures_set", _wrap_layerObj_maxfeatures_set, METH_VARARGS, " Maximum number of layer features that will be drawn - see :ref:`MAXFEATURES <mapfile-layer-maxfeatures>`"},
+	 { "layerObj_maxfeatures_get", _wrap_layerObj_maxfeatures_get, METH_O, " Maximum number of layer features that will be drawn - see :ref:`MAXFEATURES <mapfile-layer-maxfeatures>`"},
+	 { "layerObj_startindex_set", _wrap_layerObj_startindex_set, METH_VARARGS, " Feature start index - used for paging"},
+	 { "layerObj_startindex_get", _wrap_layerObj_startindex_get, METH_O, " Feature start index - used for paging"},
+	 { "layerObj_offsite_set", _wrap_layerObj_offsite_set, METH_VARARGS, " transparent pixel value for raster images - see :ref:`OFFSITE <mapfile-layer-offsite>`"},
+	 { "layerObj_offsite_get", _wrap_layerObj_offsite_get, METH_O, " transparent pixel value for raster images - see :ref:`OFFSITE <mapfile-layer-offsite>`"},
+	 { "layerObj_transform_set", _wrap_layerObj_transform_set, METH_VARARGS, "\n"
+		":data:`MS_TRUE` (default) or :data:`MS_FALSE` whether or not layer data is to be transformed to\n"
+		"image units - see :ref:`TRANSFORM <mapfile-layer-transform>`\n"
+		""},
+	 { "layerObj_transform_get", _wrap_layerObj_transform_get, METH_O, "\n"
+		":data:`MS_TRUE` (default) or :data:`MS_FALSE` whether or not layer data is to be transformed to\n"
+		"image units - see :ref:`TRANSFORM <mapfile-layer-transform>`\n"
+		""},
+	 { "layerObj_labelcache_set", _wrap_layerObj_labelcache_set, METH_VARARGS, " :data:`MS_ON` (default) or :data:`MS_OFF` - see :ref:`LABELCACHE <mapfile-layer-labelcache>`"},
+	 { "layerObj_labelcache_get", _wrap_layerObj_labelcache_get, METH_O, " :data:`MS_ON` (default) or :data:`MS_OFF` - see :ref:`LABELCACHE <mapfile-layer-labelcache>`"},
+	 { "layerObj_postlabelcache_set", _wrap_layerObj_postlabelcache_set, METH_VARARGS, " :data:`MS_ON` or :data:`MS_OFF` (default) - see :ref:`POSTLABELCACHE <mapfile-layer-postlabelcache>`"},
+	 { "layerObj_postlabelcache_get", _wrap_layerObj_postlabelcache_get, METH_O, " :data:`MS_ON` or :data:`MS_OFF` (default) - see :ref:`POSTLABELCACHE <mapfile-layer-postlabelcache>`"},
+	 { "layerObj_labelitem_set", _wrap_layerObj_labelitem_set, METH_VARARGS, " attribute defining feature label text - see :ref:`LABELITEM <mapfile-layer-labelitem>`"},
+	 { "layerObj_labelitem_get", _wrap_layerObj_labelitem_get, METH_O, " attribute defining feature label text - see :ref:`LABELITEM <mapfile-layer-labelitem>`"},
+	 { "layerObj_tileitem_set", _wrap_layerObj_tileitem_set, METH_VARARGS, " attribute defining tile paths - see :ref:`TILEITEM <mapfile-layer-tileitem>`"},
+	 { "layerObj_tileitem_get", _wrap_layerObj_tileitem_get, METH_O, " attribute defining tile paths - see :ref:`TILEITEM <mapfile-layer-tileitem>`"},
+	 { "layerObj_tileindex_set", _wrap_layerObj_tileindex_set, METH_VARARGS, " layer index file for tiling support - see :ref:`TILEINDEX <mapfile-layer-tileindex>`"},
+	 { "layerObj_tileindex_get", _wrap_layerObj_tileindex_get, METH_O, " layer index file for tiling support - see :ref:`TILEINDEX <mapfile-layer-tileindex>`"},
+	 { "layerObj_tilesrs_set", _wrap_layerObj_tilesrs_set, METH_VARARGS, " name of the attribute that contains the SRS of an individual tile - see :ref:`TILESRS <mapfile-layer-tilesrs>`"},
+	 { "layerObj_tilesrs_get", _wrap_layerObj_tilesrs_get, METH_O, " name of the attribute that contains the SRS of an individual tile - see :ref:`TILESRS <mapfile-layer-tilesrs>`"},
+	 { "layerObj_units_set", _wrap_layerObj_units_set, METH_VARARGS, " units of the layer - see :ref:`UNITS <mapfile-layer-units>`"},
+	 { "layerObj_units_get", _wrap_layerObj_units_get, METH_O, " units of the layer - see :ref:`UNITS <mapfile-layer-units>`"},
+	 { "layerObj_connection_set", _wrap_layerObj_connection_set, METH_VARARGS, " layer connection or data source name - see :ref:`CONNECTION <mapfile-layer-connection>`"},
+	 { "layerObj_connection_get", _wrap_layerObj_connection_get, METH_O, " layer connection or data source name - see :ref:`CONNECTION <mapfile-layer-connection>`"},
+	 { "layerObj_plugin_library_set", _wrap_layerObj_plugin_library_set, METH_VARARGS, " Used to select the library to load by MapServer"},
+	 { "layerObj_plugin_library_get", _wrap_layerObj_plugin_library_get, METH_O, " Used to select the library to load by MapServer"},
+	 { "layerObj_plugin_library_original_set", _wrap_layerObj_plugin_library_original_set, METH_VARARGS, " this is needed for Mapfile writing"},
+	 { "layerObj_plugin_library_original_get", _wrap_layerObj_plugin_library_original_get, METH_O, " this is needed for Mapfile writing"},
+	 { "layerObj_bandsitem_set", _wrap_layerObj_bandsitem_set, METH_VARARGS, "\n"
+		"The attribute from the index file used to select the source raster band(s) to be\n"
+		"used - normally NULL for default bands processing\n"
+		""},
+	 { "layerObj_bandsitem_get", _wrap_layerObj_bandsitem_get, METH_O, "\n"
+		"The attribute from the index file used to select the source raster band(s) to be\n"
+		"used - normally NULL for default bands processing\n"
+		""},
+	 { "layerObj_filteritem_set", _wrap_layerObj_filteritem_set, METH_VARARGS, " Attribute defining filter - see :ref:`FILTERITEM <mapfile-layer-filteritem>`"},
+	 { "layerObj_filteritem_get", _wrap_layerObj_filteritem_get, METH_O, " Attribute defining filter - see :ref:`FILTERITEM <mapfile-layer-filteritem>`"},
+	 { "layerObj_styleitem_set", _wrap_layerObj_styleitem_set, METH_VARARGS, " item to be used for style lookup - can also be 'AUTO' - see :ref:`STYLEITEM <mapfile-layer-styleitem>`"},
+	 { "layerObj_styleitem_get", _wrap_layerObj_styleitem_get, METH_O, " item to be used for style lookup - can also be 'AUTO' - see :ref:`STYLEITEM <mapfile-layer-styleitem>`"},
+	 { "layerObj_requires_set", _wrap_layerObj_requires_set, METH_VARARGS, " Context expressions, simple enough to not use expressionObj - see :ref:`REQUIRES <mapfile-layer-requires>`"},
+	 { "layerObj_requires_get", _wrap_layerObj_requires_get, METH_O, " Context expressions, simple enough to not use expressionObj - see :ref:`REQUIRES <mapfile-layer-requires>`"},
+	 { "layerObj_labelrequires_set", _wrap_layerObj_labelrequires_set, METH_VARARGS, " Simple logical expression - see :ref:`LABELREQUIRES <mapfile-layer-labelrequires>`"},
+	 { "layerObj_labelrequires_get", _wrap_layerObj_labelrequires_get, METH_O, " Simple logical expression - see :ref:`LABELREQUIRES <mapfile-layer-labelrequires>`"},
+	 { "layerObj_debug_set", _wrap_layerObj_debug_set, METH_VARARGS, " Enable debugging of layer-  :data:`MS_ON` or :data:`MS_OFF` (default) - see :ref:`DEBUG <mapfile-layer-debug>`"},
+	 { "layerObj_debug_get", _wrap_layerObj_debug_get, METH_O, " Enable debugging of layer-  :data:`MS_ON` or :data:`MS_OFF` (default) - see :ref:`DEBUG <mapfile-layer-debug>`"},
+	 { "layerObj_classgroup_set", _wrap_layerObj_classgroup_set, METH_VARARGS, " See :ref:`CLASSGROUP <mapfile-layer-classgroup>`"},
+	 { "layerObj_classgroup_get", _wrap_layerObj_classgroup_get, METH_O, " See :ref:`CLASSGROUP <mapfile-layer-classgroup>`"},
+	 { "layerObj_mask_set", _wrap_layerObj_mask_set, METH_VARARGS, " See :ref:`MASK <mapfile-layer-mask>`"},
+	 { "layerObj_mask_get", _wrap_layerObj_mask_get, METH_O, " See :ref:`MASK <mapfile-layer-mask>`"},
+	 { "layerObj_encoding_set", _wrap_layerObj_encoding_set, METH_VARARGS, " For iconving shape attributes, ignored if NULL or \"utf-8\" - see :ref:`ENCODING <mapfile-layer-encoding>`"},
+	 { "layerObj_encoding_get", _wrap_layerObj_encoding_get, METH_O, " For iconving shape attributes, ignored if NULL or \"utf-8\" - see :ref:`ENCODING <mapfile-layer-encoding>`"},
+	 { "layerObj_utfitem_set", _wrap_layerObj_utfitem_set, METH_VARARGS, " See :ref:`UTFITEM <mapfile-layer-utfitem>`"},
+	 { "layerObj_utfitem_get", _wrap_layerObj_utfitem_get, METH_O, " See :ref:`UTFITEM <mapfile-layer-utfitem>`"},
+	 { "layerObj_utfitemindex_set", _wrap_layerObj_utfitemindex_set, METH_VARARGS, " See :ref:`CLASSITEM <mapfile-layer-classitem>`"},
+	 { "layerObj_utfitemindex_get", _wrap_layerObj_utfitemindex_get, METH_O, " See :ref:`CLASSITEM <mapfile-layer-classitem>`"},
+	 { "new_layerObj", _wrap_new_layerObj, METH_VARARGS, "\n"
+		"A :class:`layerObj` is associated with :class:`mapObj`. An instance of\n"
+		":class:`layerObj` can exist outside of a :class:`mapObj`\n"
+		""},
+	 { "layerObj_setOpacity", _wrap_layerObj_setOpacity, METH_VARARGS, "\n"
+		"Sets an opacity for the layer, where the value is an integer in range [0, 100].\n"
+		"A new :ref:`composite` block is generated, containing this ``OPACITY`` value.\n"
+		""},
+	 { "layerObj_getOpacity", _wrap_layerObj_getOpacity, METH_O, " Returns the opacity value for the layer."},
 	 { "delete_layerObj", _wrap_delete_layerObj, METH_O, NULL},
-	 { "layerObj_clone", _wrap_layerObj_clone, METH_O, NULL},
-	 { "layerObj_updateFromString", _wrap_layerObj_updateFromString, METH_VARARGS, NULL},
-	 { "layerObj_convertToString", _wrap_layerObj_convertToString, METH_O, NULL},
-	 { "layerObj_insertClass", _wrap_layerObj_insertClass, METH_VARARGS, NULL},
-	 { "layerObj_removeClass", _wrap_layerObj_removeClass, METH_VARARGS, NULL},
-	 { "layerObj_open", _wrap_layerObj_open, METH_O, NULL},
-	 { "layerObj_whichShapes", _wrap_layerObj_whichShapes, METH_VARARGS, NULL},
-	 { "layerObj_nextShape", _wrap_layerObj_nextShape, METH_O, NULL},
-	 { "layerObj_close", _wrap_layerObj_close, METH_O, NULL},
-	 { "layerObj_getShape", _wrap_layerObj_getShape, METH_VARARGS, NULL},
-	 { "layerObj_getNumResults", _wrap_layerObj_getNumResults, METH_O, NULL},
-	 { "layerObj_getResultsBounds", _wrap_layerObj_getResultsBounds, METH_O, NULL},
-	 { "layerObj_getResult", _wrap_layerObj_getResult, METH_VARARGS, NULL},
-	 { "layerObj_getClass", _wrap_layerObj_getClass, METH_VARARGS, NULL},
-	 { "layerObj_getItem", _wrap_layerObj_getItem, METH_VARARGS, NULL},
-	 { "layerObj_setItems", _wrap_layerObj_setItems, METH_VARARGS, NULL},
-	 { "layerObj_draw", _wrap_layerObj_draw, METH_VARARGS, NULL},
-	 { "layerObj_drawQuery", _wrap_layerObj_drawQuery, METH_VARARGS, NULL},
-	 { "layerObj_queryByFilter", _wrap_layerObj_queryByFilter, METH_VARARGS, NULL},
-	 { "layerObj_queryByAttributes", _wrap_layerObj_queryByAttributes, METH_VARARGS, NULL},
-	 { "layerObj_queryByPoint", _wrap_layerObj_queryByPoint, METH_VARARGS, NULL},
-	 { "layerObj_queryByRect", _wrap_layerObj_queryByRect, METH_VARARGS, NULL},
-	 { "layerObj_queryByFeatures", _wrap_layerObj_queryByFeatures, METH_VARARGS, NULL},
-	 { "layerObj_queryByShape", _wrap_layerObj_queryByShape, METH_VARARGS, NULL},
-	 { "layerObj_queryByIndex", _wrap_layerObj_queryByIndex, METH_VARARGS, NULL},
-	 { "layerObj_getResults", _wrap_layerObj_getResults, METH_O, NULL},
-	 { "layerObj_setFilter", _wrap_layerObj_setFilter, METH_VARARGS, NULL},
-	 { "layerObj_getFilterString", _wrap_layerObj_getFilterString, METH_O, NULL},
-	 { "layerObj_setWKTProjection", _wrap_layerObj_setWKTProjection, METH_VARARGS, NULL},
-	 { "layerObj_getProjection", _wrap_layerObj_getProjection, METH_O, NULL},
-	 { "layerObj_setProjection", _wrap_layerObj_setProjection, METH_VARARGS, NULL},
-	 { "layerObj_addFeature", _wrap_layerObj_addFeature, METH_VARARGS, NULL},
-	 { "layerObj_getNumFeatures", _wrap_layerObj_getNumFeatures, METH_O, NULL},
-	 { "layerObj_getExtent", _wrap_layerObj_getExtent, METH_O, NULL},
-	 { "layerObj_setExtent", _wrap_layerObj_setExtent, METH_VARARGS, NULL},
-	 { "layerObj_getWMSFeatureInfoURL", _wrap_layerObj_getWMSFeatureInfoURL, METH_VARARGS, NULL},
-	 { "layerObj_executeWFSGetFeature", _wrap_layerObj_executeWFSGetFeature, METH_VARARGS, NULL},
-	 { "layerObj_applySLD", _wrap_layerObj_applySLD, METH_VARARGS, NULL},
-	 { "layerObj_applySLDURL", _wrap_layerObj_applySLDURL, METH_VARARGS, NULL},
-	 { "layerObj_generateSLD", _wrap_layerObj_generateSLD, METH_O, NULL},
-	 { "layerObj_isVisible", _wrap_layerObj_isVisible, METH_O, NULL},
-	 { "layerObj_moveClassUp", _wrap_layerObj_moveClassUp, METH_VARARGS, NULL},
-	 { "layerObj_moveClassDown", _wrap_layerObj_moveClassDown, METH_VARARGS, NULL},
-	 { "layerObj_setProcessingKey", _wrap_layerObj_setProcessingKey, METH_VARARGS, NULL},
-	 { "layerObj_addProcessing", _wrap_layerObj_addProcessing, METH_VARARGS, NULL},
-	 { "layerObj_getProcessing", _wrap_layerObj_getProcessing, METH_VARARGS, NULL},
-	 { "layerObj_getProcessingKey", _wrap_layerObj_getProcessingKey, METH_VARARGS, NULL},
-	 { "layerObj_clearProcessing", _wrap_layerObj_clearProcessing, METH_O, NULL},
-	 { "layerObj_setConnectionType", _wrap_layerObj_setConnectionType, METH_VARARGS, NULL},
-	 { "layerObj_getClassIndex", _wrap_layerObj_getClassIndex, METH_VARARGS, NULL},
-	 { "layerObj_getGeomTransform", _wrap_layerObj_getGeomTransform, METH_O, NULL},
-	 { "layerObj_setGeomTransform", _wrap_layerObj_setGeomTransform, METH_VARARGS, NULL},
-	 { "layerObj_getItemType", _wrap_layerObj_getItemType, METH_VARARGS, NULL},
+	 { "layerObj_clone", _wrap_layerObj_clone, METH_O, "\n"
+		"Return an independent copy of the layer with no parent map.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    In the Java & PHP modules this method is named ``cloneLayer``.\n"
+		""},
+	 { "layerObj_updateFromString", _wrap_layerObj_updateFromString, METH_VARARGS, " Update a :class:`layerObj` from a string snippet. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "layerObj_convertToString", _wrap_layerObj_convertToString, METH_O, " Output the :class:`layerObj` object as a Mapfile string. Provides the inverse option for :func:`layerObj.updateFromString`."},
+	 { "layerObj_insertClass", _wrap_layerObj_insertClass, METH_VARARGS, "\n"
+		"Insert a **copy** of the class into the layer at the requested *index*.\n"
+		"Default index of -1 means insertion at the end of the array of classes. Returns the index at which the class was inserted.\n"
+		""},
+	 { "layerObj_removeClass", _wrap_layerObj_removeClass, METH_VARARGS, "\n"
+		"Removes the class at *index* and returns a copy, or NULL in the case of a failure.\n"
+		"Note that subsequent classes will be renumbered by this operation.\n"
+		"The numclasses field contains the number of classes available.\n"
+		""},
+	 { "layerObj_open", _wrap_layerObj_open, METH_O, "\n"
+		"Opens the underlying layer. This is required before operations like :func:`layerObj.getResult`\n"
+		"will work, but is not required before a draw or query call.\n"
+		""},
+	 { "layerObj_whichShapes", _wrap_layerObj_whichShapes, METH_VARARGS, "\n"
+		"Performs a spatial, and optionally an attribute based feature search.\n"
+		"The function basically prepares things so that candidate features can be accessed by\n"
+		"query or drawing functions (e.g using :func:`layerObj.nextShape` function).\n"
+		"Returns :data:`MS_SUCCESS`, :data:`MS_FAILURE` or :data:`MS_DONE`.\n"
+		"MS_DONE is returned if the layer extent does not overlap *rect*.\n"
+		""},
+	 { "layerObj_nextShape", _wrap_layerObj_nextShape, METH_O, "\n"
+		"Called after :func:`layerObj.whichShapes` has been called to actually\n"
+		"retrieve shapes within a given area returns a shape object or :data:`MS_FALSE`\n"
+		"Example of usage:\n"
+		"\n"
+		".. code-block::\n"
+		"\n"
+		"    mapObj map = new mapObj(\"d:/msapps/gmap-ms40/htdocs/gmap75.map\");\n"
+		"    layerObj layer = map.getLayerByName('road');\n"
+		"    int status = layer.open();\n"
+		"    status = layer.whichShapes(map.extent);\n"
+		"    shapeObj shape;\n"
+		"    while ((shape = layer.nextShape()) != null)\n"
+		"    {\n"
+		"      ...\n"
+		"    }\n"
+		"    layer.close();\n"
+		""},
+	 { "layerObj_close", _wrap_layerObj_close, METH_O, " Close the underlying layer."},
+	 { "layerObj_getShape", _wrap_layerObj_getShape, METH_VARARGS, " Get a shape from layer data. Argument is a result cache member from :func:`layerObj.getResult`"},
+	 { "layerObj_getNumResults", _wrap_layerObj_getNumResults, METH_O, " Returns the number of entries in the query result cache for this layer."},
+	 { "layerObj_getResultsBounds", _wrap_layerObj_getResultsBounds, METH_O, " Returns the bounds of the features in the result cache."},
+	 { "layerObj_getResult", _wrap_layerObj_getResult, METH_VARARGS, "\n"
+		"Fetches the requested query result cache entry, or NULL if the index is outside\n"
+		"the range of available results. This method would normally only be used after\n"
+		"issuing a query operation.\n"
+		""},
+	 { "layerObj_getClass", _wrap_layerObj_getClass, METH_VARARGS, "\n"
+		"Fetch the requested class object at *i*. Returns NULL if the class index is out of the legal range.\n"
+		"The numclasses field contains the number of classes available, and the first class is index 0.\n"
+		""},
+	 { "layerObj_getItem", _wrap_layerObj_getItem, METH_VARARGS, "\n"
+		"Returns the requested item. Items are attribute fields, and this method returns the\n"
+		"item name (field name). The numitems field contains the number of items available, and the first item is index zero.\n"
+		""},
+	 { "layerObj_setItems", _wrap_layerObj_setItems, METH_VARARGS, " Set the items to be retrieved with a particular shape."},
+	 { "layerObj_draw", _wrap_layerObj_draw, METH_VARARGS, "\n"
+		"Renders this layer into the target image, adding labels to the cache if required.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "layerObj_drawQuery", _wrap_layerObj_drawQuery, METH_VARARGS, "\n"
+		"Draw query map for a single layer into the target image.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "layerObj_queryByFilter", _wrap_layerObj_queryByFilter, METH_VARARGS, "\n"
+		"Query by the filter *string*.\n"
+		"For querying, we switch layer status ON and then back to original\n"
+		"value before returning.\n"
+		""},
+	 { "layerObj_queryByAttributes", _wrap_layerObj_queryByAttributes, METH_VARARGS, "\n"
+		"Query layer for shapes that intersect current map extents. *qitem* is the item (attribute)\n"
+		"on which the query is performed, and *qstring* is the expression to match.\n"
+		"The query is performed on all the shapes that are part of a CLASS that contains a TEMPLATE value or that match any class in a layer that contains a LAYER TEMPLATE value.\n"
+		"Note that the layer's FILTER/FILTERITEM are ignored by this function. *mode* is :data:`MS_SINGLE` or :data:`MS_MULTIPLE` depending on number of results you want.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found or if some other error happened.\n"
+		""},
+	 { "layerObj_queryByPoint", _wrap_layerObj_queryByPoint, METH_VARARGS, "\n"
+		"Query layer at point location specified in georeferenced map coordinates (i.e. not pixels).\n"
+		"The query is performed on all the shapes that are part of a CLASS that contains a TEMPLATE value or that match any class in a layer that contains a LAYER TEMPLATE value.\n"
+		"Note that the layer's FILTER/FILTERITEM are ignored by this function. *mode* is :data:`MS_SINGLE` or :data:`MS_MULTIPLE` depending on number of results you want.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found or if some other error happened.\n"
+		""},
+	 { "layerObj_queryByRect", _wrap_layerObj_queryByRect, METH_VARARGS, "\n"
+		"Query layer using a rectangle specified in georeferenced map coordinates (i.e. not pixels).\n"
+		"The query is performed on all the shapes that are part of a CLASS that contains a TEMPLATE value or that match any class in a layer that contains a LAYER TEMPLATE value.\n"
+		"Note that the layer's FILTER/FILTERITEM are ignored by this function. The :data:`MS_MULTIPLE` mode is set by default.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found or if some other error happened.\n"
+		""},
+	 { "layerObj_queryByFeatures", _wrap_layerObj_queryByFeatures, METH_VARARGS, "\n"
+		"Perform a query set based on a previous set of results from another layer.\n"
+		"At present the results MUST be based on a polygon layer.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found or if some other error happened.\n"
+		""},
+	 { "layerObj_queryByShape", _wrap_layerObj_queryByShape, METH_VARARGS, "\n"
+		"Query layer based on a single shape, the shape has to be a polygon at this point.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found or if some other error happened.\n"
+		""},
+	 { "layerObj_queryByIndex", _wrap_layerObj_queryByIndex, METH_VARARGS, "\n"
+		"Pop a query result member into the layer's result cache. By default clobbers existing cache.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "layerObj_getResults", _wrap_layerObj_getResults, METH_O, " Returns a reference to layer's result cache. Should be NULL prior to any query, or after a failed query or query with no results."},
+	 { "layerObj_setFilter", _wrap_layerObj_setFilter, METH_VARARGS, "\n"
+		"Sets a filter expression similarly to the FILTER expression in a map file.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE` if the expression fails to parse.\n"
+		""},
+	 { "layerObj_getFilterString", _wrap_layerObj_getFilterString, METH_O, " Returns the current filter expression."},
+	 { "layerObj_setWKTProjection", _wrap_layerObj_setWKTProjection, METH_VARARGS, "\n"
+		"Set the layer projection using OpenGIS Well Known Text format.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "layerObj_getProjection", _wrap_layerObj_getProjection, METH_O, " Returns the PROJ definition of the layer's projection."},
+	 { "layerObj_setProjection", _wrap_layerObj_setProjection, METH_VARARGS, "\n"
+		"Set the layer projection using a PROJ format projection definition\n"
+		"(i.e. \"+proj=utm +zone=11 +datum=WGS84\" or \"init=EPSG:26911\").\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "layerObj_addFeature", _wrap_layerObj_addFeature, METH_VARARGS, "\n"
+		"Add a new inline feature on a layer. Returns -1 on error.\n"
+		"TODO: Is this similar to inline features in a mapfile? Does it work for any kind of layer or connection type?\n"
+		""},
+	 { "layerObj_getNumFeatures", _wrap_layerObj_getNumFeatures, METH_O, "\n"
+		"Returns the number of inline features in a layer.\n"
+		"TODO: is this really only online features or will it return the number of non-inline features on a regular layer?\n"
+		""},
+	 { "layerObj_getExtent", _wrap_layerObj_getExtent, METH_O, " Fetches the extents of the data in the layer. This normally requires a full read pass through the features of the layer and does not work for raster layers."},
+	 { "layerObj_setExtent", _wrap_layerObj_setExtent, METH_VARARGS, "\n"
+		"Sets the extent of a layer.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "layerObj_getWMSFeatureInfoURL", _wrap_layerObj_getWMSFeatureInfoURL, METH_VARARGS, "\n"
+		"Return a WMS GetFeatureInfo URL (works only for WMS layers) *clickX*, *clickY*\n"
+		"is the location of to query in pixel coordinates with (0,0) at the top\n"
+		"left of the image. *featureCount* is the number of results to return. *infoFormat*\n"
+		"is the format the format in which the result should be requested.\n"
+		"Depends on remote server's capabilities. MapServer WMS servers support only \"MIME\"\n"
+		"(and should support \"GML.1\" soon). Returns \"\" and outputs a warning if layer is not a\n"
+		"WMS layer or if it is not queryable.\n"
+		""},
+	 { "layerObj_executeWFSGetFeature", _wrap_layerObj_executeWFSGetFeature, METH_VARARGS, " Executes a GetFeature request on a WFS layer and returns the name of the temporary GML file created. Returns an empty string on error."},
+	 { "layerObj_applySLD", _wrap_layerObj_applySLD, METH_VARARGS, "\n"
+		"Apply the SLD document to the layer object. The matching between the SLD document and the\n"
+		"layer will be done using the layer's name. If a *stylelayer* argument is passed (argument is optional),\n"
+		"the NamedLayer in the SLD that matches it will be used to style the layer.\n"
+		"See SLD HOWTO for more information on the SLD support.\n"
+		""},
+	 { "layerObj_applySLDURL", _wrap_layerObj_applySLDURL, METH_VARARGS, "\n"
+		"Apply the SLD document pointed by the URL to the layer object. The matching between the SLD document and the\n"
+		"layer will be done using the layer's name. If a *stylelayer* argument is passed (argument is optional),\n"
+		"the NamedLayer in the SLD that matches it will be used to style the layer.\n"
+		"See SLD HOWTO for more information on the SLD support.\n"
+		""},
+	 { "layerObj_generateSLD", _wrap_layerObj_generateSLD, METH_O, " Returns an SLD XML string based on all the classes found in the layer (the layer must have ``STATUS ON```)."},
+	 { "layerObj_isVisible", _wrap_layerObj_isVisible, METH_O, "\n"
+		"Returns :data:`MS_TRUE` or :data:`MS_FALSE` after considering the layer status,\n"
+		"minscaledenom, and maxscaledenom within the context of the parent map.\n"
+		""},
+	 { "layerObj_moveClassUp", _wrap_layerObj_moveClassUp, METH_VARARGS, "\n"
+		"The class specified by the class index will be moved up in the array of classes.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`. For example ``moveClassUp(1)`` will have the effect\n"
+		"of moving class 1 up to position 0, and the class at position 0 will be moved to position 1.\n"
+		""},
+	 { "layerObj_moveClassDown", _wrap_layerObj_moveClassDown, METH_VARARGS, "\n"
+		"The class specified by the class index will be moved up into the array of classes.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`. For example ``moveClassDown(1)`` will have the effect\n"
+		"of moving class 1 down to position 2, and the class at position 2 will be moved to position 1.\n"
+		""},
+	 { "layerObj_setProcessingKey", _wrap_layerObj_setProcessingKey, METH_VARARGS, "\n"
+		"Adds or replaces a processing directive of the form \"key=value\".\n"
+		"Unlike the :func:`layerObj.addProcessing` function, this will replace an existing processing directive\n"
+		"for the given key value. Processing directives supported are specific to the layer type\n"
+		"and underlying renderer.\n"
+		""},
+	 { "layerObj_addProcessing", _wrap_layerObj_addProcessing, METH_VARARGS, "\n"
+		"Adds a new processing directive line to a layer, similar to the PROCESSING directive\n"
+		"in a map file. Processing directives supported are specific to the layer type and\n"
+		"underlying renderer.\n"
+		""},
+	 { "layerObj_getProcessing", _wrap_layerObj_getProcessing, METH_VARARGS, " Return the raster processing directive at *index*."},
+	 { "layerObj_getProcessingKey", _wrap_layerObj_getProcessingKey, METH_VARARGS, " Return the processing directive specified by *key*."},
+	 { "layerObj_clearProcessing", _wrap_layerObj_clearProcessing, METH_O, "\n"
+		"Clears the layer's raster processing directives.\n"
+		"Returns the subsequent number of directives, which will equal :data:`MS_SUCCESS` if the\n"
+		"directives have been cleared.\n"
+		""},
+	 { "layerObj_setConnectionType", _wrap_layerObj_setConnectionType, METH_VARARGS, "\n"
+		"Changes the connectiontype of the layer and recreates the vtable according to the new\n"
+		"connection type. This method should be used instead of setting the *connectiontype*\n"
+		"parameter directly. In case when the layer.connectiontype = :data:`MS_PLUGIN` the *library_str*\n"
+		"parameter should also be specified so as to select the library to load by MapServer.\n"
+		"For the other connection types this parameter should be set to an empty string \"\".\n"
+		""},
+	 { "layerObj_getClassIndex", _wrap_layerObj_getClassIndex, METH_VARARGS, "    Get the class index for a shape in the layer."},
+	 { "layerObj_getGeomTransform", _wrap_layerObj_getGeomTransform, METH_O, "    Return the geomtransform string for the layer."},
+	 { "layerObj_setGeomTransform", _wrap_layerObj_setGeomTransform, METH_VARARGS, "    Set the geomtransform string for the layer."},
+	 { "layerObj_getItemType", _wrap_layerObj_getItemType, METH_VARARGS, "\n"
+		"Returns the requested item's field type.\n"
+		"A layer must be open to retrieve the item definition.\n"
+		"\n"
+		"Pass in the attribute index to retrieve the type. The\n"
+		"layer's numitems property contains the number of items\n"
+		"available, and the first item is index zero.\n"
+		""},
 	 { "layerObj_swigregister", layerObj_swigregister, METH_O, NULL},
 	 { "layerObj_swiginit", layerObj_swiginit, METH_VARARGS, NULL},
-	 { "mapObj_refcount_get", _wrap_mapObj_refcount_get, METH_O, NULL},
-	 { "mapObj_numlayers_get", _wrap_mapObj_numlayers_get, METH_O, NULL},
-	 { "mapObj_maxlayers_get", _wrap_mapObj_maxlayers_get, METH_O, NULL},
-	 { "mapObj_configoptions_get", _wrap_mapObj_configoptions_get, METH_O, NULL},
-	 { "mapObj_symbolset_get", _wrap_mapObj_symbolset_get, METH_O, NULL},
-	 { "mapObj_fontset_get", _wrap_mapObj_fontset_get, METH_O, NULL},
-	 { "mapObj_labelcache_get", _wrap_mapObj_labelcache_get, METH_O, NULL},
-	 { "mapObj_numoutputformats_get", _wrap_mapObj_numoutputformats_get, METH_O, NULL},
-	 { "mapObj_outputformat_get", _wrap_mapObj_outputformat_get, METH_O, NULL},
-	 { "mapObj_imagetype_get", _wrap_mapObj_imagetype_get, METH_O, NULL},
-	 { "mapObj_reference_get", _wrap_mapObj_reference_get, METH_O, NULL},
-	 { "mapObj_scalebar_get", _wrap_mapObj_scalebar_get, METH_O, NULL},
-	 { "mapObj_legend_get", _wrap_mapObj_legend_get, METH_O, NULL},
-	 { "mapObj_querymap_get", _wrap_mapObj_querymap_get, METH_O, NULL},
-	 { "mapObj_web_get", _wrap_mapObj_web_get, METH_O, NULL},
+	 { "mapObj_refcount_get", _wrap_mapObj_refcount_get, METH_O, " Used for reference counting see RFC24"},
+	 { "mapObj_numlayers_get", _wrap_mapObj_numlayers_get, METH_O, " Number of layers in mapfile"},
+	 { "mapObj_maxlayers_get", _wrap_mapObj_maxlayers_get, METH_O, " Allocated size of layers[] array"},
+	 { "mapObj_configoptions_get", _wrap_mapObj_configoptions_get, METH_O, "\n"
+		"A hash table of configuration options from CONFIG keywords\n"
+		"in the map - see :ref:`CONFIG <mapfile-map-config>`\n"
+		""},
+	 { "mapObj_symbolset_get", _wrap_mapObj_symbolset_get, METH_O, " See :ref:`SYMBOLSET <mapfile-map-symbolset>`"},
+	 { "mapObj_fontset_get", _wrap_mapObj_fontset_get, METH_O, " See :ref:`FONTSET <mapfile-map-fontset>`"},
+	 { "mapObj_labelcache_get", _wrap_mapObj_labelcache_get, METH_O, " We need this here so multiple feature processors can access it"},
+	 { "mapObj_numoutputformats_get", _wrap_mapObj_numoutputformats_get, METH_O, " Number of output formats available in the map"},
+	 { "mapObj_outputformat_get", _wrap_mapObj_outputformat_get, METH_O, " See :ref:`OUTPUTFORMAT <mapfile-map-outputformat>`"},
+	 { "mapObj_imagetype_get", _wrap_mapObj_imagetype_get, METH_O, " Name of current outputformat"},
+	 { "mapObj_reference_get", _wrap_mapObj_reference_get, METH_O, " See :ref:`SCALEBAR <mapfile-map-scalebar>`"},
+	 { "mapObj_scalebar_get", _wrap_mapObj_scalebar_get, METH_O, " See :ref:`SCALEBAR <mapfile-map-scalebar>`"},
+	 { "mapObj_legend_get", _wrap_mapObj_legend_get, METH_O, " See :ref:`LEGEND <mapfile-map-legend>`"},
+	 { "mapObj_querymap_get", _wrap_mapObj_querymap_get, METH_O, " See :ref:`QUERYMAP <mapfile-map-querymap>`"},
+	 { "mapObj_web_get", _wrap_mapObj_web_get, METH_O, " See :ref:`WEB <mapfile-map-web>`"},
 	 { "mapObj_config_get", _wrap_mapObj_config_get, METH_O, NULL},
-	 { "mapObj_datapattern_set", _wrap_mapObj_datapattern_set, METH_VARARGS, NULL},
-	 { "mapObj_datapattern_get", _wrap_mapObj_datapattern_get, METH_O, NULL},
-	 { "mapObj_templatepattern_set", _wrap_mapObj_templatepattern_set, METH_VARARGS, NULL},
-	 { "mapObj_templatepattern_get", _wrap_mapObj_templatepattern_get, METH_O, NULL},
-	 { "mapObj_name_set", _wrap_mapObj_name_set, METH_VARARGS, NULL},
-	 { "mapObj_name_get", _wrap_mapObj_name_get, METH_O, NULL},
-	 { "mapObj_status_set", _wrap_mapObj_status_set, METH_VARARGS, NULL},
-	 { "mapObj_status_get", _wrap_mapObj_status_get, METH_O, NULL},
-	 { "mapObj_height_set", _wrap_mapObj_height_set, METH_VARARGS, NULL},
-	 { "mapObj_height_get", _wrap_mapObj_height_get, METH_O, NULL},
-	 { "mapObj_width_set", _wrap_mapObj_width_set, METH_VARARGS, NULL},
-	 { "mapObj_width_get", _wrap_mapObj_width_get, METH_O, NULL},
-	 { "mapObj_maxsize_set", _wrap_mapObj_maxsize_set, METH_VARARGS, NULL},
-	 { "mapObj_maxsize_get", _wrap_mapObj_maxsize_get, METH_O, NULL},
-	 { "mapObj_extent_set", _wrap_mapObj_extent_set, METH_VARARGS, NULL},
-	 { "mapObj_extent_get", _wrap_mapObj_extent_get, METH_O, NULL},
-	 { "mapObj_cellsize_set", _wrap_mapObj_cellsize_set, METH_VARARGS, NULL},
-	 { "mapObj_cellsize_get", _wrap_mapObj_cellsize_get, METH_O, NULL},
-	 { "mapObj_units_set", _wrap_mapObj_units_set, METH_VARARGS, NULL},
-	 { "mapObj_units_get", _wrap_mapObj_units_get, METH_O, NULL},
-	 { "mapObj_scaledenom_set", _wrap_mapObj_scaledenom_set, METH_VARARGS, NULL},
-	 { "mapObj_scaledenom_get", _wrap_mapObj_scaledenom_get, METH_O, NULL},
-	 { "mapObj_resolution_set", _wrap_mapObj_resolution_set, METH_VARARGS, NULL},
-	 { "mapObj_resolution_get", _wrap_mapObj_resolution_get, METH_O, NULL},
-	 { "mapObj_defresolution_set", _wrap_mapObj_defresolution_set, METH_VARARGS, NULL},
-	 { "mapObj_defresolution_get", _wrap_mapObj_defresolution_get, METH_O, NULL},
-	 { "mapObj_shapepath_set", _wrap_mapObj_shapepath_set, METH_VARARGS, NULL},
-	 { "mapObj_shapepath_get", _wrap_mapObj_shapepath_get, METH_O, NULL},
-	 { "mapObj_mappath_set", _wrap_mapObj_mappath_set, METH_VARARGS, NULL},
-	 { "mapObj_mappath_get", _wrap_mapObj_mappath_get, METH_O, NULL},
-	 { "mapObj_sldurl_set", _wrap_mapObj_sldurl_set, METH_VARARGS, NULL},
-	 { "mapObj_sldurl_get", _wrap_mapObj_sldurl_get, METH_O, NULL},
-	 { "mapObj_imagecolor_set", _wrap_mapObj_imagecolor_set, METH_VARARGS, NULL},
-	 { "mapObj_imagecolor_get", _wrap_mapObj_imagecolor_get, METH_O, NULL},
-	 { "mapObj_layerorder_set", _wrap_mapObj_layerorder_set, METH_VARARGS, NULL},
-	 { "mapObj_layerorder_get", _wrap_mapObj_layerorder_get, METH_O, NULL},
-	 { "mapObj_debug_set", _wrap_mapObj_debug_set, METH_VARARGS, NULL},
-	 { "mapObj_debug_get", _wrap_mapObj_debug_get, METH_O, NULL},
-	 { "new_mapObj", _wrap_new_mapObj, METH_VARARGS, NULL},
+	 { "mapObj_datapattern_set", _wrap_mapObj_datapattern_set, METH_VARARGS, " TODO - Deprecated use VALIDATION ... END block instead"},
+	 { "mapObj_datapattern_get", _wrap_mapObj_datapattern_get, METH_O, " TODO - Deprecated use VALIDATION ... END block instead"},
+	 { "mapObj_templatepattern_set", _wrap_mapObj_templatepattern_set, METH_VARARGS, " TODO - Deprecated use VALIDATION ... END block instead"},
+	 { "mapObj_templatepattern_get", _wrap_mapObj_templatepattern_get, METH_O, " TODO - Deprecated use VALIDATION ... END block instead"},
+	 { "mapObj_name_set", _wrap_mapObj_name_set, METH_VARARGS, " Small identifier for naming etc - see :ref:`NAME <mapfile-map-name>`"},
+	 { "mapObj_name_get", _wrap_mapObj_name_get, METH_O, " Small identifier for naming etc - see :ref:`NAME <mapfile-map-name>`"},
+	 { "mapObj_status_set", _wrap_mapObj_status_set, METH_VARARGS, " Is map creation on or off - see :ref:`STATUS <mapfile-map-status>`"},
+	 { "mapObj_status_get", _wrap_mapObj_status_get, METH_O, " Is map creation on or off - see :ref:`STATUS <mapfile-map-status>`"},
+	 { "mapObj_height_set", _wrap_mapObj_height_set, METH_VARARGS, " See :ref:`SIZE <mapfile-map-size>`"},
+	 { "mapObj_height_get", _wrap_mapObj_height_get, METH_O, " See :ref:`SIZE <mapfile-map-size>`"},
+	 { "mapObj_width_set", _wrap_mapObj_width_set, METH_VARARGS, " See :ref:`SIZE <mapfile-map-size>`"},
+	 { "mapObj_width_get", _wrap_mapObj_width_get, METH_O, " See :ref:`SIZE <mapfile-map-size>`"},
+	 { "mapObj_maxsize_set", _wrap_mapObj_maxsize_set, METH_VARARGS, " See :ref:`MAXSIZE  <mapfile-map-maxsize>`"},
+	 { "mapObj_maxsize_get", _wrap_mapObj_maxsize_get, METH_O, " See :ref:`MAXSIZE  <mapfile-map-maxsize>`"},
+	 { "mapObj_extent_set", _wrap_mapObj_extent_set, METH_VARARGS, " Map extent array - see :ref:`EXTENT <mapfile-map-extent>`"},
+	 { "mapObj_extent_get", _wrap_mapObj_extent_get, METH_O, " Map extent array - see :ref:`EXTENT <mapfile-map-extent>`"},
+	 { "mapObj_cellsize_set", _wrap_mapObj_cellsize_set, METH_VARARGS, " Pixel size in map units"},
+	 { "mapObj_cellsize_get", _wrap_mapObj_cellsize_get, METH_O, " Pixel size in map units"},
+	 { "mapObj_units_set", _wrap_mapObj_units_set, METH_VARARGS, " Units of the projection - see :ref:`UNITS <mapfile-map-units>`"},
+	 { "mapObj_units_get", _wrap_mapObj_units_get, METH_O, " Units of the projection - see :ref:`UNITS <mapfile-map-units>`"},
+	 { "mapObj_scaledenom_set", _wrap_mapObj_scaledenom_set, METH_VARARGS, " The nominal map scale, a value of 25000 means 1:25000 scale - see :ref:`SCALEDENOM  <mapfile-map-scaledenom>`"},
+	 { "mapObj_scaledenom_get", _wrap_mapObj_scaledenom_get, METH_O, " The nominal map scale, a value of 25000 means 1:25000 scale - see :ref:`SCALEDENOM  <mapfile-map-scaledenom>`"},
+	 { "mapObj_resolution_set", _wrap_mapObj_resolution_set, METH_VARARGS, " See :ref:`RESOLUTION <mapfile-map-resolution>`"},
+	 { "mapObj_resolution_get", _wrap_mapObj_resolution_get, METH_O, " See :ref:`RESOLUTION <mapfile-map-resolution>`"},
+	 { "mapObj_defresolution_set", _wrap_mapObj_defresolution_set, METH_VARARGS, " Default resolution - used to calculate the scalefactor, see :ref:`DEFRESOLUTION <mapfile-map-defresolution>`"},
+	 { "mapObj_defresolution_get", _wrap_mapObj_defresolution_get, METH_O, " Default resolution - used to calculate the scalefactor, see :ref:`DEFRESOLUTION <mapfile-map-defresolution>`"},
+	 { "mapObj_shapepath_set", _wrap_mapObj_shapepath_set, METH_VARARGS, " Where are the shape files located - see :ref:`SHAPEPATH <mapfile-map-shapepath>`"},
+	 { "mapObj_shapepath_get", _wrap_mapObj_shapepath_get, METH_O, " Where are the shape files located - see :ref:`SHAPEPATH <mapfile-map-shapepath>`"},
+	 { "mapObj_mappath_set", _wrap_mapObj_mappath_set, METH_VARARGS, " Path of the mapfile, all paths are relative to this path"},
+	 { "mapObj_mappath_get", _wrap_mapObj_mappath_get, METH_O, " Path of the mapfile, all paths are relative to this path"},
+	 { "mapObj_sldurl_set", _wrap_mapObj_sldurl_set, METH_VARARGS, "\n"
+		"URL of SLD document as specified with \"&SLD=...\" WMS parameter d- currently this reference is\n"
+		"used only in mapogcsld.c and has a NULL value outside that context\n"
+		""},
+	 { "mapObj_sldurl_get", _wrap_mapObj_sldurl_get, METH_O, "\n"
+		"URL of SLD document as specified with \"&SLD=...\" WMS parameter d- currently this reference is\n"
+		"used only in mapogcsld.c and has a NULL value outside that context\n"
+		""},
+	 { "mapObj_imagecolor_set", _wrap_mapObj_imagecolor_set, METH_VARARGS, " Holds the initial image color value - see :ref:`IMAGECOLOR <mapfile-map-imagecolor>`"},
+	 { "mapObj_imagecolor_get", _wrap_mapObj_imagecolor_get, METH_O, " Holds the initial image color value - see :ref:`IMAGECOLOR <mapfile-map-imagecolor>`"},
+	 { "mapObj_layerorder_set", _wrap_mapObj_layerorder_set, METH_VARARGS, " Used to modify the order in which the layers are drawn - TODO should be immutable?"},
+	 { "mapObj_layerorder_get", _wrap_mapObj_layerorder_get, METH_O, " Used to modify the order in which the layers are drawn - TODO should be immutable?"},
+	 { "mapObj_debug_set", _wrap_mapObj_debug_set, METH_VARARGS, " See :ref:`DEBUG <mapfile-map-debug>`"},
+	 { "mapObj_debug_get", _wrap_mapObj_debug_get, METH_O, " See :ref:`DEBUG <mapfile-map-debug>`"},
+	 { "new_mapObj", _wrap_new_mapObj, METH_VARARGS, " Create a new instance of :class:`mapObj`. Note that the *filename* is optional."},
 	 { "delete_mapObj", _wrap_delete_mapObj, METH_O, NULL},
-	 { "mapObj_clone", _wrap_mapObj_clone, METH_O, NULL},
-	 { "mapObj_insertLayer", _wrap_mapObj_insertLayer, METH_VARARGS, NULL},
-	 { "mapObj_removeLayer", _wrap_mapObj_removeLayer, METH_VARARGS, NULL},
-	 { "mapObj_setExtent", _wrap_mapObj_setExtent, METH_VARARGS, NULL},
-	 { "mapObj_offsetExtent", _wrap_mapObj_offsetExtent, METH_VARARGS, NULL},
-	 { "mapObj_scaleExtent", _wrap_mapObj_scaleExtent, METH_VARARGS, NULL},
-	 { "mapObj_setCenter", _wrap_mapObj_setCenter, METH_VARARGS, NULL},
+	 { "mapObj_clone", _wrap_mapObj_clone, METH_O, "\n"
+		"Return an independent copy of the map, less any caches.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    In the Java & PHP modules this method is named ``cloneMap``.\n"
+		""},
+	 { "mapObj_insertLayer", _wrap_mapObj_insertLayer, METH_VARARGS, "\n"
+		"Insert a copy of *layer* into the map at *index*.\n"
+		"The default value of *index* is -1, which means the last possible index.\n"
+		"Returns the index of the new layer, or -1 in the case of a failure.\n"
+		""},
+	 { "mapObj_removeLayer", _wrap_mapObj_removeLayer, METH_VARARGS, " Remove the layer at *index*. Returns the :class:`layerObj`."},
+	 { "mapObj_setExtent", _wrap_mapObj_setExtent, METH_VARARGS, "\n"
+		"Set the map extent, returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		"This method will correct the extents (width/height ratio) before setting the\n"
+		"minx, miny, maxx, maxy values. See extent properties to set up a custom extent from :class:`rectObj`.\n"
+		""},
+	 { "mapObj_offsetExtent", _wrap_mapObj_offsetExtent, METH_VARARGS, "\n"
+		"Offset the map extent based on the given distances in map coordinates.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_scaleExtent", _wrap_mapObj_scaleExtent, METH_VARARGS, "\n"
+		"Scale the map extent using the *zoomfactor* and ensure the extent within\n"
+		"the *minscaledenom* and *maxscaledenom* domain. If *minscaledenom* and/or *maxscaledenom*\n"
+		"is 0 then the parameter is not taken into account.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_setCenter", _wrap_mapObj_setCenter, METH_VARARGS, "\n"
+		"Set the map center to the given map point.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
 	 { "mapObj_setSize", _wrap_mapObj_setSize, METH_VARARGS, NULL},
-	 { "mapObj_pixelToGeoref", _wrap_mapObj_pixelToGeoref, METH_VARARGS, NULL},
-	 { "mapObj_getRotation", _wrap_mapObj_getRotation, METH_O, NULL},
-	 { "mapObj_setRotation", _wrap_mapObj_setRotation, METH_VARARGS, NULL},
-	 { "mapObj_getLayer", _wrap_mapObj_getLayer, METH_VARARGS, NULL},
-	 { "mapObj_getLayerByName", _wrap_mapObj_getLayerByName, METH_VARARGS, NULL},
-	 { "mapObj_getSymbolByName", _wrap_mapObj_getSymbolByName, METH_VARARGS, NULL},
-	 { "mapObj_prepareQuery", _wrap_mapObj_prepareQuery, METH_O, NULL},
-	 { "mapObj_prepareImage", _wrap_mapObj_prepareImage, METH_O, NULL},
-	 { "mapObj_setImageType", _wrap_mapObj_setImageType, METH_VARARGS, NULL},
-	 { "mapObj_selectOutputFormat", _wrap_mapObj_selectOutputFormat, METH_VARARGS, NULL},
-	 { "mapObj_getOutputFormat", _wrap_mapObj_getOutputFormat, METH_VARARGS, NULL},
-	 { "mapObj_setOutputFormat", _wrap_mapObj_setOutputFormat, METH_VARARGS, NULL},
-	 { "mapObj_draw", _wrap_mapObj_draw, METH_O, NULL},
-	 { "mapObj_drawQuery", _wrap_mapObj_drawQuery, METH_O, NULL},
-	 { "mapObj_drawLegend", _wrap_mapObj_drawLegend, METH_VARARGS, NULL},
-	 { "mapObj_drawScalebar", _wrap_mapObj_drawScalebar, METH_O, NULL},
-	 { "mapObj_drawReferenceMap", _wrap_mapObj_drawReferenceMap, METH_O, NULL},
-	 { "mapObj_embedScalebar", _wrap_mapObj_embedScalebar, METH_VARARGS, NULL},
-	 { "mapObj_embedLegend", _wrap_mapObj_embedLegend, METH_VARARGS, NULL},
-	 { "mapObj_drawLabelCache", _wrap_mapObj_drawLabelCache, METH_VARARGS, NULL},
-	 { "mapObj_queryByFilter", _wrap_mapObj_queryByFilter, METH_VARARGS, NULL},
-	 { "mapObj_queryByPoint", _wrap_mapObj_queryByPoint, METH_VARARGS, NULL},
-	 { "mapObj_queryByRect", _wrap_mapObj_queryByRect, METH_VARARGS, NULL},
-	 { "mapObj_queryByFeatures", _wrap_mapObj_queryByFeatures, METH_VARARGS, NULL},
-	 { "mapObj_queryByShape", _wrap_mapObj_queryByShape, METH_VARARGS, NULL},
-	 { "mapObj_setWKTProjection", _wrap_mapObj_setWKTProjection, METH_VARARGS, NULL},
-	 { "mapObj_getProjection", _wrap_mapObj_getProjection, METH_O, NULL},
-	 { "mapObj_setProjection", _wrap_mapObj_setProjection, METH_VARARGS, NULL},
-	 { "mapObj_save", _wrap_mapObj_save, METH_VARARGS, NULL},
-	 { "mapObj_saveQuery", _wrap_mapObj_saveQuery, METH_VARARGS, NULL},
-	 { "mapObj_loadQuery", _wrap_mapObj_loadQuery, METH_VARARGS, NULL},
-	 { "mapObj_freeQuery", _wrap_mapObj_freeQuery, METH_VARARGS, NULL},
-	 { "mapObj_saveQueryAsGML", _wrap_mapObj_saveQueryAsGML, METH_VARARGS, NULL},
-	 { "mapObj_setSymbolSet", _wrap_mapObj_setSymbolSet, METH_VARARGS, NULL},
-	 { "mapObj_getNumSymbols", _wrap_mapObj_getNumSymbols, METH_O, NULL},
-	 { "mapObj_setFontSet", _wrap_mapObj_setFontSet, METH_VARARGS, NULL},
-	 { "mapObj_saveMapContext", _wrap_mapObj_saveMapContext, METH_VARARGS, NULL},
-	 { "mapObj_loadMapContext", _wrap_mapObj_loadMapContext, METH_VARARGS, NULL},
-	 { "mapObj_moveLayerUp", _wrap_mapObj_moveLayerUp, METH_VARARGS, NULL},
-	 { "mapObj_moveLayerDown", _wrap_mapObj_moveLayerDown, METH_VARARGS, NULL},
-	 { "mapObj_getLayersDrawingOrder", _wrap_mapObj_getLayersDrawingOrder, METH_O, NULL},
-	 { "mapObj_setLayersDrawingOrder", _wrap_mapObj_setLayersDrawingOrder, METH_VARARGS, NULL},
-	 { "mapObj_setConfigOption", _wrap_mapObj_setConfigOption, METH_VARARGS, NULL},
-	 { "mapObj_getConfigOption", _wrap_mapObj_getConfigOption, METH_VARARGS, NULL},
-	 { "mapObj_applyConfigOptions", _wrap_mapObj_applyConfigOptions, METH_O, NULL},
-	 { "mapObj_applySLD", _wrap_mapObj_applySLD, METH_VARARGS, NULL},
-	 { "mapObj_applySLDURL", _wrap_mapObj_applySLDURL, METH_VARARGS, NULL},
-	 { "mapObj_generateSLD", _wrap_mapObj_generateSLD, METH_VARARGS, NULL},
-	 { "mapObj_processTemplate", _wrap_mapObj_processTemplate, METH_VARARGS, NULL},
-	 { "mapObj_processLegendTemplate", _wrap_mapObj_processLegendTemplate, METH_VARARGS, NULL},
-	 { "mapObj_processQueryTemplate", _wrap_mapObj_processQueryTemplate, METH_VARARGS, NULL},
-	 { "mapObj_getOutputFormatByName", _wrap_mapObj_getOutputFormatByName, METH_VARARGS, NULL},
-	 { "mapObj_appendOutputFormat", _wrap_mapObj_appendOutputFormat, METH_VARARGS, NULL},
-	 { "mapObj_removeOutputFormat", _wrap_mapObj_removeOutputFormat, METH_VARARGS, NULL},
-	 { "mapObj_loadOWSParameters", _wrap_mapObj_loadOWSParameters, METH_VARARGS, NULL},
-	 { "mapObj_OWSDispatch", _wrap_mapObj_OWSDispatch, METH_VARARGS, NULL},
-	 { "mapObj_convertToString", _wrap_mapObj_convertToString, METH_O, NULL},
-	 { "mapObj_applyDefaultSubstitutions", _wrap_mapObj_applyDefaultSubstitutions, METH_O, NULL},
-	 { "mapObj_applySubstitutions", _wrap_mapObj_applySubstitutions, METH_VARARGS, NULL},
-	 { "mapObj_zoomPoint", _wrap_mapObj_zoomPoint, METH_VARARGS, NULL},
-	 { "mapObj_zoomRectangle", _wrap_mapObj_zoomRectangle, METH_VARARGS, NULL},
-	 { "mapObj_zoomScale", _wrap_mapObj_zoomScale, METH_VARARGS, NULL},
-	 { "mapObj_getLayerOrder", _wrap_mapObj_getLayerOrder, METH_O, NULL},
-	 { "mapObj_setLayerOrder", _wrap_mapObj_setLayerOrder, METH_VARARGS, NULL},
-	 { "mapObj_getSize", _wrap_mapObj_getSize, METH_O, NULL},
+	 { "mapObj_pixelToGeoref", _wrap_mapObj_pixelToGeoref, METH_VARARGS, " TODO"},
+	 { "mapObj_getRotation", _wrap_mapObj_getRotation, METH_O, " Returns the map rotation angle."},
+	 { "mapObj_setRotation", _wrap_mapObj_setRotation, METH_VARARGS, "\n"
+		"Set map rotation angle. The map view rectangle (specified in EXTENTS) will be rotated by\n"
+		"the indicated angle in the counter- clockwise direction. Note that this implies the\n"
+		"rendered map will be rotated by the angle in the clockwise direction.\n"
+		"\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_getLayer", _wrap_mapObj_getLayer, METH_VARARGS, " Returns a reference to the layer at index *i*."},
+	 { "mapObj_getLayerByName", _wrap_mapObj_getLayerByName, METH_VARARGS, " Returns a reference to the named layer."},
+	 { "mapObj_getSymbolByName", _wrap_mapObj_getSymbolByName, METH_VARARGS, "\n"
+		"Return the index of the named symbol in the map's symbolset.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    This method is poorly named and too indirect. It is preferable to use the\n"
+		"    getSymbolByName method of :class:`symbolSetObj`, which really does return a :class:`symbolObj`\n"
+		"    reference, or use the index method of symbolSetObj to get a symbol's index number.\n"
+		""},
+	 { "mapObj_prepareQuery", _wrap_mapObj_prepareQuery, METH_O, " **TODO** this function only calculates the scale or am I missing something?"},
+	 { "mapObj_prepareImage", _wrap_mapObj_prepareImage, METH_O, " Returns an :class:`imageObj` initialized to map extents and outputformat."},
+	 { "mapObj_setImageType", _wrap_mapObj_setImageType, METH_VARARGS, "\n"
+		"Sets map outputformat to the named format.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    :func:`mapObj.setImageType` remains in the module but its use\n"
+		"    is deprecated in favor of :func:`mapObj.selectOutputFormat`.\n"
+		""},
+	 { "mapObj_selectOutputFormat", _wrap_mapObj_selectOutputFormat, METH_VARARGS, "\n"
+		"Set the map's active output format to the internal format named imagetype.\n"
+		"Built-in formats are \"PNG\", \"PNG24\", \"JPEG\", \"GIF\", \"GTIFF\".\n"
+		""},
+	 { "mapObj_getOutputFormat", _wrap_mapObj_getOutputFormat, METH_VARARGS, "\n"
+		"Returns the output format at the specified *i* index from the output formats array or\n"
+		"null if *i* is beyond the array bounds. The number of outpuFormats can be\n"
+		"retrieved by calling :func:`mapObj.getNumoutputformats`.\n"
+		""},
+	 { "mapObj_setOutputFormat", _wrap_mapObj_setOutputFormat, METH_VARARGS, " Sets map outputformat."},
+	 { "mapObj_draw", _wrap_mapObj_draw, METH_O, "\n"
+		"Draw the map, processing layers according to their defined order and status.\n"
+		"Return an :class:`imageObj`.\n"
+		""},
+	 { "mapObj_drawQuery", _wrap_mapObj_drawQuery, METH_O, " Draw query map, returning an :class:`imageObj`."},
+	 { "mapObj_drawLegend", _wrap_mapObj_drawLegend, METH_VARARGS, " Draw map legend, returning an :class:`imageObj`."},
+	 { "mapObj_drawScalebar", _wrap_mapObj_drawScalebar, METH_O, " Draw scale bar, returning an :class:`imageObj`."},
+	 { "mapObj_drawReferenceMap", _wrap_mapObj_drawReferenceMap, METH_O, " Draw reference map, returning an :class:`imageObj`."},
+	 { "mapObj_embedScalebar", _wrap_mapObj_embedScalebar, METH_VARARGS, "\n"
+		"Embed map's legend in *image*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_embedLegend", _wrap_mapObj_embedLegend, METH_VARARGS, "\n"
+		"Embed map's legend in *image*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_drawLabelCache", _wrap_mapObj_drawLabelCache, METH_VARARGS, "\n"
+		"Draw map's label cache on *image*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_queryByFilter", _wrap_mapObj_queryByFilter, METH_VARARGS, "\n"
+		"Query map layers using the filter *string*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_queryByPoint", _wrap_mapObj_queryByPoint, METH_VARARGS, "\n"
+		"Query map layers, result sets contain one or more features, depending on mode,\n"
+		"that intersect *point* within a tolerance *buffer*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_queryByRect", _wrap_mapObj_queryByRect, METH_VARARGS, "\n"
+		"Query map layers, result sets contain features that intersect or are contained within\n"
+		"the features in the result set of the :data:`MS_LAYER_POLYGON` type layer at layer index *slayer*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_queryByFeatures", _wrap_mapObj_queryByFeatures, METH_VARARGS, "\n"
+		"Query map layers, result sets contain features that intersect or are contained within\n"
+		"the features in the result set of the :data:`MS_LAYER_POLYGON` type layer at layer index *slayer*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`.\n"
+		""},
+	 { "mapObj_queryByShape", _wrap_mapObj_queryByShape, METH_VARARGS, "\n"
+		"Query layer based on a single shape, the shape has to be a polygon at this point.\n"
+		"Returns :data:`MS_SUCCESS` if shapes were found or :data:`MS_FAILURE` if nothing was found\n"
+		"or if some other error happened\n"
+		""},
+	 { "mapObj_setWKTProjection", _wrap_mapObj_setWKTProjection, METH_VARARGS, " Sets map projection from OGC definition *wkt*."},
+	 { "mapObj_getProjection", _wrap_mapObj_getProjection, METH_O, " Returns the PROJ definition of the map's projection."},
+	 { "mapObj_setProjection", _wrap_mapObj_setProjection, METH_VARARGS, " Set map projection from PROJ definition string proj4."},
+	 { "mapObj_save", _wrap_mapObj_save, METH_VARARGS, "\n"
+		"Save map to disk as a new map file.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_saveQuery", _wrap_mapObj_saveQuery, METH_VARARGS, "\n"
+		"Save query to disk.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_loadQuery", _wrap_mapObj_loadQuery, METH_VARARGS, "\n"
+		"Load a saved query.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_freeQuery", _wrap_mapObj_freeQuery, METH_VARARGS, " Clear layer query result caches. Default is -1, or all layers."},
+	 { "mapObj_saveQueryAsGML", _wrap_mapObj_saveQueryAsGML, METH_VARARGS, "\n"
+		"Save query to disk.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_setSymbolSet", _wrap_mapObj_setSymbolSet, METH_VARARGS, "\n"
+		"Load symbols defined in filename into map symbolset. The existing symbolset is cleared.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_getNumSymbols", _wrap_mapObj_getNumSymbols, METH_O, " Return the number of symbols in map"},
+	 { "mapObj_setFontSet", _wrap_mapObj_setFontSet, METH_VARARGS, "\n"
+		". Load fonts defined in filename into map fontset. The existing fontset is cleared.\n"
+		" Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_saveMapContext", _wrap_mapObj_saveMapContext, METH_VARARGS, "\n"
+		"Save map definition to disk as OGC-compliant XML.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_loadMapContext", _wrap_mapObj_loadMapContext, METH_VARARGS, "\n"
+		"Load an OGC map context file to define extents and layers of a map\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_moveLayerUp", _wrap_mapObj_moveLayerUp, METH_VARARGS, "\n"
+		"Move the layer at layerindex up in the drawing order array, meaning\n"
+		"that it is drawn earlier.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_moveLayerDown", _wrap_mapObj_moveLayerDown, METH_VARARGS, "\n"
+		"Move the layer at layerindex down in the drawing order array, meaning\n"
+		"that it is drawn later.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_getLayersDrawingOrder", _wrap_mapObj_getLayersDrawingOrder, METH_O, "\n"
+		"Returns an array of layer indexes in drawing order.\n"
+		"Note Unless the proper typemap is implemented for the module's language\n"
+		"a user is more likely to get back an unusable SWIG pointer to the integer array.\n"
+		""},
+	 { "mapObj_setLayersDrawingOrder", _wrap_mapObj_setLayersDrawingOrder, METH_VARARGS, "\n"
+		"Set map layer drawing order.\n"
+		"Note Unless the proper typemap is implemented for the module's language\n"
+		"users will not be able to pass arrays or lists to this method and it will be unusable.\n"
+		""},
+	 { "mapObj_setConfigOption", _wrap_mapObj_setConfigOption, METH_VARARGS, "\n"
+		"Set the indicated key configuration option to the indicated value.\n"
+		"Equivalent to including a CONFIG keyword in a map file.\n"
+		""},
+	 { "mapObj_getConfigOption", _wrap_mapObj_getConfigOption, METH_VARARGS, "\n"
+		"Fetches the value of the requested configuration key if set.\n"
+		"Returns NULL if the key is not set.\n"
+		""},
+	 { "mapObj_applyConfigOptions", _wrap_mapObj_applyConfigOptions, METH_O, " Apply the defined configuration options set by setConfigOption()"},
+	 { "mapObj_applySLD", _wrap_mapObj_applySLD, METH_VARARGS, "\n"
+		"Parse the SLD XML string sldxml and apply to map layers.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_applySLDURL", _wrap_mapObj_applySLDURL, METH_VARARGS, "\n"
+		"Fetch SLD XML from the URL sldurl and apply to map layers.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_generateSLD", _wrap_mapObj_generateSLD, METH_VARARGS, " Return SLD XML as a string for map layers that have STATUS on."},
+	 { "mapObj_processTemplate", _wrap_mapObj_processTemplate, METH_VARARGS, "\n"
+		"Process MapServer template and return HTML.\n"
+		"Note none of the three template processing methods will be usable unless the proper\n"
+		"typemaps are implemented in the module for the target language.Currently the typemaps\n"
+		"are not implemented.\n"
+		""},
+	 { "mapObj_processLegendTemplate", _wrap_mapObj_processLegendTemplate, METH_VARARGS, "\n"
+		"Process MapServer legend template and return HTML.\n"
+		"Note none of the three template processing methods will be usable unless the proper\n"
+		"typemaps are implemented in the module for the target language.Currently the typemaps\n"
+		"are not implemented.\n"
+		""},
+	 { "mapObj_processQueryTemplate", _wrap_mapObj_processQueryTemplate, METH_VARARGS, "\n"
+		"Process MapServer query template and return HTML.\n"
+		"Note none of the three template processing methods will be usable unless the proper\n"
+		"typemaps are implemented in the module for the target language.Currently the typemaps\n"
+		"are not implemented.\n"
+		""},
+	 { "mapObj_getOutputFormatByName", _wrap_mapObj_getOutputFormatByName, METH_VARARGS, "\n"
+		"Return the output format corresponding to driver name imagetype or to format name\n"
+		"imagetype. This works exactly the same as the IMAGETYPE directive in a mapfile, is\n"
+		"case insensitive and allows an output format to be found either by driver\n"
+		"(like 'AGG/PNG') or name (like 'png').\n"
+		""},
+	 { "mapObj_appendOutputFormat", _wrap_mapObj_appendOutputFormat, METH_VARARGS, "\n"
+		"Attach format to the map's output format list.\n"
+		"Returns the updated number of output formats.\n"
+		""},
+	 { "mapObj_removeOutputFormat", _wrap_mapObj_removeOutputFormat, METH_VARARGS, "\n"
+		"Removes the format named name from the map's output format list.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_loadOWSParameters", _wrap_mapObj_loadOWSParameters, METH_VARARGS, "\n"
+		"Load OWS request parameters (BBOX, LAYERS, &c.) into map.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_OWSDispatch", _wrap_mapObj_OWSDispatch, METH_VARARGS, "\n"
+		"Processes and executes the passed OpenGIS Web Services request on the map.\n"
+		"Returns :data:`MS_DONE` (2) if there is no valid OWS request in the req object,\n"
+		":data:`MS_SUCCESS` (0) if an OWS request was successfully processed and :data:`MS_FAILURE` (1)\n"
+		"if an OWS request was not successfully processed. OWS requests include WMS, WFS, WCS\n"
+		"and SOS requests supported by MapServer. Results of a dispatched request are written to\n"
+		"stdout and can be captured using the msIO services (i.e. :func:`mapscript.msIO_installStdoutToBuffer`\n"
+		"and :func:`mapscript.msIO_getStdoutBufferString()`\n"
+		""},
+	 { "mapObj_convertToString", _wrap_mapObj_convertToString, METH_O, " Saves the object to a string. Provides the inverse option for updateFromString."},
+	 { "mapObj_applyDefaultSubstitutions", _wrap_mapObj_applyDefaultSubstitutions, METH_O, " Apply any default values defined in a VALIDATION block used for runtime substitutions"},
+	 { "mapObj_applySubstitutions", _wrap_mapObj_applySubstitutions, METH_VARARGS, "\n"
+		"Pass in runtime substitution keys and values and apply them to the map.\n"
+		"Note - this method is currently enabled for Python only.\n"
+		"Typemaps are needed for other MapScript languages.\n"
+		""},
+	 { "mapObj_zoomPoint", _wrap_mapObj_zoomPoint, METH_VARARGS, "\n"
+		"Zoom by the given factor to a pixel position within the width\n"
+		"and height bounds. If max_extent is not NULL, the zoom is\n"
+		"constrained to the max_extents\n"
+		"\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "mapObj_zoomRectangle", _wrap_mapObj_zoomRectangle, METH_VARARGS, "\n"
+		"Set the map extents to a given extents.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE` on error\n"
+		""},
+	 { "mapObj_zoomScale", _wrap_mapObj_zoomScale, METH_VARARGS, "\n"
+		"Zoom by the given factor to a pixel position within the width\n"
+		"and height bounds.  If max_extent is not NULL, the zoom is\n"
+		"constrained to the max_extents\n"
+		""},
+	 { "mapObj_getLayerOrder", _wrap_mapObj_getLayerOrder, METH_O, "    **Python MapScript only**  - returns the map layer order as a native sequence"},
+	 { "mapObj_setLayerOrder", _wrap_mapObj_setLayerOrder, METH_VARARGS, "    **Python MapScript only** - sets the map layer order using a native sequence"},
+	 { "mapObj_getSize", _wrap_mapObj_getSize, METH_O, "    **Python MapScript only** - gets the map size as a tuple"},
 	 { "mapObj_swigregister", mapObj_swigregister, METH_O, NULL},
 	 { "mapObj_swiginit", mapObj_swiginit, METH_VARARGS, NULL},
-	 { "msSaveImage", _wrap_msSaveImage, METH_VARARGS, NULL},
-	 { "msFreeImage", _wrap_msFreeImage, METH_O, NULL},
-	 { "msSetup", _wrap_msSetup, METH_NOARGS, NULL},
-	 { "msCleanup", _wrap_msCleanup, METH_NOARGS, NULL},
-	 { "msLoadMapFromString", _wrap_msLoadMapFromString, METH_VARARGS, NULL},
-	 { "rectObj_minx_set", _wrap_rectObj_minx_set, METH_VARARGS, NULL},
-	 { "rectObj_minx_get", _wrap_rectObj_minx_get, METH_O, NULL},
-	 { "rectObj_miny_set", _wrap_rectObj_miny_set, METH_VARARGS, NULL},
-	 { "rectObj_miny_get", _wrap_rectObj_miny_get, METH_O, NULL},
-	 { "rectObj_maxx_set", _wrap_rectObj_maxx_set, METH_VARARGS, NULL},
-	 { "rectObj_maxx_get", _wrap_rectObj_maxx_get, METH_O, NULL},
-	 { "rectObj_maxy_set", _wrap_rectObj_maxy_set, METH_VARARGS, NULL},
-	 { "rectObj_maxy_get", _wrap_rectObj_maxy_get, METH_O, NULL},
-	 { "new_rectObj", _wrap_new_rectObj, METH_VARARGS, NULL},
+	 { "msSaveImage", _wrap_msSaveImage, METH_VARARGS, "  Saves a map image to a file"},
+	 { "msFreeImage", _wrap_msFreeImage, METH_O, "  Generic function to free a imageObj"},
+	 { "msSetup", _wrap_msSetup, METH_NOARGS, "  Sets up threads and font cache - called when MapScript is initialised"},
+	 { "msCleanup", _wrap_msCleanup, METH_NOARGS, "\n"
+		"Attempts to recover all dynamically allocated resources allocated by MapServer code and\n"
+		"dependent libraries. It is used primarily for final clean-up in scripts that need to do\n"
+		"memory leak testing to get rid of \"noise\" one-time allocations.\n"
+		"It should not normally be used by production code.\n"
+		""},
+	 { "msLoadMapFromString", _wrap_msLoadMapFromString, METH_VARARGS, "  Sets up string-based mapfile loading and calls loadMapInternal to do the work"},
+	 { "rectObj_minx_set", _wrap_rectObj_minx_set, METH_VARARGS, " Minimum easting"},
+	 { "rectObj_minx_get", _wrap_rectObj_minx_get, METH_O, " Minimum easting"},
+	 { "rectObj_miny_set", _wrap_rectObj_miny_set, METH_VARARGS, " Minimum northing"},
+	 { "rectObj_miny_get", _wrap_rectObj_miny_get, METH_O, " Minimum northing"},
+	 { "rectObj_maxx_set", _wrap_rectObj_maxx_set, METH_VARARGS, " Maximum easting"},
+	 { "rectObj_maxx_get", _wrap_rectObj_maxx_get, METH_O, " Maximum easting"},
+	 { "rectObj_maxy_set", _wrap_rectObj_maxy_set, METH_VARARGS, " Maximum northing"},
+	 { "rectObj_maxy_get", _wrap_rectObj_maxy_get, METH_O, " Maximum northing"},
+	 { "new_rectObj", _wrap_new_rectObj, METH_VARARGS, "\n"
+		"Create new instance. The four easting and northing arguments are optional and\n"
+		"default to -1.0. Note the new optional fifth argument which allows creation\n"
+		"of rectangles in image (pixel/line) units which are also tested for validity.\n"
+		""},
 	 { "delete_rectObj", _wrap_delete_rectObj, METH_O, NULL},
-	 { "rectObj_project", _wrap_rectObj_project, METH_VARARGS, NULL},
-	 { "rectObj_fit", _wrap_rectObj_fit, METH_VARARGS, NULL},
-	 { "rectObj_draw", _wrap_rectObj_draw, METH_VARARGS, NULL},
-	 { "rectObj_getCenter", _wrap_rectObj_getCenter, METH_O, NULL},
-	 { "rectObj_toPolygon", _wrap_rectObj_toPolygon, METH_O, NULL},
-	 { "rectObj_toString", _wrap_rectObj_toString, METH_O, NULL},
+	 { "rectObj_project", _wrap_rectObj_project, METH_VARARGS, "\n"
+		"*Overload 1:*\n"
+		"Reproject rectangle from proj_in to proj_out. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		"\n"
+		"|\n"
+		"\n"
+		"*Overload 2:*\n"
+		"Reproject rectangle given a reprojection object. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "rectObj_fit", _wrap_rectObj_fit, METH_VARARGS, " Adjust the rect to fit the width and height. Returns cellsize of rect."},
+	 { "rectObj_draw", _wrap_rectObj_draw, METH_VARARGS, "\n"
+		"Draw rectangle into img using style defined by the classindex class of layer.\n"
+		"The rectangle is labeled with the string text.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "rectObj_getCenter", _wrap_rectObj_getCenter, METH_O, " Return the center point of the rectangle."},
+	 { "rectObj_toPolygon", _wrap_rectObj_toPolygon, METH_O, " Convert to a polygon of five vertices."},
+	 { "rectObj_toString", _wrap_rectObj_toString, METH_O, "\n"
+		"Return a string formatted like: ``{ 'minx': %f , 'miny': %f , 'maxx': %f , 'maxy': %f }``\n"
+		"with the bounding values substituted appropriately. Python users can get the same effect\n"
+		"via the rectObj __str__ method:\n"
+		"\n"
+		">>> r = mapscript.rectObj(0, 0, 1, 1)\n"
+		"\n"
+		">>> str(r)\n"
+		"{ 'minx': 0 , 'miny': 0 , 'maxx': 1 , 'maxy': 1 }\n"
+		""},
 	 { "rectObj_swigregister", rectObj_swigregister, METH_O, NULL},
 	 { "rectObj_swiginit", rectObj_swiginit, METH_VARARGS, NULL},
-	 { "pointObj_x_set", _wrap_pointObj_x_set, METH_VARARGS, NULL},
-	 { "pointObj_x_get", _wrap_pointObj_x_get, METH_O, NULL},
-	 { "pointObj_y_set", _wrap_pointObj_y_set, METH_VARARGS, NULL},
-	 { "pointObj_y_get", _wrap_pointObj_y_get, METH_O, NULL},
-	 { "pointObj_z_set", _wrap_pointObj_z_set, METH_VARARGS, NULL},
-	 { "pointObj_z_get", _wrap_pointObj_z_get, METH_O, NULL},
-	 { "pointObj_m_set", _wrap_pointObj_m_set, METH_VARARGS, NULL},
-	 { "pointObj_m_get", _wrap_pointObj_m_get, METH_O, NULL},
-	 { "new_pointObj", _wrap_new_pointObj, METH_VARARGS, NULL},
+	 { "pointObj_x_set", _wrap_pointObj_x_set, METH_VARARGS, " The x coordinate of the point"},
+	 { "pointObj_x_get", _wrap_pointObj_x_get, METH_O, " The x coordinate of the point"},
+	 { "pointObj_y_set", _wrap_pointObj_y_set, METH_VARARGS, " The y coordinate of the point"},
+	 { "pointObj_y_get", _wrap_pointObj_y_get, METH_O, " The y coordinate of the point"},
+	 { "pointObj_z_set", _wrap_pointObj_z_set, METH_VARARGS, " The z (height) coordinate of the point"},
+	 { "pointObj_z_get", _wrap_pointObj_z_get, METH_O, " The z (height) coordinate of the point"},
+	 { "pointObj_m_set", _wrap_pointObj_m_set, METH_VARARGS, " The m (measure) of the point, used for linear referencing"},
+	 { "pointObj_m_get", _wrap_pointObj_m_get, METH_O, " The m (measure) of the point, used for linear referencing"},
+	 { "new_pointObj", _wrap_new_pointObj, METH_VARARGS, "\n"
+		"Create new instance. Easting, northing, and measure arguments are optional.\n"
+		"Java pointObj constructors are in java/javaextend.i\n"
+		"See https://github.com/mapserver/mapserver/issues/1106\n"
+		""},
 	 { "delete_pointObj", _wrap_delete_pointObj, METH_O, NULL},
-	 { "pointObj_project", _wrap_pointObj_project, METH_VARARGS, NULL},
-	 { "pointObj_draw", _wrap_pointObj_draw, METH_VARARGS, NULL},
-	 { "pointObj_distanceToPoint", _wrap_pointObj_distanceToPoint, METH_VARARGS, NULL},
-	 { "pointObj_distanceToSegment", _wrap_pointObj_distanceToSegment, METH_VARARGS, NULL},
-	 { "pointObj_distanceToShape", _wrap_pointObj_distanceToShape, METH_VARARGS, NULL},
-	 { "pointObj_setXY", _wrap_pointObj_setXY, METH_VARARGS, NULL},
-	 { "pointObj_setXYZ", _wrap_pointObj_setXYZ, METH_VARARGS, NULL},
-	 { "pointObj_setXYZM", _wrap_pointObj_setXYZM, METH_VARARGS, NULL},
-	 { "pointObj_toString", _wrap_pointObj_toString, METH_O, NULL},
-	 { "pointObj_toShape", _wrap_pointObj_toShape, METH_O, NULL},
+	 { "pointObj_project", _wrap_pointObj_project, METH_VARARGS, "\n"
+		"*Overload 1:*\n"
+		"Reproject point from proj_in to proj_out. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		"\n"
+		"|\n"
+		"\n"
+		"*Overload 2:*\n"
+		"Reproject point given a reprojection object. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "pointObj_draw", _wrap_pointObj_draw, METH_VARARGS, "\n"
+		"Draw the point using the styles defined by the classindex class of layer and\n"
+		"labelled with string text.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "pointObj_distanceToPoint", _wrap_pointObj_distanceToPoint, METH_VARARGS, " Returns the distance to point."},
+	 { "pointObj_distanceToSegment", _wrap_pointObj_distanceToSegment, METH_VARARGS, "\n"
+		"Returns the minimum distance to a hypothetical line segment connecting point1\n"
+		"and point2.\n"
+		""},
+	 { "pointObj_distanceToShape", _wrap_pointObj_distanceToShape, METH_VARARGS, " Returns the minimum distance to shape."},
+	 { "pointObj_setXY", _wrap_pointObj_setXY, METH_VARARGS, "\n"
+		"Set spatial coordinate and, optionally, measure values simultaneously.\n"
+		"The measure will be set only if the value of m is greater than the ESRI measure\n"
+		"no-data value of -1e38.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "pointObj_setXYZ", _wrap_pointObj_setXYZ, METH_VARARGS, "\n"
+		"Set spatial coordinate and, optionally, measure values simultaneously.\n"
+		"The measure will be set only if the value of m is greater than the ESRI measure\n"
+		"no-data value of -1e38.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "pointObj_setXYZM", _wrap_pointObj_setXYZM, METH_VARARGS, "\n"
+		"Set spatial coordinate and, optionally, measure values simultaneously.\n"
+		"The measure will be set only if the value of m is greater than the ESRI measure\n"
+		"no-data value of -1e38.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "pointObj_toString", _wrap_pointObj_toString, METH_O, "\n"
+		"Return a string formatted like: ``{ 'x': %f , 'y': %f, 'z': %f }``\n"
+		"with the coordinate values substituted appropriately. Python users can get the same effect\n"
+		"via the pointObj  __str__ method:\n"
+		"\n"
+		">>> p = mapscript.pointObj(1, 1)\n"
+		"\n"
+		">>> str(p)\n"
+		"{ 'x': 1.000000 , 'y': 1.000000, 'z': 1.000000 }\n"
+		""},
+	 { "pointObj_toShape", _wrap_pointObj_toShape, METH_O, " Convert to a new :class:`shapeObj`"},
 	 { "pointObj_swigregister", pointObj_swigregister, METH_O, NULL},
 	 { "pointObj_swiginit", pointObj_swiginit, METH_VARARGS, NULL},
-	 { "lineObj_numpoints_get", _wrap_lineObj_numpoints_get, METH_O, NULL},
-	 { "new_lineObj", _wrap_new_lineObj, METH_NOARGS, NULL},
+	 { "lineObj_numpoints_get", _wrap_lineObj_numpoints_get, METH_O, " Number of points in the line"},
+	 { "new_lineObj", _wrap_new_lineObj, METH_NOARGS, " A :class:`lineObj` is composed of one or more :class:`pointObj` instances"},
 	 { "delete_lineObj", _wrap_delete_lineObj, METH_O, NULL},
-	 { "lineObj_project", _wrap_lineObj_project, METH_VARARGS, NULL},
-	 { "lineObj_get", _wrap_lineObj_get, METH_VARARGS, NULL},
-	 { "lineObj_add", _wrap_lineObj_add, METH_VARARGS, NULL},
-	 { "lineObj_set", _wrap_lineObj_set, METH_VARARGS, NULL},
+	 { "lineObj_project", _wrap_lineObj_project, METH_VARARGS, "\n"
+		"*Overload 1:*\n"
+		"Transform line in place from proj_in to proj_out.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		"\n"
+		"|\n"
+		"\n"
+		"*Overload 2:*\n"
+		"Reproject line given a reprojection object. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "lineObj_get", _wrap_lineObj_get, METH_VARARGS, " Return reference to point at index *i*."},
+	 { "lineObj_add", _wrap_lineObj_add, METH_VARARGS, "\n"
+		"Add point *p* to the line.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "lineObj_set", _wrap_lineObj_set, METH_VARARGS, "\n"
+		"Set the point at index *i* to point *p*.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
 	 { "lineObj_swigregister", lineObj_swigregister, METH_O, NULL},
 	 { "lineObj_swiginit", lineObj_swiginit, METH_VARARGS, NULL},
-	 { "shapeObj_numlines_get", _wrap_shapeObj_numlines_get, METH_O, NULL},
-	 { "shapeObj_numvalues_get", _wrap_shapeObj_numvalues_get, METH_O, NULL},
-	 { "shapeObj_bounds_set", _wrap_shapeObj_bounds_set, METH_VARARGS, NULL},
-	 { "shapeObj_bounds_get", _wrap_shapeObj_bounds_get, METH_O, NULL},
-	 { "shapeObj_type_set", _wrap_shapeObj_type_set, METH_VARARGS, NULL},
-	 { "shapeObj_type_get", _wrap_shapeObj_type_get, METH_O, NULL},
-	 { "shapeObj_index_set", _wrap_shapeObj_index_set, METH_VARARGS, NULL},
-	 { "shapeObj_index_get", _wrap_shapeObj_index_get, METH_O, NULL},
-	 { "shapeObj_tileindex_set", _wrap_shapeObj_tileindex_set, METH_VARARGS, NULL},
-	 { "shapeObj_tileindex_get", _wrap_shapeObj_tileindex_get, METH_O, NULL},
-	 { "shapeObj_classindex_set", _wrap_shapeObj_classindex_set, METH_VARARGS, NULL},
-	 { "shapeObj_classindex_get", _wrap_shapeObj_classindex_get, METH_O, NULL},
-	 { "shapeObj_text_set", _wrap_shapeObj_text_set, METH_VARARGS, NULL},
-	 { "shapeObj_text_get", _wrap_shapeObj_text_get, METH_O, NULL},
+	 { "shapeObj_numlines_get", _wrap_shapeObj_numlines_get, METH_O, " Number of parts"},
+	 { "shapeObj_numvalues_get", _wrap_shapeObj_numvalues_get, METH_O, " Number of shape attributes"},
+	 { "shapeObj_bounds_set", _wrap_shapeObj_bounds_set, METH_VARARGS, " Bounding box of shape"},
+	 { "shapeObj_bounds_get", _wrap_shapeObj_bounds_get, METH_O, " Bounding box of shape"},
+	 { "shapeObj_type_set", _wrap_shapeObj_type_set, METH_VARARGS, " MS_SHAPE_POINT, MS_SHAPE_LINE, MS_SHAPE_POLYGON, or MS_SHAPE_NULL"},
+	 { "shapeObj_type_get", _wrap_shapeObj_type_get, METH_O, " MS_SHAPE_POINT, MS_SHAPE_LINE, MS_SHAPE_POLYGON, or MS_SHAPE_NULL"},
+	 { "shapeObj_index_set", _wrap_shapeObj_index_set, METH_VARARGS, " Feature index within the layer"},
+	 { "shapeObj_index_get", _wrap_shapeObj_index_get, METH_O, " Feature index within the layer"},
+	 { "shapeObj_tileindex_set", _wrap_shapeObj_tileindex_set, METH_VARARGS, " Index of tiled file for tile-indexed layers"},
+	 { "shapeObj_tileindex_get", _wrap_shapeObj_tileindex_get, METH_O, " Index of tiled file for tile-indexed layers"},
+	 { "shapeObj_classindex_set", _wrap_shapeObj_classindex_set, METH_VARARGS, " The class index for features of a classified layer"},
+	 { "shapeObj_classindex_get", _wrap_shapeObj_classindex_get, METH_O, " The class index for features of a classified layer"},
+	 { "shapeObj_text_set", _wrap_shapeObj_text_set, METH_VARARGS, " Shape annotation"},
+	 { "shapeObj_text_get", _wrap_shapeObj_text_get, METH_O, " Shape annotation"},
 	 { "shapeObj_scratch_set", _wrap_shapeObj_scratch_set, METH_VARARGS, NULL},
 	 { "shapeObj_scratch_get", _wrap_shapeObj_scratch_get, METH_O, NULL},
-	 { "shapeObj_resultindex_set", _wrap_shapeObj_resultindex_set, METH_VARARGS, NULL},
-	 { "shapeObj_resultindex_get", _wrap_shapeObj_resultindex_get, METH_O, NULL},
-	 { "new_shapeObj", _wrap_new_shapeObj, METH_VARARGS, NULL},
+	 { "shapeObj_resultindex_set", _wrap_shapeObj_resultindex_set, METH_VARARGS, " Index within a query result set"},
+	 { "shapeObj_resultindex_get", _wrap_shapeObj_resultindex_get, METH_O, " Index within a query result set"},
+	 { "new_shapeObj", _wrap_new_shapeObj, METH_VARARGS, "\n"
+		"Return a new shapeObj of the specified type. See the type attribute.\n"
+		"No attribute values created by default.\n"
+		"initValues should be explicitly called to create the required number of values.\n"
+		"Each feature of a layer's data is a shapeObj. Each part of the shape is a\n"
+		"closed :class:`lineObj`\n"
+		""},
 	 { "delete_shapeObj", _wrap_delete_shapeObj, METH_O, NULL},
-	 { "shapeObj_fromWKT", _wrap_shapeObj_fromWKT, METH_O, NULL},
-	 { "shapeObj_project", _wrap_shapeObj_project, METH_VARARGS, NULL},
-	 { "shapeObj_get", _wrap_shapeObj_get, METH_VARARGS, NULL},
-	 { "shapeObj_add", _wrap_shapeObj_add, METH_VARARGS, NULL},
-	 { "shapeObj_draw", _wrap_shapeObj_draw, METH_VARARGS, NULL},
-	 { "shapeObj_setBounds", _wrap_shapeObj_setBounds, METH_O, NULL},
-	 { "shapeObj_clone", _wrap_shapeObj_clone, METH_O, NULL},
-	 { "shapeObj_copy", _wrap_shapeObj_copy, METH_VARARGS, NULL},
-	 { "shapeObj_toWKT", _wrap_shapeObj_toWKT, METH_O, NULL},
-	 { "shapeObj_buffer", _wrap_shapeObj_buffer, METH_VARARGS, NULL},
-	 { "shapeObj_simplify", _wrap_shapeObj_simplify, METH_VARARGS, NULL},
-	 { "shapeObj_topologyPreservingSimplify", _wrap_shapeObj_topologyPreservingSimplify, METH_VARARGS, NULL},
-	 { "shapeObj_convexHull", _wrap_shapeObj_convexHull, METH_O, NULL},
-	 { "shapeObj_boundary", _wrap_shapeObj_boundary, METH_O, NULL},
-	 { "shapeObj_getCentroid", _wrap_shapeObj_getCentroid, METH_O, NULL},
-	 { "shapeObj_Union", _wrap_shapeObj_Union, METH_VARARGS, NULL},
-	 { "shapeObj_intersection", _wrap_shapeObj_intersection, METH_VARARGS, NULL},
-	 { "shapeObj_difference", _wrap_shapeObj_difference, METH_VARARGS, NULL},
-	 { "shapeObj_symDifference", _wrap_shapeObj_symDifference, METH_VARARGS, NULL},
-	 { "shapeObj_overlaps", _wrap_shapeObj_overlaps, METH_VARARGS, NULL},
-	 { "shapeObj_within", _wrap_shapeObj_within, METH_VARARGS, NULL},
-	 { "shapeObj_crosses", _wrap_shapeObj_crosses, METH_VARARGS, NULL},
-	 { "shapeObj_intersects", _wrap_shapeObj_intersects, METH_VARARGS, NULL},
-	 { "shapeObj_touches", _wrap_shapeObj_touches, METH_VARARGS, NULL},
-	 { "shapeObj_equals", _wrap_shapeObj_equals, METH_VARARGS, NULL},
-	 { "shapeObj_disjoint", _wrap_shapeObj_disjoint, METH_VARARGS, NULL},
-	 { "shapeObj_getArea", _wrap_shapeObj_getArea, METH_O, NULL},
-	 { "shapeObj_getLength", _wrap_shapeObj_getLength, METH_O, NULL},
-	 { "shapeObj_getValue", _wrap_shapeObj_getValue, METH_VARARGS, NULL},
-	 { "shapeObj_contains", _wrap_shapeObj_contains, METH_VARARGS, NULL},
-	 { "shapeObj_distanceToPoint", _wrap_shapeObj_distanceToPoint, METH_VARARGS, NULL},
-	 { "shapeObj_distanceToShape", _wrap_shapeObj_distanceToShape, METH_VARARGS, NULL},
-	 { "shapeObj_getLabelPoint", _wrap_shapeObj_getLabelPoint, METH_O, NULL},
-	 { "shapeObj_setValue", _wrap_shapeObj_setValue, METH_VARARGS, NULL},
-	 { "shapeObj_initValues", _wrap_shapeObj_initValues, METH_VARARGS, NULL},
+	 { "shapeObj_fromWKT", _wrap_shapeObj_fromWKT, METH_O, "\n"
+		"Returns a new shapeObj based on a well-known text representation of a geometry.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_project", _wrap_shapeObj_project, METH_VARARGS, "\n"
+		"*Overload 1:*\n"
+		"Reproject shape from proj_in to proj_out. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		"\n"
+		"|\n"
+		"\n"
+		"*Overload 2:*\n"
+		"Reproject shape given a reprojection object. Transformation is done in place.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapeObj_get", _wrap_shapeObj_get, METH_VARARGS, "\n"
+		"Returns a reference to part at index. Reference is valid only during\n"
+		"the life of the shapeObj.\n"
+		""},
+	 { "shapeObj_add", _wrap_shapeObj_add, METH_VARARGS, "\n"
+		"Add line (i.e. a part) to the shape.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapeObj_draw", _wrap_shapeObj_draw, METH_VARARGS, "\n"
+		"Draws the individual shape using layer.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapeObj_setBounds", _wrap_shapeObj_setBounds, METH_O, "\n"
+		"Must be called to calculate new bounding box after new parts have been added.\n"
+		"TODO: should return int and set msSetError.\n"
+		""},
+	 { "shapeObj_clone", _wrap_shapeObj_clone, METH_O, "\n"
+		"Return an independent copy of the shape.\n"
+		"\n"
+		".. note::\n"
+		"\n"
+		"    In the Java & PHP modules this method is named ``cloneShape``.\n"
+		""},
+	 { "shapeObj_copy", _wrap_shapeObj_copy, METH_VARARGS, "\n"
+		"Copy the shape to shape_copy.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapeObj_toWKT", _wrap_shapeObj_toWKT, METH_O, "\n"
+		"Returns the well - known text representation of a shapeObj.\n"
+		"Requires GEOS support.Returns NULL / undefined on failure.\n"
+		""},
+	 { "shapeObj_buffer", _wrap_shapeObj_buffer, METH_VARARGS, "\n"
+		"Returns a new buffered shapeObj based on the supplied distance\n"
+		"(given in the coordinates of the existing shapeObj).\n"
+		"Requires GEOS support. Returns NULL/undefined on failure.\n"
+		""},
+	 { "shapeObj_simplify", _wrap_shapeObj_simplify, METH_VARARGS, "\n"
+		"Given a tolerance, returns a simplified shape object or NULL on error.\n"
+		"Requires GEOS support (>=3.0).\n"
+		""},
+	 { "shapeObj_topologyPreservingSimplify", _wrap_shapeObj_topologyPreservingSimplify, METH_VARARGS, "\n"
+		"Given a tolerance, returns a simplified shape object or NULL on error.\n"
+		"Requires GEOS support (>=3.0).\n"
+		""},
+	 { "shapeObj_convexHull", _wrap_shapeObj_convexHull, METH_O, "\n"
+		"Returns the convex hull of the existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_boundary", _wrap_shapeObj_boundary, METH_O, "\n"
+		"Returns the boundary of the existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_getCentroid", _wrap_shapeObj_getCentroid, METH_O, "\n"
+		"Returns the centroid for the existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_Union", _wrap_shapeObj_Union, METH_VARARGS, "\n"
+		"Returns the union of the existing and supplied shape.\n"
+		"Shapes must be of the same type.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_intersection", _wrap_shapeObj_intersection, METH_VARARGS, "\n"
+		"Returns the computed intersection of the supplied and existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_difference", _wrap_shapeObj_difference, METH_VARARGS, "\n"
+		"Returns the computed difference of the supplied and existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_symDifference", _wrap_shapeObj_symDifference, METH_VARARGS, "\n"
+		"Returns the computed symmetric difference of the supplied and existing shape.\n"
+		"Requires GEOS support. Returns NULL/undef on failure.\n"
+		""},
+	 { "shapeObj_overlaps", _wrap_shapeObj_overlaps, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape2 overlaps shape, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_within", _wrap_shapeObj_within, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape is entirely within shape2, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_crosses", _wrap_shapeObj_crosses, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape2 crosses the shape, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_intersects", _wrap_shapeObj_intersects, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape and shape2 intersect, and :data:`MS_FALSE` otherwise.\n"
+		"Does not require GEOS support but will use GEOS functions if available.\n"
+		""},
+	 { "shapeObj_touches", _wrap_shapeObj_touches, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape and shape2 touch, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_equals", _wrap_shapeObj_equals, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape and shape2 are equal (geometry only), returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_disjoint", _wrap_shapeObj_disjoint, METH_VARARGS, "\n"
+		"Returns :data:`MS_TRUE` if shape and shape2 are disjoint, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		""},
+	 { "shapeObj_getArea", _wrap_shapeObj_getArea, METH_O, " Returns the area of the shape (if applicable). Requires GEOS support."},
+	 { "shapeObj_getLength", _wrap_shapeObj_getLength, METH_O, " Returns the length (or perimeter) of the shape. Requires GEOS support."},
+	 { "shapeObj_getValue", _wrap_shapeObj_getValue, METH_VARARGS, " Return the shape attribute at index i."},
+	 { "shapeObj_contains", _wrap_shapeObj_contains, METH_VARARGS, "\n"
+		"*Overload 1:*\n"
+		"Returns :data:`MS_TRUE` if shape2 is entirely inside the shape, returns -1 on error and :data:`MS_FALSE` otherwise.\n"
+		"Requires GEOS support.\n"
+		"\n"
+		"|\n"
+		"\n"
+		"*Overload 2:*\n"
+		"Returns :data:`MS_TRUE` if the point is inside the shape, :data:`MS_FALSE` otherwise\n"
+		""},
+	 { "shapeObj_distanceToPoint", _wrap_shapeObj_distanceToPoint, METH_VARARGS, " Returns the distance to point."},
+	 { "shapeObj_distanceToShape", _wrap_shapeObj_distanceToShape, METH_VARARGS, " Returns the minimum distance to shape."},
+	 { "shapeObj_getLabelPoint", _wrap_shapeObj_getLabelPoint, METH_O, " Given a shape, return a point object suitable for labelling it."},
+	 { "shapeObj_setValue", _wrap_shapeObj_setValue, METH_VARARGS, " Set the shape value at index i to value."},
+	 { "shapeObj_initValues", _wrap_shapeObj_initValues, METH_VARARGS, " Allocates memory for the requested number of values."},
 	 { "shapeObj_swigregister", shapeObj_swigregister, METH_O, NULL},
 	 { "shapeObj_swiginit", shapeObj_swiginit, METH_VARARGS, NULL},
-	 { "errorObj_code_set", _wrap_errorObj_code_set, METH_VARARGS, NULL},
-	 { "errorObj_code_get", _wrap_errorObj_code_get, METH_O, NULL},
-	 { "errorObj_routine_set", _wrap_errorObj_routine_set, METH_VARARGS, NULL},
-	 { "errorObj_routine_get", _wrap_errorObj_routine_get, METH_O, NULL},
-	 { "errorObj_message_set", _wrap_errorObj_message_set, METH_VARARGS, NULL},
-	 { "errorObj_message_get", _wrap_errorObj_message_get, METH_O, NULL},
-	 { "errorObj_isreported_set", _wrap_errorObj_isreported_set, METH_VARARGS, NULL},
-	 { "errorObj_isreported_get", _wrap_errorObj_isreported_get, METH_O, NULL},
-	 { "errorObj_errorcount_set", _wrap_errorObj_errorcount_set, METH_VARARGS, NULL},
-	 { "errorObj_errorcount_get", _wrap_errorObj_errorcount_get, METH_O, NULL},
-	 { "new_errorObj", _wrap_new_errorObj, METH_NOARGS, NULL},
+	 { "errorObj_code_set", _wrap_errorObj_code_set, METH_VARARGS, " MapServer error code such as :data:`MS_IMGERR`"},
+	 { "errorObj_code_get", _wrap_errorObj_code_get, METH_O, " MapServer error code such as :data:`MS_IMGERR`"},
+	 { "errorObj_routine_set", _wrap_errorObj_routine_set, METH_VARARGS, " MapServer function in which the error was set"},
+	 { "errorObj_routine_get", _wrap_errorObj_routine_get, METH_O, " MapServer function in which the error was set"},
+	 { "errorObj_message_set", _wrap_errorObj_message_set, METH_VARARGS, " Context-dependent error message"},
+	 { "errorObj_message_get", _wrap_errorObj_message_get, METH_O, " Context-dependent error message"},
+	 { "errorObj_isreported_set", _wrap_errorObj_isreported_set, METH_VARARGS, " :data:`MS_TRUE` or :data:`MS_FALSE` flag indicating if the error has been output"},
+	 { "errorObj_isreported_get", _wrap_errorObj_isreported_get, METH_O, " :data:`MS_TRUE` or :data:`MS_FALSE` flag indicating if the error has been output"},
+	 { "errorObj_errorcount_set", _wrap_errorObj_errorcount_set, METH_VARARGS, " Number of subsequent errors"},
+	 { "errorObj_errorcount_get", _wrap_errorObj_errorcount_get, METH_O, " Number of subsequent errors"},
+	 { "new_errorObj", _wrap_new_errorObj, METH_NOARGS, " Create a new instance"},
 	 { "delete_errorObj", _wrap_delete_errorObj, METH_O, NULL},
-	 { "errorObj_next", _wrap_errorObj_next, METH_O, NULL},
+	 { "errorObj_next", _wrap_errorObj_next, METH_O, " Returns the next error in the stack or NULL if the end has been reached"},
 	 { "errorObj_swigregister", errorObj_swigregister, METH_O, NULL},
 	 { "errorObj_swiginit", errorObj_swiginit, METH_VARARGS, NULL},
-	 { "msGetErrorObj", _wrap_msGetErrorObj, METH_NOARGS, NULL},
-	 { "msResetErrorList", _wrap_msResetErrorList, METH_NOARGS, NULL},
-	 { "msGetVersion", _wrap_msGetVersion, METH_NOARGS, NULL},
-	 { "msGetVersionInt", _wrap_msGetVersionInt, METH_NOARGS, NULL},
-	 { "msGetErrorString", _wrap_msGetErrorString, METH_O, NULL},
-	 { "DBFInfo_nRecords_get", _wrap_DBFInfo_nRecords_get, METH_O, NULL},
-	 { "DBFInfo_nFields_get", _wrap_DBFInfo_nFields_get, METH_O, NULL},
-	 { "DBFInfo_getFieldName", _wrap_DBFInfo_getFieldName, METH_VARARGS, NULL},
-	 { "DBFInfo_getFieldWidth", _wrap_DBFInfo_getFieldWidth, METH_VARARGS, NULL},
-	 { "DBFInfo_getFieldDecimals", _wrap_DBFInfo_getFieldDecimals, METH_VARARGS, NULL},
-	 { "DBFInfo_getFieldType", _wrap_DBFInfo_getFieldType, METH_VARARGS, NULL},
+	 { "msGetErrorObj", _wrap_msGetErrorObj, METH_NOARGS, "  Get the MapServer error object"},
+	 { "msResetErrorList", _wrap_msResetErrorList, METH_NOARGS, "  Clear the list of error objects"},
+	 { "msGetVersion", _wrap_msGetVersion, METH_NOARGS, "\n"
+		"Returns a string containing MapServer version information, and details on what optional components\n"
+		"are built in - the same report as produced by ``mapserv -v``\n"
+		""},
+	 { "msGetVersionInt", _wrap_msGetVersionInt, METH_NOARGS, "\n"
+		"Returns the MapServer version number (x.y.z) as an integer (x*10000 + y*100 + z)\n"
+		"e.g. V7.4.2 would return 70402\n"
+		""},
+	 { "msGetErrorString", _wrap_msGetErrorString, METH_O, "  Return a string of all errors"},
+	 { "DBFInfo_nRecords_get", _wrap_DBFInfo_nRecords_get, METH_O, " Number of records in the DBF"},
+	 { "DBFInfo_nFields_get", _wrap_DBFInfo_nFields_get, METH_O, " Number of fields in the DBF"},
+	 { "DBFInfo_getFieldName", _wrap_DBFInfo_getFieldName, METH_VARARGS, " Get the field name of a DBF using the field index ``iField``"},
+	 { "DBFInfo_getFieldWidth", _wrap_DBFInfo_getFieldWidth, METH_VARARGS, " Get the field width of a DBF using the field index ``iField``"},
+	 { "DBFInfo_getFieldDecimals", _wrap_DBFInfo_getFieldDecimals, METH_VARARGS, " Get the field decimals of a DBF using the field index ``iField``"},
+	 { "DBFInfo_getFieldType", _wrap_DBFInfo_getFieldType, METH_VARARGS, "\n"
+		"Get the field type of a DBF using the field index ``iField``.\n"
+		"Field types are one of FTString, FTInteger, FTDouble, FTInvalid\n"
+		""},
 	 { "new_DBFInfo", _wrap_new_DBFInfo, METH_NOARGS, NULL},
 	 { "delete_DBFInfo", _wrap_delete_DBFInfo, METH_O, NULL},
 	 { "DBFInfo_swigregister", DBFInfo_swigregister, METH_O, NULL},
 	 { "DBFInfo_swiginit", DBFInfo_swiginit, METH_VARARGS, NULL},
-	 { "shapefileObj_type_get", _wrap_shapefileObj_type_get, METH_O, NULL},
-	 { "shapefileObj_numshapes_get", _wrap_shapefileObj_numshapes_get, METH_O, NULL},
-	 { "shapefileObj_bounds_get", _wrap_shapefileObj_bounds_get, METH_O, NULL},
-	 { "new_shapefileObj", _wrap_new_shapefileObj, METH_VARARGS, NULL},
+	 { "shapefileObj_type_get", _wrap_shapefileObj_type_get, METH_O, " Shapefile type - see mapshape.h for values of type"},
+	 { "shapefileObj_numshapes_get", _wrap_shapefileObj_numshapes_get, METH_O, " Number of shapes"},
+	 { "shapefileObj_bounds_get", _wrap_shapefileObj_bounds_get, METH_O, " Extent of shapes"},
+	 { "new_shapefileObj", _wrap_new_shapefileObj, METH_VARARGS, "\n"
+		"Create a new instance. Omit the type argument or use a value of -1 to open\n"
+		"an existing shapefile.\n"
+		"\n"
+		"Type should be one of :data:`MS_SHAPEFILE_POINT`, :data:`MS_SHAPEFILE_ARC`,\n"
+		":data:`MS_SHAPEFILE_POLYGON` or :data:`MS_SHAPEFILE_MULTIPOINT`\n"
+		""},
 	 { "delete_shapefileObj", _wrap_delete_shapefileObj, METH_O, NULL},
-	 { "shapefileObj_get", _wrap_shapefileObj_get, METH_VARARGS, NULL},
-	 { "shapefileObj_getShape", _wrap_shapefileObj_getShape, METH_VARARGS, NULL},
-	 { "shapefileObj_getPoint", _wrap_shapefileObj_getPoint, METH_VARARGS, NULL},
-	 { "shapefileObj_getTransformed", _wrap_shapefileObj_getTransformed, METH_VARARGS, NULL},
-	 { "shapefileObj_getExtent", _wrap_shapefileObj_getExtent, METH_VARARGS, NULL},
-	 { "shapefileObj_add", _wrap_shapefileObj_add, METH_VARARGS, NULL},
-	 { "shapefileObj_addPoint", _wrap_shapefileObj_addPoint, METH_VARARGS, NULL},
-	 { "shapefileObj_getDBF", _wrap_shapefileObj_getDBF, METH_O, NULL},
+	 { "shapefileObj_get", _wrap_shapefileObj_get, METH_VARARGS, "\n"
+		"Get the shapefile feature from index i and store it in shape.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapefileObj_getShape", _wrap_shapefileObj_getShape, METH_VARARGS, " Returns the shapefile feature at index i. More efficient than get."},
+	 { "shapefileObj_getPoint", _wrap_shapefileObj_getPoint, METH_VARARGS, " Returns the point feature at index i and store it in pointObj."},
+	 { "shapefileObj_getTransformed", _wrap_shapefileObj_getTransformed, METH_VARARGS, "\n"
+		"Returns the feature at index i, simplify it, and store it in shape. Uses the\n"
+		"map extent and cellsize for simplification.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapefileObj_getExtent", _wrap_shapefileObj_getExtent, METH_VARARGS, " Retrieve a shape's bounding box by index and stores it in rect."},
+	 { "shapefileObj_add", _wrap_shapefileObj_add, METH_VARARGS, "\n"
+		"Appends a shape to the open shapefile.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapefileObj_addPoint", _wrap_shapefileObj_addPoint, METH_VARARGS, "\n"
+		"Appends a point to the open shapefile.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "shapefileObj_getDBF", _wrap_shapefileObj_getDBF, METH_O, " Returns a :class:`DBFInfo` object containing information on the associated DBF"},
 	 { "shapefileObj_swigregister", shapefileObj_swigregister, METH_O, NULL},
 	 { "shapefileObj_swiginit", shapefileObj_swiginit, METH_VARARGS, NULL},
-	 { "projectionObj_numargs_get", _wrap_projectionObj_numargs_get, METH_O, NULL},
-	 { "projectionObj_automatic_get", _wrap_projectionObj_automatic_get, METH_O, NULL},
-	 { "projectionObj_wellknownprojection_set", _wrap_projectionObj_wellknownprojection_set, METH_VARARGS, NULL},
-	 { "projectionObj_wellknownprojection_get", _wrap_projectionObj_wellknownprojection_get, METH_O, NULL},
-	 { "new_projectionObj", _wrap_new_projectionObj, METH_O, NULL},
+	 { "projectionObj_numargs_get", _wrap_projectionObj_numargs_get, METH_O, " Actual number of projection args"},
+	 { "projectionObj_automatic_get", _wrap_projectionObj_automatic_get, METH_O, " Projection object was to fetched from the layer"},
+	 { "projectionObj_wellknownprojection_set", _wrap_projectionObj_wellknownprojection_set, METH_VARARGS, " One of ``wkp_none 0``, ``wkp_lonlat 1``, or ``wkp_gmerc 2``"},
+	 { "projectionObj_wellknownprojection_get", _wrap_projectionObj_wellknownprojection_get, METH_O, " One of ``wkp_none 0``, ``wkp_lonlat 1``, or ``wkp_gmerc 2``"},
+	 { "new_projectionObj", _wrap_new_projectionObj, METH_O, "\n"
+		"Create new instance of projectionObj. Input parameter proj4 is a\n"
+		"PROJ definition string such as 'init=EPSG:4269'\n"
+		""},
 	 { "delete_projectionObj", _wrap_delete_projectionObj, METH_O, NULL},
-	 { "projectionObj_setWKTProjection", _wrap_projectionObj_setWKTProjection, METH_VARARGS, NULL},
-	 { "projectionObj_getUnits", _wrap_projectionObj_getUnits, METH_O, NULL},
+	 { "projectionObj_setWKTProjection", _wrap_projectionObj_setWKTProjection, METH_VARARGS, "\n"
+		"Update the projectionObj using an OGC WKT definition\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "projectionObj_getUnits", _wrap_projectionObj_getUnits, METH_O, " Returns the units of a projection object. Returns -1 on error."},
 	 { "projectionObj_swigregister", projectionObj_swigregister, METH_O, NULL},
 	 { "projectionObj_swiginit", projectionObj_swiginit, METH_VARARGS, NULL},
-	 { "new_reprojectionObj", _wrap_new_reprojectionObj, METH_VARARGS, NULL},
+	 { "new_reprojectionObj", _wrap_new_reprojectionObj, METH_VARARGS, " Create new instance of reprojectionObj. Input parameters are two projectionsObj's - in and out."},
 	 { "delete_reprojectionObj", _wrap_delete_reprojectionObj, METH_O, NULL},
 	 { "reprojectionObj_swigregister", reprojectionObj_swigregister, METH_O, NULL},
 	 { "reprojectionObj_swiginit", reprojectionObj_swiginit, METH_VARARGS, NULL},
@@ -49548,72 +50327,101 @@ static PyMethodDef SwigMethods[] = {
 	 { "colorObj_alpha_get", _wrap_colorObj_alpha_get, METH_O, "Alpha (opacity) component of color in range [0-255]"},
 	 { "new_colorObj", _wrap_new_colorObj, METH_VARARGS, "An object representing a color."},
 	 { "delete_colorObj", _wrap_delete_colorObj, METH_O, NULL},
-	 { "colorObj_setRGB", _wrap_colorObj_setRGB, METH_VARARGS, NULL},
-	 { "colorObj_setHex", _wrap_colorObj_setHex, METH_VARARGS, NULL},
-	 { "colorObj_toHex", _wrap_colorObj_toHex, METH_O, NULL},
+	 { "colorObj_setRGB", _wrap_colorObj_setRGB, METH_VARARGS, " Set all four RGBA components. Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`"},
+	 { "colorObj_setHex", _wrap_colorObj_setHex, METH_VARARGS, "\n"
+		"Set the color to values specified in case-independent hexadecimal notation.\n"
+		"hex must start with a '#' followed by three or four hex bytes, e.g. '#ffffff'\n"
+		"or '#ffffffff'. If only three hex bytes are supplied, the alpha will be set\n"
+		"to 255. Calling setHex('#ffffff') therefore assigns values of 255 to each\n"
+		"color component, including the alpha.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "colorObj_toHex", _wrap_colorObj_toHex, METH_O, "\n"
+		"Complement to setHex, returning a hexadecimal representation of the color\n"
+		"components. If alpha is 255 then this is three hex bytes '#rrggbb',\n"
+		"otherwise four hex bytes '#rrggbbaa'\n"
+		""},
 	 { "colorObj_swigregister", colorObj_swigregister, METH_O, NULL},
 	 { "colorObj_swiginit", colorObj_swiginit, METH_VARARGS, NULL},
-	 { "symbolObj_refcount_get", _wrap_symbolObj_refcount_get, METH_O, NULL},
-	 { "symbolObj_numpoints_get", _wrap_symbolObj_numpoints_get, METH_O, NULL},
-	 { "symbolObj_imagepath_get", _wrap_symbolObj_imagepath_get, METH_O, NULL},
-	 { "symbolObj_name_set", _wrap_symbolObj_name_set, METH_VARARGS, NULL},
-	 { "symbolObj_name_get", _wrap_symbolObj_name_get, METH_O, NULL},
-	 { "symbolObj_type_set", _wrap_symbolObj_type_set, METH_VARARGS, NULL},
-	 { "symbolObj_type_get", _wrap_symbolObj_type_get, METH_O, NULL},
-	 { "symbolObj_inmapfile_set", _wrap_symbolObj_inmapfile_set, METH_VARARGS, NULL},
-	 { "symbolObj_inmapfile_get", _wrap_symbolObj_inmapfile_get, METH_O, NULL},
-	 { "symbolObj_sizex_set", _wrap_symbolObj_sizex_set, METH_VARARGS, NULL},
-	 { "symbolObj_sizex_get", _wrap_symbolObj_sizex_get, METH_O, NULL},
-	 { "symbolObj_sizey_set", _wrap_symbolObj_sizey_set, METH_VARARGS, NULL},
-	 { "symbolObj_sizey_get", _wrap_symbolObj_sizey_get, METH_O, NULL},
-	 { "symbolObj_minx_set", _wrap_symbolObj_minx_set, METH_VARARGS, NULL},
-	 { "symbolObj_minx_get", _wrap_symbolObj_minx_get, METH_O, NULL},
-	 { "symbolObj_miny_set", _wrap_symbolObj_miny_set, METH_VARARGS, NULL},
-	 { "symbolObj_miny_get", _wrap_symbolObj_miny_get, METH_O, NULL},
-	 { "symbolObj_maxx_set", _wrap_symbolObj_maxx_set, METH_VARARGS, NULL},
-	 { "symbolObj_maxx_get", _wrap_symbolObj_maxx_get, METH_O, NULL},
-	 { "symbolObj_maxy_set", _wrap_symbolObj_maxy_set, METH_VARARGS, NULL},
-	 { "symbolObj_maxy_get", _wrap_symbolObj_maxy_get, METH_O, NULL},
-	 { "symbolObj_filled_set", _wrap_symbolObj_filled_set, METH_VARARGS, NULL},
-	 { "symbolObj_filled_get", _wrap_symbolObj_filled_get, METH_O, NULL},
-	 { "symbolObj_anchorpoint_x_set", _wrap_symbolObj_anchorpoint_x_set, METH_VARARGS, NULL},
-	 { "symbolObj_anchorpoint_x_get", _wrap_symbolObj_anchorpoint_x_get, METH_O, NULL},
-	 { "symbolObj_anchorpoint_y_set", _wrap_symbolObj_anchorpoint_y_set, METH_VARARGS, NULL},
-	 { "symbolObj_anchorpoint_y_get", _wrap_symbolObj_anchorpoint_y_get, METH_O, NULL},
-	 { "symbolObj_transparent_set", _wrap_symbolObj_transparent_set, METH_VARARGS, NULL},
-	 { "symbolObj_transparent_get", _wrap_symbolObj_transparent_get, METH_O, NULL},
-	 { "symbolObj_transparentcolor_set", _wrap_symbolObj_transparentcolor_set, METH_VARARGS, NULL},
-	 { "symbolObj_transparentcolor_get", _wrap_symbolObj_transparentcolor_get, METH_O, NULL},
-	 { "symbolObj_character_set", _wrap_symbolObj_character_set, METH_VARARGS, NULL},
-	 { "symbolObj_character_get", _wrap_symbolObj_character_get, METH_O, NULL},
-	 { "symbolObj_font_set", _wrap_symbolObj_font_set, METH_VARARGS, NULL},
-	 { "symbolObj_font_get", _wrap_symbolObj_font_get, METH_O, NULL},
-	 { "new_symbolObj", _wrap_new_symbolObj, METH_VARARGS, NULL},
+	 { "symbolObj_refcount_get", _wrap_symbolObj_refcount_get, METH_O, " Reference counter"},
+	 { "symbolObj_numpoints_get", _wrap_symbolObj_numpoints_get, METH_O, " Number of points of a vector symbol"},
+	 { "symbolObj_imagepath_get", _wrap_symbolObj_imagepath_get, METH_O, " Path to pixmap file - see :ref:`IMAGE <mapfile-symbol-image>`"},
+	 { "symbolObj_name_set", _wrap_symbolObj_name_set, METH_VARARGS, " Symbol name - see :ref:`NAME <mapfile-symbol-name>`"},
+	 { "symbolObj_name_get", _wrap_symbolObj_name_get, METH_O, " Symbol name - see :ref:`NAME <mapfile-symbol-name>`"},
+	 { "symbolObj_type_set", _wrap_symbolObj_type_set, METH_VARARGS, " See :ref:`TYPE <mapfile-symbol-type>`"},
+	 { "symbolObj_type_get", _wrap_symbolObj_type_get, METH_O, " See :ref:`TYPE <mapfile-symbol-type>`"},
+	 { "symbolObj_inmapfile_set", _wrap_symbolObj_inmapfile_set, METH_VARARGS, " Boolean value for writing - if set to :data:`TRUE`, the symbol will be saved inside the Mapfile. Added in MapServer 5.6.1"},
+	 { "symbolObj_inmapfile_get", _wrap_symbolObj_inmapfile_get, METH_O, " Boolean value for writing - if set to :data:`TRUE`, the symbol will be saved inside the Mapfile. Added in MapServer 5.6.1"},
+	 { "symbolObj_sizex_set", _wrap_symbolObj_sizex_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_sizex_get", _wrap_symbolObj_sizex_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_sizey_set", _wrap_symbolObj_sizey_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_sizey_get", _wrap_symbolObj_sizey_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_minx_set", _wrap_symbolObj_minx_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_minx_get", _wrap_symbolObj_minx_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_miny_set", _wrap_symbolObj_miny_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_miny_get", _wrap_symbolObj_miny_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_maxx_set", _wrap_symbolObj_maxx_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_maxx_get", _wrap_symbolObj_maxx_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_maxy_set", _wrap_symbolObj_maxy_set, METH_VARARGS, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_maxy_get", _wrap_symbolObj_maxy_get, METH_O, " :data:`MS_SYMBOL_VECTOR` and :data:`MS_SYMBOL_ELLIPSE` option"},
+	 { "symbolObj_filled_set", _wrap_symbolObj_filled_set, METH_VARARGS, " :data:`MS_TRUE` or :data:`MS_FALSE` - see :ref:`FILLED <mapfile-symbol-filled>`"},
+	 { "symbolObj_filled_get", _wrap_symbolObj_filled_get, METH_O, " :data:`MS_TRUE` or :data:`MS_FALSE` - see :ref:`FILLED <mapfile-symbol-filled>`"},
+	 { "symbolObj_anchorpoint_x_set", _wrap_symbolObj_anchorpoint_x_set, METH_VARARGS, " See :ref:`ANCHORPOINT <mapfile-symbol-anchorpoint>`"},
+	 { "symbolObj_anchorpoint_x_get", _wrap_symbolObj_anchorpoint_x_get, METH_O, " See :ref:`ANCHORPOINT <mapfile-symbol-anchorpoint>`"},
+	 { "symbolObj_anchorpoint_y_set", _wrap_symbolObj_anchorpoint_y_set, METH_VARARGS, " See :ref:`ANCHORPOINT <mapfile-symbol-anchorpoint>`"},
+	 { "symbolObj_anchorpoint_y_get", _wrap_symbolObj_anchorpoint_y_get, METH_O, " See :ref:`ANCHORPOINT <mapfile-symbol-anchorpoint>`"},
+	 { "symbolObj_transparent_set", _wrap_symbolObj_transparent_set, METH_VARARGS, " **TODO** Remove"},
+	 { "symbolObj_transparent_get", _wrap_symbolObj_transparent_get, METH_O, " **TODO** Remove"},
+	 { "symbolObj_transparentcolor_set", _wrap_symbolObj_transparentcolor_set, METH_VARARGS, " **TODO** Remove"},
+	 { "symbolObj_transparentcolor_get", _wrap_symbolObj_transparentcolor_get, METH_O, " **TODO** Remove"},
+	 { "symbolObj_character_set", _wrap_symbolObj_character_set, METH_VARARGS, " For TrueType symbols - see :ref:`CHARACTER <mapfile-symbol-character>`"},
+	 { "symbolObj_character_get", _wrap_symbolObj_character_get, METH_O, " For TrueType symbols - see :ref:`CHARACTER <mapfile-symbol-character>`"},
+	 { "symbolObj_font_set", _wrap_symbolObj_font_set, METH_VARARGS, " For TrueType symbols - see :ref:`FONT <mapfile-symbol-font>`"},
+	 { "symbolObj_font_get", _wrap_symbolObj_font_get, METH_O, " For TrueType symbols - see :ref:`FONT <mapfile-symbol-font>`"},
+	 { "new_symbolObj", _wrap_new_symbolObj, METH_VARARGS, "\n"
+		"Create new default :class:`symbolObj` named ``symbolname``. If ``imagefile`` is specified, then the symbol\n"
+		"will be of type :data:`MS_SYMBOL_PIXMAP`.\n"
+		""},
 	 { "delete_symbolObj", _wrap_delete_symbolObj, METH_O, NULL},
-	 { "symbolObj_setImagepath", _wrap_symbolObj_setImagepath, METH_VARARGS, NULL},
-	 { "symbolObj_setPoints", _wrap_symbolObj_setPoints, METH_VARARGS, NULL},
-	 { "symbolObj_getPoints", _wrap_symbolObj_getPoints, METH_O, NULL},
-	 { "symbolObj_getImage", _wrap_symbolObj_getImage, METH_VARARGS, NULL},
-	 { "symbolObj_setImage", _wrap_symbolObj_setImage, METH_VARARGS, NULL},
+	 { "symbolObj_setImagepath", _wrap_symbolObj_setImagepath, METH_VARARGS, "\n"
+		"Sets the ``imagefile`` path for a :data:`MS_SYMBOL_PIXMAP`.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "symbolObj_setPoints", _wrap_symbolObj_setPoints, METH_VARARGS, " Sets the symbol points from the points of line. Returns the updated number of points."},
+	 { "symbolObj_getPoints", _wrap_symbolObj_getPoints, METH_O, " Returns the symbol points as a :class:`lineObj`."},
+	 { "symbolObj_getImage", _wrap_symbolObj_getImage, METH_VARARGS, " Returns a pixmap symbol's imagery as an :class:`imageObj`."},
+	 { "symbolObj_setImage", _wrap_symbolObj_setImage, METH_VARARGS, "\n"
+		"Set a pixmap symbol's imagery from image.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
 	 { "symbolObj_swigregister", symbolObj_swigregister, METH_O, NULL},
 	 { "symbolObj_swiginit", symbolObj_swiginit, METH_VARARGS, NULL},
-	 { "hashTableObj_numitems_get", _wrap_hashTableObj_numitems_get, METH_O, NULL},
-	 { "new_hashTableObj", _wrap_new_hashTableObj, METH_NOARGS, NULL},
+	 { "hashTableObj_numitems_get", _wrap_hashTableObj_numitems_get, METH_O, " **immutable** number of items"},
+	 { "new_hashTableObj", _wrap_new_hashTableObj, METH_NOARGS, " Create a new instance"},
 	 { "delete_hashTableObj", _wrap_delete_hashTableObj, METH_O, NULL},
-	 { "hashTableObj_set", _wrap_hashTableObj_set, METH_VARARGS, NULL},
-	 { "hashTableObj_get", _wrap_hashTableObj_get, METH_VARARGS, NULL},
-	 { "hashTableObj_remove", _wrap_hashTableObj_remove, METH_VARARGS, NULL},
-	 { "hashTableObj_clear", _wrap_hashTableObj_clear, METH_O, NULL},
-	 { "hashTableObj_nextKey", _wrap_hashTableObj_nextKey, METH_VARARGS, NULL},
+	 { "hashTableObj_set", _wrap_hashTableObj_set, METH_VARARGS, "\n"
+		"Set a hash item given key and value.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "hashTableObj_get", _wrap_hashTableObj_get, METH_VARARGS, " Returns the value of the item by its key, or default if the key does not exist"},
+	 { "hashTableObj_remove", _wrap_hashTableObj_remove, METH_VARARGS, "\n"
+		"Removes the hash item by its key.\n"
+		"Returns :data:`MS_SUCCESS` or :data:`MS_FAILURE`\n"
+		""},
+	 { "hashTableObj_clear", _wrap_hashTableObj_clear, METH_O, " Empties the table of all items"},
+	 { "hashTableObj_nextKey", _wrap_hashTableObj_nextKey, METH_VARARGS, "\n"
+		"Returns the name of the next key or NULL if there is no valid next key.\n"
+		"If the input key is NULL, returns the first key\n"
+		""},
 	 { "hashTableObj_swigregister", hashTableObj_swigregister, METH_O, NULL},
 	 { "hashTableObj_swiginit", hashTableObj_swiginit, METH_VARARGS, NULL},
-	 { "configObj_env_set", _wrap_configObj_env_set, METH_VARARGS, NULL},
-	 { "configObj_env_get", _wrap_configObj_env_get, METH_O, NULL},
-	 { "configObj_maps_set", _wrap_configObj_maps_set, METH_VARARGS, NULL},
-	 { "configObj_maps_get", _wrap_configObj_maps_get, METH_O, NULL},
-	 { "configObj_plugins_set", _wrap_configObj_plugins_set, METH_VARARGS, NULL},
-	 { "configObj_plugins_get", _wrap_configObj_plugins_get, METH_O, NULL},
-	 { "new_configObj", _wrap_new_configObj, METH_VARARGS, NULL},
+	 { "configObj_env_set", _wrap_configObj_env_set, METH_VARARGS, " Key-value pairs of environment variables and values"},
+	 { "configObj_env_get", _wrap_configObj_env_get, METH_O, " Key-value pairs of environment variables and values"},
+	 { "configObj_maps_set", _wrap_configObj_maps_set, METH_VARARGS, " Key-value pairs of Mapfile names and paths"},
+	 { "configObj_maps_get", _wrap_configObj_maps_get, METH_O, " Key-value pairs of Mapfile names and paths"},
+	 { "configObj_plugins_set", _wrap_configObj_plugins_set, METH_VARARGS, " Key-value pairs of plugin names and paths"},
+	 { "configObj_plugins_get", _wrap_configObj_plugins_get, METH_O, " Key-value pairs of plugin names and paths"},
+	 { "new_configObj", _wrap_new_configObj, METH_VARARGS, " Create a new instance of :class:`configObj`"},
 	 { "delete_configObj", _wrap_delete_configObj, METH_O, NULL},
 	 { "configObj_swigregister", configObj_swigregister, METH_O, NULL},
 	 { "configObj_swiginit", configObj_swiginit, METH_VARARGS, NULL},
@@ -49622,36 +50430,86 @@ static PyMethodDef SwigMethods[] = {
 	 { "msConfigGetEnv", _wrap_msConfigGetEnv, METH_VARARGS, NULL},
 	 { "msConfigGetMap", _wrap_msConfigGetMap, METH_VARARGS, NULL},
 	 { "msConfigGetPlugin", _wrap_msConfigGetPlugin, METH_VARARGS, NULL},
-	 { "OWSRequest_NumParams_get", _wrap_OWSRequest_NumParams_get, METH_O, NULL},
-	 { "OWSRequest_type_set", _wrap_OWSRequest_type_set, METH_VARARGS, NULL},
-	 { "OWSRequest_type_get", _wrap_OWSRequest_type_get, METH_O, NULL},
-	 { "OWSRequest_contenttype_set", _wrap_OWSRequest_contenttype_set, METH_VARARGS, NULL},
-	 { "OWSRequest_contenttype_get", _wrap_OWSRequest_contenttype_get, METH_O, NULL},
-	 { "OWSRequest_postrequest_set", _wrap_OWSRequest_postrequest_set, METH_VARARGS, NULL},
-	 { "OWSRequest_postrequest_get", _wrap_OWSRequest_postrequest_get, METH_O, NULL},
-	 { "OWSRequest_httpcookiedata_set", _wrap_OWSRequest_httpcookiedata_set, METH_VARARGS, NULL},
-	 { "OWSRequest_httpcookiedata_get", _wrap_OWSRequest_httpcookiedata_get, METH_O, NULL},
-	 { "new_OWSRequest", _wrap_new_OWSRequest, METH_NOARGS, NULL},
+	 { "OWSRequest_NumParams_get", _wrap_OWSRequest_NumParams_get, METH_O, " The number of querystring parameters"},
+	 { "OWSRequest_type_set", _wrap_OWSRequest_type_set, METH_VARARGS, " A :ref:`request type constant<mapfile-constants-requesttype>`"},
+	 { "OWSRequest_type_get", _wrap_OWSRequest_type_get, METH_O, " A :ref:`request type constant<mapfile-constants-requesttype>`"},
+	 { "OWSRequest_contenttype_set", _wrap_OWSRequest_contenttype_set, METH_VARARGS, " The content type of the request"},
+	 { "OWSRequest_contenttype_get", _wrap_OWSRequest_contenttype_get, METH_O, " The content type of the request"},
+	 { "OWSRequest_postrequest_set", _wrap_OWSRequest_postrequest_set, METH_VARARGS, " Any POST data request"},
+	 { "OWSRequest_postrequest_get", _wrap_OWSRequest_postrequest_get, METH_O, " Any POST data request"},
+	 { "OWSRequest_httpcookiedata_set", _wrap_OWSRequest_httpcookiedata_set, METH_VARARGS, " Any cookie data associated with the request"},
+	 { "OWSRequest_httpcookiedata_get", _wrap_OWSRequest_httpcookiedata_get, METH_O, " Any cookie data associated with the request"},
+	 { "new_OWSRequest", _wrap_new_OWSRequest, METH_NOARGS, "\n"
+		"Not associated with other mapscript classes. Serves as a message intermediary\n"
+		"between an application and MapServer's OWS capabilities. Using it permits creation\n"
+		"of lightweight WMS services.\n"
+		""},
 	 { "delete_OWSRequest", _wrap_delete_OWSRequest, METH_O, NULL},
-	 { "OWSRequest_loadParams", _wrap_OWSRequest_loadParams, METH_O, NULL},
-	 { "OWSRequest_loadParamsFromURL", _wrap_OWSRequest_loadParamsFromURL, METH_VARARGS, NULL},
-	 { "OWSRequest_loadParamsFromPost", _wrap_OWSRequest_loadParamsFromPost, METH_VARARGS, NULL},
-	 { "OWSRequest_setParameter", _wrap_OWSRequest_setParameter, METH_VARARGS, NULL},
-	 { "OWSRequest_addParameter", _wrap_OWSRequest_addParameter, METH_VARARGS, NULL},
-	 { "OWSRequest_getName", _wrap_OWSRequest_getName, METH_VARARGS, NULL},
-	 { "OWSRequest_getValue", _wrap_OWSRequest_getValue, METH_VARARGS, NULL},
-	 { "OWSRequest_getValueByName", _wrap_OWSRequest_getValueByName, METH_VARARGS, NULL},
+	 { "OWSRequest_loadParams", _wrap_OWSRequest_loadParams, METH_O, "\n"
+		"Initializes the OWSRequest object from the cgi environment variables\n"
+		"``REQUEST_METHOD``, ``QUERY_STRING`` and ``HTTP_COOKIE``.\n"
+		"Returns the number of name/value pairs collected.\n"
+		"Warning: most errors will result in a process exit!\n"
+		""},
+	 { "OWSRequest_loadParamsFromURL", _wrap_OWSRequest_loadParamsFromURL, METH_VARARGS, "\n"
+		"Initializes the OWSRequest object from the provided URL which is\n"
+		"treated like a ``QUERY_STRING``.\n"
+		"Note that ``REQUEST_METHOD=GET`` and no post data is assumed in this case.\n"
+		""},
+	 { "OWSRequest_loadParamsFromPost", _wrap_OWSRequest_loadParamsFromPost, METH_VARARGS, "\n"
+		"Initializes the OWSRequest object with POST data, along with a the provided URL which is\n"
+		"treated like a ``QUERY_STRING``.\n"
+		"Note that ``REQUEST_METHOD=POST`` and the caller is responsible for setting the correct\n"
+		"content type e.g. ``req.contenttype = \"application/xml\"``\n"
+		""},
+	 { "OWSRequest_setParameter", _wrap_OWSRequest_setParameter, METH_VARARGS, "\n"
+		"Set a request parameter. For example:\n"
+		"\n"
+		"request.setParameter('REQUEST', 'GetMap')\n"
+		"request.setParameter('BBOX', '-107.0,40.0,-106.0,41.0')\n"
+		""},
+	 { "OWSRequest_addParameter", _wrap_OWSRequest_addParameter, METH_VARARGS, "\n"
+		"Add a request parameter, even if the parameter key was previously set.\n"
+		"This is useful when multiple parameters with the same key are required.\n"
+		"For example:\n"
+		"request.addParameter('SIZE', 'x(100)')\n"
+		"request.addParameter('SIZE', 'y(100)')\n"
+		""},
+	 { "OWSRequest_getName", _wrap_OWSRequest_getName, METH_VARARGS, "\n"
+		"Return the name of the parameter at ``index`` in the request's\n"
+		"array of parameter names.\n"
+		""},
+	 { "OWSRequest_getValue", _wrap_OWSRequest_getValue, METH_VARARGS, "\n"
+		"Return the value of the parameter at ``index`` in the request's\n"
+		"array of parameter values.\n"
+		""},
+	 { "OWSRequest_getValueByName", _wrap_OWSRequest_getValueByName, METH_VARARGS, " Return the value associated with the parameter ``name``"},
 	 { "OWSRequest_swigregister", OWSRequest_swigregister, METH_O, NULL},
 	 { "OWSRequest_swiginit", OWSRequest_swiginit, METH_VARARGS, NULL},
-	 { "msConnPoolCloseUnreferenced", _wrap_msConnPoolCloseUnreferenced, METH_NOARGS, NULL},
-	 { "msIO_resetHandlers", _wrap_msIO_resetHandlers, METH_NOARGS, NULL},
-	 { "msIO_installStdoutToBuffer", _wrap_msIO_installStdoutToBuffer, METH_NOARGS, NULL},
-	 { "msIO_installStdinFromBuffer", _wrap_msIO_installStdinFromBuffer, METH_NOARGS, NULL},
-	 { "msIO_stripStdoutBufferContentType", _wrap_msIO_stripStdoutBufferContentType, METH_NOARGS, NULL},
-	 { "msIO_stripStdoutBufferContentHeaders", _wrap_msIO_stripStdoutBufferContentHeaders, METH_NOARGS, NULL},
-	 { "msIO_getStdoutBufferString", _wrap_msIO_getStdoutBufferString, METH_NOARGS, NULL},
-	 { "msIO_getStdoutBufferBytes", _wrap_msIO_getStdoutBufferBytes, METH_NOARGS, NULL},
-	 { "msIO_getAndStripStdoutBufferMimeHeaders", _wrap_msIO_getAndStripStdoutBufferMimeHeaders, METH_NOARGS, NULL},
+	 { "msConnPoolCloseUnreferenced", _wrap_msConnPoolCloseUnreferenced, METH_NOARGS, "\n"
+		"Some memory leaks can be avoided by closing any unreferenced\n"
+		"connections from time to time. See https://github.com/mapserver/mapserver/issues/1661\n"
+		""},
+	 { "msIO_resetHandlers", _wrap_msIO_resetHandlers, METH_NOARGS, " Resets the default stdin and stdout handlers in place of buffer based handlers."},
+	 { "msIO_installStdoutToBuffer", _wrap_msIO_installStdoutToBuffer, METH_NOARGS, " Installs a mapserver IO handler directing future stdout output to a memory buffer."},
+	 { "msIO_installStdinFromBuffer", _wrap_msIO_installStdinFromBuffer, METH_NOARGS, "\n"
+		"Installs a mapserver IO handler directing future stdin reading\n"
+		"(i.e. post request capture) to come from a buffer.\n"
+		""},
+	 { "msIO_stripStdoutBufferContentType", _wrap_msIO_stripStdoutBufferContentType, METH_NOARGS, "\n"
+		"Strip the Content-type header off the stdout buffer if it has one, and if a content type\n"
+		"is found it is returned (otherwise NULL/None/etc).\n"
+		""},
+	 { "msIO_stripStdoutBufferContentHeaders", _wrap_msIO_stripStdoutBufferContentHeaders, METH_NOARGS, " Strip all Content-* headers off the stdout buffer if it has any."},
+	 { "msIO_getStdoutBufferString", _wrap_msIO_getStdoutBufferString, METH_NOARGS, "\n"
+		"Fetch the current stdout buffer contents as a string.\n"
+		"This method does not clear the buffer.\n"
+		""},
+	 { "msIO_getStdoutBufferBytes", _wrap_msIO_getStdoutBufferBytes, METH_NOARGS, "\n"
+		"Fetch the current stdout buffer contents as a binary buffer. The exact form of this buffer will vary by\n"
+		"MapScript language (e/g. string in Python, byte[] array in Java and C#, unhandled in Perl).\n"
+		""},
+	 { "msIO_getAndStripStdoutBufferMimeHeaders", _wrap_msIO_getAndStripStdoutBufferMimeHeaders, METH_NOARGS, " Strip off all MIME headers and return them in a hashTableObj"},
 	 { NULL, NULL, 0, NULL }
 };
 
