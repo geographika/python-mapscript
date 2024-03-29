@@ -20,8 +20,7 @@ jobs:
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
-        python-version: [2.7, 3.7, 3.8, 3.9, "3.10", "3.11"] # "3.10" needs to be in quotes
-
+        python-version: [3.8, 3.9, "3.10", 3.11, 3.12] # "3.10" needs to be in quotes
 
     steps:
       - name: Set up Python

@@ -12,13 +12,14 @@
 #	}
 #}
 
-# run from within "Developer PowerShell for VS2022"
+# IMPORTANT!!!
+# run from within "Developer PowerShell for VS 2022"
 # C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools
 # or run following from a command prompt (not PowerShell!)
 # C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Module """C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"""; Enter-VsDevShell 7683f8b4  -SkipAutomaticLocation -DevCmdArguments """-arch=x64 -host_arch=x64"""}"
 
 # https://stackoverflow.com/questions/74674641/how-to-integrate-developer-command-prompt-for-vs-2022-as-terminal-in-vs-code
-         
+
 # following lines for local testing
 cd D:\MapServer\VS2022
 $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
@@ -44,15 +45,17 @@ if (Test-Path -Path build) {
 }
 
 cd build
-$env:PATH="$ROOT_FOLDER/build/Release;$SDK_BIN;" + $env:PATH
-# TODO is the following used?
+$env:PATH="$SDK_BIN;" + $env:PATH
+# TODO is the following used? it appears in the cmake output
 $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"
 $SWIG_PYTHON_INTERPRETER_NO_DEBUG=1
 
 $PYMAPSCRIPT_ANNOTATIONS=1
 
+$BUILD_TYPE="RelWithDebInfo"
+
 cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
--DCMAKE_BUILD_TYPE=Release `
+-DCMAKE_BUILD_TYPE="$BUILD_TYPE" `
 -DCMAKE_PREFIX_PATH="$SDK_PREFIX" `
 -DPNG_LIBRARY="$SDK_LIB/libpng16_static.lib" `
 -DHARFBUZZ_INCLUDE_DIR="$SDK_INC/harfbuzz" `
@@ -89,15 +92,19 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 # cmake --build . --config Release
 # cannot use DEBUG here - see https://github.com/gisinternals/buildsystem/issues/195
 # can use RelWithDebInfo
-cmake --build . --config RelWithDebInfo
+cmake --build . --config $BUILD_TYPE
 
 
 $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/RelWithDebInfo;$SDK_BIN"
-$env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
-
 $env:PATH="$ROOT_FOLDER/build/RelWithDebInfo;$env:PATH"
+
+#$env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/$BUILD_TYPE;$SDK_BIN"
+# $env:PATH="$ROOT_FOLDER/build/$BUILD_TYPE;$env:PATH"
+
 
 $env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
 
 # cmake --build . --target pythonmapscript-wheel --config Release
-cmake --build . --target pythonmapscript-wheel --config Release
+# RelWithDebInfo does not seem to work for pythonmapscript?
+# it does work but may have to rebuild main mapserver.dll again
+cmake --build . --target pythonmapscript-wheel --config RelWithDebInfo

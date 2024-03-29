@@ -3,7 +3,7 @@ Python MapScript
 
 This repository is used to build Python MapScript Wheels for Windows.
 
-See `Wheels repository </blob/main/wheels/ReadMe.rst>`_ for details.
+See `Wheels Docs </blob/main/docs/wheels.rst>`_ for details.
 
 Adding Wheels to the Repo
 -------------------------
@@ -15,7 +15,7 @@ Testing a Wheel
 
 The example below tests Python 3.11 with a PowerShell script:
 
-..code-block:: ps1
+.. code-block:: ps1
 
     $PYTHON_VER="Python311"
     $PYTHON_ROOT="C:/$PYTHON_VER"

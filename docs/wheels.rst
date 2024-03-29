@@ -172,34 +172,6 @@ $env:MAPSERVER_DLL_PATH="$MAPSERVER_DLL_PATH"
 python -c "import mapscript;print(mapscript.msGetVersion())"
 
 
-Debugging MapScript
--------------------
-
-D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate
-set MAPSERVER_DLL_PATH=D:\MapServer\VS2022\build\RelWithDebInfo;D:\MapServer\VS2022\sdk\release-1930-x64\bin;
-set PROJ_LIB=D:\MapServer\VS2022\sdk\bin\proj7\share
-python -c "import mapscript;print(mapscript.msGetVersion())"
-
-Start an interactive Python
-
-Attach to process
-Add debugger in source files.
-
-import mapscript
-p = r"D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Lib\site-packages\mapscript\tests\data\test.map"
-m = mapscript.mapObj(p)
-#print(m.getLayer(0).convertToString())
-print(m.convertToString())
-
-print("Done!")
-
-Save to script and run:
-
-
-python D:\Temp\test2.py
-
-
-
 Uploading to PyPI
 -----------------
 
@@ -210,7 +182,7 @@ $VENV="C:\VirtualEnvs\mapscript-Python311"
 
 pip install twine
 cd D:\GitHub\python-mapscript\wheels
-twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.0.1*
+twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.0.1.tar.gz
 
 https://test.pypi.org/project/mapscript/
 
