@@ -7,23 +7,24 @@ git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
 
 cd wheels
-$fld="$root/build/mapscript/python/release/dist"
+$fld="$root/build/src/mapscript/python/release/dist"
 if (Test-Path -Path $fld) {
-cp -r "$fld/*" .
+    cp -r "$fld/*" .
 }
+
 git add .
 git commit -m "Add wheels"
 
 cd "$root/src/$PYTHON_VERSION"
 dir
-$fld="$root/build/mapscript/python/CMakeFiles/pythonmapscript.dir"
+$fld="$root/build/src/mapscript/python/CMakeFiles/pythonmapscript.dir"
 if (Test-Path -Path $fld) {
-cp -r "$fld/*" .
+    cp -r "$fld/*" .
 }
 
-$pyfile="$root/build/mapscript/python/mapscript.py"
+$pyfile="$root/build/src/mapscript/python/mapscript.py"
 if (Test-Path -Path $pyfile) {
-cp "$pyfile" .
+    cp "$pyfile" .
 }
 
 git add .
