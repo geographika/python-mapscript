@@ -86,7 +86,7 @@ python -c "import mapscript;print(mapscript.msGetVersion())"
 Start an interactive Python
 
 Attach to process - select both the root Python and the Python in the virtualenv
-Debug code types - select Native and Python (Native)
+Debug code types - select Native and Python (Native) (change from Automatic)
 import mapscript again. Might have to run line by line
 
 Add debugger in MapServer C/C++ source files.
