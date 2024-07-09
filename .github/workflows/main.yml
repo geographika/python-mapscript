@@ -48,7 +48,7 @@ jobs:
             -VS_VER $env:VS_VER `
             -VC_VARS $env:VC_VARS `
             -PYTHON_LOCATION $env:pythonLocation `
-            -PYTHON_VERSION $matrix.python-version
+            -PYTHON_VERSION ${{ matrix.python-version }}
 
       - name: Add Wheels and source files to repo
         #if: always() # always upload any files for debugging

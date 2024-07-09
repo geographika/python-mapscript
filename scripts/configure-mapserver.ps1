@@ -80,6 +80,8 @@ $env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
 
 cmake --build . --target pythonmapscript-wheel --config Release
 
+echo "Using $PYTHON_VERSION"
+
 # make sdist for one version of Python as they are identical
 if ($PYTHON_VERSION -eq "3.10")
 {
