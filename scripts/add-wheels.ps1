@@ -1,3 +1,7 @@
+param (
+    [string]$PYTHON_VERSION     
+)
+
 $root=(Get-Item .).FullName
 git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
@@ -10,7 +14,7 @@ cp -r "$fld/*" .
 git add .
 git commit -m "Add wheels"
 
-cd "$root/src/${{ matrix.python-version }}"
+cd "$root/src/$PYTHON_VERSION"
 dir
 $fld="$root/build/mapscript/python/CMakeFiles/pythonmapscript.dir"
 if (Test-Path -Path $fld) {

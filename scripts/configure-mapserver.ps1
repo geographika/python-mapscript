@@ -1,20 +1,22 @@
+param (
+    [string]$SDK,
+    [string]$SWIG_VER,
+    [string]$VS_VER,
+    [string]$VC_VARS,    
+    [string]$PYTHON_LOCATION,
+    [string]$PYTHON_VERSION,        
+)
+
 # https://stackoverflow.com/questions/2124753/how-can-i-use-powershell-with-the-visual-studio-command-prompt
 
-# remote
-$VCVARS = "${{ env.VC_VARS }}"
-
-cmd.exe /c "call `"$VCVARS`" && set > %temp%\vcvars.txt"
+cmd.exe /c "call `"$VC_VARS`" && set > %temp%\vcvars.txt"
 Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
 if ($_ -match "^(.*?)=(.*)$") {
     Set-Content "env:\$($matches[1])" $matches[2]
 }
 }
 
-$SDK="${{ env.SDK }}"
-$VS_VER="${{ env.VS_VER }}"
-$PYTHON_ROOT_DIR="${{ env.pythonLocation }}" -replace "\\","/"
-$SWIG_VER="${{ env.SWIG_VER }}"
-
+$PYTHON_ROOT_DIR="$PYTHON_LOCATION" -replace "\\","/"
 
 # following commands for both local and GHA
 $ROOT_FOLDER = (Get-Location).ToString() -replace "\\","/"
@@ -79,7 +81,7 @@ $env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
 cmake --build . --target pythonmapscript-wheel --config Release
 
 # make sdist for one version of Python as they are identical
-if ("${{ matrix.python-version }}" -eq "3.10")
+if ($PYTHON_VERSION -eq "3.10")
 {
     cd "$ROOT_FOLDER/build/mapscript/python/Release"
     $params = "setup.py", "sdist"

@@ -40,14 +40,21 @@ jobs:
 
       - name: Configure MapServer
         shell: powershell
-        run: ./scripts/configure-mapserver.ps1
+        run: |
+        ./scripts/configure-mapserver.ps1 `
+          -SDK $env:SDK `
+          -SWIG_VER $env:SWIG_VER `
+          -VS_VER $env:VS_VER `
+          -VCVARS $env:VC_VARS `
+          -PYTHON_LOCATION $env:pythonLocation `
+          -PYTHON_VERSION $matrix.python-version
 
       - name: Add Wheels and source files to repo
         #if: always() # always upload any files for debugging
         # only check-in the wheels if the keyword upload-wheels is present in the commit message
         if: contains(github.event.head_commit.message, 'upload-wheels')
         shell: powershell
-        run: ./scripts/add-wheels.ps1
+        run: ./scripts/add-wheels.ps1 -PYTHON_VERSION $matrix.python-version
 
 
 #  publish:
