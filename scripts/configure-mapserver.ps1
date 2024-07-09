@@ -83,6 +83,7 @@ cmake --build . --target pythonmapscript-wheel --config Release
 # make sdist for one version of Python as they are identical
 if ($PYTHON_VERSION -eq "3.10")
 {
+    echo "Creating sdist..."
     cd "$ROOT_FOLDER/build/src/mapscript/python/Release"
     $params = "setup.py", "sdist"
     & $PYTHON_EXECUTABLE $params
