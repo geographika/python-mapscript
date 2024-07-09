@@ -4,7 +4,7 @@ param (
     [string]$VS_VER,
     [string]$VC_VARS,    
     [string]$PYTHON_LOCATION,
-    [string]$PYTHON_VERSION,        
+    [string]$PYTHON_VERSION
 )
 
 # https://stackoverflow.com/questions/2124753/how-can-i-use-powershell-with-the-visual-studio-command-prompt
