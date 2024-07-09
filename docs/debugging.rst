@@ -13,7 +13,7 @@ Environment Settings
 Ensure RelWithDebInfo is selected.
 mapserv Properties > Debugging > Environment
 
-PROJ_LIB=D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\SHARE
+PROJ_DATA=D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\SHARE
 PATH=D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
 MAPSERVER_CONFIG_FILE=C:\MapServer\apps\mapserver-debug.conf
 
