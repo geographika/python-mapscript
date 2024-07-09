@@ -41,13 +41,13 @@ jobs:
       - name: Configure MapServer
         shell: powershell
         run: |
-        ./scripts/configure-mapserver.ps1 `
-          -SDK $env:SDK `
-          -SWIG_VER $env:SWIG_VER `
-          -VS_VER $env:VS_VER `
-          -VCVARS $env:VC_VARS `
-          -PYTHON_LOCATION $env:pythonLocation `
-          -PYTHON_VERSION $matrix.python-version
+          ./scripts/configure-mapserver.ps1 `
+            -SDK $env:SDK `
+            -SWIG_VER $env:SWIG_VER `
+            -VS_VER $env:VS_VER `
+            -VCVARS $env:VC_VARS `
+            -PYTHON_LOCATION $env:pythonLocation `
+            -PYTHON_VERSION $matrix.python-version
 
       - name: Add Wheels and source files to repo
         #if: always() # always upload any files for debugging
