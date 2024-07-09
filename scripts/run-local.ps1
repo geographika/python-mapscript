@@ -21,7 +21,10 @@
 # https://stackoverflow.com/questions/74674641/how-to-integrate-developer-command-prompt-for-vs-2022-as-terminal-in-vs-code
 
 # following lines for local testing
+# md D:\MapServer\VS2022
 cd D:\MapServer\VS2022
+#git clone https://github.com/geographika/mapserver.git --branch main --single-branch mapserver
+
 $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
 $VS_VER="Visual Studio 17 2022"
 $PYTHON_ROOT_DIR="C:/Python310"

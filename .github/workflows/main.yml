@@ -35,27 +35,12 @@ jobs:
       - name: Get MapServer sourcecode
         shell: powershell
         run: |
-          # md D:\MapServer\VS2022
-          # cd D:\MapServer\VS2022
-          #git clone https://github.com/geographika/mapserver.git --branch main --single-branch mapserver
-          # git clone https://github.com/mapserver/mapserver.git --branch branch-8-0 --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
-          # git clone https://github.com/mapserver/mapserver.git --branch rel-8-0-1 --single-branch mapserver
+          # git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
+          git clone https://github.com/mapserver/mapserver.git --branch rel-8-2-0 --single-branch mapserver
           
       - name: Download and unzip SDK
-        shell: powershell
-        # http://download.gisinternals.com/sdk/downloads/release-1930-x64-dev.zip
-        run: |
-          $SDK="${{ env.SDK }}"
-          # $SDK="release-1930-x64"
-          $SDK_ZIP="$SDK-dev.zip"
-          $SDK_URL="http://download.gisinternals.com/sdk/downloads/$SDK_ZIP"
-          $ProgressPreference = 'SilentlyContinue' # remove console output and greatly speeds-up downloading and unzipping
-          Invoke-WebRequest -Uri $SDK_URL -OutFile $SDK_ZIP
-          Expand-Archive $SDK_ZIP -DestinationPath sdk
-          $SWIG_VER="${{ env.SWIG_VER }}"
-          $SWIG_ZIP="swigwin-${{ env.SWIG_VER }}.zip"
-          Expand-Archive $SWIG_ZIP -DestinationPath "sdk"
+        shell: powershell        
+        run: ./scripts/download-sdk.ps1 -SDK $env:SDK -SWIG_VER $env:SWIG_VER
 
       - name: Configure MapServer
         shell: powershell
