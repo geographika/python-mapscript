@@ -80,7 +80,7 @@ Debugging MapScript
 D:\MapServer\VS2022\build\src\mapscript\python\RelWithDebInfo\mapscriptvenv\Scripts\activate.ps1
 # $env:PYTHONPATH = 'D:\MapServer\VS2022\build\src\mapscript\python\RelWithDebInfo\mapscript'
 $env:MAPSERVER_DLL_PATH="D:\MapServer\VS2022\build\RelWithDebInfo;D:\MapServer\VS2022\sdk\release-1930-x64\bin;"
-$env:PROJ_LIB="D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\share"
+$env:PROJ_DATA="D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\share"
 python -c "import mapscript;print(mapscript.msGetVersion())"
 
 Start an interactive Python
