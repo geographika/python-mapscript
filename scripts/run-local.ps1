@@ -26,7 +26,7 @@ $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
 $VS_VER="Visual Studio 17 2022"
 $PYTHON_ROOT_DIR="C:/Python310"
 $SDK="release-1930-x64"
-$SWIG_VER="4.1.0"
+$SWIG_VER="4.2.1"
 
 # following commands for both local and GHA
 $ROOT_FOLDER = (Get-Location).ToString() -replace "\\","/"
