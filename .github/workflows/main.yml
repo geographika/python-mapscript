@@ -45,7 +45,7 @@ jobs:
             -SDK $env:SDK `
             -SWIG_VER $env:SWIG_VER `
             -VS_VER $env:VS_VER `
-            -VCVARS $env:VC_VARS `
+            -VC_VARS $env:VC_VARS `
             -PYTHON_LOCATION $env:pythonLocation `
             -PYTHON_VERSION $matrix.python-version
 
