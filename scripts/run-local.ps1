@@ -17,11 +17,18 @@
 # or run following from a command prompt (not PowerShell!)
 # C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Module """C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"""; Enter-VsDevShell 7683f8b4  -SkipAutomaticLocation -DevCmdArguments """-arch=x64 -host_arch=x64"""}"
 
+# C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "& {Import-Module 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\Microsoft.VisualStudio.DevShell.dll'; Enter-VsDevShell 7683f8b4 -SkipAutomaticLocation -DevCmdArguments '-arch=x64 -host_arch=x64'}"
+
 # https://stackoverflow.com/questions/74674641/how-to-integrate-developer-command-prompt-for-vs-2022-as-terminal-in-vs-code
          
 # following lines for local testing
 cd D:\MapServer\VS2022
+cd C:\MapServer\VS2022
+
 $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
+$env:PATH="C:/Tools/cmake-3.26.0-rc1-windows-x86_64;" + $env:PATH
+
+
 $VS_VER="Visual Studio 17 2022"
 $PYTHON_ROOT_DIR="C:/Python310"
 $SDK="release-1930-x64"
@@ -66,6 +73,7 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 -DPROTOBUFC_COMPILER="$SDK_BIN/protoc.exe" `
 -DPROTOBUFC_LIBRARY="$SDK_LIB/protobuf-c.lib" `
 -DPROTOBUFC_INCLUDE_DIR="$SDK_INC/protobuf-c" `
+-DODBC_LIBRARY="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x64\odbc32.lib" `
 -DWITH_CURL=1 `
 -DWITH_KML=1 `
 -DWITH_SVGCAIRO=1 `
@@ -84,7 +92,8 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 -DPROJ_INCLUDE_DIR="$SDK_INC/proj9" `
 -DPython_ROOT_DIR="$PYTHON_ROOT_DIR" `
 -DPython_EXECUTABLE="$PYTHON_EXECUTABLE" `
--DWITH_PYMAPSCRIPT_ANNOTATIONS=$PYMAPSCRIPT_ANNOTATIONS
+-DWITH_PYMAPSCRIPT_ANNOTATIONS=$PYMAPSCRIPT_ANNOTATIONS `
+-DBUILD_FUZZER_REPRODUCER=ON
 
 # cmake --build . --config Release
 # cannot use DEBUG here - see https://github.com/gisinternals/buildsystem/issues/195
@@ -101,3 +110,9 @@ $env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
 
 # cmake --build . --target pythonmapscript-wheel --config Release
 cmake --build . --target pythonmapscript-wheel --config Release
+
+
+# for fuzzers - following not working directly..
+# but can build manually in Visual Studio
+cd fuzzers
+cmake --build . --config RelWithDebInfo

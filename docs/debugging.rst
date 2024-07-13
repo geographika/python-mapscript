@@ -16,6 +16,9 @@ PROJ_LIB=D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\SHARE
 PATH=D:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
 MAPSERVER_CONFIG_FILE=C:\MapServer\apps\mapserver.conf
 
+PROJ_LIB=C:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\SHARE
+PATH=C:\MapServer\VS2022\sdk\release-1930-x64\bin;%PATH%
+MAPSERVER_CONFIG_FILE=C:\MapServer\apps\mapserver.conf
 
 Command examples:
 
@@ -29,6 +32,7 @@ mapserv -nh "QUERY_STRING=map=E:\MapServer\apps\publiclighting\monaghan.map&REQU
 Testing OGC API
 ---------------
 
-mapserv "PATH_INFO=/itasca/wms/" "QUERY_STRING=REQUEST=GetCapabilities&SERVICE=wms"
+mapserv "PATH_INFO=/itasca/wms/" "QUERY_STRING=REQUEST=GetCapabilities&SERVICE=wms" -conf "C:\MapServer\apps\mapserver.config"
+
 
 

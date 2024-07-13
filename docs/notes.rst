@@ -63,4 +63,10 @@ harfbuzz.lib(harfbuzz.obj) : error LNK2038: mismatch detected for 'RuntimeLibrar
 
 
 
+Errors with MSSQL Driver:
+
+C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x86\odbc32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type
+'x64' [C:\MapServer\VS2022\build\msplugin_mssql2008.vcxproj]
+C:\MapServer\VS2022\build\RelWithDebInfo\msplugin_mssql2008.dll : fatal error LNK1120: 13 unresolved externals [C:\MapServer\VS2022\build\msplugin_mssql200
+8.vcxproj]
 
