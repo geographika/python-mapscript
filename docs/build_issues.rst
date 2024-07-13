@@ -2,7 +2,7 @@ Build Issues
 ============
 
 
-..code-block:: ps1
+.. code-block:: ps1
 
       D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\lib\site-packages\wheel\bdist_wheel.py:100: RuntimeWarning: Config variable 'Py_DEBUG' is unset, Python ABI tag may be incorrect
         if get_flag("Py_DEBUG", hasattr(sys, "gettotalrefcount"), warn=(impl == "cp")):
@@ -15,7 +15,7 @@ Build Issues
 DUE TO BUILDING A x32 VERSION and not x64
 
 
-..code-block:: ps1
+.. code-block:: ps1
 
     D:\MapServer\VS2022\build\mapscript\python\Release\mapscriptvenv\Scripts\activate.ps1
     (mapscriptvenv) PS C:\Users\seth_> pip install D:\MapServer\VS2022\build\mapscript\python\Release\dist\mapscript-8.1.0-cp310-cp310-win32.whl
