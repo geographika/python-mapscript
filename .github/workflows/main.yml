@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
-        python-version: [3.8, 3.9, "3.10", 3.11, 3.12] # "3.10" needs to be in quotes
+        python-version: [3.8, 3.9, "3.10", 3.11, 3.12, 3.13] # "3.10" needs to be in quotes
         # python-version: ["3.10"]
 
     steps:
@@ -33,10 +33,10 @@ jobs:
         shell: powershell
         run: |
           # git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch rel-8-2-0 --single-branch mapserver
+          git clone https://github.com/mapserver/mapserver.git --branch rel-8-2-2 --single-branch mapserver
           
       - name: Download and unzip SDK
-        shell: powershell        
+        shell: powershell
         run: ./scripts/download-sdk.ps1 -SDK $env:SDK -SWIG_VER $env:SWIG_VER
 
       - name: Configure MapServer

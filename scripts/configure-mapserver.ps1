@@ -2,7 +2,7 @@ param (
     [string]$SDK,
     [string]$SWIG_VER,
     [string]$VS_VER,
-    [string]$VC_VARS,    
+    [string]$VC_VARS,
     [string]$PYTHON_LOCATION,
     [string]$PYTHON_VERSION
 )
