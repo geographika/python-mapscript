@@ -54270,9 +54270,9 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "MS_RESOLUTION_MIN",SWIG_From_int((int)(10)));
   SWIG_Python_SetConstant(d, "MS_VERSION_MAJOR",SWIG_From_int((int)(8)));
   SWIG_Python_SetConstant(d, "MS_VERSION_MINOR",SWIG_From_int((int)(2)));
-  SWIG_Python_SetConstant(d, "MS_VERSION_REV",SWIG_From_int((int)(0)));
-  SWIG_Python_SetConstant(d, "MS_VERSION",SWIG_FromCharPtr("8.2.0"));
-  SWIG_Python_SetConstant(d, "MS_VERSION_NUM",SWIG_From_int((int)(80200)));
+  SWIG_Python_SetConstant(d, "MS_VERSION_REV",SWIG_From_int((int)(2)));
+  SWIG_Python_SetConstant(d, "MS_VERSION",SWIG_FromCharPtr("8.2.2"));
+  SWIG_Python_SetConstant(d, "MS_VERSION_NUM",SWIG_From_int((int)(80202)));
   SWIG_Python_SetConstant(d, "MS_NOERR",SWIG_From_int((int)(0)));
   SWIG_Python_SetConstant(d, "MS_IOERR",SWIG_From_int((int)(1)));
   SWIG_Python_SetConstant(d, "MS_MEMERR",SWIG_From_int((int)(2)));
