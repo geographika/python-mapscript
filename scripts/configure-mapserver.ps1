@@ -84,7 +84,7 @@ cmake --build . --target pythonmapscript-wheel --config Release
 echo "Using $PYTHON_VERSION"
 
 if ($PYTHON_VERSION -eq "3.13") {
-    $sourcePath = Join-Path $env:SDK_BIN "sqlite3.dll"
+    $sourcePath = Join-Path $SDK_BIN "sqlite3.dll"
     $targetPath = "c:\hostedtoolcache\windows\python\3.13.1\x64\DLLs"
     Copy-Item -Path $sourcePath -Destination $targetPath -Force
     Write-Host "sqlite3.dll successfully copied to $targetPath"
