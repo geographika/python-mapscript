@@ -6,8 +6,7 @@ env:
   VS_VER: "Visual Studio 17 2022"
   VC_VARS: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
 
-  SWIG_VER: "4.2.1"
-
+  SWIG_VER: "4.3.0"
 jobs:
   build:
 
@@ -16,7 +15,7 @@ jobs:
     strategy:
       fail-fast: true # default is true, set to false to see which builds run
       matrix:
-        python-version: [3.8, 3.9, "3.10", 3.11, 3.12] # "3.10" needs to be in quotes 3.13 not yet working
+        python-version: [3.8, 3.9, "3.10", 3.11, 3.12, 3.13] # "3.10" needs to be in quotes
         # python-version: ["3.10"]
 
     steps:

@@ -76,14 +76,14 @@ cmake --build . --config Release
 # cmake --build . --config RelWithDebInfo
 
 $env:MAPSERVER_DLL_PATH="$ROOT_FOLDER/build/Release;$SDK_BIN"
-$env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
+$env:PROJ_DATA="$SDK_BIN/proj9/SHARE"
 
 cmake --build . --target pythonmapscript-wheel --config Release
 
 echo "Using $PYTHON_VERSION"
 
 # make sdist for one version of Python as they are identical
-if ($PYTHON_VERSION -eq "3.10")
+if ($PYTHON_VERSION -eq "3.13")
 {
     echo "Creating sdist..."
     cd "$ROOT_FOLDER/build/src/mapscript/python/Release"
