@@ -183,13 +183,15 @@ $VENV="C:\VirtualEnvs\mapscript-Python310"
 
 pip install twine
 cd D:\GitHub\python-mapscript\wheels
-twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.2.0.tar.gz
+twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.2.2*
+
+# when asked for API token check https://pypi.python.org/pypi in LastPass
 
 https://test.pypi.org/project/mapscript/
 
-twine upload --repository-url https://upload.pypi.org/legacy/ mapscript-8.2.0*
+twine upload --config-file .pypirc mapscript-8.2.2*
 
-https://pypi.org/project/mapscript/8.0.1/
+https://pypi.org/project/mapscript/
 
 
 Debugging in Visual Studio

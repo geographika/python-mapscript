@@ -66,3 +66,26 @@ http://localhost/mapserver/itasca/ogcapi/collections/ruins/map?f=png&width=600&h
 http://localhost/mapserver/itasca/ogcapi/collections/ruins/items?f=json&limit=10&offset=0
 
 
+
+## Testing
+
+# RUN_PARMS: ogcapi_collections_tanzania1_items.json.txt [MAPSERV] "PATH_INFO=/[MAPFILE]/ogcapi/collections/tanzania1/items" "QUERY_STRING=f=json" > [RESULT_DEMIME]
+mapserv "PATH_INFO=/D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi_world.map/ogcapi/collections/tanzania1/items" "QUERY_STRING=f=json"
+
+# RUN_PARMS: ogcapi_collections_mn_counties.json [MAPSERV] "PATH_INFO=/[MAPFILE]/ogcapi/collections/mn_counties" "QUERY_STRING=f=json" > [RESULT_DEMIME]
+mapserv "PATH_INFO=/D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi.map/ogcapi/collections/mn_counties" "QUERY_STRING=f=json"
+
+D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi_world.map
+
+
+MAPSERVER_CONFIG_FILE=../etc/mapserv.conf
+
+mapserv "QUERY_STRING=f=png&width=600&height=900" "PATH_INFO=/itasca/ogcapi/collections/ruins/map"
+
+
+mapserv "PATH_INFO=/D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi_maps.map/ogcapi/collections/cities" "QUERY_STRING=f=json"
+
+mapserv -nh "PATH_INFO=/D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi_maps.map/ogcapi/collections/cities/map" "QUERY_STRING=f=png"  > D:\Temp\ogcmap.png
+
+# equivalent WMS request
+mapserv -nh "PATH_INFO=/D:\MapServer\VS2022\mapserver\msautotest\api\ogcapi_maps.map/" "QUERY_STRING=service=WMS&request=GetMap&version=1.3.0&LAYERS=cities&STYLES=&crs=EPSG:3857&BBOX=-20037508.34,-20048966.1,20037508.34,20048966.1&FORMAT=png&HEIGHT=300&WIDTH=300" > D:\Temp\map.png

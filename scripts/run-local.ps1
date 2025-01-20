@@ -30,10 +30,11 @@ $env:PATH="D:/Tools/cmake-3.22.3-windows-x86_64/bin;" + $env:PATH
 # $env:PATH="C:/Tools/cmake-3.26.0-rc1-windows-x86_64;" + $env:PATH
 
 $VS_VER="Visual Studio 17 2022"
-$PYTHON_ROOT_DIR="C:/Python310"
+#$PYTHON_ROOT_DIR="C:/Python310"
+$PYTHON_ROOT_DIR="C:/Python313"
 $SDK="release-1930-x64"
-# $SWIG_VER="4.1.0"
-$SWIG_VER="4.2.1"
+# $SWIG_VER="4.2.1"
+$SWIG_VER="4.3.0"
 
 # following commands for both local and GHA
 $ROOT_FOLDER = (Get-Location).ToString() -replace "\\","/"
@@ -48,11 +49,12 @@ $PYTHON_EXECUTABLE="$PYTHON_ROOT_DIR/python.exe"
 if (Test-Path -Path build) {
     "build folder already exists!"
 } else {
-	mkdir build
+    mkdir build
 }
 
 cd build
-#$env:PATH="$SDK_BIN;" + $env:PATH
+$env:PATH="$SDK_BIN;" + $env:PATH
+
 # TODO is the following used? it appears in the cmake output
 $PROJECT_BINARY_DIR="$ROOT_FOLDER/build"
 $SWIG_PYTHON_INTERPRETER_NO_DEBUG=1
@@ -76,7 +78,6 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 -DPROTOBUFC_COMPILER="$SDK_BIN/protoc.exe" `
 -DPROTOBUFC_LIBRARY="$SDK_LIB/protobuf-c.lib" `
 -DPROTOBUFC_INCLUDE_DIR="$SDK_INC/protobuf-c" `
--DODBC_LIBRARY="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x64\odbc32.lib" `
 -DWITH_CURL=1 `
 -DWITH_KML=1 `
 -DWITH_SVGCAIRO=1 `
@@ -93,10 +94,13 @@ cmake -G "$VS_VER" -A "x64" "$ROOT_FOLDER/mapserver" `
 -DWITH_PHPNG=0 `
 -DWITH_HARFBUZZ=1 `
 -DPROJ_INCLUDE_DIR="$SDK_INC/proj9" `
+-DPROJ_LIBRARY="$SDK_LIB/proj9.lib" `
 -DPython_ROOT_DIR="$PYTHON_ROOT_DIR" `
 -DPython_EXECUTABLE="$PYTHON_EXECUTABLE" `
 -DWITH_PYMAPSCRIPT_ANNOTATIONS=$PYMAPSCRIPT_ANNOTATIONS `
 -DBUILD_FUZZER_REPRODUCER=ON
+
+# -DODBC_LIBRARY="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64\odbc32.lib" `
 
 # cmake --build . --config Release
 # cannot use DEBUG here - see https://github.com/gisinternals/buildsystem/issues/195
@@ -111,7 +115,7 @@ $env:PATH="$ROOT_FOLDER/build/RelWithDebInfo;$env:PATH"
 # $env:PATH="$ROOT_FOLDER/build/$BUILD_TYPE;$env:PATH"
 
 
-$env:PROJ_LIB="$SDK_BIN/proj9/SHARE"
+$env:PROJ_DATA="$SDK_BIN/proj9/SHARE"
 
 # cmake --build . --target pythonmapscript-wheel --config Release
 # RelWithDebInfo does not seem to work for pythonmapscript?
@@ -120,5 +124,6 @@ cmake --build . --target pythonmapscript-wheel --config RelWithDebInfo
 
 # for fuzzers - following not working directly..
 # but can build manually in Visual Studio
-cd fuzzers
-cmake --build . --config RelWithDebInfo
+
+# cd fuzzers
+# cmake --build . --config RelWithDebInfo

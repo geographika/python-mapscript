@@ -28,6 +28,10 @@ mapserv -nh "QUERY_STRING=map=C:/projects/mapserver/msautotest/mssql/cluster_mss
 
 mapserv  -nh "QUERY_STRING=map=D:\test.map&REQUEST=GetMetadata&LAYER=test"
 
+mapserv -nh ""QUERY_STRING="map=D:\MapServer\VS2022\mapserver\msautotest\wxs\wms_styles_expressions.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetStyles&layers=Test24"
+
+
+
 SET MAPSERVER_CONFIG_FILE=E:\MapServer\apps\mapserver.conf
 mapserv -nh "QUERY_STRING=map=E:\test.map&REQUEST=GetMetadata&LAYER=test"
 
@@ -60,14 +64,27 @@ Testing OGC API
 mapserv "PATH_INFO=/itasca/wms/" "QUERY_STRING=REQUEST=GetCapabilities&SERVICE=wms" -conf "C:\MapServer\apps\mapserver.config"
 
 
+mapserv "PATH_INFO=/rail/ogcapi/collections/RailwayNodes/items/1" "QUERY_STRING=f=json" -conf "C:\MapServer\apps\mapserver-debug.conf"
+
+From within VS:
+
+mapserv "PATH_INFO=/rail/ogcapi/collections/RailwayNodes/items/1" "QUERY_STRING=f=json"
+
+mapserv  -nh "QUERY_STRING=map=D:\test.map&REQUEST=GetMetadata&LAYER=test"
 
 From a PowerShell prompt:
 
 $ROOT_FOLDER="D:\MapServer\VS2022"
-$env:PATH="$ROOT_FOLDER/build/RelWithDebInfo;$env:PATH"
-$env:MAPSERVER_CONFIG_FILE="C:\MapServer\apps\mapserver.conf"
+$env:PATH="$ROOT_FOLDER/build/RelWithDebInfo;;D:\MapServer\VS2022\sdk\release-1930-x64\bin;$env:PATH"
+$env:MAPSERVER_CONFIG_FILE="C:\MapServer\apps\mapserver-debug.conf"
 
 mapserv "PATH_INFO=/hello_world" QUERY_STRING="mode=map"
+mapserv "PATH_INFO=/OGCAPI2/ogcapi/collections/mn_population_centers/items/2710700172" "QUERY_STRING=f=json"
+
+mapserv "PATH_INFO=/eo/ogcapi/collections/CropClass_Tier2/items" "QUERY_STRING=limit=2&f=json&runid=1"
+
+mapserv "PATH_INFO=/eo/ogcapi/collections/CropClass_Tier2/items/5" "QUERY_STRING=f=json"
+
 
 Debugging and Breakpoints
 -------------------------
@@ -135,3 +152,45 @@ Also try break points in different places as sometimes lines are optimised away.
 
 from importlib import reload
 reload(mapscript)
+
+DLL Issues
+----------
+
+D:\MapServer\VS2022\build\src\mapscript\python\RelWithDebInfo\mapscriptvenv\Scripts\activate.ps1
+# $env:PYTHONPATH = 'D:\MapServer\VS2022\build\src\mapscript\python\RelWithDebInfo\mapscript'
+$env:MAPSERVER_DLL_PATH="D:\MapServer\VS2022\build\RelWithDebInfo;D:\MapServer\VS2022\sdk\release-1930-x64\bin;"
+$env:PROJ_DATA="D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj9\share"
+python -c "import sqlite3;print(sqlite3.sqlite_version)"
+
+
+$env:PATH="D:\MapServer\VS2022\sdk\release-1930-x64\bin;$env:PATH"
+
+
+python -c "import mapscript;print(mapscript.msGetVersion())"
+
+
+In a PowerShell Dev session:
+
+dumpbin /DEPENDENTS D:\MapServer\VS2022\build\src\mapscript\python\RelWithDebInfo\mapscriptvenv\Lib\site-packages\mapscript\_mapscript.pyd
+dumpbin /DEPENDENTS D:\MapServer\VS2022\build\RelWithDebInfo\mapserver.dll
+
+dumpbin /DEPENDENTS D:\MapServer\VS2022\sdk\release-1930-x64\bin\gdal.dll
+dumpbin /DEPENDENTS D:\MapServer\VS2022\sdk\release-1930-x64\bin\proj_9.dll
+
+
+Precommit
+---------
+
+PRECOMMIT:
+
+# https://mapserver.org/development/dev_practices.html#commit-hooks
+C:\VirtualEnvs\misc\Scripts\activate.ps1
+pip install pre-commit
+pre-commit --version
+
+# when in the MapServer directory run the following
+C:\VirtualEnvs\misc\Scripts\activate.ps1
+cd D:\MapServer\VS2022\mapserver
+pre-commit run --all-files
+
+
