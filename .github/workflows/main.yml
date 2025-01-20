@@ -32,7 +32,7 @@ jobs:
         shell: powershell
         run: |
           # git clone https://github.com/mapserver/mapserver.git --branch main --single-branch mapserver
-          git clone https://github.com/mapserver/mapserver.git --branch rel-8-2-2 --single-branch mapserver
+          git clone https://github.com/mapserver/mapserver.git --branch rel-8-4-0 --single-branch mapserver
           
       - name: Download and unzip SDK
         shell: powershell

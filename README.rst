@@ -10,6 +10,9 @@ Adding Wheels to the Repo
 
 Trigger a new build on GitHub Actions with the following in the commit message: `upload-wheels`
 
+On a new release update ``main.yml`` to use the new release version e.g. 
+``git clone https://github.com/mapserver/mapserver.git --branch rel-8-4-0 --single-branch mapserver``
+
 Testing a Wheel
 ---------------
 
