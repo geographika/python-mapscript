@@ -181,15 +181,15 @@ C:\Python310\scripts\virtualenv C:\VirtualEnvs\mapscript-Python310
 $VENV="C:\VirtualEnvs\mapscript-Python310"
 .$VENV\Scripts\activate.ps1
 
-pip install twine
+pip install twine -U
 cd D:\GitHub\python-mapscript\wheels
-twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.2.2*
+twine upload --repository-url https://test.pypi.org/legacy/ mapscript-8.4.0*
 
 # when asked for API token check https://pypi.python.org/pypi in LastPass
 
 https://test.pypi.org/project/mapscript/
 
-twine upload --config-file .pypirc mapscript-8.2.2*
+twine upload --config-file .pypirc mapscript-8.4.0*
 
 https://pypi.org/project/mapscript/
 
