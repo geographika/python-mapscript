@@ -91,7 +91,11 @@ cmake --build . --target pythonmapscript-wheel --config Release
 echo "Using $PYTHON_VERSION"
 
 # make sdist for one version of Python as they are identical
-if ($PYTHON_VERSION -eq "3.13")
+# cannot use 3.13 as get the following error
+# File "D:\a\python-mapscript\python-mapscript\build\src\mapscript\python\Release\setup.py", line 2, in <module>
+#    from setuptools import setup, find_packages, Distribution
+# ModuleNotFoundError: No module named 'setuptools'
+if ($PYTHON_VERSION -eq "3.10")
 {
     echo "Creating sdist..."
     cd "$ROOT_FOLDER/build/src/mapscript/python/Release"
